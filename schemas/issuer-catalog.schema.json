@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fides.community/schemas/issuer-catalog/v1",
+  "title": "FIDES Issuer Catalog Schema",
+  "description": "Schema for issuer catalog entries contributed by community organizations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "organization", "issuers"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "https://fides.community/schemas/issuer-catalog/v1"
+    },
+    "organization": {
+      "$ref": "#/$defs/Organization"
+    },
+    "issuers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Issuer"
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$defs": {
+    "Organization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Organization display name"
+        },
+        "did": {
+          "type": "string",
+          "pattern": "^did:",
+          "description": "Decentralized Identifier of the organization"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "logo": {
+          "type": "string",
+          "format": "uri",
+          "description": "Logo URL (optional override; crawler prefers logo from .well-known)"
+        },
+        "contact": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "support": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      }
+    },
+    "WalletReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Wallet catalog ID (e.g. wlt:animo:paradym)"
+        },
+        "displayName": {
+          "type": "string"
+        }
+      }
+    },
+    "CredentialReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^cred:[a-z0-9]+:[a-z0-9-]+:[a-z0-9-]+$",
+          "description": "Credential catalog ID (e.g. cred:fides:lpid:sd-jwt-vc)"
+        },
+        "displayName": {
+          "type": "string"
+        }
+      }
+    },
+    "Issuer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "environment", "oid4vciMetadataUrl"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^issuer:[a-z0-9]+:[a-z0-9-]+:(production|pilot|test|sandbox)$",
+          "description": "Format: issuer:<orgCode>:<issuerKey>:<environment>"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Optional display name override (crawler uses .well-known display[] by default)"
+        },
+        "environment": {
+          "type": "string",
+          "enum": ["production", "pilot", "test", "sandbox"],
+          "description": "Deployment environment of this issuer instance"
+        },
+        "oid4vciMetadataUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the OID4VCI .well-known/openid-credential-issuer metadata endpoint"
+        },
+        "projectContext": {
+          "type": "string",
+          "description": "Optional project or pilot context (e.g. 'EUDI Wallet LSP', 'EWC v3 pilot')"
+        },
+        "supportedWallets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/WalletReference"
+          },
+          "description": "Optional references to supported wallets in the wallet catalog"
+        },
+        "credentialRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CredentialReference"
+          },
+          "description": "Manual credential catalog references (fallback when auto-matching fails)"
+        }
+      }
+    }
+  }
+}

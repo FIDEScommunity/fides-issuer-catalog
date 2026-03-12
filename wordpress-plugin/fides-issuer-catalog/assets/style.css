@@ -1,0 +1,2852 @@
+/**
+ * FIDES Issuer Catalog - WordPress Plugin Styles
+ */
+
+/* CSS Variables */
+.fides-issuer-catalog {
+  --fides-bg-primary: #0f172a;
+  --fides-bg-secondary: #1e293b;
+  --fides-bg-card: rgba(30, 41, 59, 0.8);
+  --fides-text-primary: #f1f5f9;
+  --fides-text-secondary: #94a3b8;
+  --fides-text-muted: #64748b;
+  --fides-border: rgba(255, 255, 255, 0.1);
+  --fides-accent: #3b82f6;
+  --fides-accent-hover: #60a5fa;
+  --fides-success: #22c55e;
+  --fides-warning: #f59e0b;
+  --fides-radius: 12px;
+  --fides-radius-lg: 16px;
+}
+
+.fides-issuer-catalog[data-theme="light"] {
+  --fides-bg-primary: #f8fafc;
+  --fides-bg-secondary: #ffffff;
+  --fides-bg-card: #ffffff;
+  --fides-text-primary: #1e293b;
+  --fides-text-secondary: #475569;
+  --fides-text-muted: #94a3b8;
+  --fides-border: rgba(0, 0, 0, 0.1);
+}
+
+/* FIDES Community Theme */
+.fides-issuer-catalog[data-theme="fides"] {
+  --fides-bg-primary: #EAEAEE;
+  --fides-bg-secondary: #ffffff;
+  --fides-bg-card: #ffffff;
+  --fides-text-primary: #000000;
+  --fides-text-secondary: #374151;
+  --fides-text-muted: #6b7280;
+  --fides-border: rgba(0, 0, 0, 0.12);
+  --fides-accent: #0A6EF3;
+  --fides-accent-hover: #0858c4;
+  --fides-success: #059669;
+  --fides-warning: #d97706;
+}
+
+/* FIDES Theme - Badge colors for light background */
+.fides-issuer-catalog[data-theme="fides"] .fides-env-badge.personal,
+.fides-issuer-catalog[data-theme="light"] .fides-env-badge.personal {
+  background: rgba(10, 110, 243, 0.1);
+  color: #0A6EF3;
+  border: 1px solid rgba(10, 110, 243, 0.3);
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-env-badge.organizational,
+.fides-issuer-catalog[data-theme="light"] .fides-env-badge.organizational {
+  background: rgba(168, 85, 247, 0.1);
+  color: #7c3aed;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* FIDES Theme - Tag colors for light background */
+.fides-issuer-catalog[data-theme="fides"] .fides-tag,
+.fides-issuer-catalog[data-theme="light"] .fides-tag {
+  background: rgba(10, 110, 243, 0.08);
+  color: #0A6EF3;
+  border: 1px solid rgba(10, 110, 243, 0.2);
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-tag.platform,
+.fides-issuer-catalog[data-theme="light"] .fides-tag.platform {
+  background: rgba(0, 0, 0, 0.04);
+  color: #374151;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* FIDES Theme - Card shadow for light background */
+.fides-issuer-catalog[data-theme="fides"] .fides-issuer-card,
+.fides-issuer-catalog[data-theme="light"] .fides-issuer-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* FIDES Theme - Sidebar for light background */
+.fides-issuer-catalog[data-theme="fides"] .fides-sidebar,
+.fides-issuer-catalog[data-theme="light"] .fides-sidebar {
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-sidebar-header,
+.fides-issuer-catalog[data-theme="light"] .fides-sidebar-header {
+  background: #ffffff;
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-sidebar-title,
+.fides-issuer-catalog[data-theme="light"] .fides-sidebar-title {
+  color: #000000;
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-issuer-card:hover,
+.fides-issuer-catalog[data-theme="light"] .fides-issuer-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* FIDES Theme - Search input text color */
+.fides-issuer-catalog[data-theme="fides"] .fides-search-input,
+.fides-issuer-catalog[data-theme="light"] .fides-search-input {
+  color: #000000;
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-search-input::placeholder,
+.fides-issuer-catalog[data-theme="light"] .fides-search-input::placeholder {
+  color: #6b7280;
+}
+
+/* Container */
+.fides-issuer-catalog {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--fides-bg-primary);
+  color: var(--fides-text-primary);
+  padding: 2rem;
+  border-radius: var(--fides-radius-lg);
+  min-height: 400px;
+}
+
+/* Loading state */
+.fides-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--fides-text-secondary);
+}
+
+.fides-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--fides-border);
+  border-top-color: var(--fides-accent);
+  border-radius: 50%;
+  animation: fides-spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes fides-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Header */
+.fides-header {
+  margin-bottom: 2rem;
+}
+
+.fides-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--fides-text-primary);
+}
+
+.fides-subtitle {
+  color: var(--fides-text-secondary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   MAIN LAYOUT - SIDEBAR + CONTENT
+   ========================================================================== */
+
+.fides-main-layout {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Sidebar */
+.fides-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--fides-bg-secondary);
+  border: 1px solid var(--fides-border);
+  border-radius: var(--fides-radius);
+}
+
+.fides-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--fides-border);
+  background: var(--fides-bg-secondary);
+}
+
+.fides-sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--fides-text-primary);
+  font-size: 0.875rem;
+}
+
+.fides-sidebar-content {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.fides-sidebar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fides-sidebar-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--fides-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fides-sidebar-close:hover {
+  background: var(--fides-border);
+  color: var(--fides-text-primary);
+}
+
+@media (max-width: 1023px) {
+  .fides-sidebar-close {
+    display: flex;
+  }
+}
+
+.fides-sidebar .fides-filter-group {
+  min-width: 0;
+}
+
+.fides-sidebar .fides-filter-label {
+  margin-bottom: 0.1875rem;
+  font-size: 0.6875rem;
+}
+
+/* Checkbox-based filter options */
+.fides-filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  padding-left: 0.125rem;
+}
+
+.fides-filter-options-scrollable {
+  max-height: none;
+  overflow-y: visible;
+}
+
+.fides-country-flag {
+  width: 16px;
+  height: 12px;
+  object-fit: cover;
+  border-radius: 1px;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+}
+
+.fides-filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: pointer;
+  padding: 0.0625rem 0;
+  margin: 0;
+  line-height: 1.3;
+  font-size: 0.8125rem;
+  color: var(--fides-text-secondary);
+  transition: color 0.15s;
+}
+
+.fides-filter-checkbox:hover {
+  color: var(--fides-text-primary);
+}
+
+.fides-filter-checkbox input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: var(--fides-accent);
+  cursor: pointer;
+}
+
+.fides-filter-checkbox input[type="checkbox"]:checked + span {
+  color: var(--fides-text-primary);
+}
+
+/* Legacy button styles - keep for backwards compatibility */
+.fides-sidebar .fides-filter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fides-sidebar .fides-filter-btn {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0.3rem 0.625rem;
+  font-size: 0.8125rem;
+}
+
+/* Main content area */
+.fides-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Results bar */
+.fides-results-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Scoped under .fides-issuer-catalog so link color wins over theme/site rules (e.g. a { color: inherit }) */
+.fides-issuer-catalog .fides-show-on-map,
+.fides-issuer-catalog a.fides-show-on-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  font-size: 0.875rem;
+  color: var(--fides-accent, #3b82f6) !important;
+  text-decoration: none;
+}
+
+.fides-issuer-catalog .fides-show-on-map:hover,
+.fides-issuer-catalog a.fides-show-on-map:hover {
+  color: var(--fides-accent-hover, #60a5fa) !important;
+  text-decoration: underline;
+}
+
+.fides-issuer-catalog .fides-show-on-map svg {
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+.fides-results-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fides-sort-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--fides-text-secondary);
+}
+
+.fides-sort-label {
+  white-space: nowrap;
+}
+
+.fides-sort-select {
+  min-width: 160px;
+  padding: 0.4rem 2rem 0.4rem 0.6rem;
+  border: 1px solid var(--fides-border);
+  border-radius: 6px;
+  background-color: var(--fides-bg-secondary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  color: var(--fides-text-primary);
+  font-size: 0.875rem;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.fides-sort-select:focus {
+  outline: none;
+  border-color: var(--fides-accent);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.fides-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.fides-kpi-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--fides-border);
+  border-radius: 10px;
+  background: var(--fides-bg-secondary);
+  color: var(--fides-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fides-kpi-card:hover {
+  border-color: var(--fides-accent);
+  transform: translateY(-1px);
+}
+
+.fides-kpi-card.active {
+  border-color: var(--fides-accent);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+.fides-kpi-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.fides-kpi-label {
+  font-size: 0.78rem;
+  color: var(--fides-text-secondary);
+}
+
+/* On small screens show only "New" and "Updated" so labels stay on one line */
+@media (max-width: 600px) {
+  .fides-kpi-card .fides-kpi-label-extra {
+    display: none;
+  }
+}
+
+/* Filter option counts (n) next to each sidebar option */
+.fides-filter-option-count {
+  margin-left: 0.25em;
+  font-size: 0.875em;
+  color: var(--fides-accent);
+}
+
+/* Mobile filter toggle - hidden on desktop */
+.fides-mobile-filter-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--fides-bg-secondary);
+  border: 1px solid var(--fides-border);
+  border-radius: var(--fides-radius);
+  color: var(--fides-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fides-mobile-filter-toggle:hover {
+  background: var(--fides-bg-card);
+  border-color: var(--fides-text-muted);
+}
+
+/* Search - now in sidebar */
+.fides-search-container {
+  display: none; /* Legacy - moved to sidebar */
+}
+
+.fides-sidebar-search {
+  margin-bottom: 0.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--fides-border);
+}
+
+.fides-sidebar-search .fides-search-input {
+  padding: 0.5rem 2.25rem 0.5rem 2.25rem !important;
+  font-size: 0.875rem;
+}
+
+/* Mobile search - visible only on mobile */
+.fides-mobile-search {
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.fides-quick-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--fides-border);
+}
+
+.fides-quick-filters-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fides-text-muted);
+}
+
+@media (max-width: 1023px) {
+  .fides-mobile-search {
+    display: block;
+  }
+}
+
+.fides-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fides-search-input {
+  width: 100%;
+  padding: 0.875rem 2.75rem 0.875rem 3rem !important;
+  background: var(--fides-bg-secondary);
+  border: 1px solid var(--fides-border);
+  border-radius: var(--fides-radius);
+  color: var(--fides-text-primary);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  text-indent: 0;
+}
+
+.fides-search-input:focus {
+  outline: none;
+  border-color: var(--fides-accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.fides-search-input::placeholder {
+  color: var(--fides-text-muted);
+}
+
+.fides-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--fides-text-muted);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fides-search-clear {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: var(--fides-bg-card);
+  border: 1px solid var(--fides-border);
+  border-radius: 50%;
+  color: var(--fides-text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fides-search-clear:hover {
+  background: var(--fides-accent);
+  border-color: var(--fides-accent);
+  color: white;
+}
+
+.fides-search-clear.hidden {
+  display: none;
+}
+
+/* Filter Bar - Legacy (replaced by sidebar) */
+.fides-filter-bar {
+  display: none;
+}
+
+.fides-filter-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fides-filter-toggle {
+  display: none;
+}
+
+.fides-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.375rem;
+  background: var(--fides-accent);
+  border-radius: 9999px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.fides-filter-count.hidden {
+  visibility: hidden;
+}
+
+.fides-clear-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--fides-text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.fides-clear-all:hover {
+  color: var(--fides-text-primary);
+}
+
+.fides-clear-all.hidden {
+  visibility: hidden;
+}
+
+.fides-results-count {
+  color: var(--fides-text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Filters Panel - Legacy (replaced by sidebar) */
+.fides-filters {
+  display: none;
+}
+
+.fides-filter-group {
+  min-width: 0;
+}
+
+/* Collapsible filter groups */
+.fides-filter-group.collapsible {
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  transition: padding 0.2s ease;
+}
+.fides-filter-group.collapsible:last-child {
+  margin-bottom: 0;
+}
+
+.fides-filter-group.collapsible.collapsed {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.fides-filter-label-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--fides-text-primary);
+  transition: color 0.2s;
+  gap: 0.375rem;
+}
+
+.fides-filter-label-toggle:hover {
+  color: var(--fides-accent);
+}
+
+/* Wrapper keeps label + [i] together; only as wide as content (like interop matrix) */
+.fides-filter-label-with-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+.fides-filter-label-with-info .fides-filter-label {
+  flex: 0 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fides-filter-label-toggle .fides-filter-label {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  font-weight: 600;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fides-filter-toggle-spacer {
+  flex: 1;
+  min-width: 0.5rem;
+}
+
+.fides-filter-label-toggle svg {
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.fides-filter-group.collapsed .fides-filter-label-toggle svg {
+  transform: rotate(-90deg);
+}
+
+/* Vocabulary [i] info button – after active indicator; tight spacing to chevron */
+.fides-vocab-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--fides-border);
+  border-radius: 50%;
+  background: var(--fides-bg-secondary);
+  color: var(--fides-text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-style: normal;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.15s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+.fides-vocab-info:hover {
+  color: #fff;
+  background: var(--fides-accent);
+  border-color: var(--fides-accent);
+  transform: scale(1.05);
+}
+.fides-vocab-info:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--fides-accent);
+}
+.fides-issuer-catalog[data-theme="fides"] .fides-vocab-info:hover,
+.fides-issuer-catalog[data-theme="light"] .fides-vocab-info:hover {
+  background: var(--fides-accent);
+  border-color: var(--fides-accent);
+  color: #fff;
+}
+/* Overlay backdrop behind popup (above mobile menu) */
+.fides-vocab-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10000000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.fides-vocab-overlay.visible {
+  opacity: 1;
+}
+
+/* Popup: solid background so it stays readable (above mobile menu) */
+.fides-vocab-popup {
+  position: fixed;
+  z-index: 10000001;
+  max-width: 480px;
+  max-height: 75vh;
+  overflow-y: auto;
+  padding: 1.125rem 1.375rem;
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.fides-vocab-popup.visible {
+  opacity: 1;
+}
+.fides-vocab-popup-title {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+}
+.fides-vocab-popup-intro {
+  margin: 0 0 0.875rem 0;
+  color: #475569;
+  font-size: 0.875rem;
+}
+.fides-vocab-popup-list {
+  margin: 0;
+  padding-left: 1.375rem;
+  color: #334155;
+}
+.fides-vocab-popup-list li {
+  margin-bottom: 0.5rem;
+}
+.fides-vocab-popup-list li:last-child {
+  margin-bottom: 0;
+}
+.fides-vocab-popup-list strong {
+  color: #1e293b;
+}
+
+@media (max-width: 520px) {
+  .fides-vocab-popup {
+    left: 1rem !important;
+    right: 1rem !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: 85vh;
+    box-sizing: border-box;
+  }
+}
+
+/* Active filter indicator (dot) – no width when inactive so title gets more space */
+.fides-filter-active-indicator {
+  width: 0;
+  min-width: 0;
+  height: 6px;
+  background: var(--fides-accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: width 0.2s, opacity 0.2s;
+}
+
+.fides-filter-group.has-active .fides-filter-active-indicator {
+  width: 6px;
+  opacity: 1;
+}
+
+.fides-filter-group.collapsible .fides-filter-buttons,
+.fides-filter-group.collapsible .fides-filter-options {
+  margin-top: 0.25rem;
+  margin-left: 0;
+  padding-left: 0;
+  overflow: hidden;
+  max-height: 1000px;
+  transition: max-height 0.3s ease, margin-top 0.2s ease, opacity 0.2s ease;
+  opacity: 1;
+}
+
+.fides-filter-group.collapsed .fides-filter-buttons,
+.fides-filter-group.collapsed .fides-filter-options {
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+}
+
+
+.fides-filter-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fides-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.fides-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.fides-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid var(--fides-border);
+  border-radius: 9999px;
+  color: var(--fides-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.fides-filter-btn:hover {
+  background: var(--fides-bg-card);
+  border-color: var(--fides-text-muted);
+}
+
+.fides-filter-btn.active {
+  background: var(--fides-accent);
+  border-color: var(--fides-accent);
+  color: white;
+}
+
+/* Results info */
+.fides-results-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--fides-text-secondary);
+  font-size: 0.875rem;
+}
+
+.fides-clear-filters {
+  background: none;
+  border: none;
+  color: var(--fides-accent);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.fides-clear-filters:hover {
+  color: var(--fides-accent-hover);
+  text-decoration: underline;
+}
+
+/* Wallet Grid */
+.fides-issuer-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.fides-issuer-grid[data-columns="1"] { grid-template-columns: 1fr; }
+.fides-issuer-grid[data-columns="2"] { grid-template-columns: repeat(2, 1fr); }
+.fides-issuer-grid[data-columns="3"] { grid-template-columns: repeat(3, 1fr); }
+.fides-issuer-grid[data-columns="4"] { grid-template-columns: repeat(4, 1fr); }
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT
+   ========================================================================== */
+
+/* Large screens (1400px+): 3 columns with sidebar */
+@media (min-width: 1400px) {
+  .fides-issuer-grid[data-columns="3"],
+  .fides-issuer-grid[data-columns="4"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Medium-large screens (1200px - 1399px): 2 columns with sidebar */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .fides-issuer-grid[data-columns="3"],
+  .fides-issuer-grid[data-columns="4"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fides-results-controls {
+    order: 3;
+    width: 100%;
+  }
+
+  .fides-sort-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .fides-sort-select {
+    min-width: 0;
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .fides-kpi-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Tablet/small desktop (below 1024px): hide sidebar, show mobile toggle */
+@media (max-width: 1023px) {
+  .fides-main-layout {
+    flex-direction: column;
+  }
+
+  .fides-sidebar {
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: calc(100vh - 100px);
+    border-radius: 0;
+    z-index: 9999999;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .fides-sidebar.mobile-open {
+    display: flex;
+    flex-direction: column;
+    animation: fides-modal-fade-in 0.2s ease;
+  }
+
+  .fides-sidebar.mobile-open .fides-sidebar-header {
+    background: var(--fides-bg-secondary);
+    border-radius: var(--fides-radius) var(--fides-radius) 0 0;
+    max-width: 320px;
+    width: 100%;
+    border: 1px solid var(--fides-border);
+    border-bottom: none;
+  }
+
+  .fides-sidebar.mobile-open .fides-sidebar-content {
+    background: var(--fides-bg-secondary);
+    border-radius: 0 0 var(--fides-radius) var(--fides-radius);
+    max-width: 320px;
+    width: 100%;
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+    border: 1px solid var(--fides-border);
+    border-top: none;
+  }
+
+  .fides-mobile-filter-toggle {
+    display: inline-flex;
+  }
+
+  .fides-issuer-grid[data-columns="3"],
+  .fides-issuer-grid[data-columns="4"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (below 640px): single column */
+@media (max-width: 639px) {
+  .fides-issuer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fides-issuer-catalog {
+    padding: 1rem;
+  }
+}
+
+/* Wallet Card */
+.fides-issuer-card {
+  background: var(--fides-bg-card);
+  border: 1px solid var(--fides-border);
+  border-radius: var(--fides-radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.fides-issuer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.fides-wallet-header {
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 100px;
+}
+
+.fides-wallet-header.type-personal {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+}
+
+.fides-wallet-header.type-organizational {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+}
+
+
+.fides-wallet-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--fides-radius);
+  object-fit: cover;
+  background: var(--fides-bg-secondary);
+}
+
+.fides-wallet-logo-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--fides-radius);
+  background: var(--fides-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fides-text-muted);
+}
+
+.fides-wallet-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.fides-wallet-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: var(--fides-text-primary);
+  /* Reserve 1 line for consistent card height; ellipsis if longer */
+  min-height: 1.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 1 column (mobile): let title use only the space it needs, no fixed height */
+@media (max-width: 639px) {
+  .fides-wallet-name {
+    min-height: 0;
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+    text-overflow: unset;
+  }
+}
+
+.fides-wallet-provider {
+  font-size: 0.875rem;
+  color: var(--fides-text-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fides-wallet-updated {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  color: var(--fides-text-muted);
+  line-height: 1.3;
+}
+
+.fides-env-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.fides-env-badge.personal {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.fides-env-badge.organizational {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.fides-wallet-body {
+  padding: 1.25rem;
+}
+
+.fides-wallet-description {
+  font-size: 0.875rem;
+  color: var(--fides-text-secondary);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  /* Limit to ~4 lines in card view */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tags */
+.fides-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.fides-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.1);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.fides-tag.platform {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--fides-text-secondary);
+  border-color: var(--fides-border);
+}
+
+/* Section */
+.fides-wallet-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--fides-border);
+}
+
+.fides-wallet-section-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fides-text-muted);
+  margin: 0 0 0.5rem 0;
+}
+
+/* Footer */
+.fides-wallet-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--fides-border);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  margin-top: auto;
+}
+
+.fides-wallet-links {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  min-width: 0;
+}
+
+.fides-wallet-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--fides-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.fides-wallet-link:hover {
+  color: var(--fides-text-primary);
+}
+
+/* Video badge - visual indicator on wallet tile */
+.fides-wallet-video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--fides-video, #8b5cf6);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.fides-wallet-video-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+.fides-expand-btn {
+  background: none;
+  border: none;
+  color: var(--fides-accent);
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.fides-expand-btn:hover {
+  color: var(--fides-accent-hover);
+}
+
+/* Empty state */
+.fides-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--fides-text-secondary);
+}
+
+.fides-empty-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  color: var(--fides-text-muted);
+}
+
+.fides-empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--fides-text-primary);
+}
+
+.fides-empty-text {
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fides-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fides-issuer-card {
+  animation: fides-fade-in 0.3s ease forwards;
+}
+
+.fides-issuer-card:nth-child(1) { animation-delay: 0ms; }
+.fides-issuer-card:nth-child(2) { animation-delay: 50ms; }
+.fides-issuer-card:nth-child(3) { animation-delay: 100ms; }
+.fides-issuer-card:nth-child(4) { animation-delay: 150ms; }
+.fides-issuer-card:nth-child(5) { animation-delay: 200ms; }
+.fides-issuer-card:nth-child(6) { animation-delay: 250ms; }
+
+/* View details hint - always visible */
+.fides-view-details,
+.fides-issuer-card .fides-view-details,
+.fides-wallet-footer .fides-view-details,
+.fides-issuer-catalog .fides-view-details {
+  font-size: 0.8125rem;
+  color: var(--fides-accent);
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  opacity: 1 !important;
+  visibility: visible !important;
+  white-space: nowrap;
+}
+
+.fides-issuer-card:hover .fides-view-details {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   WALLET DETAIL MODAL
+   ========================================================================== */
+
+/* Modal overlay */
+.fides-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  padding: 1rem;
+  animation: fides-modal-fade-in 0.2s ease;
+}
+
+.fides-modal-overlay.closing {
+  animation: fides-modal-fade-out 0.2s ease forwards;
+}
+
+@keyframes fides-modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fides-modal-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Modal container */
+.fides-modal {
+  background: var(--fides-bg-secondary, #1e293b);
+  border-radius: var(--fides-radius-lg, 16px);
+  max-width: 900px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  animation: fides-modal-slide-up 0.3s ease;
+}
+
+.fides-modal-overlay.closing .fides-modal {
+  animation: fides-modal-slide-down 0.2s ease forwards;
+}
+
+@keyframes fides-modal-slide-up {
+  from { 
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fides-modal-slide-down {
+  from { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to { 
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+}
+
+/* Modal header */
+.fides-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--fides-border, rgba(255, 255, 255, 0.1));
+}
+
+.fides-modal-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.fides-modal-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: var(--fides-bg-primary, #0f172a);
+  padding: 0.5rem;
+  flex-shrink: 0;
+}
+
+.fides-modal-logo-placeholder {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--fides-accent, #3b82f6), #8b5cf6);
+  color: white;
+  flex-shrink: 0;
+}
+
+.fides-modal-logo-placeholder svg {
+  width: 32px;
+  height: 32px;
+}
+
+.fides-modal-title-wrap {
+  min-width: 0;
+}
+
+.fides-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: var(--fides-text-primary, #f1f5f9);
+  line-height: 1.2;
+}
+
+.fides-modal-provider {
+  font-size: 0.9375rem;
+  color: var(--fides-text-secondary, #94a3b8);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fides-modal-provider svg {
+  flex-shrink: 0;
+}
+
+.fides-modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  margin: -0.5rem -0.5rem 0 0;
+}
+
+.fides-modal-copy-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--fides-text-secondary, #94a3b8);
+  cursor: pointer;
+  padding: 0.375rem;
+  margin: 0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.fides-modal-copy-link:hover {
+  background: var(--fides-border, rgba(255, 255, 255, 0.1));
+  color: var(--fides-text-primary, #f1f5f9);
+  opacity: 1;
+}
+
+.fides-modal-copy-link.copied {
+  color: var(--fides-accent, #22c55e);
+  opacity: 1;
+}
+
+.fides-modal-copy-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fides-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--fides-text-primary, #f1f5f9);
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.fides-modal-close:hover {
+  background: var(--fides-border, rgba(255, 255, 255, 0.15));
+  color: var(--fides-text-primary, #ffffff);
+}
+
+/* Toast notification */
+.fides-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--fides-bg-secondary, #1e293b);
+  color: var(--fides-text-primary, #f1f5f9);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 1000000;
+  animation: fides-toast-in 0.3s ease-out;
+  pointer-events: auto;
+  border: 1px solid var(--fides-border, rgba(255, 255, 255, 0.1));
+  max-width: 90vw;
+  isolation: isolate;
+}
+
+.fides-toast.fides-toast-out {
+  animation: fides-toast-out 0.3s ease-in forwards;
+}
+
+.fides-toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--fides-accent, #22c55e);
+  color: white;
+  flex-shrink: 0;
+}
+
+.fides-toast-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.fides-toast-message {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@keyframes fides-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fides-toast-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.98);
+  }
+}
+
+/* Toast theme overrides */
+.fides-toast[data-theme="fides"],
+.fides-toast[data-theme="light"] {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .fides-toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    max-width: none;
+  }
+}
+
+/* Modal body */
+.fides-modal-body {
+  padding: 1.5rem;
+}
+
+/* Badges row */
+.fides-modal-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.fides-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fides-modal-badge.type-personal {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.fides-modal-badge.type-organizational {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+}
+
+
+.fides-modal-badge.open-source {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.fides-modal-badge.proprietary {
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--fides-text-secondary, #94a3b8);
+}
+
+/* Description */
+.fides-modal-section {
+  margin-bottom: 1.5rem;
+}
+
+.fides-modal-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--fides-text-secondary, #94a3b8);
+  margin: 0;
+}
+
+/* Video embed container - responsive 16:9 */
+.fides-video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  border-radius: var(--fides-radius, 12px);
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fides-video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Fallback for unsupported video providers */
+.fides-video-fallback {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+/* FIDES/Light theme adjustments */
+.fides-modal-overlay[data-theme="fides"] .fides-video-container,
+.fides-modal-overlay[data-theme="light"] .fides-video-container {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Info grid */
+.fides-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .fides-modal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.fides-modal-grid-item {
+  background: var(--fides-bg-primary, #0f172a);
+  border-radius: var(--fides-radius, 12px);
+  padding: 1rem;
+}
+
+.fides-modal-grid-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fides-text-muted, #64748b);
+  margin-bottom: 0.75rem;
+}
+
+.fides-modal-grid-label svg {
+  flex-shrink: 0;
+}
+
+.fides-label-hint {
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.fides-modal-grid-value {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.fides-modal-grid-value .fides-tag {
+  font-size: 0.8125rem;
+}
+
+.fides-modal-grid-value .fides-tag.certification {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+/* Links section */
+.fides-modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.fides-modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background: var(--fides-border, rgba(255, 255, 255, 0.1));
+  color: var(--fides-text-primary, #f1f5f9);
+}
+
+.fides-modal-link:hover {
+  background: var(--fides-accent, #3b82f6);
+  color: white;
+}
+
+.fides-modal-link.primary {
+  background: var(--fides-accent, #3b82f6);
+  color: white;
+}
+
+.fides-modal-link.primary:hover {
+  background: var(--fides-accent-hover, #60a5fa);
+}
+
+/* Provider section */
+.fides-modal-provider-section {
+  border-top: 1px solid var(--fides-border, rgba(255, 255, 255, 0.1));
+  padding-top: 1.25rem;
+}
+
+.fides-modal-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fides-text-muted, #64748b);
+  margin: 0 0 0.75rem 0;
+}
+
+.fides-modal-provider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fides-modal-provider-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.fides-modal-provider-label {
+  color: var(--fides-text-muted, #64748b);
+}
+
+.fides-modal-provider-value {
+  color: var(--fides-text-primary, #f1f5f9);
+}
+
+.fides-modal-provider-did {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  background: var(--fides-bg-primary, #0f172a);
+  padding: 0.375rem 0.625rem;
+  border-radius: 6px;
+  color: var(--fides-text-secondary, #94a3b8);
+  word-break: break-all;
+}
+
+/* FIDES/Light theme modal adjustments */
+.fides-modal-overlay[data-theme="fides"] .fides-modal,
+.fides-modal-overlay[data-theme="light"] .fides-modal {
+  background: #ffffff;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-grid-item,
+.fides-modal-overlay[data-theme="light"] .fides-modal-grid-item {
+  background: #f1f5f9;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-title,
+.fides-modal-overlay[data-theme="light"] .fides-modal-title,
+.fides-modal-overlay[data-theme="fides"] .fides-modal-provider-value,
+.fides-modal-overlay[data-theme="light"] .fides-modal-provider-value {
+  color: #000000;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-provider,
+.fides-modal-overlay[data-theme="light"] .fides-modal-provider,
+.fides-modal-overlay[data-theme="fides"] .fides-modal-description,
+.fides-modal-overlay[data-theme="light"] .fides-modal-description {
+  color: #374151;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-header,
+.fides-modal-overlay[data-theme="light"] .fides-modal-header {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-close,
+.fides-modal-overlay[data-theme="light"] .fides-modal-close {
+  color: #000000;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-close:hover,
+.fides-modal-overlay[data-theme="light"] .fides-modal-close:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #000000;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-copy-link,
+.fides-modal-overlay[data-theme="light"] .fides-modal-copy-link {
+  color: #6b7280;
+  opacity: 0.8;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-copy-link:hover,
+.fides-modal-overlay[data-theme="light"] .fides-modal-copy-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #374151;
+  opacity: 1;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-copy-link.copied,
+.fides-modal-overlay[data-theme="light"] .fides-modal-copy-link.copied {
+  color: #16a34a;
+  opacity: 1;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.type-personal,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.type-personal {
+  background: rgba(10, 110, 243, 0.1);
+  color: #0A6EF3;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.type-organizational,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.type-organizational {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.open-source,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.open-source {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.proprietary,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.proprietary {
+  background: rgba(0, 0, 0, 0.05);
+  color: #6b7280;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-grid-label,
+.fides-modal-overlay[data-theme="light"] .fides-modal-grid-label {
+  color: #6b7280;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-section-title,
+.fides-modal-overlay[data-theme="light"] .fides-modal-section-title {
+  color: #6b7280;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-provider-section,
+.fides-modal-overlay[data-theme="light"] .fides-modal-provider-section {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-provider-label,
+.fides-modal-overlay[data-theme="light"] .fides-modal-provider-label {
+  color: #6b7280;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-provider-did,
+.fides-modal-overlay[data-theme="light"] .fides-modal-provider-did {
+  background: #f1f5f9;
+  color: #374151;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-link,
+.fides-modal-overlay[data-theme="light"] .fides-modal-link {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-link:hover,
+.fides-modal-overlay[data-theme="light"] .fides-modal-link:hover {
+  background: #0A6EF3;
+  color: #ffffff;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-link.primary,
+.fides-modal-overlay[data-theme="light"] .fides-modal-link.primary {
+  background: #0A6EF3;
+  color: #ffffff;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-link.primary:hover,
+.fides-modal-overlay[data-theme="light"] .fides-modal-link.primary:hover {
+  background: #0858c4;
+}
+
+/* FIDES theme tags in modal */
+.fides-modal-overlay[data-theme="fides"] .fides-tag,
+.fides-modal-overlay[data-theme="light"] .fides-tag {
+  background: rgba(0, 0, 0, 0.05);
+  color: #374151;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-tag.platform,
+.fides-modal-overlay[data-theme="light"] .fides-tag.platform {
+  background: rgba(10, 110, 243, 0.1);
+  color: #0A6EF3;
+}
+
+/* ==========================================================================
+   EXTENDED MODAL STYLES
+   ========================================================================== */
+
+/* App Store buttons */
+.fides-modal-app-stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.fides-app-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.fides-app-store-btn.ios {
+  background: #000000;
+  color: #ffffff;
+}
+
+.fides-app-store-btn.android {
+  background: #01875f;
+  color: #ffffff;
+}
+
+.fides-app-store-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fides-app-store-btn svg {
+  flex-shrink: 0;
+}
+
+.fides-app-store-btn span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.fides-app-store-btn small {
+  font-size: 0.625rem;
+  opacity: 0.8;
+}
+
+.fides-app-store-btn strong {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* Status badges */
+.fides-modal-badge.status-dev {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.fides-modal-badge.status-beta {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+}
+
+.fides-modal-badge.status-prod {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.fides-modal-badge.status-deprecated {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Clickable platform tags (has app store link) */
+a.fides-tag.platform.clickable {
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background: #16a34a;
+  color: white;
+  border: 1px solid #15803d;
+  font-weight: 500;
+}
+
+a.fides-tag.platform.clickable:hover {
+  background: #15803d;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+}
+
+/* Non-clickable platform tags (no link) */
+span.fides-tag.platform {
+  opacity: 0.6;
+}
+
+/* Light/FIDES theme clickable platform tags */
+.fides-issuer-catalog[data-theme="fides"] a.fides-tag.platform.clickable,
+.fides-issuer-catalog[data-theme="light"] a.fides-tag.platform.clickable {
+  background: #16a34a;
+  color: white;
+  border: 1px solid #15803d;
+}
+
+.fides-issuer-catalog[data-theme="fides"] a.fides-tag.platform.clickable:hover,
+.fides-issuer-catalog[data-theme="light"] a.fides-tag.platform.clickable:hover {
+  background: #15803d;
+  color: white;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+/* Protocol tags */
+.fides-tag.protocol-issuance {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.fides-tag.protocol-presentation {
+  background: rgba(139, 92, 246, 0.15);
+  color: #a78bfa;
+}
+
+/* DID method tags */
+.fides-tag.did-method {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--fides-text-secondary, #94a3b8);
+}
+
+/* Standard tags */
+.fides-tag.standard {
+  background: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+}
+
+/* Features list */
+.fides-modal-features {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--fides-bg-primary, #0f172a);
+  border-radius: var(--fides-radius, 12px);
+}
+
+.fides-features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.fides-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--fides-text-secondary, #94a3b8);
+  padding: 0.375rem 0;
+}
+
+.fides-features-list li svg {
+  flex-shrink: 0;
+  color: var(--fides-success, #22c55e);
+}
+
+/* FIDES/Light theme - Extended modal adjustments */
+.fides-modal-overlay[data-theme="fides"] .fides-tag.did-method,
+.fides-modal-overlay[data-theme="light"] .fides-tag.did-method {
+  background: rgba(0, 0, 0, 0.05);
+  color: #374151;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-tag.protocol-issuance,
+.fides-modal-overlay[data-theme="light"] .fides-tag.protocol-issuance {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-tag.protocol-presentation,
+.fides-modal-overlay[data-theme="light"] .fides-tag.protocol-presentation {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-tag.standard,
+.fides-modal-overlay[data-theme="light"] .fides-tag.standard {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0891b2;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-tag.certification,
+.fides-modal-overlay[data-theme="light"] .fides-tag.certification {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-tag.key-mgmt,
+.fides-modal-overlay[data-theme="light"] .fides-tag.key-mgmt {
+  background: rgba(0, 0, 0, 0.05);
+  color: #374151;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-features,
+.fides-modal-overlay[data-theme="light"] .fides-modal-features {
+  background: #f1f5f9;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-features-title,
+.fides-modal-overlay[data-theme="light"] .fides-modal-features-title {
+  color: #000000;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-features-list li,
+.fides-modal-overlay[data-theme="light"] .fides-features-list li {
+  color: #374151;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.status-dev,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.status-dev {
+  background: rgba(234, 179, 8, 0.1);
+  color: #ca8a04;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.status-beta,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.status-beta {
+  background: rgba(249, 115, 22, 0.1);
+  color: #ea580c;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.status-prod,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.status-prod {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.status-deprecated,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.status-deprecated {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+/* FIDES theme - Logo placeholder in modal */
+.fides-modal-overlay[data-theme="fides"] .fides-modal-logo-placeholder,
+.fides-modal-overlay[data-theme="light"] .fides-modal-logo-placeholder {
+  background: #f1f5f9;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-logo-placeholder svg,
+.fides-modal-overlay[data-theme="light"] .fides-modal-logo-placeholder svg {
+  color: #0A6EF3;
+}
+
+/* FIDES theme - Credential format tags in modal */
+.fides-modal-overlay[data-theme="fides"] .fides-tag.credential-format,
+.fides-modal-overlay[data-theme="light"] .fides-tag.credential-format {
+  background: rgba(10, 110, 243, 0.1);
+  color: #0A6EF3;
+}
+
+/* FIDES theme - Platform tags in modal */
+/* Modal platform tags - clickable (solid green, app store buttons) */
+.fides-modal-overlay a.fides-tag.platform.clickable {
+  background: #16a34a;
+  color: white;
+  border: 1px solid #15803d;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.fides-modal-overlay a.fides-tag.platform.clickable:hover {
+  background: #15803d;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+}
+
+/* Modal platform tags - non-clickable (dimmed) */
+.fides-modal-overlay span.fides-tag.platform {
+  opacity: 0.6;
+}
+
+/* FIDES/Light theme - Modal platform tags */
+.fides-modal-overlay[data-theme="fides"] a.fides-tag.platform.clickable,
+.fides-modal-overlay[data-theme="light"] a.fides-tag.platform.clickable {
+  background: #16a34a;
+  color: white;
+  border: 1px solid #15803d;
+}
+
+.fides-modal-overlay[data-theme="fides"] a.fides-tag.platform.clickable:hover,
+.fides-modal-overlay[data-theme="light"] a.fides-tag.platform.clickable:hover {
+  background: #15803d;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+/* FIDES theme - Features checkmark color */
+.fides-modal-overlay[data-theme="fides"] .fides-features-list li svg,
+.fides-modal-overlay[data-theme="light"] .fides-features-list li svg {
+  color: #16a34a;
+}
+
+/* ==========================================================================
+   CAPABILITIES & INTEROP PROFILES STYLING
+   ========================================================================== */
+
+/* Capability tags */
+.fides-tag.capability {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+}
+
+.fides-tag.capability-holder {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.fides-tag.capability-issuer {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.fides-tag.capability-verifier {
+  background: rgba(168, 85, 247, 0.15);
+  color: #a78bfa;
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Interop profile tags */
+.fides-tag.interop {
+  background: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* Capability tags - Light/FIDES theme */
+.fides-issuer-catalog[data-theme="fides"] .fides-tag.capability-holder,
+.fides-issuer-catalog[data-theme="light"] .fides-tag.capability-holder {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-tag.capability-issuer,
+.fides-issuer-catalog[data-theme="light"] .fides-tag.capability-issuer {
+  background: rgba(10, 110, 243, 0.1);
+  color: #0A6EF3;
+  border-color: rgba(10, 110, 243, 0.3);
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-tag.capability-verifier,
+.fides-issuer-catalog[data-theme="light"] .fides-tag.capability-verifier {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-tag.interop,
+.fides-issuer-catalog[data-theme="light"] .fides-tag.interop {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0891b2;
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* Modal capability badges */
+.fides-modal-badge.capability-holder {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.fides-modal-badge.capability-issuer {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.fides-modal-badge.capability-verifier {
+  background: rgba(168, 85, 247, 0.15);
+  color: #a78bfa;
+}
+
+/* Modal capability badges - Light/FIDES theme */
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.capability-holder,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.capability-holder {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.capability-issuer,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.capability-issuer {
+  background: rgba(10, 110, 243, 0.1);
+  color: #0A6EF3;
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-modal-badge.capability-verifier,
+.fides-modal-overlay[data-theme="light"] .fides-modal-badge.capability-verifier {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+}
+
+/* Interop tags in modal - Light/FIDES theme */
+.fides-modal-overlay[data-theme="fides"] .fides-tag.interop,
+.fides-modal-overlay[data-theme="light"] .fides-tag.interop {
+  background: rgba(6, 182, 212, 0.1);
+  color: #0891b2;
+}
+
+/* ==========================================================================
+   ISSUER CATALOG — SPECIFIC STYLES
+   ========================================================================== */
+
+/* Issuer layout wrapper */
+.fides-issuer-layout {
+  width: 100%;
+}
+
+/* Issuer card */
+.fides-issuer-card {
+  background: var(--fides-bg-card);
+  border: 1px solid var(--fides-border);
+  border-radius: var(--fides-radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.fides-issuer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-issuer-card,
+.fides-issuer-catalog[data-theme="light"] .fides-issuer-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.fides-issuer-catalog[data-theme="fides"] .fides-issuer-card:hover,
+.fides-issuer-catalog[data-theme="light"] .fides-issuer-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header */
+.fides-issuer-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1rem 0.75rem;
+  min-height: 72px;
+}
+
+.fides-issuer-logo-wrap {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fides-issuer-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.fides-issuer-logo-placeholder {
+  width: 40px;
+  height: 40px;
+  background: var(--fides-bg-secondary);
+  border: 1px solid var(--fides-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fides-text-muted);
+}
+
+.fides-issuer-header-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fides-issuer-org {
+  font-size: 0.75rem;
+  color: var(--fides-text-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.fides-issuer-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fides-text-primary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+/* Card body */
+.fides-issuer-card-body {
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.fides-issuer-credentials-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fides-issuer-credential-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8rem;
+  color: var(--fides-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fides-issuer-credential-item svg {
+  flex-shrink: 0;
+  color: var(--fides-accent);
+  width: 13px;
+  height: 13px;
+}
+
+.fides-issuer-credential-more {
+  font-size: 0.75rem;
+  color: var(--fides-text-muted);
+  font-style: italic;
+}
+
+.fides-issuer-no-credentials {
+  font-size: 0.8rem;
+  color: var(--fides-text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Card footer */
+.fides-issuer-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin-top: auto;
+  border-top: 1px solid var(--fides-border);
+}
+
+.fides-issuer-updated {
+  font-size: 0.72rem;
+  color: var(--fides-text-muted);
+  white-space: nowrap;
+}
+
+/* Issuer grid */
+.fides-issuer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  animation: fides-fade-in 0.3s ease;
+}
+
+.fides-issuer-grid[data-columns="2"] { grid-template-columns: repeat(2, 1fr); }
+.fides-issuer-grid[data-columns="3"] { grid-template-columns: repeat(3, 1fr); }
+.fides-issuer-grid[data-columns="4"] { grid-template-columns: repeat(4, 1fr); }
+
+@keyframes fides-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Environment badges */
+.fides-env-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.fides-env-production {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.fides-env-pilot {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.fides-env-test {
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.fides-env-sandbox {
+  background: rgba(148, 163, 184, 0.12);
+  color: #64748b;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* Modal issuer-specific */
+.fides-modal-issuer-url {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--fides-accent);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.fides-modal-issuer-url:hover {
+  text-decoration: underline;
+}
+
+.fides-modal-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.fides-modal-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.fides-modal-logo-placeholder {
+  width: 52px;
+  height: 52px;
+  background: var(--fides-bg-secondary);
+  border: 1px solid var(--fides-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fides-text-muted);
+  flex-shrink: 0;
+}
+
+.fides-mono {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.8em;
+  color: var(--fides-accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Credential list in modal */
+.fides-modal-credential-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.fides-modal-credential-list li {
+  display: flex;
+}
+
+/* Table wrap */
+.fides-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive: issuer grid */
+@media (max-width: 1023px) {
+  .fides-main-content .fides-issuer-grid[data-columns="3"],
+  .fides-main-content .fides-issuer-grid[data-columns="4"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 639px) {
+  .fides-issuer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .fides-issuer-catalog {
+    padding: 1rem;
+  }
+}
+
+/* Desktop sidebar override — prevent WP theme conflicts */
+@media (min-width: 1024px) {
+  .fides-issuer-catalog .fides-sidebar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: hidden !important;
+    position: static !important;
+    transform: none !important;
+  }
+}
+
+.fides-issuer-catalog .fides-main.no-filters .fides-sidebar {
+  display: none !important;
+}
+
+/* Mobile sidebar drawer */
+@media (max-width: 1023px) {
+  .fides-issuer-catalog .fides-sidebar {
+    display: none !important;
+    position: fixed !important;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    max-height: calc(100vh - 100px);
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    z-index: 9999999;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(4px);
+    padding: 1rem !important;
+    margin: 0 !important;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .fides-issuer-catalog .fides-sidebar.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    animation: fides-modal-fade-in 0.2s ease;
+  }
+
+  .fides-issuer-catalog .fides-sidebar.mobile-open .fides-sidebar-header {
+    background: var(--fides-bg-secondary);
+    border-radius: var(--fides-radius) var(--fides-radius) 0 0;
+    max-width: 320px;
+    width: 100%;
+    border: 1px solid var(--fides-border);
+    border-bottom: none;
+  }
+
+  .fides-issuer-catalog .fides-sidebar.mobile-open .fides-sidebar-content {
+    background: var(--fides-bg-secondary);
+    border-radius: 0 0 var(--fides-radius) var(--fides-radius);
+    max-width: 320px;
+    width: 100%;
+    max-height: calc(100vh - 220px);
+    overflow-y: auto;
+    border: 1px solid var(--fides-border);
+    border-top: none;
+  }
+}

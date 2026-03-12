@@ -1,0 +1,16 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "FIDES Labs BV",
+    "did": "did:web:fides.community",
+    "website": "https://fides.community"
+  },
+  "issuers": [
+    {
+      "id": "issuer:fides:credential-issuer:production",
+      "environment": "production",
+      "oid4vciMetadataUrl": "https://issuer.fides.community/.well-known/openid-credential-issuer",
+      "projectContext": "FIDES Community Platform"
+    }
+  ]
+}

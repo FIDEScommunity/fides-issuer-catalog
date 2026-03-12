@@ -1,0 +1,34 @@
+{
+  "name": "fides-issuer-catalog",
+  "version": "0.1.0",
+  "description": "FIDES Community Issuer Catalog - Discover OID4VCI credential issuers and their credential configurations",
+  "main": "dist/index.js",
+  "scripts": {
+    "crawl": "tsx src/crawler/index.ts",
+    "build": "tsc",
+    "validate": "ajv validate --spec=draft2020 -c ajv-formats -s schemas/issuer-catalog.schema.json -d 'community-catalogs/**/issuer-catalog.json'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FIDEScommunity/fides-issuer-catalog.git"
+  },
+  "keywords": [
+    "oid4vci",
+    "issuer",
+    "verifiable-credentials",
+    "issuer-catalog",
+    "fides"
+  ],
+  "author": "FIDES Community",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ajv-cli": "^5.0.0",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.2"
+  }
+}
