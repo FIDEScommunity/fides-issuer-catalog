@@ -108,9 +108,25 @@ function matchCredentialCatalog(
   };
 }
 
-// Extract signing algorithms from credential configuration
+// Extract signing algorithms from credential configuration.
+// OID4VCI drafts use different fields; check all known locations.
 function extractSigningAlgorithms(config: Oid4vciCredentialConfiguration): string[] {
-  return config.credential_signing_alg_values_supported || [];
+  // Draft 13+: credential_signing_alg_values_supported
+  if (config.credential_signing_alg_values_supported?.length) {
+    return config.credential_signing_alg_values_supported;
+  }
+  // Draft 11/12: proof_types_supported.*.proof_signing_alg_values_supported
+  if (config.proof_types_supported) {
+    const algs = Object.values(config.proof_types_supported as Record<string, { proof_signing_alg_values_supported?: string[] }>)
+      .flatMap((pt) => pt.proof_signing_alg_values_supported || []);
+    if (algs.length) return [...new Set(algs)];
+  }
+  // Older drafts: cryptographic_suites_supported
+  if ((config as Record<string, unknown>).cryptographic_suites_supported) {
+    const suites = (config as Record<string, unknown>).cryptographic_suites_supported as string[];
+    if (suites.length) return suites;
+  }
+  return [];
 }
 
 // Extract proof types from credential configuration
@@ -146,6 +162,7 @@ function getConfigLogoUri(config: Oid4vciCredentialConfiguration): string | unde
 function mapVcFormat(format: string): string {
   const formatMap: Record<string, string> = {
     'vc+sd-jwt': 'sd_jwt_vc',
+    'dc+sd-jwt': 'sd_jwt_vc',
     'jwt_vc_json': 'vcdm_1_1',
     'jwt_vc': 'vcdm_1_1',
     'ldp_vc': 'vcdm_1_1',
@@ -310,6 +327,7 @@ async function crawl(): Promise<void> {
         ),
         oid4vciMetadataUrl: sourceIssuer.oid4vciMetadataUrl,
         logoUri: getIssuerLogoUri(metadata, catalog.organization),
+        ...(sourceIssuer.description ? { description: sourceIssuer.description } : {}),
         projectContext: sourceIssuer.projectContext,
         credentialConfigurations,
         supportedWallets: sourceIssuer.supportedWallets?.map((w) => ({

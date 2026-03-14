@@ -9,6 +9,8 @@
     search: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>',
     filter: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>',
     chevronDown: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>',
+    chevronUp: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"></path></svg>',
+    wallet: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>',
     x: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>',
     xSmall: '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>',
     xLarge: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>',
@@ -21,6 +23,7 @@
     share: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>',
     check: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
     server: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>',
+    eye: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>',
   };
 
   const ENVIRONMENT_LABELS = {
@@ -30,16 +33,37 @@
     sandbox: 'Sandbox',
   };
 
+  const VC_FORMAT_LABELS = {
+    'sd_jwt_vc': 'SD-JWT VC',
+    'vcdm_1_1':  'JWT-VC',
+    'vcdm_2_0':  'JSON-LD VC',
+    'mdoc':      'mDL/mDoc',
+  };
+
+  const ISSUER_FILTER_TO_VOCAB = {
+    environment:      'availability',
+    organization:     'provider',
+    vcFormat:         'credentialFormat',
+    credential:       'credential',
+    signingAlgorithm: 'signingAlgorithm',
+  };
+
   const config = window.fidesIssuerCatalog || {
     pluginUrl: '',
     githubDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-issuer-catalog/main/data/aggregated.json',
     credentialCatalogUrl: 'https://fides.community/community-tools/credential-catalog/',
+    rpCatalogDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/wordpress-plugin/fides-rp-catalog/data/aggregated.json',
+    rpCatalogFallbackUrl: '',
   };
 
   let issuers = [];
   let filterFacets = null;
   let sortBy = 'lastUpdated';
   let selectedIssuer = null;
+  let vocabulary = null;
+  let root;
+  let rpCatalogData = null;
+  let rpCatalogFetchPromise = null;
 
   const filterGroupState = {
     environment: true,
@@ -57,9 +81,9 @@
     credential: [],
     signingAlgorithm: [],
     addedLast30Days: false,
+    inCredentialCatalog: false,
   };
 
-  let container;
   let settings;
 
   function escapeHtml(str) {
@@ -111,7 +135,8 @@
       filters.vcFormat.length +
       filters.credential.length +
       filters.signingAlgorithm.length +
-      (filters.addedLast30Days ? 1 : 0)
+      (filters.addedLast30Days ? 1 : 0) +
+      (filters.inCredentialCatalog ? 1 : 0)
     );
   }
 
@@ -133,6 +158,7 @@
       credential: {},
       signingAlgorithm: {},
       addedLast30Days: 0,
+      inCredentialCatalog: 0,
     };
     items.forEach((issuer) => {
       if (issuer.environment) facets.environment[issuer.environment] = (facets.environment[issuer.environment] || 0) + 1;
@@ -143,6 +169,7 @@
         (cc.signingAlgorithms || []).forEach((alg) => { facets.signingAlgorithm[alg] = (facets.signingAlgorithm[alg] || 0) + 1; });
       });
       if (isWithinLastDays(issuer.firstSeenAt, 30)) facets.addedLast30Days++;
+      if ((issuer.credentialConfigurations || []).some((cc) => cc.credentialCatalogRef)) facets.inCredentialCatalog++;
     });
     return facets;
   }
@@ -150,6 +177,7 @@
   function getFilteredIssuers() {
     return issuers.filter((issuer) => {
       if (filters.addedLast30Days && !isWithinLastDays(issuer.firstSeenAt, 30)) return false;
+      if (filters.inCredentialCatalog && !(issuer.credentialConfigurations || []).some((cc) => cc.credentialCatalogRef)) return false;
       if (filters.environment.length && !filters.environment.includes(issuer.environment)) return false;
       if (filters.organization.length && !filters.organization.includes(issuer.organization?.name)) return false;
 
@@ -185,52 +213,87 @@
 
   function renderIssuerCard(issuer) {
     const configs = issuer.credentialConfigurations || [];
-    const updatedDate = issuer.updatedAt ? formatDate(issuer.updatedAt) : '';
+    const catalogCreds = configs.filter((c) => c.credentialCatalogRef);
+    const activityDate = issuer.updatedAt || issuer.firstSeenAt;
+    const activityLabel = activityDate
+      ? `${issuer.updatedAt ? 'Updated' : 'Added'} ${formatDate(activityDate)}`
+      : '';
     const logo = issuer.logoUri || issuer.organization?.logoUri;
-
-    const formats = [...new Set(configs.map((c) => c.vcFormat).filter(Boolean))];
-    const credentials = configs.filter((c) => c.credentialCatalogRef?.displayName);
-    const visibleCredentials = credentials.slice(0, 3);
-    const hiddenCount = credentials.length - visibleCredentials.length;
-
-    const credentialItems = visibleCredentials.map((cc) =>
-      `<li class="fides-issuer-credential-item">${icons.fileCheck} <span title="${escapeHtml(cc.credentialCatalogRef.displayName)}">${escapeHtml(cc.credentialCatalogRef.displayName)}</span></li>`
-    ).join('');
+    const catalogCount = catalogCreds.length;
+    const totalCount = configs.length;
+    const extraCount = totalCount - catalogCount;
+    const credLabel = catalogCount === 1 ? 'Credential' : 'Credentials';
 
     return `
-      <article class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}" tabindex="0" role="button" aria-label="${escapeHtml(issuer.displayName)}">
-        <div class="fides-issuer-card-header">
-          <div class="fides-issuer-logo-wrap">
+      <div class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}" tabindex="0" role="button" aria-label="${escapeHtml(issuer.displayName)}">
+        <header class="fides-credential-header">
+          <div class="fides-credential-subject-icon" aria-hidden="true">
             ${logo
-              ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(issuer.organization?.name || '')}" class="fides-issuer-logo">`
-              : `<div class="fides-issuer-logo-placeholder">${icons.server}</div>`
+              ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(issuer.organization?.name || '')}" style="width:28px;height:28px;object-fit:contain;border-radius:4px;">`
+              : icons.server
             }
           </div>
-          <div class="fides-issuer-header-text">
-            <p class="fides-issuer-org" title="${escapeHtml(issuer.organization?.name || '')}">${escapeHtml(issuer.organization?.name || '')}</p>
-            <h3 class="fides-issuer-name" title="${escapeHtml(issuer.displayName)}">${escapeHtml(issuer.displayName)}</h3>
+          <div class="fides-credential-header-text">
+            <h3 class="fides-credential-name" title="${escapeHtml(issuer.displayName)}">${escapeHtml(issuer.displayName)}</h3>
+            <p class="fides-credential-provider">${escapeHtml(issuer.organization?.name || '')}</p>
           </div>
-          ${renderEnvironmentBadge(issuer.environment)}
-        </div>
-        <div class="fides-issuer-card-body">
-          ${credentials.length > 0 ? `
-            <ul class="fides-issuer-credentials-list">
-              ${credentialItems}
-              ${hiddenCount > 0 ? `<li class="fides-issuer-credential-more">+ ${hiddenCount} more</li>` : ''}
-            </ul>
-          ` : `<p class="fides-issuer-no-credentials">No linked credentials</p>`}
-        </div>
-        <div class="fides-issuer-card-footer">
-          <div class="fides-tags">
-            ${formats.map((f) => `<span class="fides-tag">${escapeHtml(f)}</span>`).join('')}
+        </header>
+        <div class="fides-wallet-body">
+          ${activityLabel ? `<p class="fides-wallet-updated">${escapeHtml(activityLabel)}</p>` : ''}
+          <div class="fides-card-counts">
+            <div class="fides-card-count-item">
+              <span class="fides-card-count-num">${catalogCount}</span>
+              <span class="fides-card-count-label">${escapeHtml(credLabel)}</span>
+              ${extraCount > 0 ? `<span class="fides-card-count-extra">+ ${extraCount} more</span>` : ''}
+            </div>
+            <div class="fides-card-count-item fides-card-count-item--rp" data-issuer-id="${escapeHtml(issuer.id)}">
+              <span class="fides-card-count-num fides-card-rp-count">—</span>
+              <span class="fides-card-count-label">Relying Parties</span>
+            </div>
           </div>
-          ${updatedDate ? `<span class="fides-issuer-updated">Updated ${escapeHtml(updatedDate)}</span>` : ''}
         </div>
-        <div class="fides-card-actions">
-          <button class="fides-card-btn fides-view-details-btn" data-id="${escapeHtml(issuer.id)}">View details</button>
+        <div class="fides-wallet-footer">
+          <div class="fides-wallet-links"></div>
+          <span class="fides-view-details">${icons.eye} View details</span>
         </div>
-      </article>
+      </div>
     `;
+  }
+
+  async function fetchRpCatalog() {
+    if (rpCatalogData) return rpCatalogData;
+    if (rpCatalogFetchPromise) return rpCatalogFetchPromise;
+    rpCatalogFetchPromise = (async () => {
+      const sources = [
+        config.rpCatalogFallbackUrl,
+        config.rpCatalogDataUrl,
+      ].filter(Boolean);
+      for (const url of sources) {
+        try {
+          const r = await fetch(url);
+          if (r.ok) {
+            const data = await r.json();
+            rpCatalogData = data.relyingParties || [];
+            return rpCatalogData;
+          }
+        } catch (_) {}
+      }
+      rpCatalogData = [];
+      return [];
+    })();
+    return rpCatalogFetchPromise;
+  }
+
+  function countRpsForIssuer(issuer, rpList) {
+    const credIds = new Set(
+      (issuer.credentialConfigurations || [])
+        .map((c) => c.credentialCatalogRef?.id)
+        .filter(Boolean)
+    );
+    if (!credIds.size) return null;
+    return rpList.filter((rp) =>
+      (rp.acceptedCredentialRefs || []).some((ref) => credIds.has(ref.credentialCatalogId))
+    ).length;
   }
 
   function renderModal() {
@@ -239,138 +302,260 @@
     const logo = issuer.logoUri || issuer.organization?.logoUri;
     const configs = issuer.credentialConfigurations || [];
     const credentialsWithRef = configs.filter((c) => c.credentialCatalogRef);
-    const theme = container.dataset.theme || 'fides';
+    const theme = root?.dataset?.theme || 'fides';
+
+    const allFormats = [...new Set(configs.map((c) => c.vcFormat).filter(Boolean))];
+    const allAlgorithms = [...new Set(configs.flatMap((c) => c.signingAlgorithms || []))];
+    const allProofTypes = [...new Set(configs.flatMap((c) => c.proofTypes || []))];
+    const catalogCount = credentialsWithRef.length;
+    const showCatalogToggle = catalogCount > 0 && catalogCount < configs.length;
+    const catalogConfigs = configs.filter((cc) => cc.credentialCatalogRef);
+    const uncataloguedConfigs = configs.filter((cc) => !cc.credentialCatalogRef);
 
     return `
-      <div class="fides-modal-overlay" id="fides-modal-overlay" role="dialog" aria-modal="true" aria-label="${escapeHtml(issuer.displayName)}">
-        <div class="fides-modal">
+      <div class="fides-modal-overlay" id="fides-modal-overlay" data-theme="${escapeHtml(theme)}">
+        <div class="fides-modal" role="dialog" aria-modal="true" aria-labelledby="fides-modal-title">
           <div class="fides-modal-header">
-            <div class="fides-modal-logo-wrap">
+            <div class="fides-modal-header-content">
               ${logo
                 ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(issuer.organization?.name || '')}" class="fides-modal-logo">`
                 : `<div class="fides-modal-logo-placeholder">${icons.server}</div>`
               }
-            </div>
-            <div class="fides-modal-header-text">
-              <p class="fides-modal-provider">${escapeHtml(issuer.organization?.name || '')}</p>
-              <h2 class="fides-modal-title">${escapeHtml(issuer.displayName)}</h2>
-              <div class="fides-modal-header-meta">
-                ${renderEnvironmentBadge(issuer.environment)}
-                ${issuer.credentialIssuerUrl
-                  ? `<a href="${escapeHtml(issuer.credentialIssuerUrl)}" class="fides-modal-issuer-url" target="_blank" rel="noopener">${escapeHtml(issuer.credentialIssuerUrl)} ${icons.externalLinkSmall}</a>`
-                  : ''}
+              <div class="fides-modal-title-wrap">
+                <h2 class="fides-modal-title" id="fides-modal-title">${escapeHtml(issuer.displayName)}</h2>
+                <p class="fides-modal-provider">${icons.building} ${escapeHtml(issuer.organization?.name || '')}</p>
               </div>
             </div>
             <div class="fides-modal-header-actions">
-              <button class="fides-modal-action-btn" id="fides-modal-copy-link" title="Copy link">${icons.share}</button>
-              <button class="fides-modal-close" id="fides-modal-close" aria-label="Close modal">${icons.xLarge}</button>
+              <button type="button" class="fides-modal-copy-link" id="fides-modal-copy-link" aria-label="Copy link" title="Copy link">
+                ${icons.share}
+              </button>
+              <button class="fides-modal-close" id="fides-modal-close" aria-label="Close modal">
+                ${icons.xLarge}
+              </button>
             </div>
           </div>
-          <div class="fides-modal-body">
-            <div class="fides-modal-info-blocks">
-              <!-- Block 1: Issuer details -->
-              <div class="fides-modal-info-block">
-                <h3 class="fides-modal-section-title fides-modal-section-first">${icons.building} Issuer details</h3>
-                <dl class="fides-modal-details">
-                  <div class="fides-modal-detail-row">
-                    <dt>Environment</dt>
-                    <dd>${renderEnvironmentBadge(issuer.environment)}</dd>
-                  </div>
-                  ${issuer.projectContext ? `
-                    <div class="fides-modal-detail-row">
-                      <dt>Project</dt>
-                      <dd>${escapeHtml(issuer.projectContext)}</dd>
-                    </div>
-                  ` : ''}
-                  ${issuer.organization?.did ? `
-                    <div class="fides-modal-detail-row">
-                      <dt>DID</dt>
-                      <dd><span class="fides-mono" title="${escapeHtml(issuer.organization.did)}">${escapeHtml(issuer.organization.did)}</span></dd>
-                    </div>
-                  ` : ''}
-                  <div class="fides-modal-detail-row">
-                    <dt>Protocol</dt>
-                    <dd><span class="fides-tag">OID4VCI</span></dd>
-                  </div>
-                  ${issuer.updatedAt ? `
-                    <div class="fides-modal-detail-row">
-                      <dt>Updated</dt>
-                      <dd>${escapeHtml(formatDate(issuer.updatedAt))}</dd>
-                    </div>
-                  ` : ''}
-                  ${issuer.firstSeenAt ? `
-                    <div class="fides-modal-detail-row">
-                      <dt>First seen</dt>
-                      <dd>${escapeHtml(formatDate(issuer.firstSeenAt))}</dd>
-                    </div>
-                  ` : ''}
-                </dl>
-              </div>
 
-              <!-- Block 2: Issued credentials -->
-              <div class="fides-modal-info-block">
-                <h3 class="fides-modal-section-title fides-modal-section-first">${icons.fileCheck} Issued credentials</h3>
-                ${credentialsWithRef.length > 0 ? `
-                  <ul class="fides-modal-credential-list">
-                    ${credentialsWithRef.map((cc) => {
-                      const url = config.credentialCatalogUrl
-                        ? `${config.credentialCatalogUrl.replace(/\/$/, '')}?credential=${encodeURIComponent(cc.credentialCatalogRef.id)}`
-                        : '#';
-                      return `<li>
-                        <a href="${escapeHtml(url)}" class="fides-tag wallet-link" target="_blank" rel="noopener">
-                          ${escapeHtml(cc.credentialCatalogRef.displayName || cc.credentialCatalogRef.id)} ${icons.externalLinkSmall}
-                        </a>
-                      </li>`;
-                    }).join('')}
-                  </ul>
-                ` : `<p class="fides-modal-empty">No linked credentials found.</p>`}
+          <div class="fides-modal-body">
+            <!-- Description (if available) -->
+            ${issuer.description ? `<div class="fides-modal-intro"><p class="fides-modal-description">${escapeHtml(issuer.description)}</p></div>` : ''}
+
+            <!-- FIDES Ecosystem Model -->
+            <div class="fides-accordion fides-modal-section">
+              <div class="fides-accordion-header fides-modal-section-header" style="pointer-events:none;cursor:default;">
+                <span class="fides-accordion-title">${icons.wallet} FIDES Ecosystem Model</span>
+              </div>
+              <div class="fides-accordion-body fides-modal-ecosystem-body">
+                <div class="fides-modal-ecosystem">
+                  <!-- Personal Wallets (top) -->
+                  <div class="fides-eco-wallet-row">
+                    <div class="fides-eco-wallet-box">
+                      <span class="fides-eco-wallet-count">—</span>
+                      <span class="fides-eco-wallet-label">Personal Wallets</span>
+                    </div>
+                  </div>
+                  <div class="fides-eco-wallet-connector">${icons.chevronUp}</div>
+                  <!-- Main row: Issuer → Credentials → Relying Parties -->
+                  <div class="fides-eco-main-row">
+                    <div class="fides-eco-col fides-eco-col-center">
+                      <div class="fides-eco-center-card">
+                        <div class="fides-eco-center-icon">
+                          ${logo
+                            ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(issuer.organization?.name || '')}" style="width:24px;height:24px;object-fit:contain;border-radius:4px;">`
+                            : icons.server
+                          }
+                        </div>
+                        <p class="fides-eco-center-name">${escapeHtml(issuer.displayName)}</p>
+                        ${issuer.organization?.name ? `<p class="fides-eco-center-authority">${escapeHtml(issuer.organization.name)}</p>` : ''}
+                      </div>
+                    </div>
+                    <div class="fides-eco-arrow">${icons.chevronDown}</div>
+                    <div class="fides-eco-col fides-eco-col-side">
+                      <div class="fides-eco-col-header">
+                        <span class="fides-eco-count">${credentialsWithRef.length}</span>
+                        <span class="fides-eco-label">${credentialsWithRef.length === 1 ? 'Credential' : 'Credentials'}</span>
+                      </div>
+                      <div class="fides-eco-entities">
+                        ${credentialsWithRef.length === 0
+                          ? `<p class="fides-modal-empty">No catalog credentials.</p>`
+                          : (() => {
+                              const visible = credentialsWithRef.slice(0, 2);
+                              const hidden = credentialsWithRef.length - 2;
+                              const renderCredTag = (cc) => {
+                                const ref = cc.credentialCatalogRef;
+                                const href = config.credentialCatalogUrl
+                                  ? `${config.credentialCatalogUrl.replace(/\/$/, '')}?credential=${encodeURIComponent(ref.id)}`
+                                  : null;
+                                const inner = `${escapeHtml(ref.displayName || ref.id)}${href ? ' ' + icons.externalLinkSmall : ''}`;
+                                return href
+                                  ? `<a href="${escapeHtml(href)}" target="_blank" rel="noopener" class="fides-eco-tag fides-eco-tag-green" onclick="event.stopPropagation();">${inner}</a>`
+                                  : `<span class="fides-eco-tag fides-eco-tag-green">${inner}</span>`;
+                              };
+                              if (hidden > 0) {
+                                return visible.slice(0, -1).map(renderCredTag).join('') +
+                                  `<div class="fides-eco-tag-last-row">${renderCredTag(visible[visible.length - 1])}<span class="fides-eco-more fides-eco-more--green">+ ${hidden} more</span></div>`;
+                              }
+                              return visible.map(renderCredTag).join('');
+                            })()
+                        }
+                      </div>
+                    </div>
+                    <div class="fides-eco-arrow">${icons.chevronDown}</div>
+                    <div class="fides-eco-col fides-eco-col-side">
+                      <div class="fides-eco-col-header">
+                        <span class="fides-eco-count fides-eco-rp-count">—</span>
+                        <span class="fides-eco-label">Relying Parties</span>
+                      </div>
+                      <div class="fides-eco-entities fides-eco-entities--row fides-eco-rp-entities"></div>
+                    </div>
+                  </div>
+                  <div class="fides-eco-wallet-connector">${icons.chevronUp}</div>
+                  <!-- Business Wallets (bottom) -->
+                  <div class="fides-eco-wallet-row">
+                    <div class="fides-eco-wallet-box">
+                      <span class="fides-eco-wallet-count">—</span>
+                      <span class="fides-eco-wallet-label">Business Wallets</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <!-- Credential configurations table -->
+            <!-- Credential configurations accordion -->
             ${configs.length > 0 ? `
-              <div class="fides-modal-info-block fides-modal-info-block-full">
-                <h3 class="fides-modal-section-title fides-modal-section-first">${icons.shield} Credential configurations</h3>
-                <div class="fides-table-wrap">
-                  <table class="fides-attributes-table">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Format</th>
-                        <th>Signing algorithms</th>
-                        <th>Proof types</th>
-                        <th>Credential catalog</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      ${configs.map((cc) => `
+              <div class="fides-accordion is-open" id="fides-accordion-configs">
+                <button class="fides-accordion-header" type="button" aria-expanded="true">
+                  <span class="fides-accordion-title">${icons.shield} Credential configurations${configs.length > 0 ? ` <span class="fides-accordion-count">${configs.length}</span>` : ''}</span>
+                  <span class="fides-accordion-chevron">${icons.chevronDown}</span>
+                </button>
+                <div class="fides-accordion-body">
+                  <div class="fides-attributes-table-wrap">
+                    <table class="fides-attributes-table">
+                      <thead>
                         <tr>
-                          <td>${escapeHtml(cc.displayName || cc.configurationId)}</td>
-                          <td><span class="fides-tag">${escapeHtml(cc.vcFormat)}</span></td>
-                          <td>${(cc.signingAlgorithms || []).map((a) => `<span class="fides-tag">${escapeHtml(a)}</span>`).join(' ')}</td>
-                          <td>${(cc.proofTypes || []).map((p) => `<span class="fides-tag">${escapeHtml(p)}</span>`).join(' ')}</td>
-                          <td>${cc.credentialCatalogRef
-                            ? `<a href="${escapeHtml((config.credentialCatalogUrl || '').replace(/\/$/, '') + '?credential=' + encodeURIComponent(cc.credentialCatalogRef.id))}" class="fides-tag wallet-link" target="_blank" rel="noopener">${escapeHtml(cc.credentialCatalogRef.displayName || cc.credentialCatalogRef.id)} ${icons.externalLinkSmall}</a>`
-                            : '<span class="fides-modal-empty">—</span>'
-                          }</td>
+                          <th>Credential</th>
+                          <th>Format</th>
+                          <th>Credential catalog</th>
                         </tr>
-                      `).join('')}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        ${catalogConfigs.map((cc) => `
+                          <tr>
+                            <td>${escapeHtml(cc.displayName || cc.configurationId)}</td>
+                            <td><span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[cc.vcFormat] || cc.vcFormat)}</span></td>
+                            <td><a href="${escapeHtml((config.credentialCatalogUrl || '').replace(/\/$/, '') + '?credential=' + encodeURIComponent(cc.credentialCatalogRef.id))}" class="fides-modal-link-inline" target="_blank" rel="noopener" onclick="event.stopPropagation();">${escapeHtml(cc.credentialCatalogRef.displayName || cc.credentialCatalogRef.id)} ${icons.externalLinkSmall}</a></td>
+                          </tr>
+                        `).join('')}
+                        ${catalogConfigs.length === 0 ? `<tr><td colspan="3" style="color:var(--fides-text-muted);font-style:italic;">No credentials in catalog.</td></tr>` : ''}
+                      </tbody>
+                      ${uncataloguedConfigs.length > 0 ? `
+                        <tbody class="fides-configs-extra" style="display:none;" id="fides-configs-extra">
+                          ${uncataloguedConfigs.map((cc) => `
+                            <tr>
+                              <td>${escapeHtml(cc.displayName || cc.configurationId)}</td>
+                              <td><span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[cc.vcFormat] || cc.vcFormat)}</span></td>
+                              <td><span style="color:var(--fides-text-muted);">—</span></td>
+                            </tr>
+                          `).join('')}
+                        </tbody>
+                        <tbody>
+                          <tr class="fides-configs-show-more-row">
+                            <td colspan="3">
+                              <button type="button" class="fides-show-more-btn" id="fides-configs-show-more">
+                                Show ${uncataloguedConfigs.length} more
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      ` : ''}
+                    </table>
+                  </div>
                 </div>
               </div>
             ` : ''}
 
-            <!-- OID4VCI metadata link -->
-            <div class="fides-modal-section">
-              <h3 class="fides-modal-section-title">${icons.link} Metadata</h3>
-              <div class="fides-modal-links">
-                <a href="${escapeHtml(issuer.oid4vciMetadataUrl)}" class="fides-modal-link" target="_blank" rel="noopener">
-                  ${icons.shield} .well-known/openid-credential-issuer ${icons.externalLinkSmall}
-                </a>
+            <!-- Other details accordion (open by default) -->
+            <div class="fides-accordion is-open" id="fides-accordion-details">
+              <button class="fides-accordion-header" type="button" aria-expanded="true">
+                <span class="fides-accordion-title">${icons.shield} Other details</span>
+                <span class="fides-accordion-chevron">${icons.chevronDown}</span>
+              </button>
+              <div class="fides-accordion-body">
+                <div class="fides-details-kv">
+                  <div class="fides-kv-row fides-kv-row-wide">
+                    <span class="fides-kv-key">URL</span>
+                    <span class="fides-kv-val fides-kv-val--url">
+                      ${issuer.oid4vciMetadataUrl
+                        ? `<a href="${escapeHtml(issuer.oid4vciMetadataUrl)}" target="_blank" rel="noopener" class="fides-modal-link-inline fides-url-ellipsis" title="${escapeHtml(issuer.oid4vciMetadataUrl)}" onclick="event.stopPropagation();">${escapeHtml(issuer.oid4vciMetadataUrl)} ${icons.externalLinkSmall}</a>`
+                        : '—'
+                      }
+                    </span>
+                  </div>
+                  <div class="fides-kv-row">
+                    <span class="fides-kv-key">Cred. formats</span>
+                    <span class="fides-kv-val fides-kv-tags">
+                      ${allFormats.length > 0
+                        ? allFormats.map((f) => `<span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[f] || f)}</span>`).join('')
+                        : '—'
+                      }
+                    </span>
+                  </div>
+                  <div class="fides-kv-row">
+                    <span class="fides-kv-key">Project context</span>
+                    <span class="fides-kv-val">${escapeHtml(issuer.projectContext || '—')}</span>
+                  </div>
+                  <div class="fides-kv-row">
+                    <span class="fides-kv-key">Signing algorithms</span>
+                    <span class="fides-kv-val fides-kv-tags">
+                      ${allAlgorithms.length > 0
+                        ? allAlgorithms.map((a) => `<span class="fides-tag">${escapeHtml(a)}</span>`).join('')
+                        : '—'
+                      }
+                    </span>
+                  </div>
+                  <div class="fides-kv-row">
+                    <span class="fides-kv-key">Environment</span>
+                    <span class="fides-kv-val">${escapeHtml(ENVIRONMENT_LABELS[issuer.environment] || issuer.environment || '—')}</span>
+                  </div>
+                  <div class="fides-kv-row">
+                    <span class="fides-kv-key">Proof types</span>
+                    <span class="fides-kv-val fides-kv-tags">
+                      ${allProofTypes.length > 0
+                        ? allProofTypes.map((p) => `<span class="fides-tag">${escapeHtml(p)}</span>`).join('')
+                        : '—'
+                      }
+                    </span>
+                  </div>
+                  <div class="fides-kv-row">
+                    <span class="fides-kv-key">Last updated</span>
+                    <span class="fides-kv-val">${escapeHtml(issuer.updatedAt ? formatDate(issuer.updatedAt) : '—')}</span>
+                  </div>
+                </div>
               </div>
             </div>
 
+            <!-- Organization info -->
+            <div class="fides-modal-provider-section">
+              <h4 class="fides-modal-section-title">Organization</h4>
+              <div class="fides-modal-provider-info">
+                <div class="fides-modal-provider-detail">
+                  <span class="fides-modal-provider-label">Name:</span>
+                  <span class="fides-modal-provider-value">${escapeHtml(issuer.organization?.name || '')}</span>
+                </div>
+                ${issuer.organization?.website ? `
+                  <div class="fides-modal-provider-detail">
+                    <span class="fides-modal-provider-label">Website:</span>
+                    <a href="${escapeHtml(issuer.organization.website)}" class="fides-modal-provider-value" target="_blank" rel="noopener" style="color:var(--fides-accent);">${escapeHtml(issuer.organization.website)}</a>
+                  </div>
+                ` : ''}
+                ${issuer.organization?.did ? `
+                  <div class="fides-modal-provider-detail">
+                    <span class="fides-modal-provider-label">DID:</span>
+                    <code class="fides-modal-provider-did">${escapeHtml(issuer.organization.did)}</code>
+                  </div>
+                ` : ''}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -417,7 +602,7 @@
           ${options.map((opt) => `
             <label class="fides-filter-checkbox">
               <input type="checkbox" data-filter-group="${escapeHtml(key)}" value="${escapeHtml(opt)}" ${selected.includes(opt) ? 'checked' : ''}>
-              <span>${escapeHtml(ENVIRONMENT_LABELS[opt] || opt)}<span class="fides-filter-option-count">(${facets?.[key]?.[opt] || 0})</span></span>
+              <span>${escapeHtml(ENVIRONMENT_LABELS[opt] || VC_FORMAT_LABELS[opt] || opt)}<span class="fides-filter-option-count">(${facets?.[key]?.[opt] || 0})</span></span>
             </label>
           `).join('')}
         </div>
@@ -469,6 +654,10 @@
             <label class="fides-filter-checkbox">
               <input type="checkbox" id="fides-added-last-30" ${filters.addedLast30Days ? 'checked' : ''}>
               <span>Added last 30 days<span class="fides-filter-option-count">(${filterFacets?.addedLast30Days || 0})</span></span>
+            </label>
+            <label class="fides-filter-checkbox">
+              <input type="checkbox" id="fides-in-credential-catalog" ${filters.inCredentialCatalog ? 'checked' : ''}>
+              <span>In credential catalog<span class="fides-filter-option-count">(${filterFacets?.inCredentialCatalog || 0})</span></span>
             </label>
           </div>
           ${renderCheckboxGroup('Environment', 'environment', environmentOptions, filterFacets)}
@@ -527,7 +716,6 @@
           </section>
         </div>
       </div>
-      ${renderModal()}
     `;
 
     bindEvents();
@@ -552,7 +740,7 @@
     if (!selectedIssuer) return;
     const url = new URL(window.location.href);
     url.searchParams.set('issuer', selectedIssuer.id);
-    const theme = container?.dataset?.theme || 'fides';
+    const theme = root?.dataset?.theme || 'fides';
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(url.toString()).then(
         () => showToast('Link copied to clipboard', 'success', theme),
@@ -582,20 +770,57 @@
   function openModal(id) {
     selectedIssuer = issuers.find((i) => i.id === id) || null;
     if (!selectedIssuer) return;
-    const modalEl = root.querySelector('#fides-modal-overlay');
-    if (modalEl) { modalEl.remove(); }
-    root.insertAdjacentHTML('beforeend', renderModal());
+    const existing = document.getElementById('fides-modal-overlay');
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML('beforeend', renderModal());
     document.body.style.overflow = 'hidden';
     bindModalEvents();
     const params = new URLSearchParams(window.location.search);
     params.set('issuer', id);
     history.replaceState(null, '', '?' + params.toString());
+
+    // Async: fill in RP count and tags once RP catalog is loaded
+    const issuerForRp = selectedIssuer;
+    fetchRpCatalog().then((rpList) => {
+      const credIds = new Set(
+        (issuerForRp.credentialConfigurations || [])
+          .map((c) => c.credentialCatalogRef?.id)
+          .filter(Boolean)
+      );
+      const matchingRps = rpList.filter((rp) =>
+        (rp.acceptedCredentialRefs || []).some((ref) => credIds.has(ref.credentialCatalogId))
+      );
+      const count = credIds.size ? matchingRps.length : null;
+      const countEl = document.querySelector('.fides-eco-rp-count');
+      if (countEl && count !== null) countEl.textContent = count;
+
+      const entitiesEl = document.querySelector('.fides-eco-rp-entities');
+      if (entitiesEl && matchingRps.length > 0) {
+        const shown = matchingRps.slice(0, 2);
+        const hidden = matchingRps.length - 2;
+        const renderRpTag = (rp) => {
+          const label = escapeHtml(rp.name || rp.id);
+          return rp.website
+            ? `<a href="${escapeHtml(rp.website)}" target="_blank" rel="noopener" class="fides-eco-tag fides-eco-tag-blue" onclick="event.stopPropagation();">${label} ${icons.externalLinkSmall}</a>`
+            : `<span class="fides-eco-tag fides-eco-tag-blue">${label}</span>`;
+        };
+        if (hidden > 0) {
+          entitiesEl.innerHTML = shown.slice(0, -1).map(renderRpTag).join('') +
+            `<div class="fides-eco-tag-last-row">${renderRpTag(shown[shown.length - 1])}<span class="fides-eco-more fides-eco-more--blue">+ ${hidden} more</span></div>`;
+        } else {
+          entitiesEl.innerHTML = shown.map(renderRpTag).join('');
+        }
+      }
+    });
   }
 
   function closeModal() {
     selectedIssuer = null;
-    const overlay = root.querySelector('#fides-modal-overlay');
-    if (overlay) overlay.remove();
+    const overlay = document.getElementById('fides-modal-overlay');
+    if (overlay) {
+      overlay.classList.add('closing');
+      setTimeout(() => { overlay.remove(); }, 200);
+    }
     document.body.style.overflow = '';
     const params = new URLSearchParams(window.location.search);
     params.delete('issuer');
@@ -604,16 +829,37 @@
   }
 
   function bindModalEvents() {
-    const closeBtn = root.querySelector('#fides-modal-close');
+    const closeBtn = document.getElementById('fides-modal-close');
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-    const overlay = root.querySelector('#fides-modal-overlay');
+    const overlay = document.getElementById('fides-modal-overlay');
     if (overlay) {
       overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
     }
 
-    const copyBtn = root.querySelector('#fides-modal-copy-link');
+    const copyBtn = document.getElementById('fides-modal-copy-link');
     if (copyBtn) copyBtn.addEventListener('click', copyIssuerLink);
+
+    const showMoreBtn = document.getElementById('fides-configs-show-more');
+    const extraTbody = document.getElementById('fides-configs-extra');
+    if (showMoreBtn && extraTbody) {
+      const uncatCount = extraTbody.querySelectorAll('tr').length;
+      showMoreBtn.addEventListener('click', () => {
+        const isHidden = extraTbody.style.display === 'none';
+        extraTbody.style.display = isHidden ? 'table-row-group' : 'none';
+        showMoreBtn.textContent = isHidden ? 'Show less' : `Show ${uncatCount} more`;
+      });
+    }
+
+    // Accordion toggle
+    document.querySelectorAll('.fides-modal-overlay .fides-accordion-header[type="button"]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const accordion = btn.closest('.fides-accordion');
+        if (!accordion) return;
+        const isOpen = accordion.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
 
     document.addEventListener('keydown', function escHandler(e) {
       if (e.key === 'Escape') { closeModal(); document.removeEventListener('keydown', escHandler); }
@@ -671,7 +917,7 @@
 
     const clearBtn = root.querySelector('#fides-clear');
     if (clearBtn) clearBtn.addEventListener('click', () => {
-      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], addedLast30Days: false };
+      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], addedLast30Days: false, inCredentialCatalog: false };
       render();
     });
 
@@ -689,11 +935,13 @@
 
     const addedInput = root.querySelector('#fides-added-last-30');
     if (addedInput) addedInput.addEventListener('change', (e) => { filters.addedLast30Days = e.target.checked; render(); });
+    const catalogInput = root.querySelector('#fides-in-credential-catalog');
+    if (catalogInput) catalogInput.addEventListener('change', (e) => { filters.inCredentialCatalog = e.target.checked; render(); });
 
     root.querySelectorAll('.fides-kpi-card').forEach((btn) => {
       btn.addEventListener('click', () => {
         const action = btn.dataset.kpiAction;
-        if (action === 'reset') { filters.environment = []; filters.addedLast30Days = false; sortBy = 'lastUpdated'; }
+        if (action === 'reset') { filters.environment = []; filters.addedLast30Days = false; filters.inCredentialCatalog = false; sortBy = 'lastUpdated'; }
         else if (action === 'toggle-production') {
           if (filters.environment.includes('production')) filters.environment = filters.environment.filter((e) => e !== 'production');
           else filters.environment = [...filters.environment, 'production'];
@@ -713,14 +961,8 @@
 
     // Card clicks
     root.querySelectorAll('.fides-issuer-card').forEach((card) => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('.fides-card-btn')) return;
-        openModal(card.dataset.id);
-      });
+      card.addEventListener('click', () => openModal(card.dataset.id));
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.id); } });
-    });
-    root.querySelectorAll('.fides-view-details-btn').forEach((btn) => {
-      btn.addEventListener('click', (e) => { e.stopPropagation(); openModal(btn.dataset.id); });
     });
 
     // Mobile filter drawer
@@ -736,6 +978,11 @@
     if (sidebar) {
       sidebar.addEventListener('click', (e) => { if (e.target === sidebar && sidebar.classList.contains('mobile-open')) { sidebar.classList.remove('mobile-open'); document.body.style.overflow = ''; } });
     }
+
+    initVocabularyInfo(root);
+
+    // Fill RP counts on cards asynchronously
+    fillCardRpCounts(getFilteredIssuers());
   }
 
   function renderIssuerGridOnly() {
@@ -746,11 +993,21 @@
       ? filtered.map(renderIssuerCard).join('')
       : '<p class="fides-empty">No issuers found.</p>';
     root.querySelectorAll('.fides-issuer-card').forEach((card) => {
-      card.addEventListener('click', (e) => { if (e.target.closest('.fides-card-btn')) return; openModal(card.dataset.id); });
+      card.addEventListener('click', () => openModal(card.dataset.id));
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.id); } });
     });
-    root.querySelectorAll('.fides-view-details-btn').forEach((btn) => {
-      btn.addEventListener('click', (e) => { e.stopPropagation(); openModal(btn.dataset.id); });
+    fillCardRpCounts(filtered);
+  }
+
+  function fillCardRpCounts(issuerList) {
+    fetchRpCatalog().then((rpList) => {
+      issuerList.forEach((issuer) => {
+        const count = countRpsForIssuer(issuer, rpList);
+        if (count === null) return;
+        root.querySelectorAll(`.fides-card-count-item--rp[data-issuer-id="${CSS.escape(issuer.id)}"] .fides-card-rp-count`).forEach((el) => {
+          el.textContent = count;
+        });
+      });
     });
   }
 
@@ -758,6 +1015,133 @@
     const params = new URLSearchParams(window.location.search);
     const id = params.get('issuer');
     if (id) openModal(id);
+  }
+
+  async function loadVocabulary(primaryUrl, fallbackUrl) {
+    const tryLoad = async (url) => {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      return data.terms || null;
+    };
+    if (primaryUrl) {
+      try { return await tryLoad(primaryUrl); } catch (e) { console.warn('Vocabulary load failed (primary):', e.message); }
+    }
+    if (fallbackUrl) {
+      try {
+        const terms = await tryLoad(fallbackUrl);
+        if (terms) console.log('Vocabulary loaded from fallback');
+        return terms;
+      } catch (e) { console.warn('Vocabulary load failed (fallback):', e.message); }
+    }
+    return null;
+  }
+
+  function hideVocabularyPopup() {
+    const overlay = document.querySelector('.fides-vocab-overlay');
+    const popup = document.querySelector('.fides-vocab-popup');
+    if (overlay) overlay.remove();
+    if (popup) popup.remove();
+  }
+
+  function showVocabularyPopup(button, groupEl, vocabKey) {
+    hideVocabularyPopup();
+    const groupTerm = vocabulary[vocabKey];
+    const categoryName = (groupEl.querySelector('.fides-filter-label') || {}).textContent?.trim() || '';
+    let html = '';
+    if (categoryName) html += '<p class="fides-vocab-popup-title"><strong>' + escapeHtml(categoryName) + '</strong></p>';
+    if (groupTerm && groupTerm.description) html += '<p class="fides-vocab-popup-intro">' + escapeHtml(groupTerm.description) + '</p>';
+    const optionsEl = groupEl.querySelector('.fides-filter-options');
+    if (optionsEl) {
+      const labels = optionsEl.querySelectorAll('label.fides-filter-checkbox');
+      if (labels.length > 0) {
+        const listItems = [];
+        labels.forEach((label) => {
+          const input = label.querySelector('input');
+          const value = input ? (input.dataset.value || input.value) : '';
+          const labelText = (label.querySelector('span') || label).textContent.trim();
+          const term = vocabulary[value] || null;
+          const desc = term && term.description ? escapeHtml(term.description) : '';
+          listItems.push({ labelText, desc });
+        });
+        const hasAnyOptionDesc = listItems.some((item) => item.desc);
+        if (hasAnyOptionDesc) {
+          html += '<ul class="fides-vocab-popup-list">';
+          listItems.forEach((item) => {
+            html += '<li><strong>' + escapeHtml(item.labelText) + '</strong>' + (item.desc ? ': ' + item.desc : '') + '</li>';
+          });
+          html += '</ul>';
+        }
+      }
+    }
+    if (!html) html = '<p>No description available.</p>';
+    const popup = document.createElement('div');
+    popup.className = 'fides-vocab-popup';
+    popup.setAttribute('role', 'dialog');
+    popup.setAttribute('aria-label', 'Filter explanation');
+    popup.innerHTML = html;
+    const overlay = document.createElement('div');
+    overlay.className = 'fides-vocab-overlay';
+    document.body.appendChild(overlay);
+    document.body.appendChild(popup);
+    const margin = 20;
+    const rect = button.getBoundingClientRect();
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const pw = popup.offsetWidth;
+    const ph = popup.offsetHeight;
+    const left = Math.max(margin, Math.min(rect.right + 40, w - pw - margin));
+    const top = Math.max(margin, Math.min((h - ph) / 2, h - ph - margin));
+    popup.style.left = left + 'px';
+    popup.style.top = top + 'px';
+    setTimeout(() => { overlay.classList.add('visible'); popup.classList.add('visible'); }, 10);
+    const close = (e) => {
+      if (e && e.target.closest && e.target.closest('.fides-vocab-popup')) return;
+      hideVocabularyPopup();
+      document.removeEventListener('click', close, true);
+      document.removeEventListener('keydown', onKeydown);
+    };
+    function onKeydown(e) { if (e.key === 'Escape') close(); }
+    document.addEventListener('keydown', onKeydown);
+    setTimeout(() => document.addEventListener('click', close, true), 0);
+  }
+
+  function initVocabularyInfo(containerEl) {
+    if (!vocabulary) return;
+    hideVocabularyPopup();
+    containerEl.querySelectorAll('.fides-vocab-info').forEach((btn) => btn.remove());
+    containerEl.querySelectorAll('.fides-filter-group').forEach((groupEl) => {
+      const toggle = groupEl.querySelector('.fides-filter-label-toggle');
+      const labelSpan = toggle && toggle.querySelector('.fides-filter-label');
+      if (!toggle || !labelSpan) return;
+      const filterGroup = groupEl.dataset.filterGroup;
+      const vocabKey = ISSUER_FILTER_TO_VOCAB[filterGroup] || filterGroup;
+      const infoBtn = document.createElement('button');
+      infoBtn.type = 'button';
+      infoBtn.className = 'fides-vocab-info';
+      infoBtn.dataset.group = vocabKey;
+      infoBtn.setAttribute('aria-label', 'Explain filter');
+      infoBtn.textContent = 'i';
+      infoBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        showVocabularyPopup(e.currentTarget, groupEl, vocabKey);
+      });
+      const parent = labelSpan.parentNode;
+      if (parent.classList && parent.classList.contains('fides-filter-label-with-info')) {
+        parent.appendChild(infoBtn);
+        return;
+      }
+      const wrapper = document.createElement('div');
+      wrapper.className = 'fides-filter-label-with-info';
+      parent.insertBefore(wrapper, labelSpan);
+      wrapper.appendChild(labelSpan);
+      wrapper.appendChild(infoBtn);
+      const spacer = document.createElement('span');
+      spacer.className = 'fides-filter-toggle-spacer';
+      spacer.setAttribute('aria-hidden', 'true');
+      parent.insertBefore(spacer, wrapper.nextSibling);
+    });
   }
 
   async function loadIssuers() {
@@ -780,11 +1164,13 @@
       }
     }
     filterFacets = computeFilterFacets(issuers);
+    if (config.vocabularyUrl || config.vocabularyFallbackUrl) {
+      vocabulary = await loadVocabulary(config.vocabularyUrl, config.vocabularyFallbackUrl);
+    }
     render();
     checkDeepLink();
   }
 
-  let root;
   function init() {
     root = document.getElementById('fides-issuer-catalog-root');
     if (!root) return;

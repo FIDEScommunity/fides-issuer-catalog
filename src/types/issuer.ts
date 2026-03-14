@@ -24,6 +24,7 @@ export interface SourceCredentialReference {
 export interface SourceIssuer {
   id: string;
   displayName?: string;
+  description?: string;
   environment: 'production' | 'pilot' | 'test' | 'sandbox';
   oid4vciMetadataUrl: string;
   projectContext?: string;
@@ -133,6 +134,7 @@ export interface AggregatedIssuer {
   id: string;
   organization: AggregatedOrganization;
   displayName: string;
+  description?: string;
   environment: 'production' | 'pilot' | 'test' | 'sandbox';
   credentialIssuerUrl: string;
   oid4vciMetadataUrl: string;

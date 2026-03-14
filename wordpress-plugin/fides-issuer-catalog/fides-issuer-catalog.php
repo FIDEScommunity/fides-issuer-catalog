@@ -38,6 +38,13 @@ function fides_issuer_catalog_enqueue_assets() {
             'fides_issuer_catalog_credential_catalog_url',
             'https://fides.community/community-tools/credential-catalog/'
         ),
+        'rpCatalogDataUrl' => get_option(
+            'fides_issuer_catalog_rp_catalog_data_url',
+            'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/wordpress-plugin/fides-rp-catalog/data/aggregated.json'
+        ),
+        'rpCatalogFallbackUrl' => $plugin_url . 'data/rp-aggregated.json',
+        'vocabularyUrl'         => 'https://raw.githubusercontent.com/FIDEScommunity/fides-interop-profiles/main/data/vocabulary.json',
+        'vocabularyFallbackUrl' => $plugin_url . 'assets/vocabulary.json',
     ]);
 }
 add_action('wp_enqueue_scripts', 'fides_issuer_catalog_enqueue_assets');
@@ -71,6 +78,9 @@ function fides_issuer_catalog_settings_init() {
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
     register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_credential_catalog_url', [
+        'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
+    ]);
+    register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_rp_catalog_data_url', [
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
 }
@@ -109,6 +119,15 @@ function fides_issuer_catalog_settings_render() { ?>
                                value="<?php echo esc_attr(get_option('fides_issuer_catalog_credential_catalog_url', 'https://fides.community/community-tools/credential-catalog/')); ?>"
                                class="regular-text">
                         <p class="description">Base URL for credential catalog deep links in the modal.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="fides_issuer_catalog_rp_catalog_data_url">RP Catalog Data URL</label></th>
+                    <td>
+                        <input type="url" id="fides_issuer_catalog_rp_catalog_data_url" name="fides_issuer_catalog_rp_catalog_data_url"
+                               value="<?php echo esc_attr(get_option('fides_issuer_catalog_rp_catalog_data_url', 'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/data/aggregated.json')); ?>"
+                               class="regular-text">
+                        <p class="description">URL to the RP catalog aggregated.json (used to count relying parties per issuer).</p>
                     </td>
                 </tr>
             </table>

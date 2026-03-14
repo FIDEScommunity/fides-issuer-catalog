@@ -1,0 +1,21 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "Credenco",
+    "website": "https://credenco.com"
+  },
+  "issuers": [
+    {
+      "id": "issuer:credenco:kvk:sandbox",
+      "displayName": "Kamer van Koophandel",
+      "environment": "sandbox",
+      "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company/.well-known/openid-credential-issuer"
+    },
+    {
+      "id": "issuer:credenco:belastingdienst:sandbox",
+      "displayName": "Belastingdienst",
+      "environment": "sandbox",
+      "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst/.well-known/openid-credential-issuer"
+    }
+  ]
+}
