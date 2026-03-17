@@ -7,7 +7,8 @@
     "crawl": "tsx src/crawler/index.ts",
     "build": "tsc",
     "validate": "ajv validate --spec=draft2020 -c ajv-formats -s schemas/issuer-catalog.schema.json -d 'community-catalogs/**/issuer-catalog.json'",
-    "copy-rp-aggregated": "node scripts/copy-rp-aggregated.js"
+    "copy-rp-aggregated": "node scripts/copy-rp-aggregated.js",
+    "check-links": "tsx scripts/check-links.ts"
   },
   "repository": {
     "type": "git",
