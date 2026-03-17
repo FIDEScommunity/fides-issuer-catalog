@@ -2,47 +2,89 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
+define('FIDES_ISSUER_CATALOG_VERSION', '1.1.0');
+
+/**
+ * Detect if the site is running on a .local or localhost URL (local dev).
+ * In that case the plugin can use bundled data/aggregated.json instead of GitHub.
+ */
+function fides_issuer_catalog_is_local_site() {
+    $host = '';
+    if (function_exists('get_site_url')) {
+        $url = get_site_url();
+        if (is_string($url)) {
+            $parsed = parse_url($url);
+            $host = isset($parsed['host']) ? $parsed['host'] : '';
+        }
+    }
+    if ($host === '' && !empty($_SERVER['HTTP_HOST'])) {
+        $host = (string) $_SERVER['HTTP_HOST'];
+    }
+    $host = strtolower(trim($host));
+    return ($host !== '' && (preg_match('/\.local$/i', $host) || $host === 'localhost'));
+}
+
 function fides_issuer_catalog_enqueue_assets() {
     $plugin_url = plugin_dir_url(__FILE__);
     $plugin_dir = plugin_dir_path(__FILE__);
+    $use_local = fides_issuer_catalog_is_local_site();
 
     wp_enqueue_style(
         'fides-issuer-catalog',
         $plugin_url . 'assets/style.css',
         [],
-        file_exists($plugin_dir . 'assets/style.css') ? filemtime($plugin_dir . 'assets/style.css') : '1.0.0'
+        file_exists($plugin_dir . 'assets/style.css') ? filemtime($plugin_dir . 'assets/style.css') : FIDES_ISSUER_CATALOG_VERSION
     );
 
     wp_enqueue_script(
         'fides-issuer-catalog',
         $plugin_url . 'assets/issuer-catalog.js',
         [],
-        file_exists($plugin_dir . 'assets/issuer-catalog.js') ? filemtime($plugin_dir . 'assets/issuer-catalog.js') : '1.0.0',
+        file_exists($plugin_dir . 'assets/issuer-catalog.js') ? filemtime($plugin_dir . 'assets/issuer-catalog.js') : FIDES_ISSUER_CATALOG_VERSION,
         true
     );
 
-    wp_localize_script('fides-issuer-catalog', 'fidesIssuerCatalog', [
-        'pluginUrl'       => $plugin_url,
-        'githubDataUrl'   => get_option(
+    $issuer_data_url = $use_local
+        ? $plugin_url . 'data/aggregated.json'
+        : get_option(
             'fides_issuer_catalog_data_url',
             'https://raw.githubusercontent.com/FIDEScommunity/fides-issuer-catalog/main/data/aggregated.json'
-        ),
+        );
+    $rp_data_url = $use_local
+        ? $plugin_url . 'data/rp-aggregated.json'
+        : get_option(
+            'fides_issuer_catalog_rp_catalog_data_url',
+            'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/wordpress-plugin/fides-rp-catalog/data/aggregated.json'
+        );
+
+    wp_localize_script('fides-issuer-catalog', 'fidesIssuerCatalog', [
+        'pluginUrl'       => $plugin_url,
+        'githubDataUrl'   => $issuer_data_url,
         'credentialCatalogUrl' => get_option(
             'fides_issuer_catalog_credential_catalog_url',
             'https://fides.community/community-tools/credential-catalog/'
         ),
-        'rpCatalogDataUrl' => get_option(
-            'fides_issuer_catalog_rp_catalog_data_url',
-            'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/wordpress-plugin/fides-rp-catalog/data/aggregated.json'
-        ),
+        'rpCatalogDataUrl' => $rp_data_url,
         'rpCatalogFallbackUrl' => $plugin_url . 'data/rp-aggregated.json',
+        'rpCatalogUrl' => $use_local
+            ? 'http://' . $_SERVER['HTTP_HOST'] . '/community-tools/relying-party-catalog/'
+            : get_option(
+                'fides_issuer_catalog_rp_catalog_url',
+                'https://fides.community/community-tools/relying-party-catalog/'
+            ),
+        'walletCatalogUrl' => $use_local
+            ? 'http://' . $_SERVER['HTTP_HOST'] . '/community-tools/personal-wallets/'
+            : get_option(
+                'fides_issuer_catalog_wallet_catalog_url',
+                'https://fides.community/community-tools/personal-wallets/'
+            ),
         'vocabularyUrl'         => 'https://raw.githubusercontent.com/FIDEScommunity/fides-interop-profiles/main/data/vocabulary.json',
         'vocabularyFallbackUrl' => $plugin_url . 'assets/vocabulary.json',
     ]);

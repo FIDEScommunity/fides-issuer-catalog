@@ -54,6 +54,8 @@
     credentialCatalogUrl: 'https://fides.community/community-tools/credential-catalog/',
     rpCatalogDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/wordpress-plugin/fides-rp-catalog/data/aggregated.json',
     rpCatalogFallbackUrl: '',
+    rpCatalogUrl: 'https://fides.community/community-tools/relying-party-catalog/',
+    walletCatalogUrl: 'https://fides.community/community-tools/personal-wallets/',
   };
 
   let issuers = [];
@@ -82,7 +84,11 @@
     signingAlgorithm: [],
     addedLast30Days: false,
     inCredentialCatalog: false,
+    ids: []
   };
+
+  // IDs from ?issuers= URL param; preserved so the filter can be toggled back on
+  let originalIssuerIds = [];
 
   let settings;
 
@@ -135,6 +141,7 @@
       filters.vcFormat.length +
       filters.credential.length +
       filters.signingAlgorithm.length +
+      filters.ids.length +
       (filters.addedLast30Days ? 1 : 0) +
       (filters.inCredentialCatalog ? 1 : 0)
     );
@@ -176,6 +183,9 @@
 
   function getFilteredIssuers() {
     return issuers.filter((issuer) => {
+      // ID pre-filter (from ?issuers= URL param)
+      if (filters.ids.length > 0 && !filters.ids.includes(issuer.id)) return false;
+
       if (filters.addedLast30Days && !isWithinLastDays(issuer.firstSeenAt, 30)) return false;
       if (filters.inCredentialCatalog && !(issuer.credentialConfigurations || []).some((cc) => cc.credentialCatalogRef)) return false;
       if (filters.environment.length && !filters.environment.includes(issuer.environment)) return false;
@@ -225,7 +235,7 @@
     const credLabel = catalogCount === 1 ? 'Credential' : 'Credentials';
 
     return `
-      <div class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}" tabindex="0" role="button" aria-label="${escapeHtml(issuer.displayName)}">
+      <div class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}" tabindex="0" role="button" aria-label="${escapeHtml(issuer.organization?.name || '')} – ${escapeHtml(issuer.displayName)}">
         <header class="fides-credential-header">
           <div class="fides-credential-subject-icon" aria-hidden="true">
             ${logo
@@ -234,8 +244,8 @@
             }
           </div>
           <div class="fides-credential-header-text">
-            <h3 class="fides-credential-name" title="${escapeHtml(issuer.displayName)}">${escapeHtml(issuer.displayName)}</h3>
-            <p class="fides-credential-provider">${escapeHtml(issuer.organization?.name || '')}</p>
+            <h3 class="fides-credential-name" title="${escapeHtml(issuer.organization?.name || '')}">${escapeHtml(issuer.organization?.name || issuer.id)}</h3>
+            <p class="fides-credential-provider">${escapeHtml(issuer.displayName || '')}</p>
           </div>
         </header>
         <div class="fides-wallet-body">
@@ -322,8 +332,8 @@
                 : `<div class="fides-modal-logo-placeholder">${icons.server}</div>`
               }
               <div class="fides-modal-title-wrap">
-                <h2 class="fides-modal-title" id="fides-modal-title">${escapeHtml(issuer.displayName)}</h2>
-                <p class="fides-modal-provider">${icons.building} ${escapeHtml(issuer.organization?.name || '')}</p>
+                <h2 class="fides-modal-title" id="fides-modal-title">${escapeHtml(issuer.organization?.name || issuer.id)}</h2>
+                <p class="fides-modal-provider">${escapeHtml(issuer.displayName || '')}</p>
               </div>
             </div>
             <div class="fides-modal-header-actions">
@@ -370,10 +380,11 @@
                       </div>
                     </div>
                     <div class="fides-eco-arrow">${icons.chevronDown}</div>
-                    <div class="fides-eco-col fides-eco-col-side">
+                    <div class="fides-eco-col fides-eco-col-side fides-eco-col-side--green"
+                      ${credentialsWithRef.length > 0 && config.credentialCatalogUrl ? `data-href="${config.credentialCatalogUrl.replace(/\/$/, '')}?credentials=${credentialsWithRef.map(cc => encodeURIComponent(cc.credentialCatalogRef.id)).join(',')}"` : ''}>
                       <div class="fides-eco-col-header">
                         <span class="fides-eco-count">${credentialsWithRef.length}</span>
-                        <span class="fides-eco-label">${credentialsWithRef.length === 1 ? 'Credential' : 'Credentials'}</span>
+                        <span class="fides-eco-label">Credential types</span>
                       </div>
                       <div class="fides-eco-entities">
                         ${credentialsWithRef.length === 0
@@ -388,7 +399,7 @@
                                   : null;
                                 const inner = `${escapeHtml(ref.displayName || ref.id)}${href ? ' ' + icons.externalLinkSmall : ''}`;
                                 return href
-                                  ? `<a href="${escapeHtml(href)}" target="_blank" rel="noopener" class="fides-eco-tag fides-eco-tag-green" onclick="event.stopPropagation();">${inner}</a>`
+                                  ? `<a href="${escapeHtml(href)}" class="fides-eco-tag fides-eco-tag-green" onclick="event.stopPropagation();">${escapeHtml(ref.displayName || ref.id)}</a>`
                                   : `<span class="fides-eco-tag fides-eco-tag-green">${inner}</span>`;
                               };
                               if (hidden > 0) {
@@ -401,7 +412,7 @@
                       </div>
                     </div>
                     <div class="fides-eco-arrow">${icons.chevronDown}</div>
-                    <div class="fides-eco-col fides-eco-col-side">
+                    <div class="fides-eco-col fides-eco-col-side fides-eco-col-side--blue">
                       <div class="fides-eco-col-header">
                         <span class="fides-eco-count fides-eco-rp-count">—</span>
                         <span class="fides-eco-label">Relying Parties</span>
@@ -425,7 +436,7 @@
             ${configs.length > 0 ? `
               <div class="fides-accordion is-open" id="fides-accordion-configs">
                 <button class="fides-accordion-header" type="button" aria-expanded="true">
-                  <span class="fides-accordion-title">${icons.shield} Credential configurations${configs.length > 0 ? ` <span class="fides-accordion-count">${configs.length}</span>` : ''}</span>
+                  <span class="fides-accordion-title">${icons.shield} Credential types issued${configs.length > 0 ? ` <span class="fides-accordion-count">${configs.length}</span>` : ''}</span>
                   <span class="fides-accordion-chevron">${icons.chevronDown}</span>
                 </button>
                 <div class="fides-accordion-body">
@@ -443,7 +454,7 @@
                           <tr>
                             <td>${escapeHtml(cc.displayName || cc.configurationId)}</td>
                             <td><span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[cc.vcFormat] || cc.vcFormat)}</span></td>
-                            <td><a href="${escapeHtml((config.credentialCatalogUrl || '').replace(/\/$/, '') + '?credential=' + encodeURIComponent(cc.credentialCatalogRef.id))}" class="fides-modal-link-inline" target="_blank" rel="noopener" onclick="event.stopPropagation();">${escapeHtml(cc.credentialCatalogRef.displayName || cc.credentialCatalogRef.id)} ${icons.externalLinkSmall}</a></td>
+                            <td><a href="${escapeHtml((config.credentialCatalogUrl || '').replace(/\/$/, '') + '?credential=' + encodeURIComponent(cc.credentialCatalogRef.id))}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${escapeHtml(cc.credentialCatalogRef.displayName || cc.credentialCatalogRef.id)}</a></td>
                           </tr>
                         `).join('')}
                         ${catalogConfigs.length === 0 ? `<tr><td colspan="3" style="color:var(--fides-text-muted);font-style:italic;">No credentials in catalog.</td></tr>` : ''}
@@ -659,6 +670,11 @@
               <input type="checkbox" id="fides-in-credential-catalog" ${filters.inCredentialCatalog ? 'checked' : ''}>
               <span>In credential catalog<span class="fides-filter-option-count">(${filterFacets?.inCredentialCatalog || 0})</span></span>
             </label>
+            ${originalIssuerIds.length > 0 ? `
+            <label class="fides-filter-checkbox">
+              <input type="checkbox" data-filter="linkedIssuers" ${filters.ids.length > 0 ? 'checked' : ''}>
+              <span>Linked issuers (${originalIssuerIds.length})</span>
+            </label>` : ''}
           </div>
           ${renderCheckboxGroup('Environment', 'environment', environmentOptions, filterFacets)}
           ${renderCheckboxGroup('Organization', 'organization', organizationOptions, filterFacets)}
@@ -794,6 +810,19 @@
       const countEl = document.querySelector('.fides-eco-rp-count');
       if (countEl && count !== null) countEl.textContent = count;
 
+      // Make the RP column box clickable to the RP catalog
+      if (config.rpCatalogUrl && matchingRps.length > 0) {
+        const rpColEl = document.querySelector('.fides-eco-col-side--blue');
+        if (rpColEl) {
+          const rpIds = matchingRps.map(rp => encodeURIComponent(rp.id)).join(',');
+          rpColEl.dataset.href = config.rpCatalogUrl.replace(/\/$/, '') + '/?rps=' + rpIds;
+          rpColEl.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            window.location.href = rpColEl.dataset.href;
+          });
+        }
+      }
+
       const entitiesEl = document.querySelector('.fides-eco-rp-entities');
       if (entitiesEl && matchingRps.length > 0) {
         const shown = matchingRps.slice(0, 2);
@@ -801,7 +830,7 @@
         const renderRpTag = (rp) => {
           const label = escapeHtml(rp.name || rp.id);
           return rp.website
-            ? `<a href="${escapeHtml(rp.website)}" target="_blank" rel="noopener" class="fides-eco-tag fides-eco-tag-blue" onclick="event.stopPropagation();">${label} ${icons.externalLinkSmall}</a>`
+            ? `<a href="${escapeHtml(rp.website)}" class="fides-eco-tag fides-eco-tag-blue" onclick="event.stopPropagation();">${label}</a>`
             : `<span class="fides-eco-tag fides-eco-tag-blue">${label}</span>`;
         };
         if (hidden > 0) {
@@ -810,6 +839,27 @@
         } else {
           entitiesEl.innerHTML = shown.map(renderRpTag).join('');
         }
+      }
+
+      // Collect unique personal wallets from matching RPs
+      const walletById = new Map();
+      for (const rp of matchingRps) {
+        for (const w of (rp.supportedWallets || [])) {
+          if (w && w.walletCatalogId && !walletById.has(w.walletCatalogId)) {
+            walletById.set(w.walletCatalogId, { id: w.walletCatalogId, name: w.name || w.walletCatalogId });
+          }
+        }
+      }
+      const walletItems = Array.from(walletById.values());
+      const walletBoxEl = document.querySelector('.fides-eco-wallet-row .fides-eco-wallet-box');
+      if (walletBoxEl && walletItems.length > 0 && config.walletCatalogUrl) {
+        const walletUrl = config.walletCatalogUrl.replace(/\/$/, '') + '/?wallets=' + walletItems.map(w => encodeURIComponent(w.id)).join(',');
+        const link = document.createElement('a');
+        link.href = walletUrl;
+        link.className = 'fides-eco-wallet-box fides-eco-wallet-box--link';
+        link.addEventListener('click', (e) => e.stopPropagation());
+        link.innerHTML = `<span class="fides-eco-wallet-count">${walletItems.length}</span><span class="fides-eco-wallet-label">${walletItems.length === 1 ? 'Personal Wallet' : 'Personal Wallets'}</span>`;
+        walletBoxEl.replaceWith(link);
       }
     });
   }
@@ -858,6 +908,14 @@
         if (!accordion) return;
         const isOpen = accordion.classList.toggle('is-open');
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+
+    // Click handler for ecosystem column boxes with data-href (credential column)
+    document.querySelectorAll('.fides-modal-overlay .fides-eco-col-side[data-href]').forEach((col) => {
+      col.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        window.location.href = col.dataset.href;
       });
     });
 
@@ -917,7 +975,11 @@
 
     const clearBtn = root.querySelector('#fides-clear');
     if (clearBtn) clearBtn.addEventListener('click', () => {
-      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], addedLast30Days: false, inCredentialCatalog: false };
+      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], addedLast30Days: false, inCredentialCatalog: false, ids: [] };
+      originalIssuerIds = [];
+      const url = new URL(window.location.href);
+      url.searchParams.delete('issuers');
+      history.replaceState(null, '', url.toString());
       render();
     });
 
@@ -937,6 +999,14 @@
     if (addedInput) addedInput.addEventListener('change', (e) => { filters.addedLast30Days = e.target.checked; render(); });
     const catalogInput = root.querySelector('#fides-in-credential-catalog');
     if (catalogInput) catalogInput.addEventListener('change', (e) => { filters.inCredentialCatalog = e.target.checked; render(); });
+
+    const linkedIssuersInput = root.querySelector('[data-filter="linkedIssuers"]');
+    if (linkedIssuersInput) {
+      linkedIssuersInput.addEventListener('change', (e) => {
+        filters.ids = e.target.checked ? [...originalIssuerIds] : [];
+        render();
+      });
+    }
 
     root.querySelectorAll('.fides-kpi-card').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -1171,6 +1241,16 @@
     checkDeepLink();
   }
 
+  function readQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    const issuersParam = params.get('issuers');
+    if (issuersParam) {
+      const ids = issuersParam.split(',').map((id) => decodeURIComponent(id.trim())).filter(Boolean);
+      originalIssuerIds = ids;
+      filters.ids = [...ids];
+    }
+  }
+
   function init() {
     root = document.getElementById('fides-issuer-catalog-root');
     if (!root) return;
@@ -1181,6 +1261,7 @@
       theme: root.dataset.theme || 'fides',
     };
     root.setAttribute('data-theme', settings.theme);
+    readQueryParams();
     loadIssuers();
   }
 

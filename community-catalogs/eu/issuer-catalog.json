@@ -1,0 +1,16 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "European Commission",
+    "website": "https://github.com/eu-digital-identity-wallet"
+  },
+  "issuers": [
+    {
+      "id": "issuer:eu:digital-credentials-issuer:test",
+      "displayName": "Digital Credentials Issuer",
+      "environment": "test",
+      "oid4vciMetadataUrl": "https://issuer.eudiw.dev/.well-known/openid-credential-issuer",
+      "projectContext": "EUDI Wallet Reference Implementation"
+    }
+  ]
+}

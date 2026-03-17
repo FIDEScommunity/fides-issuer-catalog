@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { hostname } from 'os';
 import { execFileSync } from 'child_process';
 import type {
   SourceIssuerCatalog,
@@ -21,9 +22,13 @@ const HISTORY_STATE_FILE = path.join(DATA_DIR, 'issuer-history-state.json');
 const AGGREGATED_FILE = path.join(DATA_DIR, 'aggregated.json');
 const WP_DATA_DIR = path.join(ROOT, 'wordpress-plugin', 'fides-issuer-catalog', 'data');
 
-// URL to the credential catalog aggregated.json for cross-catalog matching
+// Primary: credential catalog from GitHub (used in deploy/CI). Fallback: local file when fetch fails.
 const CREDENTIAL_CATALOG_URL =
   'https://raw.githubusercontent.com/FIDEScommunity/fides-credential-catalog/main/data/aggregated.json';
+const CREDENTIAL_CATALOG_LOCAL_PATHS = [
+  process.env.CREDENTIAL_CATALOG_AGGREGATED_PATH,
+  path.join(ROOT, '..', 'credential-catalog', 'data', 'aggregated.json'),
+].filter(Boolean) as string[];
 
 // Fetch with timeout
 async function fetchJson<T>(url: string, timeoutMs = 10000): Promise<T> {
@@ -75,12 +80,50 @@ interface CredentialEntry {
   nativeIdentifierType?: string;
 }
 
+/** Same logic as WordPress plugin: .local or localhost = local dev → use local credential catalog when available */
+function isLocalDevHost(): boolean {
+  const host = hostname();
+  return host !== '' && (host.endsWith('.local') || host === 'localhost');
+}
+
 async function loadCredentialCatalog(): Promise<CredentialEntry[]> {
+  const useLocal = isLocalDevHost();
+
+  if (useLocal) {
+    for (const localPath of CREDENTIAL_CATALOG_LOCAL_PATHS) {
+      if (localPath && fs.existsSync(localPath)) {
+        try {
+          const raw = fs.readFileSync(localPath, 'utf-8');
+          const data = JSON.parse(raw) as { credentials?: CredentialEntry[] };
+          const list = data.credentials || [];
+          console.log(`  (using local credential catalog: ${localPath}, ${list.length} credentials)`);
+          return list;
+        } catch (parseErr) {
+          console.warn('Could not parse local credential catalog:', (parseErr as Error).message);
+        }
+      }
+    }
+  }
+
   try {
     const data = await fetchJson<{ credentials?: CredentialEntry[] }>(CREDENTIAL_CATALOG_URL);
+    console.log(`  (using credential catalog from GitHub, ${(data.credentials || []).length} credentials)`);
     return data.credentials || [];
   } catch (err) {
-    console.warn('Could not load credential catalog for cross-catalog matching:', (err as Error).message);
+    console.warn('Could not fetch credential catalog from GitHub:', (err as Error).message);
+    for (const localPath of CREDENTIAL_CATALOG_LOCAL_PATHS) {
+      if (localPath && fs.existsSync(localPath)) {
+        try {
+          const raw = fs.readFileSync(localPath, 'utf-8');
+          const data = JSON.parse(raw) as { credentials?: CredentialEntry[] };
+          const list = data.credentials || [];
+          console.log(`  (fallback: using local ${localPath})`);
+          return list;
+        } catch (parseErr) {
+          console.warn('Could not parse local credential catalog:', (parseErr as Error).message);
+        }
+      }
+    }
     return [];
   }
 }

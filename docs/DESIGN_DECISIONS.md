@@ -55,6 +55,19 @@ Examples:
 
 ---
 
+## D12 — Credential catalog aggregated.json: GitHub primary, local fallback on .local
+
+**Decision:** The issuer catalog crawler always fetches `data/aggregated.json` from the credential catalog's GitHub raw URL. It falls back to the sibling local path (`../credential-catalog/data/aggregated.json`) only when GitHub is unreachable. Exception: when the machine hostname ends in `.local` or equals `localhost`, the crawler uses the local file first — this signals a local development environment (e.g. Local by Flywheel / MAMP) where unpublished credential catalog changes (such as new mDoc entries) must be reflected immediately.
+
+This mirrors the logic in the WordPress plugins: the PHP plugins serve local bundled data when the site URL host ends in `.local` or is `localhost`, and serve the GitHub URL otherwise.
+
+**Rationale:**
+- On CI and production the credential catalog is always read from GitHub, so no local state is needed and no code changes are required before deployment.
+- On a local WordPress dev environment (`.local` hostname) the developer may have unpublished credential catalog changes. Using the local file ensures the issuer catalog crawler picks up those changes without needing a GitHub push first.
+- The check is implicit (hostname-based) so no environment variables or script variants are needed — `npm run crawl` works the same everywhere.
+
+---
+
 ## D6 — Wallet catalog UX copied literally
 
 **Decision:** The WordPress plugin UI (search, filters, KPI cards, mobile drawer, modal structure, toast notifications, share link) is a literal copy of the wallet catalog's UX patterns.
@@ -100,6 +113,26 @@ Examples:
 **Decision:** `data/issuer-history-state.json` stores the first time each issuer was seen. The crawler never overwrites this value.
 
 **Rationale:** Consistent with wallet and credential catalog patterns. Enables the "Added last 30 days" quick filter to work reliably across crawler runs.
+
+---
+
+## D13 — English only: code, comments, and UI strings
+
+**Decision:** All code comments, UI strings (labels, placeholders, buttons, messages, error text), and in-repository documentation (README, design decisions, schema descriptions) are written in English. Dutch or any other language is not used in code or UI.
+
+**Rationale:** The FIDES catalog platform is an open-source, internationally oriented project. Using English as the single working language ensures:
+- Contributors from outside the Netherlands can read and review code without a language barrier.
+- UI is immediately usable for non-Dutch-speaking users without translation.
+- Tools such as linters, AI assistants, and code review bots work better with English source material.
+
+**Scope:**
+- Source code comments → English.
+- UI strings (plugin labels, error messages, filter names, button text) → English.
+- Commit messages, pull request descriptions → English.
+- Schema `description` fields → English.
+- `docs/` files (DESIGN_DECISIONS.md, LESSONS_LEARNED.md, README) → English.
+
+**Enforcement:** A Cursor workspace rule (`.cursor/rules/english-only.mdc`) is present in each repository to remind AI-assisted development of this convention.
 
 ---
 
