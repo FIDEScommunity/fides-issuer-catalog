@@ -109,6 +109,10 @@
           "type": "string",
           "description": "Optional display name override (crawler uses .well-known display[] by default)"
         },
+        "description": {
+          "type": "string",
+          "description": "Optional human-readable description of this issuer"
+        },
         "environment": {
           "type": "string",
           "enum": ["production", "pilot", "test", "sandbox"],

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-17T16:18:55.008Z",
+  "lastUpdated": "2026-03-17T18:28:47.812Z",
   "issuers": [
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -106,7 +106,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-17T16:18:55.008Z"
+      "fetchedAt": "2026-03-17T18:28:47.812Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -218,7 +218,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-17T16:18:55.008Z"
+      "fetchedAt": "2026-03-17T18:28:47.812Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -784,7 +784,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-17T10:28:16+01:00",
-      "fetchedAt": "2026-03-17T16:18:55.008Z"
+      "fetchedAt": "2026-03-17T18:28:47.812Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -811,7 +811,11 @@
           ],
           "cryptographicBindingMethods": [
             "jwk"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:ewc:pda1-sd-jwt:sd-jwt-vc",
+            "displayName": "Portable Document A1 (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "VerifiablePortableDocumentA2SDJWT",
@@ -826,7 +830,11 @@
           ],
           "cryptographicBindingMethods": [
             "jwk"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:ewc:pda2-sd-jwt:sd-jwt-vc",
+            "displayName": "Portable Document A2 (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "VerifiableIdCardJwtVc",
@@ -841,7 +849,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:id-card-jwt-vc:jwt-vc",
+            "displayName": "Verifiable ID Card (JWT VC)"
+          }
         },
         {
           "configurationId": "VerifiablePIDSDJWT",
@@ -857,7 +869,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:pid-sd-jwt:sd-jwt-vc",
+            "displayName": "Person Identification Data (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "VerifiableePassportCredentialSDJWT",
@@ -873,7 +889,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:epassport-sd-jwt:sd-jwt-vc",
+            "displayName": "ePassport (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "VerifiableStudentIDSDJWT",
@@ -889,7 +909,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://studyingreece.edu.gr/wp-content/uploads/2023/03/25.png"
+          "logoUri": "https://studyingreece.edu.gr/wp-content/uploads/2023/03/25.png",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:student-id-sd-jwt:sd-jwt-vc",
+            "displayName": "Student ID (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "VerifiableFerryBoardingPassCredentialSDJWT",
@@ -905,7 +929,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "data:image/png;base64,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"
+          "logoUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPsAAACrCAMAAACXIhpjAAAAh1BMVEX////tHCT0cXbxVFrwRkzzYmj1f4P81NbvOD/6xsj+8fH95OXuJi32jZHtICj+9/f3m5/uJCzuLzb+9vb5tbj96er8293vMTnzaW/5r7L+7/D7zM7wPUT3oKP1hYnwQUjxS1L3mJv0eX34qq3yWV/6u772jJD1gof0dHn5ubv6wsTxSVDzY2mKM97kAAAFPklEQVR4nO2Ya3uiPBCGgydQEBTPoqLW2tr2//++JclMSGJ3t1j23X2v67m/CGMyzGQOCQgBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4O8wDFqj1BoX7WlsxLGx72/tPXzf+mo2YtjY93Frz05GWuOgNY2NuDR2XfRoatn5FpcoOGuFo4Q0dr+nsQnr7jQIG7tuErR5xngsY/17IIWr2Xc1NmF2az5nzWFvy4gFh33flsY/xSL9maXLgcb8MRwPLMZiPnDglONq32WOunjgzt5bd4eJmryxRadCim76bi6uzvS4Fd+vZGlSJ2hBRkdUtSTmBCEO8dQVLMhHXsxN7bY0de4M7oiuO1v2ir4rWhtRNJql9j95ZeH+3Xl+2nw5shX73iPKhJzl+NHts2tYEHuWHkljhwWssJcn2zvH5rGnLtiKbeKJlpyVc/Hk/NGpY8YMGrsuNr4J6kmSCd+S79r281DzNBgNwzDUjl6qq4Ja5TK9VziWcnWVFKGk2Gd6ZXvVjW6NaUabbVSJaNuNqW3uhNipi72aHW5CsdBBL7uaKFk0993LPMlKpXyVotHB8p3i5NZwlithYYnWnyiU5dRxo0MxlnWhHe2zMtle9urqyLvlngomqh9ztsMil7a56+G9pSpKopgG+XJiPYA2rvW4Yk9nGGPjrxVKb3QXqIuSYlwt5Uy7/EbK8mqhsogW5sTBOBpF5Gp6t+iNeSXz8i6TpzJ7lnkwLYTlOwWFKJ1uOLcUXmhExPqOU9XvX5S0oweNrBhnOoI9ViZX/koLQ83oRGeQXD81yzi7EjcLm7HlVnmqZXItF5UdN2H77vaaQJ8jdCbuLIUFD6jPWDOZjpS8eaToU4yDVRTRmm6489SiCT20OinrXjPVs/Otya5E3h/ttf86J9Ix3Tri2bvOL8t3r6k/qXF+JtbtY+09yH1nGFJS17wL8e6JqnQp1cWB+iQzuLPmgWI3O3jw6oor1RfZzK2GsvvkaU4mKt5+Yg0lb6m2vN2RYjzt6WxYdQ9bmpr2chK9LMRNj1pQn4xoC47r7CI2ojlmy3bfAs6uZuV7915Eqz+2ZnLs/LC7PXFGr08D0qAS50ITO7VSnVZnr0+O6qbyuflfg3V0HenJ06z+Lfqqc5XWQtOObZULH91SPwl11pi6pBjHtKKygEL2Qncx2X8ouku3T8q18wx8f8B1U0ZOzlT5WNIBxt9E2USd5t6OXUErY5lpr0ndEy88qvZdu3zhZJoIvlpzn6zX0/8s9PaA73xoXdlbxTANVrwLm153Wo40H0pyUBZ4OzZndnDfe3QpnJSGxfPMxJhyf25eAoaW70sepfvkRc3eFqHwW11XNGfGx+erJQyTIDHlw757BxZ9fjxQWAxL3jD9t2H3o9hHHWPy/cYtRiavSQU6LvPZh8hHRu2WOvUjBxwOU2odhcPcTiF98kkyd4eaqrqlt7hnM3jEGe9/O8pKe3a6pDqWM3Uf2PAx7cn4PuFq33gvLdaGSrnSf8B1U51W6OJ1v782FbCt7iTFtV/TGessH+vbusWezBA7jypufZtTdtYXsjBe1dVevNCDKtFAj6Lffrz4sGd3rPKkF8ZHmnx736r+DpQrfl/9Eh/kelWdcTH6/fh/jG2XSuiBuSbsZ3XizMte9w9z7LVISZ8JHvhkYTWgw6cv8f8Teo98CjZflqqzfDb9hfZ/md31P/0KDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYfgAAnkj8AfqfaQAAAABJRU5ErkJggg==",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:ferry-boarding-pass-sd-jwt:sd-jwt-vc",
+            "displayName": "Ferry Boarding Pass (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "VerifiableReceipt",
@@ -921,7 +949,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "data:image/png;base64,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"
+          "logoUri": "data:image/png;base64,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",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:vreceipt-sd-jwt:sd-jwt-vc",
+            "displayName": "vReceipt (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "urn:eu.europa.ec.eudi:pid:1",
@@ -937,7 +969,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:pid-eudi-sd-jwt:sd-jwt-vc",
+            "displayName": "PID EUDI (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "urn:eu.europa.ec.eudi:pid:1:mso_mdoc",
@@ -953,7 +989,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:pid-eudi-sd-jwt:sd-jwt-vc",
+            "displayName": "PID EUDI (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "PaymentWalletAttestation",
@@ -969,7 +1009,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:payment-wallet-attestation-sd-jwt:sd-jwt-vc",
+            "displayName": "Payment Wallet Attestation (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "PhotoID",
@@ -985,7 +1029,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:photo-id-sd-jwt:sd-jwt-vc",
+            "displayName": "Photo ID (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "PCD",
@@ -1001,7 +1049,11 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:personal-contact-details-sd-jwt:sd-jwt-vc",
+            "displayName": "Personal Contact Details (SD-JWT VC)"
+          }
         },
         {
           "configurationId": "LoyaltyCard",
@@ -1017,13 +1069,17 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "data:image/png;base64,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"
+          "logoUri": "data:image/png;base64,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",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:loyalty-card-sd-jwt:sd-jwt-vc",
+            "displayName": "Loyalty Card (SD-JWT VC)"
+          }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-17T17:12:56+01:00",
-      "fetchedAt": "2026-03-17T16:18:55.008Z"
+      "fetchedAt": "2026-03-17T18:28:47.812Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1420,7 +1476,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-17T16:18:55.008Z"
+      "fetchedAt": "2026-03-17T18:28:47.812Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1504,7 +1560,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-17T16:18:55.008Z"
+      "fetchedAt": "2026-03-17T18:28:47.812Z"
     }
   ],
   "stats": {
