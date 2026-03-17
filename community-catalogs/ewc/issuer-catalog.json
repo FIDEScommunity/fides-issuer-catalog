@@ -1,0 +1,16 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "University of the Aegean / EWC",
+    "website": "https://dss.aegean.gr"
+  },
+  "issuers": [
+    {
+      "id": "issuer:ewc:ewc-issuer:test",
+      "displayName": "EWC Issuer",
+      "environment": "test",
+      "oid4vciMetadataUrl": "https://dss.aegean.gr/rfc-issuer/.well-known/openid-credential-issuer",
+      "projectContext": "EWC (European Wallet Consortium) Reference Implementation"
+    }
+  ]
+}
