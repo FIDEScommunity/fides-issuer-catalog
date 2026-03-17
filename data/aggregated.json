@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-16T18:23:23.545Z",
+  "lastUpdated": "2026-03-17T16:18:55.008Z",
   "issuers": [
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -28,9 +28,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -45,9 +45,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -62,9 +62,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -80,9 +80,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -97,16 +97,16 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-16T18:23:23.545Z"
+      "fetchedAt": "2026-03-17T16:18:55.008Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -134,9 +134,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -152,9 +152,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:vat:sd-jwt-vc",
@@ -174,9 +174,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -192,9 +192,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -209,16 +209,16 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-16T18:23:23.545Z"
+      "fetchedAt": "2026-03-17T16:18:55.008Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -783,8 +783,247 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
-      "updatedAt": "2026-03-16T18:23:23.545Z",
-      "fetchedAt": "2026-03-16T18:23:23.545Z"
+      "updatedAt": "2026-03-17T10:28:16+01:00",
+      "fetchedAt": "2026-03-17T16:18:55.008Z"
+    },
+    {
+      "id": "issuer:ewc:ewc-issuer:test",
+      "organization": {
+        "name": "University of the Aegean / EWC",
+        "website": "https://dss.aegean.gr"
+      },
+      "displayName": "EWC Issuer",
+      "environment": "test",
+      "credentialIssuerUrl": "https://dss.aegean.gr/rfc-issuer",
+      "oid4vciMetadataUrl": "https://dss.aegean.gr/rfc-issuer/.well-known/openid-credential-issuer",
+      "projectContext": "EWC (European Wallet Consortium) Reference Implementation",
+      "credentialConfigurations": [
+        {
+          "configurationId": "VerifiablePortableDocumentA1SDJWT",
+          "displayName": "SD-JWT Portable Document A1",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "VerifiablePortableDocumentA1SDJWT",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "VerifiablePortableDocumentA2SDJWT",
+          "displayName": "SD-JWT Portable Document A2",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "VerifiablePortableDocumentA2SDJWT",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "VerifiableIdCardJwtVc",
+          "displayName": "Verifiable ID Card (jwt_vc)",
+          "vcFormat": "vcdm_1_1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+        },
+        {
+          "configurationId": "VerifiablePIDSDJWT",
+          "displayName": "PID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "VerifiablePIDSDJWT",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+        },
+        {
+          "configurationId": "VerifiableePassportCredentialSDJWT",
+          "displayName": "ePassportCredential",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "VerifiableePassportCredentialSDJWT",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+        },
+        {
+          "configurationId": "VerifiableStudentIDSDJWT",
+          "displayName": "Student ID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "VerifiableStudentIDSDJWT",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://studyingreece.edu.gr/wp-content/uploads/2023/03/25.png"
+        },
+        {
+          "configurationId": "VerifiableFerryBoardingPassCredentialSDJWT",
+          "displayName": "Fast Ferries Boarding Pass",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "VerifiableFerryBoardingPassCredentialSDJWT",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "data:image/png;base64,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"
+        },
+        {
+          "configurationId": "VerifiableReceipt",
+          "displayName": "vReceipt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "VerifiablevReceiptSDJWT",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "data:image/png;base64,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"
+        },
+        {
+          "configurationId": "urn:eu.europa.ec.eudi:pid:1",
+          "displayName": "Person Identification Data",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eu.europa.ec.eudi:pid:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+        },
+        {
+          "configurationId": "urn:eu.europa.ec.eudi:pid:1:mso_mdoc",
+          "displayName": "Person Identification Data (mDoc)",
+          "vcFormat": "mdoc",
+          "docType": "urn:eu.europa.ec.eudi:pid:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+        },
+        {
+          "configurationId": "PaymentWalletAttestation",
+          "displayName": "PSP Credentials",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "PaymentWalletAttestation",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+        },
+        {
+          "configurationId": "PhotoID",
+          "displayName": "Photo ID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "eu.europa.ec.eudi.photoid.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+        },
+        {
+          "configurationId": "PCD",
+          "displayName": "Personal Contact Details",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "eu.europa.ec.eudi.pcd.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "https://avatars.githubusercontent.com/u/140810559?s=400&u=ee2a7f495f540fd5f23ca59d38b7411ea56c0d6d&v=4"
+        },
+        {
+          "configurationId": "LoyaltyCard",
+          "displayName": "Fast Friends Card",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "LoyaltyCard",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "data:image/png;base64,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"
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-17T16:18:55.008Z",
+      "updatedAt": "2026-03-17T17:12:56+01:00",
+      "fetchedAt": "2026-03-17T16:18:55.008Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -815,9 +1054,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -833,9 +1072,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -851,9 +1090,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -869,9 +1108,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -887,9 +1126,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:lpid:sd-jwt-vc",
@@ -909,9 +1148,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -927,9 +1166,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -945,9 +1184,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:pid:sd-jwt-vc",
@@ -967,9 +1206,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -985,9 +1224,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -1003,9 +1242,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:vat:sd-jwt-vc",
@@ -1025,9 +1264,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -1043,9 +1282,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -1061,9 +1300,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -1078,9 +1317,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -1096,9 +1335,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iban:sd-jwt-vc",
@@ -1118,9 +1357,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -1136,9 +1375,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -1154,9 +1393,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         },
         {
@@ -1172,16 +1411,16 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-16T18:23:23.545Z"
+      "fetchedAt": "2026-03-17T16:18:55.008Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1212,9 +1451,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:brp:sd-jwt-vc",
@@ -1234,9 +1473,9 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:contact-details:sd-jwt-vc",
@@ -1256,22 +1495,22 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
+            "did:jwk",
             "did:ebsi",
-            "did:web",
-            "did:jwk"
+            "did:web"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-16T18:23:23.545Z"
+      "fetchedAt": "2026-03-17T16:18:55.008Z"
     }
   ],
   "stats": {
-    "totalIssuers": 5,
+    "totalIssuers": 6,
     "productionIssuers": 0,
-    "totalOrganizations": 3,
-    "totalCredentialConfigurations": 59
+    "totalOrganizations": 4,
+    "totalCredentialConfigurations": 73
   }
 }

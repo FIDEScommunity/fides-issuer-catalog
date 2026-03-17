@@ -13,5 +13,8 @@
   },
   "issuer:eu:digital-credentials-issuer:test": {
     "firstSeenAt": "2026-03-16T14:36:01.417Z"
+  },
+  "issuer:ewc:ewc-issuer:test": {
+    "firstSeenAt": "2026-03-17T16:18:55.008Z"
   }
 }
