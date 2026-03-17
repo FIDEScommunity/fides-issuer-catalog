@@ -275,8 +275,8 @@
     if (rpCatalogFetchPromise) return rpCatalogFetchPromise;
     rpCatalogFetchPromise = (async () => {
       const sources = [
-        config.rpCatalogFallbackUrl,
         config.rpCatalogDataUrl,
+        config.rpCatalogFallbackUrl,
       ].filter(Boolean);
       for (const url of sources) {
         try {
