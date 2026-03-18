@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-18T07:01:15.874Z",
+  "lastUpdated": "2026-03-18T07:07:28.259Z",
   "issuers": [
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -106,7 +106,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-18T07:01:15.874Z"
+      "fetchedAt": "2026-03-18T07:07:28.259Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -218,7 +218,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-18T07:01:15.874Z"
+      "fetchedAt": "2026-03-18T07:07:28.259Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -784,7 +784,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-17T10:28:16+01:00",
-      "fetchedAt": "2026-03-18T07:01:15.874Z"
+      "fetchedAt": "2026-03-18T07:07:28.259Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1079,7 +1079,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-17T17:12:56+01:00",
-      "fetchedAt": "2026-03-18T07:01:15.874Z"
+      "fetchedAt": "2026-03-18T07:07:28.259Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1500,7 +1500,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-18T07:01:15.874Z"
+      "fetchedAt": "2026-03-18T07:07:28.259Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1578,13 +1578,17 @@
             "did:jwk",
             "did:ebsi",
             "did:web"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:fides:bri:sd-jwt-vc",
+            "displayName": "BRI Attestation"
+          }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-18T07:01:15.874Z"
+      "fetchedAt": "2026-03-18T07:07:28.259Z"
     }
   ],
   "stats": {
