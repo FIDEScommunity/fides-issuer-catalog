@@ -1,8 +1,344 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-18T07:09:04.265Z",
+  "lastUpdated": "2026-03-18T12:20:11.986Z",
   "issuers": [
+    {
+      "id": "issuer:animo:bundesdruckerei:test",
+      "organization": {
+        "name": "Animo",
+        "website": "https://animo.id",
+        "logoUri": "https://playground.animo.id/assets/issuers/bdr/issuer.png"
+      },
+      "displayName": "Bundesdruckerei (Animo Playground)",
+      "environment": "test",
+      "credentialIssuerUrl": "https://playground.animo.id/oid4vci/188e2459-6da8-4431-9062-2fcdac274f41",
+      "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/188e2459-6da8-4431-9062-2fcdac274f41/.well-known/openid-credential-issuer",
+      "logoUri": "https://playground.animo.id/assets/issuers/bdr/issuer.png",
+      "description": "Simulated Bundesdruckerei issuer hosted on the Animo EUDI Playground. Issues PID, mDL and Age Verification credentials.",
+      "projectContext": "Animo EUDI Wallet Playground",
+      "credentialConfigurations": [
+        {
+          "configurationId": "mdl-mdoc-bdr",
+          "displayName": "Driving Licence",
+          "vcFormat": "mdoc",
+          "docType": "org.iso.18013.5.1.mDL",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:mdl-mdoc:mdoc",
+            "displayName": "mDL (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "mdl-mdoc-bdr-key-attestations",
+          "displayName": "Driving Licence",
+          "vcFormat": "mdoc",
+          "docType": "org.iso.18013.5.1.mDL",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:mdl-mdoc:mdoc",
+            "displayName": "mDL (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "eudi-pid-sd-jwt-bdr",
+          "displayName": "EUDI PID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eudi:pid:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
+            "displayName": "PID (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "eudi-pid-sd-jwt-bdr-key-attestations",
+          "displayName": "EUDI PID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eudi:pid:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
+            "displayName": "PID (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "eudi-pid-mdoc-bdr",
+          "displayName": "EUDI PID",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.pid.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-mdoc:mdoc",
+            "displayName": "PID (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "eudi-pid-mdoc-bdr-key-attestations",
+          "displayName": "EUDI PID",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.pid.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-mdoc:mdoc",
+            "displayName": "PID (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "proof_of_age-bdr",
+          "displayName": "Age",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.av.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:age-verification-mdoc:mdoc",
+            "displayName": "Age Verification (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "proof_of_age-bdr-key-attestations",
+          "displayName": "Age",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.av.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:age-verification-mdoc:mdoc",
+            "displayName": "Age Verification (MSO Mdoc)"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-18T12:08:33.802Z",
+      "updatedAt": "2026-03-18T13:19:58+01:00",
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
+    },
+    {
+      "id": "issuer:animo:rdw:test",
+      "organization": {
+        "name": "Animo",
+        "website": "https://animo.id",
+        "logoUri": "https://playground.animo.id/assets/issuers/mvrc/issuer.png"
+      },
+      "displayName": "RDW (Animo Playground)",
+      "environment": "test",
+      "credentialIssuerUrl": "https://playground.animo.id/oid4vci/2943c018-8eac-4ddc-a234-da35857fa3e9",
+      "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/2943c018-8eac-4ddc-a234-da35857fa3e9/.well-known/openid-credential-issuer",
+      "logoUri": "https://playground.animo.id/assets/issuers/mvrc/issuer.png",
+      "description": "Simulated RDW (Dutch Vehicle Registration Authority) issuer hosted on the Animo EUDI Playground. Issues Vehicle Registration Certificate (mVRC).",
+      "projectContext": "Animo EUDI Wallet Playground",
+      "credentialConfigurations": [
+        {
+          "configurationId": "mvrc-mdoc",
+          "displayName": "Vehicle Registration",
+          "vcFormat": "mdoc",
+          "docType": "org.iso.7367.1.mVRC",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:mvrc-mdoc:mdoc",
+            "displayName": "Vehicle Registration Certificate (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "mvrc-mdoc-key-attestations",
+          "displayName": "Vehicle Registration",
+          "vcFormat": "mdoc",
+          "docType": "org.iso.7367.1.mVRC",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:mvrc-mdoc:mdoc",
+            "displayName": "Vehicle Registration Certificate (MSO Mdoc)"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-18T12:08:33.802Z",
+      "updatedAt": "2026-03-18T13:19:58+01:00",
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
+    },
+    {
+      "id": "issuer:animo:telorg:test",
+      "organization": {
+        "name": "Animo",
+        "website": "https://animo.id",
+        "logoUri": "https://playground.animo.id/assets/issuers/telOrg/issuer.png"
+      },
+      "displayName": "TelOrg (Animo Playground)",
+      "environment": "test",
+      "credentialIssuerUrl": "https://playground.animo.id/oid4vci/a5292f18-3c9f-484a-8515-fb4ec4cb33e8",
+      "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/a5292f18-3c9f-484a-8515-fb4ec4cb33e8/.well-known/openid-credential-issuer",
+      "logoUri": "https://playground.animo.id/assets/issuers/telOrg/issuer.png",
+      "description": "Simulated telecom organisation issuer hosted on the Animo EUDI Playground. Issues MSISDN credentials.",
+      "projectContext": "Animo EUDI Wallet Playground",
+      "credentialConfigurations": [
+        {
+          "configurationId": "msisdn-sd-jwt",
+          "displayName": "MSISDN",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "eu.europa.ec.eudi.msisdn.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:msisdn-mdoc:mdoc",
+            "displayName": "MSISDN (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "msisdn-sd-jwt-key-attestations",
+          "displayName": "MSISDN",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "eu.europa.ec.eudi.msisdn.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:msisdn-mdoc:mdoc",
+            "displayName": "MSISDN (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "msisdn-mdoc",
+          "displayName": "MSISDN",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.msisdn.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:msisdn-mdoc:mdoc",
+            "displayName": "MSISDN (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "msisdn-mdoc-key-attestations",
+          "displayName": "MSISDN",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.msisdn.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:msisdn-mdoc:mdoc",
+            "displayName": "MSISDN (MSO Mdoc)"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-18T12:08:33.802Z",
+      "updatedAt": "2026-03-18T13:19:58+01:00",
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
+    },
     {
       "id": "issuer:credenco:kvk:sandbox",
       "organization": {
@@ -106,7 +442,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-18T07:09:04.265Z"
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -218,7 +554,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-18T07:09:04.265Z"
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -784,7 +1120,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-17T10:28:16+01:00",
-      "fetchedAt": "2026-03-18T07:09:04.265Z"
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1079,7 +1415,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-17T17:12:56+01:00",
-      "fetchedAt": "2026-03-18T07:09:04.265Z"
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1500,7 +1836,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-18T07:09:04.265Z"
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1588,13 +1924,535 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-14T23:21:44+01:00",
-      "fetchedAt": "2026-03-18T07:09:04.265Z"
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
+    },
+    {
+      "id": "issuer:hovi:eudi-playground:test",
+      "organization": {
+        "name": "Hovi",
+        "website": "https://hovi.id",
+        "logoUri": "https://hovi-assets.s3.eu-central-1.amazonaws.com/studio-assets/tenants/images/hovi-eudi-playground-image-1772726952220.png"
+      },
+      "displayName": "Hovi EUDI Playground",
+      "environment": "test",
+      "credentialIssuerUrl": "https://core-agent.hovi.id/oid4vci/e7db294f-cb68-4643-851c-375d81bc3665",
+      "oid4vciMetadataUrl": "https://core-agent.hovi.id/oid4vci/e7db294f-cb68-4643-851c-375d81bc3665/.well-known/openid-credential-issuer",
+      "logoUri": "https://hovi-assets.s3.eu-central-1.amazonaws.com/studio-assets/tenants/images/hovi-eudi-playground-image-1772726952220.png",
+      "description": "EUDI Wallet playground issuer by Hovi. Issues a broad range of EUDI credential types including PID, EHIC, Diploma, IBAN, Photo ID and more.",
+      "projectContext": "Hovi EUDI Wallet Playground",
+      "credentialConfigurations": [
+        {
+          "configurationId": "employee_id_(eaa)_1.0.0_mdoc",
+          "displayName": "employee_id_(eaa)_1.0.0_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.employee.1",
+          "signingAlgorithms": [
+            -19,
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:employee-mdoc:mdoc",
+            "displayName": "Employee ID (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "loyalty_(eaa)_1.0.0_mdoc",
+          "displayName": "loyalty_(eaa)_1.0.0_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.loyalty_mdoc",
+          "signingAlgorithms": [
+            -19,
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "reservation_1.0.0_mdoc",
+          "displayName": "reservation_1.0.0_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "org.iso.18013.5.1.reservation_mdoc",
+          "signingAlgorithms": [
+            -19,
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "certificate_of_residence_(qeaa)_1.0.0_mdoc",
+          "displayName": "certificate_of_residence_(qeaa)_1.0.0_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.cor.1",
+          "signingAlgorithms": [
+            -19,
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:cor-mdoc:mdoc",
+            "displayName": "Certificate of Residence (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "health_id_(hiid)_qeaa_1.0.0_mdoc",
+          "displayName": "health_id_(hiid)_qeaa_1.0.0_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.hiid.1",
+          "signingAlgorithms": [
+            -19,
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:hiid-mdoc:mdoc",
+            "displayName": "Health ID (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "photo_id_(qeaa)_1.0.0_mdoc",
+          "displayName": "photo_id_(qeaa)_1.0.0_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "org.iso.23220.photoid.1",
+          "signingAlgorithms": [
+            -19,
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:photoid-mdoc-iso23220:mdoc",
+            "displayName": "Photo ID (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "diploma_(qeaa)_1.0.0_sd_jwt",
+          "displayName": "diploma_(qeaa)_1.0.0_sd_jwt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eu.europa.ec.eudi:diploma:1:1",
+          "signingAlgorithms": [
+            "EdDSA",
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "did:key",
+            "did:jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:diploma-vc-sd-jwt:sd-jwt-vc",
+            "displayName": "Diploma (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "iban_(qeaa)_1.0.0_sd_jwt",
+          "displayName": "iban_(qeaa)_1.0.0_sd_jwt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eu.europa.ec.eudi:iban:1",
+          "signingAlgorithms": [
+            "EdDSA",
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "did:key",
+            "did:jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:iban-sd-jwt-vc:sd-jwt-vc",
+            "displayName": "IBAN (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "power_of_representation_(qeaa)_1.0.0_sd_jwt",
+          "displayName": "power_of_representation_(qeaa)_1.0.0_sd_jwt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eu.europa.ec.eudi:por:1",
+          "signingAlgorithms": [
+            "EdDSA",
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "did:key",
+            "did:jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:por-sd-jwt-vc:sd-jwt-vc",
+            "displayName": "Power Of Representation (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "tax_id_(qeaa)_1.0.0_sd_jwt",
+          "displayName": "tax_id_(qeaa)_1.0.0_sd_jwt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eu.europa.ec.eudi:tax:1",
+          "signingAlgorithms": [
+            "EdDSA",
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "did:key",
+            "did:jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:tax-sd-jwt-vc:sd-jwt-vc",
+            "displayName": "Tax Number (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "person_identification_data_(pid)_1.0.0_mdoc",
+          "displayName": "person_identification_data_(pid)_1.0.0_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.pid.1",
+          "signingAlgorithms": [
+            -19,
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-mdoc:mdoc",
+            "displayName": "PID (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "person_identification_data_(pid)_1.0.0_sd_jwt",
+          "displayName": "person_identification_data_(pid)_1.0.0_sd_jwt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eudi:pid:1",
+          "signingAlgorithms": [
+            "EdDSA",
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "did:key",
+            "did:jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
+            "displayName": "PID (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "ehic_(qeaa)_1.0.0_sd_jwt",
+          "displayName": "ehic_(qeaa)_1.0.0_sd_jwt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eudi:ehic:1",
+          "signingAlgorithms": [
+            "EdDSA",
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "did:key",
+            "did:jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:ehic-sd-jwt-vc:sd-jwt-vc",
+            "displayName": "EHIC (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "person_identification_data_(pid)_[age]_1.0.0_mdoc",
+          "displayName": "person_identification_data_(pid)_[age]_1.0.0_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.pid.1",
+          "signingAlgorithms": [
+            -19,
+            -9
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-mdoc:mdoc",
+            "displayName": "PID (MSO Mdoc)"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-18T12:08:33.802Z",
+      "updatedAt": "2026-03-18T13:19:58+01:00",
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
+    },
+    {
+      "id": "issuer:namirial:wallet-studio:test",
+      "organization": {
+        "name": "Namirial",
+        "website": "https://www.namirial.com",
+        "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png"
+      },
+      "displayName": "Namirial Demo Platform",
+      "environment": "test",
+      "credentialIssuerUrl": "https://wallet-studio.test.namirial.com/issuance/api/v1/2",
+      "oid4vciMetadataUrl": "https://wallet-studio.test.namirial.com/issuance/api/v1/2/.well-known/openid-credential-issuer",
+      "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png",
+      "description": "Test issuer on the Namirial Wallet Studio platform. Issues PID, mDL, Age Verification and contact credentials.",
+      "projectContext": "Namirial Wallet Studio Test Environment",
+      "credentialConfigurations": [
+        {
+          "configurationId": "eu.europa.ec.av.1#mso_mdoc#352",
+          "displayName": "Proof of age",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.av.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png",
+          "credentialCatalogRef": {
+            "id": "cred:eu:age-verification-mdoc:mdoc",
+            "displayName": "Age Verification (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "org.iso.18013.5.1.mDL#mso_mdoc#326",
+          "displayName": "mDL",
+          "vcFormat": "mdoc",
+          "docType": "org.iso.18013.5.1.mDL",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "https://wallet-studio.test.namirial.com/credential/api/v1/template/326/graphic/282/?type=logo",
+          "credentialCatalogRef": {
+            "id": "cred:eu:mdl-mdoc:mdoc",
+            "displayName": "mDL (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "eu.europa.ec.eudi.pid.1#mso_mdoc#321",
+          "displayName": "Potential PID",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.pid.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "data:image/png;base64,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",
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-mdoc:mdoc",
+            "displayName": "PID (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "nob:phone:1#sd-jwt#156",
+          "displayName": "Phone number",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "nob:phone:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png"
+        },
+        {
+          "configurationId": "nob:email:1#sd-jwt#155",
+          "displayName": "Email address",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "nob:email:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png"
+        },
+        {
+          "configurationId": "nob:pid:1#sd-jwt#154",
+          "displayName": "Namirial PID (NOB)",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "nob:pid:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png"
+        },
+        {
+          "configurationId": "urn:eu.europa.ec.eudi:pid:1#sd-jwt#108",
+          "displayName": "Potential PID [SD-JWT]",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eu.europa.ec.eudi:pid:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png",
+          "credentialCatalogRef": {
+            "id": "cred:ewc:pid-eudi-sd-jwt:sd-jwt-vc",
+            "displayName": "PID EUDI (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "lpid#sd-jwt#107",
+          "displayName": "Legal PID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "lpid",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png"
+        },
+        {
+          "configurationId": "pid#sd-jwt#104",
+          "displayName": "Namirial PID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "pid",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "cwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key",
+            "did:jwk",
+            "did:key"
+          ],
+          "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png"
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-18T12:08:33.802Z",
+      "updatedAt": "2026-03-18T13:19:58+01:00",
+      "fetchedAt": "2026-03-18T12:20:11.986Z"
     }
   ],
   "stats": {
-    "totalIssuers": 6,
+    "totalIssuers": 11,
     "productionIssuers": 0,
-    "totalOrganizations": 4,
-    "totalCredentialConfigurations": 73
+    "totalOrganizations": 7,
+    "totalCredentialConfigurations": 110
   }
 }
