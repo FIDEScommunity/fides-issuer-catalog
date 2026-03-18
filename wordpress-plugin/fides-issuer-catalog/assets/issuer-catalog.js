@@ -83,6 +83,8 @@
     credential: [],
     signingAlgorithm: [],
     addedLast30Days: false,
+    updatedLast30Days: false,
+    usedByRPsOnly: false,
     inCredentialCatalog: false,
     ids: []
   };
@@ -143,17 +145,25 @@
       filters.signingAlgorithm.length +
       filters.ids.length +
       (filters.addedLast30Days ? 1 : 0) +
+      (filters.updatedLast30Days ? 1 : 0) +
+      (filters.usedByRPsOnly ? 1 : 0) +
       (filters.inCredentialCatalog ? 1 : 0)
     );
   }
 
   function computeMetrics() {
-    const filtered = getFilteredIssuers();
+    const uniqueCredIds = new Set();
+    let recentActivity = 0;
+    for (const issuer of issuers) {
+      (issuer.credentialConfigurations || []).forEach((cc) => {
+        if (cc.credentialCatalogRef?.id) uniqueCredIds.add(cc.credentialCatalogRef.id);
+      });
+      if (isWithinLastDays(issuer.firstSeenAt, 30) || isWithinLastDays(issuer.updatedAt, 30)) recentActivity += 1;
+    }
     return {
       total: issuers.length,
-      production: issuers.filter((i) => i.environment === 'production').length,
-      organizations: new Set(issuers.map((i) => i.organization?.name)).size,
-      addedLast30: issuers.filter((i) => isWithinLastDays(i.firstSeenAt, 30)).length,
+      credentials: uniqueCredIds.size,
+      recentActivity,
     };
   }
 
@@ -187,6 +197,8 @@
       if (filters.ids.length > 0 && !filters.ids.includes(issuer.id)) return false;
 
       if (filters.addedLast30Days && !isWithinLastDays(issuer.firstSeenAt, 30)) return false;
+      if (filters.updatedLast30Days && !isWithinLastDays(issuer.updatedAt, 30)) return false;
+      if (filters.usedByRPsOnly && rpCatalogData !== null && countRpsForIssuer(issuer, rpCatalogData) === 0) return false;
       if (filters.inCredentialCatalog && !(issuer.credentialConfigurations || []).some((cc) => cc.credentialCatalogRef)) return false;
       if (filters.environment.length && !filters.environment.includes(issuer.environment)) return false;
       if (filters.organization.length && !filters.organization.includes(issuer.organization?.name)) return false;
@@ -574,23 +586,24 @@
   }
 
   function renderKpiCards(metrics) {
+    const recentActive = filters.addedLast30Days || filters.updatedLast30Days;
     return `
       <div class="fides-kpi-row">
         <button class="fides-kpi-card" type="button" data-kpi-action="reset">
           <span class="fides-kpi-value">${metrics.total}</span>
           <span class="fides-kpi-label">Issuers</span>
         </button>
-        <button class="fides-kpi-card ${filters.environment.includes('production') ? 'active' : ''}" type="button" data-kpi-action="toggle-production">
-          <span class="fides-kpi-value">${metrics.production}</span>
-          <span class="fides-kpi-label">Production</span>
+        <button class="fides-kpi-card ${filters.inCredentialCatalog ? 'active' : ''}" type="button" data-kpi-action="toggle-credentials">
+          <span class="fides-kpi-value">${metrics.credentials}</span>
+          <span class="fides-kpi-label">Credentials</span>
         </button>
-        <button class="fides-kpi-card" type="button" data-kpi-action="reset">
-          <span class="fides-kpi-value">${metrics.organizations}</span>
-          <span class="fides-kpi-label">Organizations</span>
+        <button class="fides-kpi-card ${filters.usedByRPsOnly ? 'active' : ''}" type="button" data-kpi-action="toggle-rp">
+          <span class="fides-kpi-value" data-kpi-metric="rp-issuers">—</span>
+          <span class="fides-kpi-label">Used by relying parties</span>
         </button>
-        <button class="fides-kpi-card ${filters.addedLast30Days ? 'active' : ''}" type="button" data-kpi-action="toggle-added">
-          <span class="fides-kpi-value">${metrics.addedLast30}</span>
-          <span class="fides-kpi-label">New<span class="fides-kpi-label-extra"> last 30 days</span></span>
+        <button class="fides-kpi-card ${recentActive ? 'active' : ''}" type="button" data-kpi-action="toggle-recent">
+          <span class="fides-kpi-value">${metrics.recentActivity}</span>
+          <span class="fides-kpi-label">Updated last 30 days</span>
         </button>
       </div>
     `;
@@ -1011,12 +1024,21 @@
     root.querySelectorAll('.fides-kpi-card').forEach((btn) => {
       btn.addEventListener('click', () => {
         const action = btn.dataset.kpiAction;
-        if (action === 'reset') { filters.environment = []; filters.addedLast30Days = false; filters.inCredentialCatalog = false; sortBy = 'lastUpdated'; }
-        else if (action === 'toggle-production') {
-          if (filters.environment.includes('production')) filters.environment = filters.environment.filter((e) => e !== 'production');
-          else filters.environment = [...filters.environment, 'production'];
-        } else if (action === 'toggle-added') {
-          filters.addedLast30Days = !filters.addedLast30Days;
+        if (action === 'reset') {
+          filters.environment = [];
+          filters.addedLast30Days = false;
+          filters.updatedLast30Days = false;
+          filters.usedByRPsOnly = false;
+          filters.inCredentialCatalog = false;
+          sortBy = 'lastUpdated';
+        } else if (action === 'toggle-credentials') {
+          filters.inCredentialCatalog = !filters.inCredentialCatalog;
+        } else if (action === 'toggle-rp') {
+          filters.usedByRPsOnly = !filters.usedByRPsOnly;
+        } else if (action === 'toggle-recent') {
+          const recentActive = filters.addedLast30Days || filters.updatedLast30Days;
+          filters.addedLast30Days = !recentActive;
+          filters.updatedLast30Days = !recentActive;
         }
         render();
       });
@@ -1077,6 +1099,11 @@
         root.querySelectorAll(`.fides-card-count-item--rp[data-issuer-id="${CSS.escape(issuer.id)}"] .fides-card-rp-count`).forEach((el) => {
           el.textContent = count;
         });
+      });
+      // Update the "used by relying parties" KPI count
+      const issuersWithRps = issuers.filter((i) => (countRpsForIssuer(i, rpList) ?? 0) > 0).length;
+      root.querySelectorAll('[data-kpi-metric="rp-issuers"]').forEach((el) => {
+        el.textContent = issuersWithRps;
       });
     });
   }
