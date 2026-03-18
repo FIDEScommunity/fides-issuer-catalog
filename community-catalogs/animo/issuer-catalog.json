@@ -1,0 +1,33 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "Animo",
+    "website": "https://animo.id"
+  },
+  "issuers": [
+    {
+      "id": "issuer:animo:bundesdruckerei:test",
+      "displayName": "Bundesdruckerei (Animo Playground)",
+      "description": "Simulated Bundesdruckerei issuer hosted on the Animo EUDI Playground. Issues PID, mDL and Age Verification credentials.",
+      "environment": "test",
+      "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/188e2459-6da8-4431-9062-2fcdac274f41/.well-known/openid-credential-issuer",
+      "projectContext": "Animo EUDI Wallet Playground"
+    },
+    {
+      "id": "issuer:animo:rdw:test",
+      "displayName": "RDW (Animo Playground)",
+      "description": "Simulated RDW (Dutch Vehicle Registration Authority) issuer hosted on the Animo EUDI Playground. Issues Vehicle Registration Certificate (mVRC).",
+      "environment": "test",
+      "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/2943c018-8eac-4ddc-a234-da35857fa3e9/.well-known/openid-credential-issuer",
+      "projectContext": "Animo EUDI Wallet Playground"
+    },
+    {
+      "id": "issuer:animo:telorg:test",
+      "displayName": "TelOrg (Animo Playground)",
+      "description": "Simulated telecom organisation issuer hosted on the Animo EUDI Playground. Issues MSISDN credentials.",
+      "environment": "test",
+      "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/a5292f18-3c9f-484a-8515-fb4ec4cb33e8/.well-known/openid-credential-issuer",
+      "projectContext": "Animo EUDI Wallet Playground"
+    }
+  ]
+}

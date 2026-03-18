@@ -1,0 +1,17 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "Hovi",
+    "website": "https://hovi.id"
+  },
+  "issuers": [
+    {
+      "id": "issuer:hovi:eudi-playground:test",
+      "displayName": "Hovi EUDI Playground",
+      "description": "EUDI Wallet playground issuer by Hovi. Issues a broad range of EUDI credential types including PID, EHIC, Diploma, IBAN, Photo ID and more.",
+      "environment": "test",
+      "oid4vciMetadataUrl": "https://core-agent.hovi.id/oid4vci/e7db294f-cb68-4643-851c-375d81bc3665/.well-known/openid-credential-issuer",
+      "projectContext": "Hovi EUDI Wallet Playground"
+    }
+  ]
+}

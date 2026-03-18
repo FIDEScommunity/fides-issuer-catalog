@@ -16,5 +16,20 @@
   },
   "issuer:ewc:ewc-issuer:test": {
     "firstSeenAt": "2026-03-17T16:18:55.008Z"
+  },
+  "issuer:animo:bundesdruckerei:test": {
+    "firstSeenAt": "2026-03-18T12:08:33.802Z"
+  },
+  "issuer:animo:rdw:test": {
+    "firstSeenAt": "2026-03-18T12:08:33.802Z"
+  },
+  "issuer:animo:telorg:test": {
+    "firstSeenAt": "2026-03-18T12:08:33.802Z"
+  },
+  "issuer:hovi:eudi-playground:test": {
+    "firstSeenAt": "2026-03-18T12:08:33.802Z"
+  },
+  "issuer:namirial:wallet-studio:test": {
+    "firstSeenAt": "2026-03-18T12:08:33.802Z"
   }
 }
