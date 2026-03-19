@@ -24,6 +24,8 @@
     check: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
     server: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>',
     eye: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>',
+    viewGrid: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>',
+    viewList: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>',
   };
 
   const ENVIRONMENT_LABELS = {
@@ -62,6 +64,33 @@
   let filterFacets = null;
   let sortBy = 'lastUpdated';
   let selectedIssuer = null;
+
+  /**
+   * VIEW TOGGLE STATE
+   * "grid" | "list" — persisted in localStorage key "fides-issuer-view".
+   * - Grid mode: cards rendered by renderIssuerCard().
+   * - List mode: compact rows rendered by renderIssuerRow().
+   * Toggle is hidden on screens < 1024 px (always grid on mobile/tablet).
+   *
+   * To reuse this pattern in another catalog:
+   *  1. Copy renderViewToggle(), renderIssuerListHeader(), renderIssuerRow() and their CSS block.
+   *  2. Replace the localStorage key and CSS class prefixes.
+   *  3. Adjust the grid-template-columns to match your column count.
+   */
+  let viewMode = localStorage.getItem('fides-issuer-view') || 'grid';
+  const LIST_BREAKPOINT = 1024;
+  function effectiveView() {
+    return window.innerWidth < LIST_BREAKPOINT ? 'grid' : viewMode;
+  }
+
+  let _lastEffective = effectiveView();
+  window.addEventListener('resize', () => {
+    const cur = effectiveView();
+    if (cur !== _lastEffective) {
+      _lastEffective = cur;
+      renderIssuerGridOnly();
+    }
+  });
   let vocabulary = null;
   let root;
   let rpCatalogData = null;
@@ -226,6 +255,80 @@
       const dateB = new Date(b.updatedAt || b.fetchedAt || 0).getTime();
       return dateB - dateA;
     });
+  }
+
+  /**
+   * Renders the grid/list toggle buttons for the results bar.
+   * Generic: only depends on the module-level `viewMode` variable and `icons`.
+   */
+  function renderViewToggle() {
+    return `
+      <div class="fides-view-toggle" role="group" aria-label="View mode">
+        <button class="fides-view-btn${viewMode === 'grid' ? ' active' : ''}" data-view="grid"
+                aria-label="Grid view" aria-pressed="${viewMode === 'grid'}" title="Grid view">
+          ${icons.viewGrid}
+        </button>
+        <button class="fides-view-btn${viewMode === 'list' ? ' active' : ''}" data-view="list"
+                aria-label="List view" aria-pressed="${viewMode === 'list'}" title="List view">
+          ${icons.viewList}
+        </button>
+      </div>
+    `;
+  }
+
+  function renderIssuerListHeader() {
+    return `
+      <div class="fides-issuer-list-header" aria-hidden="true">
+        <div></div>
+        <div>Name</div>
+        <div>Environment</div>
+        <div class="fides-list-col-right" title="Credentials">${icons.fileCheck}</div>
+        <div class="fides-list-col-right" title="Relying parties">${icons.shield}</div>
+        <div style="padding-left:0.75rem">Updated</div>
+      </div>
+    `;
+  }
+
+  /**
+   * Renders a compact list-row for an issuer (used in list / table view).
+   * The outer element is the same .fides-issuer-card as in grid mode so
+   * that card click events work without any changes.
+   *
+   * If you add or remove a column, also update:
+   *  - renderIssuerListHeader()   — column header labels
+   *  - style.css: grid-template-columns in .fides-issuer-list-header
+   *               and .fides-issuer-grid[data-view="list"] .fides-issuer-card
+   */
+  function renderIssuerRow(issuer) {
+    const configs = issuer.credentialConfigurations || [];
+    const logo = issuer.logoUri || issuer.organization?.logoUri;
+    const activityDate = issuer.updatedAt || issuer.firstSeenAt;
+    const activityLabel = activityDate ? formatDate(activityDate) : '—';
+    const env = issuer.environment;
+    const credCount = configs.length;
+
+    return `
+      <div class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}" tabindex="0" role="button" aria-label="${escapeHtml(issuer.organization?.name || '')} – ${escapeHtml(issuer.displayName)}">
+        <div class="fides-row-icon" aria-hidden="true">
+          ${logo
+            ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(issuer.organization?.name || '')}" style="width:22px;height:22px;object-fit:contain;border-radius:3px;">`
+            : icons.server
+          }
+        </div>
+        <div class="fides-row-name">
+          <span class="fides-row-name-text" title="${escapeHtml(issuer.organization?.name || issuer.id)}">${escapeHtml(issuer.organization?.name || issuer.id)}</span>
+          ${issuer.displayName ? `<span class="fides-row-name-id" title="${escapeHtml(issuer.displayName)}">${escapeHtml(issuer.displayName)}</span>` : ''}
+        </div>
+        <div class="fides-row-environment">
+          ${env ? escapeHtml(ENVIRONMENT_LABELS[env] || env) : '—'}
+        </div>
+        <div class="fides-row-count fides-list-col-right" title="${credCount} credential${credCount !== 1 ? 's' : ''}">${credCount}</div>
+        <div class="fides-row-count fides-list-col-right fides-card-count-item--rp" data-issuer-id="${escapeHtml(issuer.id)}">
+          <span class="fides-card-rp-count">—</span>
+        </div>
+        <div class="fides-row-updated">${escapeHtml(activityLabel)}</div>
+      </div>
+    `;
   }
 
   function renderEnvironmentBadge(env) {
@@ -723,12 +826,14 @@
                   <span class="fides-filter-count ${getActiveFilterCount() > 0 ? '' : 'hidden'}">${getActiveFilterCount() || 0}</span>
                 </button>
               ` : ''}
+              ${renderViewToggle()}
             </div>
             ${renderKpiCards(metrics)}
             <div class="fides-results">
-              <div class="fides-issuer-grid" data-columns="${escapeHtml(settings.columns)}">
+              <div class="fides-issuer-grid" data-view="${effectiveView()}" data-columns="${escapeHtml(settings.columns)}">
+                ${effectiveView() === 'list' ? renderIssuerListHeader() : ''}
                 ${filtered.length > 0
-                  ? filtered.map(renderIssuerCard).join('')
+                  ? filtered.map(effectiveView() === 'list' ? renderIssuerRow : renderIssuerCard).join('')
                   : '<p class="fides-empty">No issuers found.</p>'
                 }
               </div>
@@ -1032,6 +1137,24 @@
       sidebar.addEventListener('click', (e) => { if (e.target === sidebar && sidebar.classList.contains('mobile-open')) { sidebar.classList.remove('mobile-open'); document.body.style.overflow = ''; } });
     }
 
+    // View toggle — targeted update to avoid rebuilding the full results bar
+    root.querySelectorAll('.fides-view-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const newView = btn.getAttribute('data-view') || 'grid';
+        if (newView === viewMode) return;
+        viewMode = newView;
+        localStorage.setItem('fides-issuer-view', viewMode);
+        root.querySelectorAll('.fides-view-btn').forEach((b) => {
+          const active = b.getAttribute('data-view') === viewMode;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-pressed', String(active));
+        });
+        const grid = root.querySelector('.fides-issuer-grid');
+        if (grid) grid.setAttribute('data-view', viewMode);
+        renderIssuerGridOnly();
+      });
+    });
+
     initVocabularyInfo(root);
 
     // Fill RP counts on cards asynchronously
@@ -1041,10 +1164,14 @@
   function renderIssuerGridOnly() {
     const grid = root.querySelector('.fides-issuer-grid');
     if (!grid) return;
+    const ev = effectiveView();
+    grid.setAttribute('data-view', ev);
     const filtered = getFilteredIssuers();
-    grid.innerHTML = filtered.length > 0
-      ? filtered.map(renderIssuerCard).join('')
+    const header = ev === 'list' ? renderIssuerListHeader() : '';
+    const items = filtered.length > 0
+      ? filtered.map(ev === 'list' ? renderIssuerRow : renderIssuerCard).join('')
       : '<p class="fides-empty">No issuers found.</p>';
+    grid.innerHTML = header + items;
     root.querySelectorAll('.fides-issuer-card').forEach((card) => {
       card.addEventListener('click', () => openModal(card.dataset.id));
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.id); } });

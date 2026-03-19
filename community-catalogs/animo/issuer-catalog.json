@@ -2,7 +2,8 @@
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
   "organization": {
     "name": "Animo",
-    "website": "https://animo.id"
+    "website": "https://animo.id",
+    "logo": "https://avatars.githubusercontent.com/u/60350822?v=4"
   },
   "issuers": [
     {

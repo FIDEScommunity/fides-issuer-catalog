@@ -3,7 +3,8 @@
   "organization": {
     "name": "FIDES Labs BV",
     "did": "did:web:fides.community",
-    "website": "https://fides.community"
+    "website": "https://fides.community",
+    "logo": "https://avatars.githubusercontent.com/u/119322214?v=4"
   },
   "issuers": [
     {

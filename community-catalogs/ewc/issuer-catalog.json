@@ -2,7 +2,8 @@
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
   "organization": {
     "name": "University of the Aegean / EWC",
-    "website": "https://dss.aegean.gr"
+    "website": "https://dss.aegean.gr",
+    "logo": "https://avatars.githubusercontent.com/u/140810559?v=4"
   },
   "issuers": [
     {

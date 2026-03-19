@@ -2,7 +2,8 @@
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
   "organization": {
     "name": "Hovi",
-    "website": "https://hovi.id"
+    "website": "https://hovi.id",
+    "logo": "https://avatars.githubusercontent.com/u/126883948?v=4"
   },
   "issuers": [
     {

@@ -2,7 +2,8 @@
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
   "organization": {
     "name": "Credenco",
-    "website": "https://credenco.com"
+    "website": "https://credenco.com",
+    "logo": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png"
   },
   "issuers": [
     {
