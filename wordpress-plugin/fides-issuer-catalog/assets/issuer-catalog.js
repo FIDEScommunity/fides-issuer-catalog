@@ -31,8 +31,7 @@
   const ENVIRONMENT_LABELS = {
     production: 'Production',
     pilot: 'Pilot',
-    test: 'Test',
-    sandbox: 'Sandbox',
+    test: 'Testing',
   };
 
   const VC_FORMAT_LABELS = {
@@ -98,8 +97,8 @@
 
   const filterGroupState = {
     environment: true,
-    organization: true,
-    vcFormat: true,
+    organization: false,
+    vcFormat: false,
     credential: false,
     signingAlgorithm: false,
   };
@@ -114,7 +113,6 @@
     addedLast30Days: false,
     updatedLast30Days: false,
     usedByRPsOnly: false,
-    inCredentialCatalog: false,
     ids: []
   };
 
@@ -175,8 +173,7 @@
       filters.ids.length +
       (filters.addedLast30Days ? 1 : 0) +
       (filters.updatedLast30Days ? 1 : 0) +
-      (filters.usedByRPsOnly ? 1 : 0) +
-      (filters.inCredentialCatalog ? 1 : 0)
+      (filters.usedByRPsOnly ? 1 : 0)
     );
   }
 
@@ -204,7 +201,6 @@
       credential: {},
       signingAlgorithm: {},
       addedLast30Days: 0,
-      inCredentialCatalog: 0,
     };
     items.forEach((issuer) => {
       if (issuer.environment) facets.environment[issuer.environment] = (facets.environment[issuer.environment] || 0) + 1;
@@ -215,7 +211,6 @@
         (cc.signingAlgorithms || []).forEach((alg) => { facets.signingAlgorithm[alg] = (facets.signingAlgorithm[alg] || 0) + 1; });
       });
       if (isWithinLastDays(issuer.firstSeenAt, 30)) facets.addedLast30Days++;
-      if ((issuer.credentialConfigurations || []).some((cc) => cc.credentialCatalogRef)) facets.inCredentialCatalog++;
     });
     return facets;
   }
@@ -228,7 +223,6 @@
       if (filters.addedLast30Days && !isWithinLastDays(issuer.firstSeenAt, 30)) return false;
       if (filters.updatedLast30Days && !isWithinLastDays(issuer.updatedAt, 30)) return false;
       if (filters.usedByRPsOnly && rpCatalogData !== null && countRpsForIssuer(issuer, rpCatalogData) === 0) return false;
-      if (filters.inCredentialCatalog && !(issuer.credentialConfigurations || []).some((cc) => cc.credentialCatalogRef)) return false;
       if (filters.environment.length && !filters.environment.includes(issuer.environment)) return false;
       if (filters.organization.length && !filters.organization.includes(issuer.organization?.name)) return false;
 
@@ -359,8 +353,8 @@
             }
           </div>
           <div class="fides-credential-header-text">
-            <h3 class="fides-credential-name" title="${escapeHtml(issuer.organization?.name || '')}">${escapeHtml(issuer.organization?.name || issuer.id)}</h3>
-            <p class="fides-credential-provider">${escapeHtml(issuer.displayName || '')}</p>
+            <h3 class="fides-credential-name" title="${escapeHtml(issuer.displayName || '')}">${escapeHtml(issuer.displayName || issuer.id)}</h3>
+            <p class="fides-credential-provider">${escapeHtml(issuer.organization?.name || '')}</p>
           </div>
         </header>
         <div class="fides-wallet-body">
@@ -447,8 +441,8 @@
                 : `<div class="fides-modal-logo-placeholder">${icons.server}</div>`
               }
               <div class="fides-modal-title-wrap">
-                <h2 class="fides-modal-title" id="fides-modal-title">${escapeHtml(issuer.organization?.name || issuer.id)}</h2>
-                <p class="fides-modal-provider">${escapeHtml(issuer.displayName || '')}</p>
+                <h2 class="fides-modal-title" id="fides-modal-title">${escapeHtml(issuer.displayName || issuer.id)}</h2>
+                <p class="fides-modal-provider">${escapeHtml(issuer.organization?.name || '')}</p>
               </div>
             </div>
             <div class="fides-modal-header-actions">
@@ -696,7 +690,7 @@
           <span class="fides-kpi-value">${metrics.total}</span>
           <span class="fides-kpi-label">Issuers</span>
         </button>
-        <button class="fides-kpi-card ${filters.inCredentialCatalog ? 'active' : ''}" type="button" data-kpi-action="toggle-credentials">
+        <button class="fides-kpi-card" type="button" data-kpi-action="toggle-credentials">
           <span class="fides-kpi-value">${metrics.credentials}</span>
           <span class="fides-kpi-label">Credentials</span>
         </button>
@@ -741,8 +735,8 @@
     if (!settings.showFilters) return '';
     const activeFilterCount = getActiveFilterCount();
 
-    const environmentOptions = ['production', 'pilot', 'test', 'sandbox'].filter(
-      (e) => filterFacets?.environment?.[e] > 0 || filters.environment.includes(e)
+    const environmentOptions = ['pilot', 'test', 'production'].filter(
+      (e) => e === 'production' || filterFacets?.environment?.[e] > 0 || filters.environment.includes(e)
     );
     const organizationOptions = uniqueValues(issuers, (i) => i.organization?.name);
     const vcFormatOptions = uniqueValues(issuers, (i) => (i.credentialConfigurations || []).map((c) => c.vcFormat));
@@ -773,10 +767,6 @@
               <input type="checkbox" id="fides-added-last-30" ${filters.addedLast30Days ? 'checked' : ''}>
               <span>Added last 30 days<span class="fides-filter-option-count">(${filterFacets?.addedLast30Days || 0})</span></span>
             </label>
-            <label class="fides-filter-checkbox">
-              <input type="checkbox" id="fides-in-credential-catalog" ${filters.inCredentialCatalog ? 'checked' : ''}>
-              <span>In credential catalog<span class="fides-filter-option-count">(${filterFacets?.inCredentialCatalog || 0})</span></span>
-            </label>
             ${originalIssuerIds.length > 0 ? `
             <label class="fides-filter-checkbox">
               <input type="checkbox" data-filter="linkedIssuers" ${filters.ids.length > 0 ? 'checked' : ''}>
@@ -784,9 +774,9 @@
             </label>` : ''}
           </div>
           ${renderCheckboxGroup('Environment', 'environment', environmentOptions, filterFacets)}
-          ${renderCheckboxGroup('Organization', 'organization', organizationOptions, filterFacets)}
+          ${renderCheckboxGroup('Issuer organization', 'organization', organizationOptions, filterFacets)}
           ${renderCheckboxGroup('VC Format', 'vcFormat', vcFormatOptions, filterFacets)}
-          ${renderCheckboxGroup('Credential', 'credential', credentialOptions, filterFacets)}
+          ${renderCheckboxGroup('Credential Type', 'credential', credentialOptions, filterFacets)}
           ${renderCheckboxGroup('Signing Algorithm', 'signingAlgorithm', signingAlgOptions, filterFacets)}
         </div>
       </aside>
@@ -1054,7 +1044,7 @@
 
     const clearBtn = root.querySelector('#fides-clear');
     if (clearBtn) clearBtn.addEventListener('click', () => {
-      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], addedLast30Days: false, inCredentialCatalog: false, ids: [] };
+      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], addedLast30Days: false, ids: [] };
       originalIssuerIds = [];
       const url = new URL(window.location.href);
       url.searchParams.delete('issuers');
@@ -1076,9 +1066,6 @@
 
     const addedInput = root.querySelector('#fides-added-last-30');
     if (addedInput) addedInput.addEventListener('change', (e) => { filters.addedLast30Days = e.target.checked; render(); });
-    const catalogInput = root.querySelector('#fides-in-credential-catalog');
-    if (catalogInput) catalogInput.addEventListener('change', (e) => { filters.inCredentialCatalog = e.target.checked; render(); });
-
     const linkedIssuersInput = root.querySelector('[data-filter="linkedIssuers"]');
     if (linkedIssuersInput) {
       linkedIssuersInput.addEventListener('change', (e) => {
@@ -1095,10 +1082,7 @@
           filters.addedLast30Days = false;
           filters.updatedLast30Days = false;
           filters.usedByRPsOnly = false;
-          filters.inCredentialCatalog = false;
           sortBy = 'lastUpdated';
-        } else if (action === 'toggle-credentials') {
-          filters.inCredentialCatalog = !filters.inCredentialCatalog;
         } else if (action === 'toggle-rp') {
           filters.usedByRPsOnly = !filters.usedByRPsOnly;
         } else if (action === 'toggle-recent') {
