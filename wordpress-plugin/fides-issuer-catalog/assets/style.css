@@ -1104,7 +1104,7 @@
  */
 .fides-issuer-list-header,
 .fides-issuer-grid[data-view="list"] .fides-issuer-card {
-  grid-template-columns: 32px 2fr 1fr 52px 52px 110px;
+  grid-template-columns: 32px 2fr 1fr 52px 52px minmax(0, 110px);
   gap: 0.75rem;
   padding: 0.625rem 1rem;
 }
