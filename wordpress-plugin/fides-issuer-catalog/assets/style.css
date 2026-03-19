@@ -325,12 +325,16 @@
 
 /* Results bar */
 .fides-results-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap !important;
+  gap: 0.5rem;
+}
+
+/* Push sort + filter toggle to the right */
+.fides-results-bar .fides-sort-label {
+  margin-left: auto;
 }
 
 /* Scoped under .fides-issuer-catalog so link color wins over theme/site rules (e.g. a { color: inherit }) */
@@ -371,24 +375,29 @@
 }
 
 .fides-sort-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--fides-text-secondary);
+  height: 2.25rem;
+  margin: 0;
+  padding: 0;
   white-space: nowrap;
 }
 
 .fides-sort-select {
-  min-width: 160px;
-  padding: 0.4rem 2rem 0.4rem 0.6rem;
+  height: 2.25rem;
+  padding: 0 1.75rem 0 0.5rem;
+  font-size: 0.875rem;
+  line-height: 2.25rem;
+  color: var(--fides-text-primary);
+  background: var(--fides-bg-secondary);
   border: 1px solid var(--fides-border);
   border-radius: 6px;
-  background-color: var(--fides-bg-secondary);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1rem;
-  color: var(--fides-text-primary);
-  font-size: 0.875rem;
-  appearance: none;
-  -webkit-appearance: none;
   cursor: pointer;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .fides-sort-select:focus {
@@ -454,9 +463,9 @@
   color: var(--fides-accent);
 }
 
-/* Mobile filter toggle - hidden on desktop */
+/* Mobile filter toggle — always visible, hidden on desktop via min-width rule */
 .fides-mobile-filter-toggle {
-  display: none;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
@@ -470,16 +479,48 @@
   transition: all 0.2s;
 }
 
+@media (min-width: 1024px) {
+  .fides-mobile-filter-toggle {
+    display: none;
+  }
+}
+
 .fides-mobile-filter-toggle:hover {
   background: var(--fides-bg-card);
   border-color: var(--fides-text-muted);
 }
 
-/* Search - now in sidebar */
-.fides-search-container {
-  display: none; /* Legacy - moved to sidebar */
+/* Topbar search — shown in results bar (replaces sidebar search) */
+.fides-topbar-search {
+  flex: 1;
+  min-width: 160px;
+  max-width: 480px;
+  height: 2.25rem;
 }
 
+.fides-topbar-search .fides-search-input {
+  height: 2.25rem !important;
+  padding: 0 2.25rem 0 2.25rem !important;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  border-radius: 6px !important;
+  background: var(--fides-bg-card) !important;
+  box-sizing: border-box;
+  border: 1px solid var(--fides-border) !important;
+  border-bottom: 1px solid var(--fides-border) !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.fides-topbar-search .fides-search-input:focus,
+.fides-topbar-search .fides-search-input:focus-visible {
+  outline: none !important;
+  border-color: var(--fides-accent) !important;
+  border-bottom-color: var(--fides-accent) !important;
+  box-shadow: 0 0 0 3px rgba(10, 110, 243, 0.15) !important;
+}
+
+/* Legacy sidebar search — kept for backwards compat, no longer rendered */
 .fides-sidebar-search {
   margin-bottom: 0.25rem;
   padding-bottom: 0.75rem;
@@ -491,7 +532,7 @@
   font-size: 0.875rem;
 }
 
-/* Mobile search - visible only on mobile */
+/* Mobile search — no longer rendered */
 .fides-mobile-search {
   display: none;
   margin-bottom: 1rem;
@@ -524,6 +565,8 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .fides-search-input {
@@ -1048,27 +1091,37 @@
     border-top: none;
   }
 
-  .fides-mobile-filter-toggle {
-    display: inline-flex;
-  }
-
   .fides-issuer-grid[data-columns="3"],
   .fides-issuer-grid[data-columns="4"] {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Hide sort label on mobile, show Filters full-width */
+  /* Hide sort label on mobile */
   .fides-sort-label {
     display: none !important;
   }
 
-  .fides-results-bar {
-    justify-content: flex-end;
+  /* Search takes full width above filter toggle */
+  .fides-topbar-search {
+    flex: 0 0 100%;
+    max-width: none;
+    order: -1;
+    height: auto;
   }
 
+  /* Filter toggle takes full width */
   .fides-mobile-filter-toggle {
-    width: 100%;
+    flex: 0 0 100%;
     justify-content: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+  }
+
+  .fides-main-layout {
+    overflow: visible;
   }
 
   /* Modal sizing on mobile: sheet from bottom */

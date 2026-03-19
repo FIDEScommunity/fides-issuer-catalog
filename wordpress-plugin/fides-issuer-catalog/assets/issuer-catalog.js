@@ -432,7 +432,7 @@
                       <div class="fides-eco-entities fides-eco-entities--row fides-eco-rp-entities"></div>
                     </div>
                   </div>
-                  <div class="fides-eco-wallet-connector">${icons.chevronUp}</div>
+                  <div class="fides-eco-wallet-connector">${icons.chevronDown}</div>
                   <!-- Business Wallets (bottom) -->
                   <div class="fides-eco-wallet-row">
                     <div class="fides-eco-wallet-box">
@@ -664,15 +664,6 @@
           </div>
         </div>
         <div class="fides-sidebar-content">
-          ${settings.showSearch ? `
-            <div class="fides-sidebar-search">
-              <div class="fides-search-wrapper">
-                <span class="fides-search-icon">${icons.search}</span>
-                <input id="fides-search-input" class="fides-search-input" type="text" placeholder="Search..." value="${escapeHtml(filters.search)}">
-                <button class="fides-search-clear ${filters.search ? '' : 'hidden'}" id="fides-search-clear" type="button" aria-label="Clear search">${icons.xSmall}</button>
-              </div>
-            </div>
-          ` : ''}
           <div class="fides-quick-filters">
             <span class="fides-quick-filters-title">Quick filters</span>
             <label class="fides-filter-checkbox">
@@ -708,16 +699,16 @@
         <div class="fides-main-layout fides-main ${settings.showFilters ? '' : 'no-filters'}">
           ${renderFiltersPanel()}
           <section class="fides-main-content">
-            ${settings.showSearch ? `
-              <div class="fides-mobile-search">
-                <div class="fides-search-wrapper">
-                  <span class="fides-search-icon">${icons.search}</span>
-                  <input id="fides-mobile-search-input" class="fides-search-input fides-mobile-search-input" type="text" placeholder="Search..." value="${escapeHtml(filters.search)}">
-                  <button class="fides-search-clear ${filters.search ? '' : 'hidden'}" id="fides-mobile-search-clear" type="button" aria-label="Clear search">${icons.xSmall}</button>
-                </div>
-              </div>
-            ` : ''}
             <div class="fides-results-bar">
+              ${settings.showSearch ? `
+                <div class="fides-topbar-search">
+                  <div class="fides-search-wrapper">
+                    <span class="fides-search-icon">${icons.search}</span>
+                    <input id="fides-search-input" class="fides-search-input" type="text" placeholder="Search..." value="${escapeHtml(filters.search)}" autocomplete="off">
+                    <button class="fides-search-clear ${filters.search ? '' : 'hidden'}" id="fides-search-clear" type="button" aria-label="Clear search">${icons.xSmall}</button>
+                  </div>
+                </div>
+              ` : ''}
               <label class="fides-sort-label" for="fides-sort-select">
                 <span class="fides-sort-text">Sort by:</span>
                 <select id="fides-sort-select" class="fides-sort-select">
@@ -938,19 +929,11 @@
   }
 
   function bindEvents() {
-    const syncMobileSearch = (value) => {
-      const mobileInput = root.querySelector('#fides-mobile-search-input');
-      const mobileClear = root.querySelector('#fides-mobile-search-clear');
-      if (mobileInput) mobileInput.value = value;
-      if (mobileClear) mobileClear.classList.toggle('hidden', !value);
-    };
-
     const searchInput = root.querySelector('#fides-search-input');
     const searchClear = root.querySelector('#fides-search-clear');
     const handleSearch = debounce((e) => {
       filters.search = e.target.value || '';
       if (searchClear) searchClear.classList.toggle('hidden', !filters.search);
-      syncMobileSearch(filters.search);
       renderIssuerGridOnly();
     }, 300);
     if (searchInput) searchInput.addEventListener('input', handleSearch);
@@ -958,28 +941,6 @@
       filters.search = '';
       if (searchInput) searchInput.value = '';
       searchClear.classList.add('hidden');
-      syncMobileSearch('');
-      renderIssuerGridOnly();
-    });
-
-    const mobileInput = root.querySelector('#fides-mobile-search-input');
-    const mobileClear = root.querySelector('#fides-mobile-search-clear');
-    const handleMobileSearch = debounce((e) => {
-      filters.search = e.target.value || '';
-      const si = root.querySelector('#fides-search-input');
-      const sc = root.querySelector('#fides-search-clear');
-      if (si) si.value = filters.search;
-      if (sc) sc.classList.toggle('hidden', !filters.search);
-      if (mobileClear) mobileClear.classList.toggle('hidden', !filters.search);
-      renderIssuerGridOnly();
-    }, 300);
-    if (mobileInput) mobileInput.addEventListener('input', handleMobileSearch);
-    if (mobileClear) mobileClear.addEventListener('click', () => {
-      filters.search = '';
-      if (mobileInput) mobileInput.value = '';
-      mobileClear.classList.add('hidden');
-      const si = root.querySelector('#fides-search-input');
-      if (si) si.value = '';
       renderIssuerGridOnly();
     });
 
