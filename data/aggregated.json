@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-19T20:09:04.752Z",
+  "lastUpdated": "2026-03-19T20:37:25.579Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -178,7 +178,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -238,7 +238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -337,7 +337,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -347,7 +347,7 @@
         "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png"
       },
       "displayName": "Kamer van Koophandel",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company/.well-known/openid-credential-issuer",
       "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png",
@@ -441,8 +441,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
-      "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "updatedAt": "2026-03-19T21:37:14+01:00",
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -452,7 +452,7 @@
         "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png"
       },
       "displayName": "Belastingdienst",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst/.well-known/openid-credential-issuer",
       "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png",
@@ -553,8 +553,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
-      "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "updatedAt": "2026-03-19T21:37:14+01:00",
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1120,7 +1120,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1417,18 +1417,18 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
       "organization": {
-        "name": "FIDES Labs BV",
+        "name": "FIDES Labs",
         "did": "did:web:fides.community",
         "website": "https://fides.community",
         "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4"
       },
       "displayName": "FIDES",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/5ebe0351-f7a3-46dc-97e8-fdb356fb6f5b/Organization",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/5ebe0351-f7a3-46dc-97e8-fdb356fb6f5b/Organization/.well-known/openid-credential-issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4",
@@ -1837,19 +1837,19 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
-      "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "updatedAt": "2026-03-19T21:37:14+01:00",
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
       "organization": {
-        "name": "FIDES Labs BV",
+        "name": "FIDES Labs",
         "did": "did:web:fides.community",
         "website": "https://fides.community",
         "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4"
       },
       "displayName": "MijnOverheid issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/a860157d-64d2-434f-9288-04f5b4d2b9dc/MijnOverheidIssuer",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/a860157d-64d2-434f-9288-04f5b4d2b9dc/MijnOverheidIssuer/.well-known/openid-credential-issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4",
@@ -1925,8 +1925,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
-      "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "updatedAt": "2026-03-19T21:37:14+01:00",
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2231,7 +2231,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2448,7 +2448,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-19T20:09:04.752Z"
+      "fetchedAt": "2026-03-19T20:37:25.579Z"
     }
   ],
   "stats": {
