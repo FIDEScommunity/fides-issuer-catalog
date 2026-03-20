@@ -34,5 +34,8 @@
   },
   "issuer:credenco:tulip:sandbox": {
     "firstSeenAt": "2026-03-20T08:33:47.815Z"
+  },
+  "issuer:multipaz:mdl:sandbox": {
+    "firstSeenAt": "2026-03-20T15:19:21.293Z"
   }
 }

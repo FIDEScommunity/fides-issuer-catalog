@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-20T13:23:55.001Z",
+  "lastUpdated": "2026-03-20T15:19:21.293Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -179,7 +179,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -240,7 +240,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -340,7 +340,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -453,7 +453,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:26:31+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:credenco:tulip:sandbox",
@@ -559,7 +559,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-20T09:33:34+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1126,7 +1126,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1424,7 +1424,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1845,7 +1845,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1933,7 +1933,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2238,7 +2238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -2344,7 +2344,164 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:27:53+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
+    },
+    {
+      "id": "issuer:multipaz:mdl:sandbox",
+      "organization": {
+        "name": "MultiPaz",
+        "website": "https://www.multipaz.org",
+        "logoUri": "https://issuer.multipaz.org/multipaz-logo-400x400.png"
+      },
+      "displayName": "MultiPaz Sandbox Issuer",
+      "environment": "sandbox",
+      "credentialIssuerUrl": "https://issuer.multipaz.org/issuer",
+      "oid4vciMetadataUrl": "https://issuer.multipaz.org/.well-known/openid-credential-issuer/issuer",
+      "logoUri": "https://issuer.multipaz.org/multipaz-logo-400x400.png",
+      "description": "This sandbox credential issuer from MultiPaz supports the issuance of verious credentials for testing OpenID4VCI flows and interoperability scenarios.",
+      "issuerWebsiteUrl": "issuer.multipaz.org",
+      "projectContext": "MultiPaz OpenID4VCI demo issuer",
+      "credentialConfigurations": [
+        {
+          "configurationId": "mDL",
+          "displayName": "mDL",
+          "vcFormat": "mdoc",
+          "docType": "org.iso.18013.5.1.mDL",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:mdl-mdoc:mdoc",
+            "displayName": "mDL (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "pid_mdoc",
+          "displayName": "pid_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.eudi.pid.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-mdoc:mdoc",
+            "displayName": "PID (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "pid_sd_jwt",
+          "displayName": "pid_sd_jwt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eudi:pid:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
+            "displayName": "PID (SD-JWT VC)"
+          }
+        },
+        {
+          "configurationId": "utopia_naturalization",
+          "displayName": "utopia_naturalization",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "http://utopia.example.com/vct/naturalization",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "utopia_movie_ticket",
+          "displayName": "utopia_movie_ticket",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://utopia.example.com/vct/movieticket",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [],
+          "cryptographicBindingMethods": []
+        },
+        {
+          "configurationId": "mDoc-AgeVerification",
+          "displayName": "mDoc-AgeVerification",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.ec.av.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:age-verification-mdoc:mdoc",
+            "displayName": "Age Verification (MSO Mdoc)"
+          }
+        },
+        {
+          "configurationId": "utopia_wholesale",
+          "displayName": "utopia_wholesale",
+          "vcFormat": "mdoc",
+          "docType": "org.multipaz.loyalty.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ]
+        },
+        {
+          "configurationId": "payment_sca_mdoc",
+          "displayName": "payment_sca_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "org.multipaz.payment.sca.1",
+          "signingAlgorithms": [
+            -9
+          ],
+          "proofTypes": [
+            "jwt",
+            "attestation"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ]
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-20T15:19:21.293Z",
+      "updatedAt": "2026-03-20T16:19:07+01:00",
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2561,13 +2718,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T13:23:55.001Z"
+      "fetchedAt": "2026-03-20T15:19:21.293Z"
     }
   ],
   "stats": {
-    "totalIssuers": 12,
+    "totalIssuers": 13,
     "productionIssuers": 0,
-    "totalOrganizations": 9,
-    "totalCredentialConfigurations": 115
+    "totalOrganizations": 10,
+    "totalCredentialConfigurations": 123
   }
 }
