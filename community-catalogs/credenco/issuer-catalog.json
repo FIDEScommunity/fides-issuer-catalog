@@ -7,18 +7,11 @@
   },
   "issuers": [
     {
-      "id": "issuer:credenco:kvk:sandbox",
-      "displayName": "KVK Sandbox Issuer",
-      "description": "This sandbox credential issuer from the Dutch Chamber of Commerce (Kamer van Koophandel), hosted by Credenco, supports a range of credentials used in pilots, experiments, and demonstrations to explore interoperable digital trust.",
+      "id": "issuer:credenco:tulip:sandbox",
+      "displayName": "Tulip Bank Demo Issuer",
+      "description": "This is a demo credential issuer for the fictitious ‘Tulip Bank’, hosted by Credenco. It provides credentials that can be used across pilots, experiments, and demos.",
       "environment": "sandbox",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company/.well-known/openid-credential-issuer"
-    },
-    {
-      "id": "issuer:credenco:belastingdienst:sandbox",
-      "displayName": "Belastingdienst Sandbox Issuer",
-      "description": "This sandbox credential issuer from the Dutch Tax Administration (Belastingdienst), hosted by Credenco, supports a range of credentials used in pilots, experiments, and demonstrations to explore interoperable digital trust.",
-      "environment": "sandbox",
-      "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst/.well-known/openid-credential-issuer"
     }
   ]
 }
