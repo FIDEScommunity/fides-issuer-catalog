@@ -2,7 +2,7 @@
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
   "organization": {
     "name": "European Commission",
-    "website": "https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/694487738/EU+Digital+Identity+Wallet+Home",
+    "website": "https://github.com/eu-digital-identity-wallet",
     "logo": "https://avatars.githubusercontent.com/u/123750850?v=4"
   },
   "issuers": [
