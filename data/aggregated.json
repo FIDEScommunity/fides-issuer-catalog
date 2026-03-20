@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-20T07:54:58.751Z",
+  "lastUpdated": "2026-03-20T08:02:49.310Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -178,7 +178,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -238,7 +238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -337,7 +337,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -443,7 +443,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T08:48:46+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -555,7 +555,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T08:48:46+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -569,6 +569,7 @@
       "credentialIssuerUrl": "https://issuer.eudiw.dev",
       "oid4vciMetadataUrl": "https://issuer.eudiw.dev/.well-known/openid-credential-issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/123750850?v=4",
+      "description": "This is the EUDI reference credential issuer that can be used for testing, demonstration, and pilot applications, providing a set of credentials aligned with the EUDI reference architecture.",
       "projectContext": "EUDI Wallet Reference Implementation",
       "credentialConfigurations": [
         {
@@ -1120,8 +1121,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
-      "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "updatedAt": "2026-03-20T09:02:39+01:00",
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1419,7 +1420,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1840,7 +1841,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-19T21:37:14+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1928,7 +1929,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-19T21:37:14+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2233,7 +2234,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2450,7 +2451,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:54:58.751Z"
+      "fetchedAt": "2026-03-20T08:02:49.310Z"
     }
   ],
   "stats": {
