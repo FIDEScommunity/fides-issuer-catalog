@@ -31,5 +31,8 @@
   },
   "issuer:namirial:wallet-studio:test": {
     "firstSeenAt": "2026-03-18T12:08:33.802Z"
+  },
+  "issuer:credenco:tulip:sandbox": {
+    "firstSeenAt": "2026-03-20T08:33:47.815Z"
   }
 }

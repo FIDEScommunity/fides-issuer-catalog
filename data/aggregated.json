@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-20T08:28:05.478Z",
+  "lastUpdated": "2026-03-20T08:33:47.815Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -178,7 +178,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -238,7 +238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -337,7 +337,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -450,21 +450,21 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:26:31+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
-      "id": "issuer:credenco:kvk:sandbox",
+      "id": "issuer:credenco:tulip:sandbox",
       "organization": {
         "name": "Credenco",
         "website": "https://credenco.com",
         "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png"
       },
-      "displayName": "KVK Sandbox Issuer",
+      "displayName": "Tulip Bank Demo Issuer",
       "environment": "sandbox",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company/.well-known/openid-credential-issuer",
       "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png",
-      "description": "This sandbox credential issuer from the Dutch Chamber of Commerce (Kamer van Koophandel), hosted by Credenco, supports a range of credentials used in pilots, experiments, and demonstrations to explore interoperable digital trust.",
+      "description": "This is a demo credential issuer for the fictitious ‘Tulip Bank’, hosted by Credenco. It provides credentials that can be used across pilots, experiments, and demos.",
       "credentialConfigurations": [
         {
           "configurationId": "KVKRegistration_jwt_vc_json",
@@ -554,122 +554,9 @@
         }
       ],
       "supportedWallets": [],
-      "firstSeenAt": "2026-03-16T14:36:01.417Z",
-      "updatedAt": "2026-03-20T09:13:09+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
-    },
-    {
-      "id": "issuer:credenco:belastingdienst:sandbox",
-      "organization": {
-        "name": "Credenco",
-        "website": "https://credenco.com",
-        "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png"
-      },
-      "displayName": "Belastingdienst Sandbox Issuer",
-      "environment": "sandbox",
-      "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst",
-      "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst/.well-known/openid-credential-issuer",
-      "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png",
-      "description": "This sandbox credential issuer from the Dutch Tax Administration (Belastingdienst), hosted by Credenco, supports a range of credentials used in pilots, experiments, and demonstrations to explore interoperable digital trust.",
-      "credentialConfigurations": [
-        {
-          "configurationId": "LoonheffingenGedifferentieerdPremiepercentageWerkhervattingskas_sd",
-          "displayName": "Loonheffingen Gedifferentieerd premiepercentage Werkhervattingskas",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "LoonheffingenGedifferentieerdPremiepercentageWerkhervattingskas",
-          "signingAlgorithms": [
-            "ES256K",
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "did:jwk",
-            "did:ebsi",
-            "did:web"
-          ]
-        },
-        {
-          "configurationId": "urn:org:fides:vat:1",
-          "displayName": "VAT",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "urn:org:fides:vat:1",
-          "signingAlgorithms": [
-            "ES256K",
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "did:jwk",
-            "did:ebsi",
-            "did:web"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:fides:vat:sd-jwt-vc",
-            "displayName": "VAT Attestation"
-          }
-        },
-        {
-          "configurationId": "VerklaringBetalingsgedragNakomingFiscaleVerplichtingen_sd",
-          "displayName": "Statement of payment behaviour compliance with tax obligations",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "VerklaringBetalingsgedragNakomingFiscaleVerplichtingen",
-          "signingAlgorithms": [
-            "ES256K",
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "did:jwk",
-            "did:ebsi",
-            "did:web"
-          ]
-        },
-        {
-          "configurationId": "DigitalAssetIdentifier",
-          "displayName": "DigitalAssetIdentifier",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "DigitalAssetIdentifier",
-          "signingAlgorithms": [
-            "ES256K",
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "did:jwk",
-            "did:ebsi",
-            "did:web"
-          ]
-        },
-        {
-          "configurationId": "issue_vat",
-          "displayName": "Tax registration statement",
-          "vcFormat": "vcdm_1_1",
-          "signingAlgorithms": [
-            "ES256K",
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "did:jwk",
-            "did:ebsi",
-            "did:web"
-          ]
-        }
-      ],
-      "supportedWallets": [],
-      "firstSeenAt": "2026-03-16T14:36:01.417Z",
-      "updatedAt": "2026-03-20T09:13:09+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "firstSeenAt": "2026-03-20T08:33:47.815Z",
+      "updatedAt": "2026-03-20T09:33:34+01:00",
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1236,7 +1123,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:02:39+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1534,7 +1421,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1955,7 +1842,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -2043,7 +1930,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2348,7 +2235,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -2454,7 +2341,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:27:53+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2671,13 +2558,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:28:05.478Z"
+      "fetchedAt": "2026-03-20T08:33:47.815Z"
     }
   ],
   "stats": {
-    "totalIssuers": 13,
+    "totalIssuers": 12,
     "productionIssuers": 0,
     "totalOrganizations": 9,
-    "totalCredentialConfigurations": 120
+    "totalCredentialConfigurations": 115
   }
 }
