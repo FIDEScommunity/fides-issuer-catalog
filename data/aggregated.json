@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-20T08:47:38.884Z",
+  "lastUpdated": "2026-03-20T13:05:43.105Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -16,6 +16,7 @@
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/188e2459-6da8-4431-9062-2fcdac274f41/.well-known/openid-credential-issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4",
       "description": "Simulated Bundesdruckerei issuer hosted on the Animo EUDI Playground. Issues PID, mDL and Age Verification credentials.",
+      "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=188e2459-6da8-4431-9062-2fcdac274f41&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
       "credentialConfigurations": [
         {
@@ -178,7 +179,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -193,6 +194,7 @@
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/2943c018-8eac-4ddc-a234-da35857fa3e9/.well-known/openid-credential-issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4",
       "description": "Simulated RDW (Dutch Vehicle Registration Authority) issuer hosted on the Animo EUDI Playground. Issues Vehicle Registration Certificate (mVRC).",
+      "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=2943c018-8eac-4ddc-a234-da35857fa3e9&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
       "credentialConfigurations": [
         {
@@ -238,7 +240,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -253,6 +255,7 @@
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/a5292f18-3c9f-484a-8515-fb4ec4cb33e8/.well-known/openid-credential-issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4",
       "description": "Simulated telecom organisation issuer hosted on the Animo EUDI Playground. Issues MSISDN credentials.",
+      "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=a5292f18-3c9f-484a-8515-fb4ec4cb33e8&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
       "credentialConfigurations": [
         {
@@ -337,7 +340,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -450,7 +453,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:26:31+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:credenco:tulip:sandbox",
@@ -556,7 +559,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-20T09:33:34+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1123,7 +1126,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1421,7 +1424,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1842,7 +1845,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1930,7 +1933,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2235,7 +2238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -2341,7 +2344,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:27:53+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2558,7 +2561,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:47:38.884Z"
+      "fetchedAt": "2026-03-20T13:05:43.105Z"
     }
   ],
   "stats": {

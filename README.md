@@ -100,6 +100,7 @@ https://raw.githubusercontent.com/FIDEScommunity/fides-issuer-catalog/main/data/
 Each issuer entry includes all source fields plus data enriched from `.well-known`:
 - `displayName`, `logoUri` — from `display[]`
 - `credentialIssuerUrl` — from `credential_issuer`
+- `issuerWebsiteUrl` — optional; from source catalog when set (e.g. issuer web UI or playground link)
 - `credentialConfigurations[]` — one entry per supported credential, including:
   - `vcFormat`, `vct`, `docType`
   - `signingAlgorithms`, `proofTypes`, `cryptographicBindingMethods`

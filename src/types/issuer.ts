@@ -27,6 +27,8 @@ export interface SourceIssuer {
   description?: string;
   environment: 'production' | 'pilot' | 'test' | 'sandbox';
   oid4vciMetadataUrl: string;
+  /** Optional public URL for this issuer instance (e.g. web UI, demo, playground). */
+  issuerWebsiteUrl?: string;
   projectContext?: string;
   supportedWallets?: SourceWalletReference[];
   credentialRefs?: SourceCredentialReference[];
@@ -138,6 +140,8 @@ export interface AggregatedIssuer {
   environment: 'production' | 'pilot' | 'test' | 'sandbox';
   credentialIssuerUrl: string;
   oid4vciMetadataUrl: string;
+  /** From source catalog when provided (e.g. issuer web UI or playground link). */
+  issuerWebsiteUrl?: string;
   logoUri?: string;
   projectContext?: string;
   credentialConfigurations: AggregatedCredentialConfiguration[];

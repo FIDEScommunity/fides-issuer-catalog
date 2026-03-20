@@ -123,6 +123,11 @@
           "format": "uri",
           "description": "URL to the OID4VCI .well-known/openid-credential-issuer metadata endpoint"
         },
+        "issuerWebsiteUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional public URL for this issuer instance (e.g. issuer web UI, demo, or playground)"
+        },
         "projectContext": {
           "type": "string",
           "description": "Optional project or pilot context (e.g. 'EUDI Wallet LSP', 'EWC v3 pilot')"

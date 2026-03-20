@@ -301,11 +301,12 @@
         const inName = (issuer.displayName || '').toLowerCase().includes(q);
         const inOrg = (issuer.organization?.name || '').toLowerCase().includes(q);
         const inUrl = (issuer.credentialIssuerUrl || '').toLowerCase().includes(q);
+        const inIssuerSite = (issuer.issuerWebsiteUrl || '').toLowerCase().includes(q);
         const inCredentials = configs.some((cc) =>
           (cc.displayName || '').toLowerCase().includes(q) ||
           (cc.credentialCatalogRef?.displayName || '').toLowerCase().includes(q)
         );
-        if (!inName && !inOrg && !inUrl && !inCredentials) return false;
+        if (!inName && !inOrg && !inUrl && !inIssuerSite && !inCredentials) return false;
       }
       return true;
     }).sort((a, b) => {
@@ -722,6 +723,14 @@
                       }
                     </span>
                   </div>
+                  ${issuer.issuerWebsiteUrl ? `
+                  <div class="fides-kv-row fides-kv-row-wide">
+                    <span class="fides-kv-key">Issuer website</span>
+                    <span class="fides-kv-val fides-kv-val--url">
+                      <a href="${escapeHtml(issuer.issuerWebsiteUrl)}" target="_blank" rel="noopener" class="fides-modal-link-inline fides-url-ellipsis" title="${escapeHtml(issuer.issuerWebsiteUrl)}" onclick="event.stopPropagation();">${escapeHtml(issuer.issuerWebsiteUrl)} ${icons.externalLinkSmall}</a>
+                    </span>
+                  </div>
+                  ` : ''}
                   <div class="fides-kv-row">
                     <span class="fides-kv-key">VC Format</span>
                     <span class="fides-kv-val fides-kv-tags">

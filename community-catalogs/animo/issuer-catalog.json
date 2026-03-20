@@ -12,6 +12,7 @@
       "description": "Simulated Bundesdruckerei issuer hosted on the Animo EUDI Playground. Issues PID, mDL and Age Verification credentials.",
       "environment": "test",
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/188e2459-6da8-4431-9062-2fcdac274f41/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=188e2459-6da8-4431-9062-2fcdac274f41&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground"
     },
     {
@@ -20,6 +21,7 @@
       "description": "Simulated RDW (Dutch Vehicle Registration Authority) issuer hosted on the Animo EUDI Playground. Issues Vehicle Registration Certificate (mVRC).",
       "environment": "test",
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/2943c018-8eac-4ddc-a234-da35857fa3e9/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=2943c018-8eac-4ddc-a234-da35857fa3e9&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground"
     },
     {
@@ -28,6 +30,7 @@
       "description": "Simulated telecom organisation issuer hosted on the Animo EUDI Playground. Issues MSISDN credentials.",
       "environment": "test",
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/a5292f18-3c9f-484a-8515-fb4ec4cb33e8/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=a5292f18-3c9f-484a-8515-fb4ec4cb33e8&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground"
     }
   ]

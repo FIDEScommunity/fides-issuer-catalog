@@ -371,6 +371,9 @@ async function crawl(): Promise<void> {
         oid4vciMetadataUrl: sourceIssuer.oid4vciMetadataUrl,
         logoUri: getIssuerLogoUri(metadata, catalog.organization),
         ...(sourceIssuer.description ? { description: sourceIssuer.description } : {}),
+        ...(sourceIssuer.issuerWebsiteUrl
+          ? { issuerWebsiteUrl: sourceIssuer.issuerWebsiteUrl }
+          : {}),
         projectContext: sourceIssuer.projectContext,
         credentialConfigurations,
         supportedWallets: sourceIssuer.supportedWallets?.map((w) => ({
