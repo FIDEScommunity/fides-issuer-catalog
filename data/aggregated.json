@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-20T15:19:21.293Z",
+  "lastUpdated": "2026-03-20T15:48:38.832Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -179,7 +179,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -240,7 +240,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -340,7 +340,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -453,7 +453,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:26:31+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:credenco:tulip:sandbox",
@@ -559,7 +559,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-20T09:33:34+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1126,7 +1126,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1424,7 +1424,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1845,7 +1845,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1933,7 +1933,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2238,7 +2238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -2344,7 +2344,59 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:27:53+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
+    },
+    {
+      "id": "issuer:mosip:insurance:sandbox",
+      "organization": {
+        "name": "MOSIP",
+        "website": "https://www.mosip.io",
+        "logoUri": "https://avatars.githubusercontent.com/u/39733477?s=280&v=4"
+      },
+      "displayName": "Inji Certify - Insurance Sandbox Issuer",
+      "environment": "sandbox",
+      "credentialIssuerUrl": "https://injicertify-insurance.collab.mosip.net",
+      "oid4vciMetadataUrl": "https://injicertify-insurance.collab.mosip.net/v1/certify/issuance/.well-known/openid-credential-issuer",
+      "logoUri": "https://avatars.githubusercontent.com/u/39733477?s=280&v=4",
+      "description": "This sandbox credential issuer from MOSIP Inji Certify supports the issuance of insurance-related credentials in the MOSIP collab environment for testing OpenID4VCI flows and interoperability scenarios.",
+      "issuerWebsiteUrl": "https://collab.mosip.net/",
+      "projectContext": "MOSIP Collab - Inji Certify",
+      "credentialConfigurations": [
+        {
+          "configurationId": "InsuranceCredential",
+          "displayName": "Health Insurance",
+          "vcFormat": "vcdm_1_1",
+          "signingAlgorithms": [
+            "EdDSA"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "LifeInsuranceCredential",
+          "displayName": "Life Insurance",
+          "vcFormat": "vcdm_1_1",
+          "signingAlgorithms": [
+            "EdDSA"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-20T15:48:38.832Z",
+      "updatedAt": "2026-03-20T16:48:25+01:00",
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:multipaz:mdl:sandbox",
@@ -2501,7 +2553,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-20T16:19:07+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2718,13 +2770,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T15:19:21.293Z"
+      "fetchedAt": "2026-03-20T15:48:38.832Z"
     }
   ],
   "stats": {
-    "totalIssuers": 13,
+    "totalIssuers": 14,
     "productionIssuers": 0,
-    "totalOrganizations": 10,
-    "totalCredentialConfigurations": 123
+    "totalOrganizations": 11,
+    "totalCredentialConfigurations": 125
   }
 }

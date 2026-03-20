@@ -37,5 +37,8 @@
   },
   "issuer:multipaz:mdl:sandbox": {
     "firstSeenAt": "2026-03-20T15:19:21.293Z"
+  },
+  "issuer:mosip:insurance:sandbox": {
+    "firstSeenAt": "2026-03-20T15:48:38.832Z"
   }
 }
