@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers.
- * Version: 1.2.5
+ * Version: 1.4.0
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.2.5');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.4.0');
 
 /**
  * Detect if the site is running on a .local or localhost URL (local dev).

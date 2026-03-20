@@ -425,6 +425,12 @@
   margin-bottom: 1rem;
 }
 
+/* Force arrow cursor for entire KPI strip (themes often set pointer on groups/spans) */
+.fides-issuer-catalog .fides-kpi-row,
+.fides-issuer-catalog .fides-kpi-row * {
+  cursor: default !important;
+}
+
 .fides-kpi-card {
   display: flex;
   flex-direction: column;
@@ -436,18 +442,21 @@
   background: var(--fides-bg-secondary);
   color: var(--fides-text-primary);
   text-align: left;
-  cursor: pointer;
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 0;
+  cursor: default;
 }
 
-.fides-kpi-card:hover {
-  border-color: var(--fides-accent);
-  transform: translateY(-1px);
-}
-
-.fides-kpi-card.active {
-  border-color: var(--fides-accent);
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+/* KPIs are non-interactive; lock appearance on hover/focus so theme or old button styles cannot apply */
+.fides-issuer-catalog .fides-kpi-card:hover,
+.fides-issuer-catalog .fides-kpi-card:focus,
+.fides-issuer-catalog .fides-kpi-card:focus-visible,
+.fides-issuer-catalog .fides-kpi-card:focus-within {
+  border-color: var(--fides-border) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  background: var(--fides-bg-secondary) !important;
+  color: var(--fides-text-primary) !important;
+  cursor: default !important;
 }
 
 .fides-kpi-value {
@@ -2903,6 +2912,21 @@ span.fides-tag.platform {
   color: #0A6EF3;
 }
 
+/* Signing algorithms vs proof types — distinct from each other and from default gray pills */
+.fides-modal-overlay[data-theme="fides"] .fides-tag.signing-algorithm,
+.fides-modal-overlay[data-theme="light"] .fides-tag.signing-algorithm {
+  background: rgba(124, 58, 237, 0.12);
+  color: #5b21b6;
+  border: 1px solid rgba(124, 58, 237, 0.28);
+}
+
+.fides-modal-overlay[data-theme="fides"] .fides-tag.proof-type,
+.fides-modal-overlay[data-theme="light"] .fides-tag.proof-type {
+  background: rgba(5, 150, 105, 0.12);
+  color: #047857;
+  border: 1px solid rgba(5, 150, 105, 0.28);
+}
+
 /* FIDES theme - Platform tags in modal */
 /* Modal platform tags - clickable (solid green, app store buttons) */
 .fides-modal-overlay a.fides-tag.platform.clickable {
@@ -4116,7 +4140,7 @@ a.fides-eco-tag-blue:hover {
 
 .fides-attributes-table {
   width: 100%;
-  min-width: 380px;
+  min-width: 320px;
   border-collapse: collapse;
   font-size: 0.8125rem;
 }
@@ -4138,8 +4162,10 @@ a.fides-eco-tag-blue:hover {
   white-space: nowrap;
 }
 
-/* Prevent format tags from wrapping at hyphens */
-.fides-attributes-table .fides-tag.credential-format {
+/* Prevent technical tags from wrapping at hyphens */
+.fides-attributes-table .fides-tag.credential-format,
+.fides-attributes-table .fides-tag.signing-algorithm,
+.fides-attributes-table .fides-tag.proof-type {
   white-space: nowrap;
   display: inline-block;
 }

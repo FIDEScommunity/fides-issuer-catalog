@@ -41,6 +41,64 @@
     'mdoc':      'mDL/mDoc',
   };
 
+  /** COSE algorithm integers from OID4VCI / mdoc (IANA + common deployments). JOSE names pass through. */
+  const COSE_SIGNING_ALG_LABELS = {
+    '-257': 'RS256',
+    '-258': 'RS384',
+    '-259': 'RS512',
+    '-7': 'ES256',
+    '-8': 'EdDSA',
+    '-9': 'ES512',
+    '-35': 'ES384',
+    '-36': 'ES512',
+    '-37': 'PS256',
+    '-38': 'PS384',
+    '-39': 'PS512',
+    '-19': 'Ed25519',
+    '-46': 'Ed448',
+    '-47': 'ES256K',
+  };
+
+  function formatSigningAlgorithmLabel(alg) {
+    if (alg === null || alg === undefined || alg === '') return String(alg);
+    if (typeof alg === 'number' && Number.isFinite(alg)) {
+      const k = String(alg);
+      return COSE_SIGNING_ALG_LABELS[k] || `COSE ${k}`;
+    }
+    const s = String(alg).trim();
+    if (/^-?\d+$/.test(s)) {
+      return COSE_SIGNING_ALG_LABELS[s] || `COSE ${s}`;
+    }
+    return s;
+  }
+
+  function uniqueSigningAlgorithmLabels(algorithms) {
+    if (!algorithms || !algorithms.length) return [];
+    const labels = [...new Set(algorithms.map(formatSigningAlgorithmLabel))];
+    labels.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+    return labels;
+  }
+
+  /** Unique display labels for signing algorithms across all credential configs (merged filter options). */
+  function collectIssuerSigningAlgorithmLabels(issuerList) {
+    const set = new Set();
+    issuerList.forEach((issuer) => {
+      (issuer.credentialConfigurations || []).forEach((cc) => {
+        (cc.signingAlgorithms || []).forEach((alg) => {
+          set.add(formatSigningAlgorithmLabel(alg));
+        });
+      });
+    });
+    const arr = Array.from(set);
+    arr.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+    return arr;
+  }
+
+  /** Merge legacy filter state (raw COSE / string) into canonical display labels. */
+  function normalizeIssuerSigningAlgorithmFilters() {
+    filters.signingAlgorithm = [...new Set((filters.signingAlgorithm || []).map((v) => formatSigningAlgorithmLabel(v)))];
+  }
+
   const ISSUER_FILTER_TO_VOCAB = {
     environment:      'availability',
     organization:     'provider',
@@ -208,7 +266,10 @@
       (issuer.credentialConfigurations || []).forEach((cc) => {
         if (cc.vcFormat) facets.vcFormat[cc.vcFormat] = (facets.vcFormat[cc.vcFormat] || 0) + 1;
         if (cc.credentialCatalogRef?.displayName) facets.credential[cc.credentialCatalogRef.displayName] = (facets.credential[cc.credentialCatalogRef.displayName] || 0) + 1;
-        (cc.signingAlgorithms || []).forEach((alg) => { facets.signingAlgorithm[alg] = (facets.signingAlgorithm[alg] || 0) + 1; });
+        (cc.signingAlgorithms || []).forEach((alg) => {
+          const L = formatSigningAlgorithmLabel(alg);
+          facets.signingAlgorithm[L] = (facets.signingAlgorithm[L] || 0) + 1;
+        });
       });
       if (isWithinLastDays(issuer.firstSeenAt, 30)) facets.addedLast30Days++;
     });
@@ -229,7 +290,11 @@
       const configs = issuer.credentialConfigurations || [];
       if (filters.vcFormat.length && !configs.some((cc) => filters.vcFormat.includes(cc.vcFormat))) return false;
       if (filters.credential.length && !configs.some((cc) => filters.credential.includes(cc.credentialCatalogRef?.displayName))) return false;
-      if (filters.signingAlgorithm.length && !configs.some((cc) => (cc.signingAlgorithms || []).some((alg) => filters.signingAlgorithm.includes(alg)))) return false;
+      if (filters.signingAlgorithm.length && !configs.some((cc) =>
+        (cc.signingAlgorithms || []).some((alg) =>
+          filters.signingAlgorithm.includes(formatSigningAlgorithmLabel(alg))
+        )
+      )) return false;
 
       if (filters.search) {
         const q = filters.search.toLowerCase();
@@ -244,7 +309,29 @@
       }
       return true;
     }).sort((a, b) => {
-      if (sortBy === 'az') return (a.displayName || '').localeCompare(b.displayName || '');
+      if (sortBy === 'az') return compareIssuerDisplayName(a, b);
+
+      if (sortBy === 'relyingParties') {
+        const ra = issuerRpCountForSort(a);
+        const rb = issuerRpCountForSort(b);
+        const aOk = ra >= 0;
+        const bOk = rb >= 0;
+        if (aOk && bOk) {
+          if (rb !== ra) return rb - ra;
+          return compareIssuerDisplayName(a, b);
+        }
+        if (aOk && !bOk) return -1;
+        if (!aOk && bOk) return 1;
+        return compareIssuerDisplayName(a, b);
+      }
+
+      if (sortBy === 'credentialTypes') {
+        const ca = issuerCredentialTypeCount(a);
+        const cb = issuerCredentialTypeCount(b);
+        if (cb !== ca) return cb - ca;
+        return compareIssuerDisplayName(a, b);
+      }
+
       const dateA = new Date(a.updatedAt || a.fetchedAt || 0).getTime();
       const dateB = new Date(b.updatedAt || b.fetchedAt || 0).getTime();
       return dateB - dateA;
@@ -415,6 +502,22 @@
     ).length;
   }
 
+  /** RP count for sort (high to low). -1 if the RP catalog is not loaded yet. */
+  function issuerRpCountForSort(issuer) {
+    if (!rpCatalogData || !Array.isArray(rpCatalogData)) return -1;
+    const n = countRpsForIssuer(issuer, rpCatalogData);
+    return n === null ? 0 : n;
+  }
+
+  /** Number of credential configurations (types) offered by the issuer. */
+  function issuerCredentialTypeCount(issuer) {
+    return (issuer.credentialConfigurations || []).length;
+  }
+
+  function compareIssuerDisplayName(a, b) {
+    return (a.displayName || '').localeCompare(b.displayName || '');
+  }
+
   function renderModal() {
     if (!selectedIssuer) return '';
     const issuer = selectedIssuer;
@@ -430,6 +533,14 @@
     const showCatalogToggle = catalogCount > 0 && catalogCount < configs.length;
     const catalogConfigs = configs.filter((cc) => cc.credentialCatalogRef);
     const uncataloguedConfigs = configs.filter((cc) => !cc.credentialCatalogRef);
+
+    const credCatalogBase = (config.credentialCatalogUrl || '').replace(/\/$/, '');
+    const ecosystemCredentialHref =
+      credentialsWithRef.length > 0 && credCatalogBase
+        ? credentialsWithRef.length === 1
+          ? `${credCatalogBase}?credential=${encodeURIComponent(credentialsWithRef[0].credentialCatalogRef.id)}`
+          : `${credCatalogBase}?credentials=${credentialsWithRef.map((cc) => encodeURIComponent(cc.credentialCatalogRef.id)).join(',')}`
+        : '';
 
     return `
       <div class="fides-modal-overlay" id="fides-modal-overlay" data-theme="${escapeHtml(theme)}">
@@ -490,7 +601,7 @@
                     </div>
                     <div class="fides-eco-arrow">${icons.chevronDown}</div>
                     <div class="fides-eco-col fides-eco-col-side fides-eco-col-side--green"
-                      ${credentialsWithRef.length > 0 && config.credentialCatalogUrl ? `data-href="${config.credentialCatalogUrl.replace(/\/$/, '')}?credentials=${credentialsWithRef.map(cc => encodeURIComponent(cc.credentialCatalogRef.id)).join(',')}"` : ''}>
+                      ${ecosystemCredentialHref ? `data-href="${escapeHtml(ecosystemCredentialHref)}"` : ''}>
                       <div class="fides-eco-col-header">
                         <span class="fides-eco-count">${credentialsWithRef.length}</span>
                         <span class="fides-eco-label">Credential types</span>
@@ -503,13 +614,7 @@
                               const hidden = credentialsWithRef.length - 2;
                               const renderCredTag = (cc) => {
                                 const ref = cc.credentialCatalogRef;
-                                const href = config.credentialCatalogUrl
-                                  ? `${config.credentialCatalogUrl.replace(/\/$/, '')}?credential=${encodeURIComponent(ref.id)}`
-                                  : null;
-                                const inner = `${escapeHtml(ref.displayName || ref.id)}${href ? ' ' + icons.externalLinkSmall : ''}`;
-                                return href
-                                  ? `<a href="${escapeHtml(href)}" class="fides-eco-tag fides-eco-tag-green" onclick="event.stopPropagation();">${escapeHtml(ref.displayName || ref.id)}</a>`
-                                  : `<span class="fides-eco-tag fides-eco-tag-green">${inner}</span>`;
+                                return `<span class="fides-eco-tag fides-eco-tag-green">${escapeHtml(ref.displayName || ref.id)}</span>`;
                               };
                               if (hidden > 0) {
                                 return visible.slice(0, -1).map(renderCredTag).join('') +
@@ -553,20 +658,27 @@
                     <table class="fides-attributes-table">
                       <thead>
                         <tr>
-                          <th>Credential</th>
-                          <th>Format</th>
-                          <th>Credential catalog</th>
+                          <th>Credential Type</th>
+                          <th>VC Format</th>
                         </tr>
                       </thead>
                       <tbody>
-                        ${catalogConfigs.map((cc) => `
+                        ${catalogConfigs.map((cc) => {
+                          const ref = cc.credentialCatalogRef;
+                          const base = (config.credentialCatalogUrl || '').replace(/\/$/, '');
+                          const href = base ? `${base}?credential=${encodeURIComponent(ref.id)}` : '';
+                          const label = ref.displayName || ref.id;
+                          const typeCell = href
+                            ? `<a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${escapeHtml(label)}</a>`
+                            : `<span>${escapeHtml(label)}</span>`;
+                          return `
                           <tr>
-                            <td>${escapeHtml(cc.displayName || cc.configurationId)}</td>
+                            <td>${typeCell}</td>
                             <td><span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[cc.vcFormat] || cc.vcFormat)}</span></td>
-                            <td><a href="${escapeHtml((config.credentialCatalogUrl || '').replace(/\/$/, '') + '?credential=' + encodeURIComponent(cc.credentialCatalogRef.id))}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${escapeHtml(cc.credentialCatalogRef.displayName || cc.credentialCatalogRef.id)}</a></td>
                           </tr>
-                        `).join('')}
-                        ${catalogConfigs.length === 0 ? `<tr><td colspan="3" style="color:var(--fides-text-muted);font-style:italic;">No credentials in catalog.</td></tr>` : ''}
+                        `;
+                        }).join('')}
+                        ${catalogConfigs.length === 0 ? `<tr><td colspan="2" style="color:var(--fides-text-muted);font-style:italic;">No credentials in catalog.</td></tr>` : ''}
                       </tbody>
                       ${uncataloguedConfigs.length > 0 ? `
                         <tbody class="fides-configs-extra" style="display:none;" id="fides-configs-extra">
@@ -574,13 +686,12 @@
                             <tr>
                               <td>${escapeHtml(cc.displayName || cc.configurationId)}</td>
                               <td><span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[cc.vcFormat] || cc.vcFormat)}</span></td>
-                              <td><span style="color:var(--fides-text-muted);">—</span></td>
                             </tr>
                           `).join('')}
                         </tbody>
                         <tbody>
                           <tr class="fides-configs-show-more-row">
-                            <td colspan="3">
+                            <td colspan="2">
                               <button type="button" class="fides-show-more-btn" id="fides-configs-show-more">
                                 Show ${uncataloguedConfigs.length} more
                               </button>
@@ -612,7 +723,7 @@
                     </span>
                   </div>
                   <div class="fides-kv-row">
-                    <span class="fides-kv-key">Cred. formats</span>
+                    <span class="fides-kv-key">VC Format</span>
                     <span class="fides-kv-val fides-kv-tags">
                       ${allFormats.length > 0
                         ? allFormats.map((f) => `<span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[f] || f)}</span>`).join('')
@@ -628,7 +739,7 @@
                     <span class="fides-kv-key">Signing algorithms</span>
                     <span class="fides-kv-val fides-kv-tags">
                       ${allAlgorithms.length > 0
-                        ? allAlgorithms.map((a) => `<span class="fides-tag">${escapeHtml(a)}</span>`).join('')
+                        ? uniqueSigningAlgorithmLabels(allAlgorithms).map((label) => `<span class="fides-tag signing-algorithm">${escapeHtml(label)}</span>`).join('')
                         : '—'
                       }
                     </span>
@@ -641,7 +752,7 @@
                     <span class="fides-kv-key">Proof types</span>
                     <span class="fides-kv-val fides-kv-tags">
                       ${allProofTypes.length > 0
-                        ? allProofTypes.map((p) => `<span class="fides-tag">${escapeHtml(p)}</span>`).join('')
+                        ? allProofTypes.map((p) => `<span class="fides-tag proof-type">${escapeHtml(p)}</span>`).join('')
                         : '—'
                       }
                     </span>
@@ -683,25 +794,24 @@
   }
 
   function renderKpiCards(metrics) {
-    const recentActive = filters.addedLast30Days || filters.updatedLast30Days;
     return `
-      <div class="fides-kpi-row">
-        <button class="fides-kpi-card" type="button" data-kpi-action="reset">
+      <div class="fides-kpi-row" role="group" aria-label="Catalog summary">
+        <div class="fides-kpi-card">
           <span class="fides-kpi-value">${metrics.total}</span>
           <span class="fides-kpi-label">Issuers</span>
-        </button>
-        <button class="fides-kpi-card" type="button" data-kpi-action="toggle-credentials">
+        </div>
+        <div class="fides-kpi-card">
           <span class="fides-kpi-value">${metrics.credentials}</span>
           <span class="fides-kpi-label">Credentials</span>
-        </button>
-        <button class="fides-kpi-card ${filters.usedByRPsOnly ? 'active' : ''}" type="button" data-kpi-action="toggle-rp">
+        </div>
+        <div class="fides-kpi-card">
           <span class="fides-kpi-value" data-kpi-metric="rp-issuers">—</span>
           <span class="fides-kpi-label">Used by relying parties</span>
-        </button>
-        <button class="fides-kpi-card ${recentActive ? 'active' : ''}" type="button" data-kpi-action="toggle-recent">
+        </div>
+        <div class="fides-kpi-card">
           <span class="fides-kpi-value">${metrics.recentActivity}</span>
           <span class="fides-kpi-label">Updated last 30 days</span>
-        </button>
+        </div>
       </div>
     `;
   }
@@ -723,7 +833,11 @@
           ${options.map((opt) => `
             <label class="fides-filter-checkbox">
               <input type="checkbox" data-filter-group="${escapeHtml(key)}" value="${escapeHtml(opt)}" ${selected.includes(opt) ? 'checked' : ''}>
-              <span>${escapeHtml(ENVIRONMENT_LABELS[opt] || VC_FORMAT_LABELS[opt] || opt)}<span class="fides-filter-option-count">(${facets?.[key]?.[opt] || 0})</span></span>
+              <span>${escapeHtml(
+                key === 'signingAlgorithm'
+                  ? opt
+                  : (ENVIRONMENT_LABELS[opt] || VC_FORMAT_LABELS[opt] || opt)
+              )}<span class="fides-filter-option-count">(${facets?.[key]?.[opt] || 0})</span></span>
             </label>
           `).join('')}
         </div>
@@ -741,7 +855,12 @@
     const organizationOptions = uniqueValues(issuers, (i) => i.organization?.name);
     const vcFormatOptions = uniqueValues(issuers, (i) => (i.credentialConfigurations || []).map((c) => c.vcFormat));
     const credentialOptions = uniqueValues(issuers, (i) => (i.credentialConfigurations || []).filter((c) => c.credentialCatalogRef?.displayName).map((c) => c.credentialCatalogRef.displayName));
-    const signingAlgOptions = uniqueValues(issuers, (i) => (i.credentialConfigurations || []).flatMap((c) => c.signingAlgorithms || []));
+    let signingAlgOptions = collectIssuerSigningAlgorithmLabels(issuers);
+    (filters.signingAlgorithm || []).forEach((f) => {
+      const L = formatSigningAlgorithmLabel(f);
+      if (!signingAlgOptions.includes(L)) signingAlgOptions.push(L);
+    });
+    signingAlgOptions.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
     return `
       <aside class="fides-sidebar">
@@ -807,6 +926,8 @@
                 <select id="fides-sort-select" class="fides-sort-select">
                   <option value="lastUpdated" ${sortBy === 'lastUpdated' ? 'selected' : ''}>Last updated</option>
                   <option value="az" ${sortBy === 'az' ? 'selected' : ''}>A–Z</option>
+                  <option value="credentialTypes" ${sortBy === 'credentialTypes' ? 'selected' : ''}>Credential types</option>
+                  <option value="relyingParties" ${sortBy === 'relyingParties' ? 'selected' : ''}>Relying parties</option>
                 </select>
               </label>
               ${settings.showFilters ? `
@@ -913,8 +1034,11 @@
       if (config.rpCatalogUrl && matchingRps.length > 0) {
         const rpColEl = document.querySelector('.fides-eco-col-side--blue');
         if (rpColEl) {
-          const rpIds = matchingRps.map(rp => encodeURIComponent(rp.id)).join(',');
-          rpColEl.dataset.href = config.rpCatalogUrl.replace(/\/$/, '') + '/?rps=' + rpIds;
+          const rpBase = config.rpCatalogUrl.replace(/\/$/, '');
+          rpColEl.dataset.href =
+            matchingRps.length === 1
+              ? `${rpBase}/?rp=${encodeURIComponent(matchingRps[0].id)}`
+              : `${rpBase}/?rps=${matchingRps.map((rp) => encodeURIComponent(rp.id)).join(',')}`;
           rpColEl.addEventListener('click', (e) => {
             if (e.target.closest('a')) return;
             window.location.href = rpColEl.dataset.href;
@@ -928,9 +1052,7 @@
         const hidden = matchingRps.length - 2;
         const renderRpTag = (rp) => {
           const label = escapeHtml(rp.name || rp.id);
-          return rp.website
-            ? `<a href="${escapeHtml(rp.website)}" class="fides-eco-tag fides-eco-tag-blue" onclick="event.stopPropagation();">${label}</a>`
-            : `<span class="fides-eco-tag fides-eco-tag-blue">${label}</span>`;
+          return `<span class="fides-eco-tag fides-eco-tag-blue">${label}</span>`;
         };
         if (hidden > 0) {
           entitiesEl.innerHTML = shown.slice(0, -1).map(renderRpTag).join('') +
@@ -1010,7 +1132,7 @@
       });
     });
 
-    // Click handler for ecosystem column boxes with data-href (credential column)
+    // Ecosystem side columns: whole block navigates via data-href (credential types); pills are not separate links
     document.querySelectorAll('.fides-modal-overlay .fides-eco-col-side[data-href]').forEach((col) => {
       col.addEventListener('click', (e) => {
         if (e.target.closest('a')) return;
@@ -1040,7 +1162,16 @@
     });
 
     const sortSelect = root.querySelector('#fides-sort-select');
-    if (sortSelect) sortSelect.addEventListener('change', (e) => { sortBy = e.target.value; render(); });
+    if (sortSelect) {
+      sortSelect.addEventListener('change', (e) => {
+        sortBy = e.target.value;
+        if (sortBy === 'relyingParties') {
+          fetchRpCatalog().then(() => render());
+        } else {
+          render();
+        }
+      });
+    }
 
     const clearBtn = root.querySelector('#fides-clear');
     if (clearBtn) clearBtn.addEventListener('click', () => {
@@ -1073,26 +1204,6 @@
         render();
       });
     }
-
-    root.querySelectorAll('.fides-kpi-card').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const action = btn.dataset.kpiAction;
-        if (action === 'reset') {
-          filters.environment = [];
-          filters.addedLast30Days = false;
-          filters.updatedLast30Days = false;
-          filters.usedByRPsOnly = false;
-          sortBy = 'lastUpdated';
-        } else if (action === 'toggle-rp') {
-          filters.usedByRPsOnly = !filters.usedByRPsOnly;
-        } else if (action === 'toggle-recent') {
-          const recentActive = filters.addedLast30Days || filters.updatedLast30Days;
-          filters.addedLast30Days = !recentActive;
-          filters.updatedLast30Days = !recentActive;
-        }
-        render();
-      });
-    });
 
     root.querySelectorAll('.fides-filter-label-toggle').forEach((toggle) => {
       toggle.addEventListener('click', () => {
@@ -1333,11 +1444,15 @@
       }
     }
     filterFacets = computeFilterFacets(issuers);
+    normalizeIssuerSigningAlgorithmFilters();
     if (config.vocabularyUrl || config.vocabularyFallbackUrl) {
       vocabulary = await loadVocabulary(config.vocabularyUrl, config.vocabularyFallbackUrl);
     }
     render();
     checkDeepLink();
+    fetchRpCatalog().then(() => {
+      if (sortBy === 'relyingParties') render();
+    });
   }
 
   function readQueryParams() {
