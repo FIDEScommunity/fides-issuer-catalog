@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-20T07:48:57.599Z",
+  "lastUpdated": "2026-03-20T07:54:58.751Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -178,7 +178,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -238,7 +238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -337,7 +337,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -443,7 +443,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T08:48:46+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -555,7 +555,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T08:48:46+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1121,12 +1121,12 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
       "organization": {
-        "name": "University of the Aegean / EWC",
+        "name": "EWC - European Wallet Consortium",
         "website": "https://dss.aegean.gr",
         "logoUri": "https://avatars.githubusercontent.com/u/140810559?v=4"
       },
@@ -1135,6 +1135,7 @@
       "credentialIssuerUrl": "https://dss.aegean.gr/rfc-issuer",
       "oid4vciMetadataUrl": "https://dss.aegean.gr/rfc-issuer/.well-known/openid-credential-issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/140810559?v=4",
+      "description": "This is the reference credential issuer from the EWC project, hosted by the University of the Aegean. It issues a range of credentials used for various use cases in the EWC EUDI Large Scale Pilot",
       "projectContext": "EWC (European Wallet Consortium) Reference Implementation",
       "credentialConfigurations": [
         {
@@ -1417,8 +1418,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
-      "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "updatedAt": "2026-03-20T08:54:47+01:00",
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1839,7 +1840,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-19T21:37:14+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1927,7 +1928,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-19T21:37:14+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2232,7 +2233,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2449,7 +2450,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T07:48:57.599Z"
+      "fetchedAt": "2026-03-20T07:54:58.751Z"
     }
   ],
   "stats": {
