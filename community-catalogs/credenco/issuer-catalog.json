@@ -9,13 +9,14 @@
     {
       "id": "issuer:credenco:kvk:sandbox",
       "displayName": "Kamer van Koophandel",
-      "environment": "test",
+      "description": "This sandbox credential issuer from the Dutch Chamber of Commerce (Kamer van Koophandel), hosted by Credenco, supports a range of credentials used in pilots, experiments, and demonstrations to explore interoperable digital trust.",
+      "environment": "sandbox",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company/.well-known/openid-credential-issuer"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
       "displayName": "Belastingdienst",
-      "environment": "test",
+      "description": "This sandbox credential issuer from the Dutch Tax Administration (Belastingdienst), hosted by Credenco, supports a range of credentials used in pilots, experiments, and demonstrations to explore interoperable digital trust.",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst/.well-known/openid-credential-issuer"
     }
   ]
