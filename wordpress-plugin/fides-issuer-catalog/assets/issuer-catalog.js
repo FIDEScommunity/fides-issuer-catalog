@@ -9,6 +9,8 @@
     search: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>',
     filter: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>',
     chevronDown: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>',
+    /** Stacked chevrons — ecosystem stat boxes hint to scroll/open details below */
+    chevronDoubleDown: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 8 6 6 6-6"></path><path d="m6 14 6 6 6-6"></path></svg>',
     chevronUp: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"></path></svg>',
     wallet: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>',
     x: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>',
@@ -187,6 +189,13 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
+  }
+
+  /** Trim string; empty if missing. */
+  function trimStr(value) {
+    if (value == null) return '';
+    const s = String(value).trim();
+    return s;
   }
 
   function debounce(fn, ms) {
@@ -530,17 +539,12 @@
     const allFormats = [...new Set(configs.map((c) => c.vcFormat).filter(Boolean))];
     const allAlgorithms = [...new Set(configs.flatMap((c) => c.signingAlgorithms || []))];
     const allProofTypes = [...new Set(configs.flatMap((c) => c.proofTypes || []))];
-    const catalogCount = credentialsWithRef.length;
-    const showCatalogToggle = catalogCount > 0 && catalogCount < configs.length;
     const catalogConfigs = configs.filter((cc) => cc.credentialCatalogRef);
     const uncataloguedConfigs = configs.filter((cc) => !cc.credentialCatalogRef);
-
-    const credCatalogBase = (config.credentialCatalogUrl || '').replace(/\/$/, '');
-    const ecosystemCredentialHref =
-      credentialsWithRef.length > 0 && credCatalogBase
-        ? credentialsWithRef.length === 1
-          ? `${credCatalogBase}?credential=${encodeURIComponent(credentialsWithRef[0].credentialCatalogRef.id)}`
-          : `${credCatalogBase}?credentials=${credentialsWithRef.map((cc) => encodeURIComponent(cc.credentialCatalogRef.id)).join(',')}`
+    const credCatBase = (config.credentialCatalogUrl || '').replace(/\/$/, '');
+    const credentialCatalogExploreHref =
+      catalogConfigs.length > 0 && credCatBase
+        ? `${credCatBase}?credentials=${catalogConfigs.map((cc) => encodeURIComponent(cc.credentialCatalogRef.id)).join(',')}`
         : '';
 
     return `
@@ -592,7 +596,7 @@
                       <div class="fides-eco-center-card">
                         <div class="fides-eco-center-icon">
                           ${logo
-                            ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(issuer.organization?.name || '')}" style="width:24px;height:24px;object-fit:contain;border-radius:4px;">`
+                            ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(issuer.organization?.name || '')}" style="width:20px;height:20px;object-fit:contain;border-radius:4px;">`
                             : icons.server
                           }
                         </div>
@@ -601,38 +605,25 @@
                       </div>
                     </div>
                     <div class="fides-eco-arrow">${icons.chevronDown}</div>
-                    <div class="fides-eco-col fides-eco-col-side fides-eco-col-side--green"
-                      ${ecosystemCredentialHref ? `data-href="${escapeHtml(ecosystemCredentialHref)}"` : ''}>
-                      <div class="fides-eco-col-header">
-                        <span class="fides-eco-count">${credentialsWithRef.length}</span>
-                        <span class="fides-eco-label">Credential types</span>
-                      </div>
-                      <div class="fides-eco-entities">
-                        ${credentialsWithRef.length === 0
-                          ? `<p class="fides-modal-empty">No catalog credentials.</p>`
-                          : (() => {
-                              const visible = credentialsWithRef.slice(0, 2);
-                              const hidden = credentialsWithRef.length - 2;
-                              const renderCredTag = (cc) => {
-                                const ref = cc.credentialCatalogRef;
-                                return `<span class="fides-eco-tag fides-eco-tag-green">${escapeHtml(ref.displayName || ref.id)}</span>`;
-                              };
-                              if (hidden > 0) {
-                                return visible.slice(0, -1).map(renderCredTag).join('') +
-                                  `<div class="fides-eco-tag-last-row">${renderCredTag(visible[visible.length - 1])}<span class="fides-eco-more fides-eco-more--green">+ ${hidden} more</span></div>`;
-                              }
-                              return visible.map(renderCredTag).join('');
-                            })()
-                        }
+                    <div class="fides-eco-col fides-eco-stat-wrap">
+                      <div class="fides-eco-wallet-box fides-eco-stat-box fides-eco-stat-box--green${configs.length > 0 ? '' : ' fides-eco-stat-box--static'}"
+                        ${configs.length > 0 ? 'data-fides-eco-target="fides-accordion-configs"' : ''}>
+                        <div class="fides-eco-stat-box-main">
+                          <span class="fides-eco-wallet-count">${configs.length}</span>
+                          <span class="fides-eco-wallet-label">Credential types</span>
+                        </div>
+                        ${configs.length > 0 ? `<span class="fides-eco-stat-hint" aria-hidden="true">${icons.chevronDoubleDown}</span>` : ''}
                       </div>
                     </div>
                     <div class="fides-eco-arrow">${icons.chevronDown}</div>
-                    <div class="fides-eco-col fides-eco-col-side fides-eco-col-side--blue">
-                      <div class="fides-eco-col-header">
-                        <span class="fides-eco-count fides-eco-rp-count">—</span>
-                        <span class="fides-eco-label">Relying Parties</span>
+                    <div class="fides-eco-col fides-eco-stat-wrap fides-eco-rp-col">
+                      <div class="fides-eco-wallet-box fides-eco-stat-box fides-eco-stat-box--blue" data-fides-eco-target="fides-accordion-rps">
+                        <div class="fides-eco-stat-box-main">
+                          <span class="fides-eco-wallet-count fides-eco-rp-count">—</span>
+                          <span class="fides-eco-wallet-label">Relying parties</span>
+                        </div>
+                        <span class="fides-eco-stat-hint" aria-hidden="true">${icons.chevronDoubleDown}</span>
                       </div>
-                      <div class="fides-eco-entities fides-eco-entities--row fides-eco-rp-entities"></div>
                     </div>
                   </div>
                   <div class="fides-eco-wallet-connector">${icons.chevronDown}</div>
@@ -647,13 +638,20 @@
               </div>
             </div>
 
-            <!-- Credential configurations accordion -->
+            <!-- Credential configurations accordion (above Relying parties) -->
             ${configs.length > 0 ? `
               <div class="fides-accordion is-open" id="fides-accordion-configs">
-                <button class="fides-accordion-header" type="button" aria-expanded="true">
-                  <span class="fides-accordion-title">${icons.shield} Credential types issued${configs.length > 0 ? ` <span class="fides-accordion-count">${configs.length}</span>` : ''}</span>
-                  <span class="fides-accordion-chevron">${icons.chevronDown}</span>
-                </button>
+                <div class="fides-accordion-header-bar">
+                  <button class="fides-accordion-header fides-accordion-toggle" type="button" aria-expanded="true">
+                    <span class="fides-accordion-title">${icons.shield} Credential types issued${configs.length > 0 ? ` <span class="fides-accordion-count">${configs.length}</span>` : ''}</span>
+                  </button>
+                  ${credentialCatalogExploreHref
+                    ? `<a href="${escapeHtml(credentialCatalogExploreHref)}" class="fides-accordion-explore-link" aria-label="Credential catalog (filtered view)">Open in catalog</a>`
+                    : ''}
+                  <button type="button" class="fides-accordion-chevron-btn fides-accordion-toggle" aria-expanded="true" aria-label="Toggle credential types section">
+                    <span class="fides-accordion-chevron">${icons.chevronDown}</span>
+                  </button>
+                </div>
                 <div class="fides-accordion-body">
                   <div class="fides-attributes-table-wrap">
                     <table class="fides-attributes-table">
@@ -664,54 +662,64 @@
                         </tr>
                       </thead>
                       <tbody>
-                        ${catalogConfigs.map((cc) => {
+                        ${[...catalogConfigs, ...uncataloguedConfigs].map((cc) => {
+                          const formatTag = `<span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[cc.vcFormat] || cc.vcFormat)}</span>`;
+                          const formatTd = `<td>${formatTag}</td>`;
                           const ref = cc.credentialCatalogRef;
-                          const base = (config.credentialCatalogUrl || '').replace(/\/$/, '');
-                          const href = base ? `${base}?credential=${encodeURIComponent(ref.id)}` : '';
-                          const label = ref.displayName || ref.id;
-                          const typeCell = href
-                            ? `<a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${escapeHtml(label)}</a>`
-                            : `<span>${escapeHtml(label)}</span>`;
-                          return `
-                          <tr>
-                            <td>${typeCell}</td>
-                            <td><span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[cc.vcFormat] || cc.vcFormat)}</span></td>
-                          </tr>
-                        `;
+                          if (ref) {
+                            const base = (config.credentialCatalogUrl || '').replace(/\/$/, '');
+                            const href = base ? `${base}?credential=${encodeURIComponent(ref.id)}` : '';
+                            const label = ref.displayName || ref.id;
+                            const typeCell = href
+                              ? `<a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${escapeHtml(label)}</a>`
+                              : `<span>${escapeHtml(label)}</span>`;
+                            return `<tr><td>${typeCell}</td>${formatTd}</tr>`;
+                          }
+                          const name = escapeHtml(cc.displayName || cc.configurationId);
+                          const star =
+                            uncataloguedConfigs.length > 0
+                              ? `<sup class="fides-catalog-fn-sup"><a class="fides-catalog-fnref" href="#fides-catalog-footnote" title="Not listed in the credential catalog" aria-label="See footnote: not listed in credential catalog">*</a></sup>`
+                              : '';
+                          return `<tr><td><span>${name}</span>${star}</td>${formatTd}</tr>`;
                         }).join('')}
-                        ${catalogConfigs.length === 0 ? `<tr><td colspan="2" style="color:var(--fides-text-muted);font-style:italic;">No credentials in catalog.</td></tr>` : ''}
                       </tbody>
-                      ${uncataloguedConfigs.length > 0 ? `
-                        <tbody class="fides-configs-extra" style="display:none;" id="fides-configs-extra">
-                          ${uncataloguedConfigs.map((cc) => `
-                            <tr>
-                              <td>${escapeHtml(cc.displayName || cc.configurationId)}</td>
-                              <td><span class="fides-tag credential-format">${escapeHtml(VC_FORMAT_LABELS[cc.vcFormat] || cc.vcFormat)}</span></td>
-                            </tr>
-                          `).join('')}
-                        </tbody>
-                        <tbody>
-                          <tr class="fides-configs-show-more-row">
-                            <td colspan="2">
-                              <button type="button" class="fides-show-more-btn" id="fides-configs-show-more">
-                                Show ${uncataloguedConfigs.length} more
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      ` : ''}
                     </table>
+                    ${uncataloguedConfigs.length > 0
+                      ? `<p class="fides-catalog-footnote" id="fides-catalog-footnote" role="note"><span class="fides-catalog-footnote-mark" aria-hidden="true">*</span> Not listed in the credential catalog; no link to the catalog is available for these types.</p>`
+                      : ''}
                   </div>
                 </div>
               </div>
             ` : ''}
 
+            <!-- Relying parties (collapsible; names loaded with RP catalog) -->
+            <div class="fides-accordion" id="fides-accordion-rps">
+              <div class="fides-accordion-header-bar">
+                <button class="fides-accordion-header fides-accordion-toggle" type="button" aria-expanded="false">
+                  <span class="fides-accordion-title">${icons.building} Relying parties <span class="fides-accordion-count" id="fides-rp-accordion-count">—</span></span>
+                </button>
+                <a id="fides-rp-catalog-explore" class="fides-accordion-explore-link fides-accordion-explore-link--hidden" href="#" aria-hidden="true" tabindex="-1" aria-label="Relying party catalog (filtered view)">Open in catalog</a>
+                <button type="button" class="fides-accordion-chevron-btn fides-accordion-toggle" aria-expanded="false" aria-label="Toggle relying parties section">
+                  <span class="fides-accordion-chevron">${icons.chevronDown}</span>
+                </button>
+              </div>
+              <div class="fides-accordion-body">
+                <div id="fides-rp-list-mount" class="fides-rp-list-mount">
+                  <p class="fides-modal-empty" id="fides-rp-list-loading">Loading…</p>
+                </div>
+              </div>
+            </div>
+
             <!-- Other details accordion (open by default) -->
             <div class="fides-accordion is-open" id="fides-accordion-details">
-              <button class="fides-accordion-header" type="button" aria-expanded="true">
-                <span class="fides-accordion-title">${icons.shield} Other details</span>
-                <span class="fides-accordion-chevron">${icons.chevronDown}</span>
-              </button>
+              <div class="fides-accordion-header-bar">
+                <button class="fides-accordion-header fides-accordion-toggle" type="button" aria-expanded="true">
+                  <span class="fides-accordion-title">${icons.shield} Other details</span>
+                </button>
+                <button type="button" class="fides-accordion-chevron-btn fides-accordion-toggle" aria-expanded="true" aria-label="Toggle other details section">
+                  <span class="fides-accordion-chevron">${icons.chevronDown}</span>
+                </button>
+              </div>
               <div class="fides-accordion-body">
                 <div class="fides-details-kv">
                   <div class="fides-kv-row fides-kv-row-wide">
@@ -1027,47 +1035,82 @@
     // Async: fill in RP count and tags once RP catalog is loaded
     const issuerForRp = selectedIssuer;
     fetchRpCatalog().then((rpList) => {
+      const overlay = document.getElementById('fides-modal-overlay');
+      if (!overlay) return;
+
       const credIds = new Set(
         (issuerForRp.credentialConfigurations || [])
           .map((c) => c.credentialCatalogRef?.id)
           .filter(Boolean)
       );
-      const matchingRps = rpList.filter((rp) =>
-        (rp.acceptedCredentialRefs || []).some((ref) => credIds.has(ref.credentialCatalogId))
-      );
-      const count = credIds.size ? matchingRps.length : null;
-      const countEl = document.querySelector('.fides-eco-rp-count');
-      if (countEl && count !== null) countEl.textContent = count;
+      const matchingRps = rpList
+        .filter((rp) =>
+          (rp.acceptedCredentialRefs || []).some((ref) => credIds.has(ref.credentialCatalogId))
+        )
+        .sort((a, b) =>
+          String(a.name || a.id).localeCompare(String(b.name || b.id), undefined, { sensitivity: 'base' })
+        );
 
-      // Make the RP column box clickable to the RP catalog
-      if (config.rpCatalogUrl && matchingRps.length > 0) {
-        const rpColEl = document.querySelector('.fides-eco-col-side--blue');
-        if (rpColEl) {
+      const countEl = overlay.querySelector('.fides-eco-rp-count');
+      const accordionCountEl = overlay.querySelector('#fides-rp-accordion-count');
+      const mountEl = overlay.querySelector('#fides-rp-list-mount');
+      const rpExploreEl = overlay.querySelector('#fides-rp-catalog-explore');
+
+      if (rpExploreEl) {
+        if (config.rpCatalogUrl && credIds.size > 0 && matchingRps.length > 0) {
           const rpBase = config.rpCatalogUrl.replace(/\/$/, '');
-          rpColEl.dataset.href =
-            matchingRps.length === 1
-              ? `${rpBase}/?rp=${encodeURIComponent(matchingRps[0].id)}`
-              : `${rpBase}/?rps=${matchingRps.map((rp) => encodeURIComponent(rp.id)).join(',')}`;
-          rpColEl.addEventListener('click', (e) => {
-            if (e.target.closest('a')) return;
-            window.location.href = rpColEl.dataset.href;
-          });
+          const rpsParam = matchingRps.map((rp) => encodeURIComponent(rp.id)).join(',');
+          rpExploreEl.href = `${rpBase}/?rps=${rpsParam}`;
+          rpExploreEl.classList.remove('fides-accordion-explore-link--hidden');
+          rpExploreEl.removeAttribute('aria-hidden');
+          rpExploreEl.removeAttribute('tabindex');
+        } else {
+          rpExploreEl.href = '#';
+          rpExploreEl.classList.add('fides-accordion-explore-link--hidden');
+          rpExploreEl.setAttribute('aria-hidden', 'true');
+          rpExploreEl.setAttribute('tabindex', '-1');
         }
       }
 
-      const entitiesEl = document.querySelector('.fides-eco-rp-entities');
-      if (entitiesEl && matchingRps.length > 0) {
-        const shown = matchingRps.slice(0, 2);
-        const hidden = matchingRps.length - 2;
-        const renderRpTag = (rp) => {
-          const label = escapeHtml(rp.name || rp.id);
-          return `<span class="fides-eco-tag fides-eco-tag-blue">${label}</span>`;
-        };
-        if (hidden > 0) {
-          entitiesEl.innerHTML = shown.slice(0, -1).map(renderRpTag).join('') +
-            `<div class="fides-eco-tag-last-row">${renderRpTag(shown[shown.length - 1])}<span class="fides-eco-more fides-eco-more--blue">+ ${hidden} more</span></div>`;
-        } else {
-          entitiesEl.innerHTML = shown.map(renderRpTag).join('');
+      if (credIds.size === 0) {
+        if (countEl) countEl.textContent = '—';
+        if (accordionCountEl) accordionCountEl.textContent = '—';
+        if (mountEl) {
+          mountEl.innerHTML =
+            '<p class="fides-modal-empty">No catalog-linked credential types, so relying parties cannot be matched from the RP catalog.</p>';
+        }
+      } else {
+        const count = matchingRps.length;
+        if (countEl) countEl.textContent = String(count);
+        if (accordionCountEl) accordionCountEl.textContent = String(count);
+        if (mountEl) {
+          if (matchingRps.length === 0) {
+            mountEl.innerHTML =
+              '<p class="fides-modal-empty">No relying parties in the loaded RP catalog accept these credential types.</p>';
+          } else {
+            const rpBase = config.rpCatalogUrl ? config.rpCatalogUrl.replace(/\/$/, '') : '';
+            const showRpOrgCol = matchingRps.some(
+              (rp) => trimStr(rp.organization?.name) || trimStr(rp.provider?.name)
+            );
+            const thead = showRpOrgCol
+              ? '<thead><tr><th>Relying party</th><th>Organization</th></tr></thead>'
+              : '<thead><tr><th>Relying party</th></tr></thead>';
+            const rows = matchingRps
+              .map((rp) => {
+                const label = escapeHtml(rp.name || rp.id);
+                const orgRaw = trimStr(rp.organization?.name) || trimStr(rp.provider?.name);
+                const orgCell = showRpOrgCol
+                  ? `<td>${orgRaw ? escapeHtml(orgRaw) : '—'}</td>`
+                  : '';
+                if (rpBase) {
+                  const href = `${rpBase}/?rp=${encodeURIComponent(rp.id)}`;
+                  return `<tr><td><a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${label}</a></td>${orgCell}</tr>`;
+                }
+                return `<tr><td><span class="fides-modal-rp-td-text">${label}</span></td>${orgCell}</tr>`;
+              })
+              .join('');
+            mountEl.innerHTML = `<div class="fides-attributes-table-wrap"><table class="fides-attributes-table fides-modal-rp-table fides-modal-entity-table" aria-label="Relying parties">${thead}<tbody>${rows}</tbody></table></div>`;
+          }
         }
       }
 
@@ -1120,32 +1163,35 @@
     const copyBtn = document.getElementById('fides-modal-copy-link');
     if (copyBtn) copyBtn.addEventListener('click', copyIssuerLink);
 
-    const showMoreBtn = document.getElementById('fides-configs-show-more');
-    const extraTbody = document.getElementById('fides-configs-extra');
-    if (showMoreBtn && extraTbody) {
-      const uncatCount = extraTbody.querySelectorAll('tr').length;
-      showMoreBtn.addEventListener('click', () => {
-        const isHidden = extraTbody.style.display === 'none';
-        extraTbody.style.display = isHidden ? 'table-row-group' : 'none';
-        showMoreBtn.textContent = isHidden ? 'Show less' : `Show ${uncatCount} more`;
-      });
-    }
-
-    // Accordion toggle
-    document.querySelectorAll('.fides-modal-overlay .fides-accordion-header[type="button"]').forEach((btn) => {
+    // Accordion toggle (title row and/or chevron-only control in header bar)
+    document.querySelectorAll('.fides-modal-overlay .fides-accordion-toggle[type="button"]').forEach((btn) => {
       btn.addEventListener('click', () => {
         const accordion = btn.closest('.fides-accordion');
         if (!accordion) return;
         const isOpen = accordion.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        accordion.querySelectorAll('.fides-accordion-toggle[type="button"]').forEach((b) => {
+          b.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
       });
     });
 
-    // Ecosystem side columns: whole block navigates via data-href (credential types); pills are not separate links
-    document.querySelectorAll('.fides-modal-overlay .fides-eco-col-side[data-href]').forEach((col) => {
-      col.addEventListener('click', (e) => {
+    // Ecosystem side boxes: scroll modal to matching accordion and open it
+    function openEcoTargetAccordion(accordionId) {
+      const acc = document.getElementById(accordionId);
+      if (!acc) return;
+      acc.classList.add('is-open');
+      acc.querySelectorAll('.fides-accordion-toggle[type="button"]').forEach((b) => {
+        b.setAttribute('aria-expanded', 'true');
+      });
+      requestAnimationFrame(() => {
+        acc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+    document.querySelectorAll('.fides-modal-overlay [data-fides-eco-target]').forEach((el) => {
+      el.addEventListener('click', (e) => {
         if (e.target.closest('a')) return;
-        window.location.href = col.dataset.href;
+        const id = el.getAttribute('data-fides-eco-target');
+        if (id) openEcoTargetAccordion(id);
       });
     });
 
