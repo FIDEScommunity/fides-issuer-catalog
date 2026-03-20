@@ -1,0 +1,19 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "MOSIP",
+    "website": "https://www.mosip.io",
+    "logo": "https://avatars.githubusercontent.com/u/39733477?s=280&v=4"
+  },
+  "issuers": [
+    {
+      "id": "issuer:mosip:insurance:sandbox",
+      "displayName": "Inji Certify - Insurance Sandbox Issuer",
+      "description": "This sandbox credential issuer from MOSIP Inji Certify supports the issuance of insurance-related credentials in the MOSIP collab environment for testing OpenID4VCI flows and interoperability scenarios.",
+      "environment": "sandbox",
+      "oid4vciMetadataUrl": "https://injicertify-insurance.collab.mosip.net/v1/certify/issuance/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://collab.mosip.net/",
+      "projectContext": "MOSIP Collab - Inji Certify"
+    }
+  ]
+}
