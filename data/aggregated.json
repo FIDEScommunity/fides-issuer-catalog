@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-20T16:00:57.789Z",
+  "lastUpdated": "2026-03-20T16:02:13.260Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -179,7 +179,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -240,7 +240,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -340,7 +340,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -453,7 +453,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:26:31+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:credenco:tulip:sandbox",
@@ -468,6 +468,7 @@
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/a396df10-6645-44c3-9209-1f4e227cd35e/bankv4/.well-known/openid-credential-issuer",
       "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png",
       "description": "This is a demo credential issuer for the fictitious ‘Tulip Bank’, hosted by Credenco. It provides credentials that can be used across pilots, experiments, and demos.",
+      "issuerWebsiteUrl": "https://tulip-bank.acc.credenco.com",
       "credentialConfigurations": [
         {
           "configurationId": "urn:org:fides:iban:1",
@@ -512,8 +513,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
-      "updatedAt": "2026-03-20T17:00:37+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "updatedAt": "2026-03-20T17:02:00+01:00",
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1080,7 +1081,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1378,7 +1379,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1799,7 +1800,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1887,7 +1888,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T09:10:40+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2192,7 +2193,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -2298,7 +2299,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:27:53+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:mosip:insurance:sandbox",
@@ -2350,7 +2351,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-20T16:48:25+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:multipaz:mdl:sandbox",
@@ -2507,7 +2508,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-20T16:19:07+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2724,7 +2725,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T16:00:57.789Z"
+      "fetchedAt": "2026-03-20T16:02:13.260Z"
     }
   ],
   "stats": {
