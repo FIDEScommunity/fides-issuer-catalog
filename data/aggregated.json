@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-20T08:05:17.144Z",
+  "lastUpdated": "2026-03-20T08:05:39.066Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -178,7 +178,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -238,7 +238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -337,7 +337,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -442,8 +442,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
-      "updatedAt": "2026-03-20T09:05:02+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "updatedAt": "2026-03-20T09:05:24+01:00",
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -452,7 +452,7 @@
         "website": "https://credenco.com",
         "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png"
       },
-      "displayName": "Belastingdienst sandbox Issuer",
+      "displayName": "Belastingdienst Sandbox Issuer",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst/.well-known/openid-credential-issuer",
       "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png",
@@ -554,8 +554,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
-      "updatedAt": "2026-03-20T09:05:02+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "updatedAt": "2026-03-20T09:05:24+01:00",
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1122,7 +1122,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:02:39+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1420,7 +1420,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1841,7 +1841,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-19T21:37:14+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1929,7 +1929,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-19T21:37:14+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2234,7 +2234,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2451,7 +2451,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-20T08:05:17.144Z"
+      "fetchedAt": "2026-03-20T08:05:39.066Z"
     }
   ],
   "stats": {
