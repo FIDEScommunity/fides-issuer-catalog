@@ -1,0 +1,19 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "iGrant.io",
+    "website": "https://www.igrant.io",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq7T7oJ6tMP18AjPk9RrsbfPkObIj0dJYJQ&s"
+  },
+  "issuers": [
+    {
+      "id": "issuer:igrant:demo:sandbox",
+      "displayName": "iGrant.io Demo Issuer",
+      "description": "Sandbox credential issuer from iGrant.io used for demonstrating OpenID4VCI issuance flows and interoperability scenarios across multiple credential types.",
+      "environment": "sandbox",
+      "oid4vciMetadataUrl": "https://oid4vc.igrant.io/.well-known/openid-credential-issuer/organisation/f8a7e3b9-09dc-4e45-88cc-3ce28e42e0ef/service",
+      "issuerWebsiteUrl": "https://www.igrant.io/demo.html",
+      "projectContext": "iGrant.io OpenID4VCI demo issuer"
+    }
+  ]
+}
