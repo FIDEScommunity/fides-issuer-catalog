@@ -1,0 +1,19 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "Talao",
+    "website": "https://talao.co",
+    "logo": "https://blockspot.io/wp-content/uploads/talao-talao-coin-logo.png"
+  },
+  "issuers": [
+    {
+      "id": "issuer:talao:acnliwayop:sandbox",
+      "displayName": "Talao Issuer (ACNLIWAYOP)",
+      "description": "Sandbox OID4VCI issuer provided by Talao.",
+      "environment": "sandbox",
+      "oid4vciMetadataUrl": "https://talao.co/issuer/acnliwayop/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://talao.co/issuer/oidc/test",
+      "projectContext": "Talao demo issuer"
+    }
+  ]
+}
