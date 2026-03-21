@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-21T06:52:10.929Z",
+  "lastUpdated": "2026-03-21T16:42:02.255Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -179,7 +179,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -240,7 +240,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -340,7 +340,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -453,7 +453,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T17:11:27+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:credenco:tulip:sandbox",
@@ -514,7 +514,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-20T17:03:51+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1081,7 +1081,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1379,7 +1379,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1799,7 +1799,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T22:39:05+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1886,7 +1886,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T22:39:05+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2191,7 +2191,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -2297,7 +2297,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T17:14:01+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:mosip:insurance:sandbox",
@@ -2349,20 +2349,20 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-20T16:48:25+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:multipaz:mdl:sandbox",
       "organization": {
-        "name": "MultiPaz",
-        "website": "https://www.multipaz.org",
-        "logoUri": "https://issuer.multipaz.org/multipaz-logo-400x400.png"
+        "name": "OpenWallet Foundation",
+        "website": "https://openwallet.foundation/projects/identity-credential/",
+        "logoUri": "https://avatars.githubusercontent.com/u/131064301?s=280&v=4"
       },
       "displayName": "MultiPaz Sandbox Issuer",
       "environment": "sandbox",
       "credentialIssuerUrl": "https://issuer.multipaz.org/issuer",
       "oid4vciMetadataUrl": "https://issuer.multipaz.org/.well-known/openid-credential-issuer/issuer",
-      "logoUri": "https://issuer.multipaz.org/multipaz-logo-400x400.png",
+      "logoUri": "https://avatars.githubusercontent.com/u/131064301?s=280&v=4",
       "description": "This sandbox credential issuer from MultiPaz supports the issuance of verious credentials for testing OpenID4VCI flows and interoperability scenarios.",
       "issuerWebsiteUrl": "https://issuer.multipaz.org",
       "projectContext": "MultiPaz OpenID4VCI demo issuer",
@@ -2505,8 +2505,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
-      "updatedAt": "2026-03-21T06:28:19+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "updatedAt": "2026-03-21T17:41:48+01:00",
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2723,7 +2723,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-21T06:52:10.929Z"
+      "fetchedAt": "2026-03-21T16:42:02.255Z"
     }
   ],
   "stats": {
