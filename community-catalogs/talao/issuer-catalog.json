@@ -8,7 +8,7 @@
   "issuers": [
     {
       "id": "issuer:talao:acnliwayop:sandbox",
-      "displayName": "Talao Issuer (ACNLIWAYOP)",
+      "displayName": "Talao Sandbox Issuer",
       "description": "Sandbox OID4VCI issuer provided by Talao.",
       "environment": "sandbox",
       "oid4vciMetadataUrl": "https://talao.co/issuer/acnliwayop/.well-known/openid-credential-issuer",
