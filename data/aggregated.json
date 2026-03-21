@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-21T16:42:02.255Z",
+  "lastUpdated": "2026-03-21T16:59:22.876Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -179,7 +179,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -240,7 +240,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -340,7 +340,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -453,7 +453,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T17:11:27+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:credenco:tulip:sandbox",
@@ -514,7 +514,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-20T17:03:51+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1081,7 +1081,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1379,7 +1379,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1799,7 +1799,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T22:39:05+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1886,7 +1886,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T22:39:05+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2191,7 +2191,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -2297,7 +2297,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T17:14:01+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:mosip:insurance:sandbox",
@@ -2349,7 +2349,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-20T16:48:25+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:multipaz:mdl:sandbox",
@@ -2506,7 +2506,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-21T17:41:48+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2723,13 +2723,51 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-21T16:42:02.255Z"
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
+    },
+    {
+      "id": "issuer:swiyu:beta-id:sandbox",
+      "organization": {
+        "name": "Swiss Confederation",
+        "website": "https://www.eid.admin.ch/en",
+        "logoUri": "https://play-lh.googleusercontent.com/24M9nEXiuSVZAfEnkDzJ2koRLLfd7s_sSw3CgfzVeNfQjALW800TPcVB_mwDrKpJhz0V"
+      },
+      "displayName": "Swiss E-ID Beta Credential Service Issuer",
+      "environment": "sandbox",
+      "credentialIssuerUrl": "https://bcs.admin.ch/bcs-web/issuer-agent/oid4vci",
+      "oid4vciMetadataUrl": "https://bcs.admin.ch/bcs-web/issuer-agent/oid4vci/.well-known/openid-credential-issuer",
+      "logoUri": "https://play-lh.googleusercontent.com/24M9nEXiuSVZAfEnkDzJ2koRLLfd7s_sSw3CgfzVeNfQjALW800TPcVB_mwDrKpJhz0V",
+      "description": "Sandbox credential issuer for the Swiss E-ID (swiyu) Public Beta. Supports issuance of Beta-ID credentials using OpenID4VCI with SD-JWT format via pre-authorized flows.",
+      "issuerWebsiteUrl": "https://www.bcs.admin.ch/bcs-web/#/",
+      "projectContext": "Swiss E-ID (swiyu) Public Beta – Beta Credential Service (BCS)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "betaid-sdjwt",
+          "displayName": "Beta ID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "betaid-sdjwt",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAQAAADa613fAAAAt0lEQVR42u3YMQ4BQRiG4a2p3UMi0Wlcih5n2GYTWS6gcBahdZGfSqHZWdNMxvN+/WSe9m8aSZIkSaqiWMYzcV3ZkFWkdgEBAQEBAQEBAQEBAQEBAQEBKQ4S6zi8tx/Y7rM+GfIYfPV70xzIOcppBlIT5AQCAgICApIB6UFAQEBAQDIgx1og89iMWpv8rXtsR25S5jnoWstdCwQEBAQEBAQEBAQEBAQEBOSfIYu4Ja5tJEmSJP3UC98M2ozRcV9yAAAAAElFTkSuQmCC"
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-21T16:59:22.876Z",
+      "updatedAt": "2026-03-21T17:59:09+01:00",
+      "fetchedAt": "2026-03-21T16:59:22.876Z"
     }
   ],
   "stats": {
-    "totalIssuers": 14,
+    "totalIssuers": 15,
     "productionIssuers": 0,
-    "totalOrganizations": 11,
-    "totalCredentialConfigurations": 122
+    "totalOrganizations": 12,
+    "totalCredentialConfigurations": 123
   }
 }

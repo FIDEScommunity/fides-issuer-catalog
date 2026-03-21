@@ -40,5 +40,8 @@
   },
   "issuer:mosip:insurance:sandbox": {
     "firstSeenAt": "2026-03-20T15:48:38.832Z"
+  },
+  "issuer:swiyu:beta-id:sandbox": {
+    "firstSeenAt": "2026-03-21T16:59:22.876Z"
   }
 }
