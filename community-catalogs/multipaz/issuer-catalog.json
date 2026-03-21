@@ -12,7 +12,7 @@
       "description": "This sandbox credential issuer from MultiPaz supports the issuance of verious credentials for testing OpenID4VCI flows and interoperability scenarios.",
       "environment": "sandbox",
       "oid4vciMetadataUrl": "https://issuer.multipaz.org/.well-known/openid-credential-issuer/issuer",
-      "issuerWebsiteUrl": "issuer.multipaz.org",
+      "issuerWebsiteUrl": "https://issuer.multipaz.org",
       "projectContext": "MultiPaz OpenID4VCI demo issuer"
     }
   ]
