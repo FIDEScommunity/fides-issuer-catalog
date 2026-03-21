@@ -1,9 +1,9 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
   "organization": {
-    "name": "MultiPaz",
-    "website": "https://www.multipaz.org",
-    "logo": "https://issuer.multipaz.org/multipaz-logo-400x400.png"
+    "name": "OpenWallet Foundation",
+    "website": "https://openwallet.foundation/projects/identity-credential/",
+    "logo": "https://avatars.githubusercontent.com/u/131064301?s=280&v=4"
   },
   "issuers": [
     {
