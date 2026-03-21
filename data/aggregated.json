@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-21T17:24:16.301Z",
+  "lastUpdated": "2026-03-21T17:43:39.905Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -179,7 +179,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -240,7 +240,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -340,7 +340,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:sandbox",
@@ -453,7 +453,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T17:11:27+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:credenco:tulip:sandbox",
@@ -514,7 +514,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-20T17:03:51+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1081,7 +1081,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1379,7 +1379,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:fides:credential-issuer:sandbox",
@@ -1799,7 +1799,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T22:39:05+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:sandbox",
@@ -1886,7 +1886,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T22:39:05+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2191,7 +2191,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:igrant:demo:sandbox",
@@ -2267,7 +2267,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-03-21T18:24:01+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:credenco:kvk:sandbox",
@@ -2373,7 +2373,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T17:14:01+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:mosip:insurance:sandbox",
@@ -2425,7 +2425,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-20T16:48:25+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:multipaz:mdl:sandbox",
@@ -2582,7 +2582,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-21T17:41:48+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -2799,7 +2799,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     },
     {
       "id": "issuer:swiyu:beta-id:sandbox",
@@ -2837,13 +2837,137 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-03-21T17:59:09+01:00",
-      "fetchedAt": "2026-03-21T17:24:16.301Z"
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
+    },
+    {
+      "id": "issuer:talao:acnliwayop:sandbox",
+      "organization": {
+        "name": "Talao",
+        "website": "https://talao.co",
+        "logoUri": "https://blockspot.io/wp-content/uploads/talao-talao-coin-logo.png"
+      },
+      "displayName": "Talao Issuer (ACNLIWAYOP)",
+      "environment": "sandbox",
+      "credentialIssuerUrl": "https://talao.co/issuer/acnliwayop",
+      "oid4vciMetadataUrl": "https://talao.co/issuer/acnliwayop/.well-known/openid-credential-issuer",
+      "logoUri": "https://blockspot.io/wp-content/uploads/talao-talao-coin-logo.png",
+      "description": "Sandbox OID4VCI issuer provided by Talao.",
+      "issuerWebsiteUrl": "https://talao.co/issuer/oidc/test",
+      "projectContext": "Talao demo issuer",
+      "credentialConfigurations": [
+        {
+          "configurationId": "Over18",
+          "displayName": "Age Over18",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://doc.wallet-provider.io/vc_type#binanceassociatedaddress",
+          "signingAlgorithms": [
+            "ES256K",
+            "ES256",
+            "EdDSA",
+            "RS256"
+          ],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [
+            "did",
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "CryptoAccountProof",
+          "displayName": "Crypto Account Proof",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://doc.wallet-provider.io/vc_type#binanceassociatedaddress",
+          "signingAlgorithms": [
+            "ES256K",
+            "ES256",
+            "EdDSA",
+            "RS256"
+          ],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [
+            "did",
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "AgeProof",
+          "displayName": "Age proof",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eu.europa.ec.eudi:age_proof:1",
+          "signingAlgorithms": [
+            "ES256K",
+            "ES256",
+            "EdDSA",
+            "RS256"
+          ],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [
+            "did",
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "Pid",
+          "displayName": "Personal ID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://vc-registry.com/vct/registry/publish/_rOPa737ozNN-OBdTqc5YAFGQ8PKLUp_0n7CpulXcm8",
+          "signingAlgorithms": [
+            "ES256K",
+            "ES256",
+            "EdDSA",
+            "RS256"
+          ],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [
+            "did",
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "EmailPass",
+          "displayName": "Proof of Email",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://vc-registry.com/vct/registry/publish/mv-PvJ9tUWXzcG_Vk_AEzKpiCTLqe8y-Uo1m89WID7c",
+          "signingAlgorithms": [
+            "ES256K",
+            "ES256",
+            "EdDSA",
+            "RS256"
+          ],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [
+            "did",
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "PhoneProof",
+          "displayName": "Proof of phone number",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://vc-registry.com/vct/registry/publish/04mHy3S5qyUuMj6SUi2npMBlmQwABa2Z9buxGnMWzvY",
+          "signingAlgorithms": [
+            "ES256K",
+            "ES256",
+            "EdDSA",
+            "RS256"
+          ],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [
+            "did",
+            "jwk"
+          ]
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-03-21T17:43:39.905Z",
+      "updatedAt": "2026-03-21T18:43:24+01:00",
+      "fetchedAt": "2026-03-21T17:43:39.905Z"
     }
   ],
   "stats": {
-    "totalIssuers": 16,
+    "totalIssuers": 17,
     "productionIssuers": 0,
-    "totalOrganizations": 13,
-    "totalCredentialConfigurations": 126
+    "totalOrganizations": 14,
+    "totalCredentialConfigurations": 132
   }
 }
