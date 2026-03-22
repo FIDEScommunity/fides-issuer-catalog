@@ -1,0 +1,19 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "TOPPAN",
+    "website": "https://www.toppandigital.com",
+    "logo": "https://toppandigital.com/wp-content/themes/tdl/assets/images/logo-toppan-digital-language.svg"
+  },
+  "issuers": [
+    {
+      "id": "issuer:toppan:goid:sandbox",
+      "displayName": "TOPPAN Sandbox Issuer",
+      "description": "Sandbox OID4VCI issuer operated by TOPPAN Digital for issuing PID credentials in both mso_mdoc and dc+sd-jwt formats.",
+      "environment": "sandbox",
+      "oid4vciMetadataUrl": "https://demo.goid.toppanapps.com:542/.well-known/openid-credential-issuer/",
+      "issuerWebsiteUrl": "https://demo.goid.toppanapps.com:542",
+      "projectContext": "goID demo issuer"
+    }
+  ]
+}
