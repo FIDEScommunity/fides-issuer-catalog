@@ -1,0 +1,19 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "Aruba IT",
+    "website": "https://www.aruba.io",
+    "logo": "https://www.aruba.io/assets/images/logo.svg"
+  },
+  "issuers": [
+    {
+      "id": "issuer:aruba:wallet:sandbox",
+      "displayName": "Aruba.IT Wallet PID Issuer",
+      "description": "OID4VCI issuer used in the Aruba wallet environment for issuing EUDI PID credentials in mso_mdoc format.",
+      "environment": "sandbox",
+      "oid4vciMetadataUrl": "https://wallet.aruba.io/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://wallet.aruba.io",
+      "projectContext": "Aruba EUDI wallet pilot"
+    }
+  ]
+}
