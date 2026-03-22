@@ -1,0 +1,19 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "organization": {
+    "name": "Thales",
+    "website": "https://www.thalesgroup.com",
+    "logo": "https://digid-eks.dev.citizen-online.com/issuer-portal/assets/img/Thales.svg"
+  },
+  "issuers": [
+    {
+      "id": "issuer:thales:unfold:sandbox",
+      "displayName": "Thales Unfold OID4VCI Issuer",
+      "description": "Sandbox OID4VCI issuer operated by Thales (Unfold environment), supporting issuance of PID, mDL, and age verification credentials using both mdoc and SD-JWT formats.",
+      "environment": "sandbox",
+      "oid4vciMetadataUrl": "https://digid-eks.dev.citizen-online.com/oid4vci/dev/unfold/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://digid-eks.dev.citizen-online.com/issuer-portal/",
+      "projectContext": "Unfold / EUDI Wallet pilot environment"
+    }
+  ]
+}
