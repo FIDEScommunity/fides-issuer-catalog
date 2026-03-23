@@ -25,7 +25,7 @@ export interface SourceIssuer {
   id: string;
   displayName?: string;
   description?: string;
-  environment: 'production' | 'pilot' | 'test' | 'sandbox';
+  environment: 'production' | 'test';
   oid4vciMetadataUrl: string;
   /** Optional public URL for this issuer instance (e.g. web UI, demo, playground). */
   issuerWebsiteUrl?: string;
@@ -137,7 +137,7 @@ export interface AggregatedIssuer {
   organization: AggregatedOrganization;
   displayName: string;
   description?: string;
-  environment: 'production' | 'pilot' | 'test' | 'sandbox';
+  environment: 'production' | 'test';
   credentialIssuerUrl: string;
   oid4vciMetadataUrl: string;
   /** From source catalog when provided (e.g. issuer web UI or playground link). */

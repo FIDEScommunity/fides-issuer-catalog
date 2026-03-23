@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "1.1.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-23T07:17:35.145Z",
+  "lastUpdated": "2026-03-23T12:52:40.209Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -179,7 +179,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -240,7 +240,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -340,17 +340,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:aruba:wallet:sandbox",
+      "id": "issuer:aruba:wallet:test",
       "organization": {
         "name": "Aruba IT",
         "website": "https://www.aruba.io",
         "logoUri": "https://www.aruba.io/assets/images/logo.svg"
       },
       "displayName": "Aruba.IT Wallet PID Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://wallet.aruba.io",
       "oid4vciMetadataUrl": "https://wallet.aruba.io/.well-known/openid-credential-issuer",
       "logoUri": "https://www.aruba.io/assets/images/logo.svg",
@@ -898,17 +898,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-03-22T20:36:46+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:credenco:belastingdienst:sandbox",
+      "id": "issuer:credenco:belastingdienst:test",
       "organization": {
         "name": "Belastingdienst",
         "website": "https://www.belastingdienst.nl",
         "logoUri": "https://sliedrecht24.nl/wp-content/uploads/2023/10/Logo-Belastingdienst.png"
       },
       "displayName": "Belastingdienst Sandbox Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst/.well-known/openid-credential-issuer",
       "logoUri": "https://sliedrecht24.nl/wp-content/uploads/2023/10/Logo-Belastingdienst.png",
@@ -1011,17 +1011,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T17:11:27+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:credenco:tulip:sandbox",
+      "id": "issuer:credenco:tulip:test",
       "organization": {
         "name": "Credenco",
         "website": "https://credenco.com",
         "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png"
       },
       "displayName": "Tulip Bank Demo Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/a396df10-6645-44c3-9209-1f4e227cd35e/bankv4",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/a396df10-6645-44c3-9209-1f4e227cd35e/bankv4/.well-known/openid-credential-issuer",
       "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png",
@@ -1072,7 +1072,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-20T17:03:51+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1639,7 +1639,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1937,10 +1937,10 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:fides:credential-issuer:sandbox",
+      "id": "issuer:fides:credential-issuer:test",
       "organization": {
         "name": "FIDES Labs",
         "website": "https://fides.community",
@@ -2357,10 +2357,10 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-20T22:39:05+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:fides:mijnoverheid-issuer:sandbox",
+      "id": "issuer:fides:mijnoverheid-issuer:test",
       "organization": {
         "name": "FIDES Labs",
         "website": "https://fides.community",
@@ -2444,7 +2444,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-20T22:39:05+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2767,17 +2767,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:igrant:demo:sandbox",
+      "id": "issuer:igrant:demo:test",
       "organization": {
         "name": "iGrant.io",
         "website": "https://www.igrant.io",
         "logoUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq7T7oJ6tMP18AjPk9RrsbfPkObIj0dJYJQ&s"
       },
       "displayName": "iGrant.io Demo Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://oid4vc.igrant.io/organisation/f8a7e3b9-09dc-4e45-88cc-3ce28e42e0ef/service/version-01",
       "oid4vciMetadataUrl": "https://oid4vc.igrant.io/.well-known/openid-credential-issuer/organisation/f8a7e3b9-09dc-4e45-88cc-3ce28e42e0ef/service",
       "logoUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq7T7oJ6tMP18AjPk9RrsbfPkObIj0dJYJQ&s",
@@ -2843,17 +2843,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-03-21T18:24:01+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:credenco:kvk:sandbox",
+      "id": "issuer:credenco:kvk:test",
       "organization": {
         "name": "Kamer van Koophandel",
         "website": "https://www.kvk.nl",
         "logoUri": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5f1610bc0cba87000181beed/0x0.png"
       },
       "displayName": "KVK Sandbox Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company/.well-known/openid-credential-issuer",
       "logoUri": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5f1610bc0cba87000181beed/0x0.png",
@@ -2949,17 +2949,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T17:14:01+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:mosip:insurance:sandbox",
+      "id": "issuer:mosip:insurance:test",
       "organization": {
         "name": "MOSIP",
         "website": "https://www.mosip.io",
         "logoUri": "https://avatars.githubusercontent.com/u/39733477?s=280&v=4"
       },
       "displayName": "Inji Certify - Insurance Sandbox Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://injicertify-insurance.collab.mosip.net",
       "oid4vciMetadataUrl": "https://injicertify-insurance.collab.mosip.net/v1/certify/issuance/.well-known/openid-credential-issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/39733477?s=280&v=4",
@@ -3001,17 +3001,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-20T16:48:25+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:multipaz:mdl:sandbox",
+      "id": "issuer:multipaz:mdl:test",
       "organization": {
         "name": "OpenWallet Foundation",
         "website": "https://openwallet.foundation/projects/identity-credential/",
         "logoUri": "https://avatars.githubusercontent.com/u/131064301?s=280&v=4"
       },
       "displayName": "MultiPaz Sandbox Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://issuer.multipaz.org/issuer",
       "oid4vciMetadataUrl": "https://issuer.multipaz.org/.well-known/openid-credential-issuer/issuer",
       "logoUri": "https://avatars.githubusercontent.com/u/131064301?s=280&v=4",
@@ -3158,7 +3158,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-21T17:41:48+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -3375,17 +3375,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:swiyu:beta-id:sandbox",
+      "id": "issuer:swiyu:beta-id:test",
       "organization": {
         "name": "Swiss Confederation",
         "website": "https://www.eid.admin.ch/en",
         "logoUri": "https://play-lh.googleusercontent.com/24M9nEXiuSVZAfEnkDzJ2koRLLfd7s_sSw3CgfzVeNfQjALW800TPcVB_mwDrKpJhz0V"
       },
       "displayName": "Swiss E-ID Beta Credential Service Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://bcs.admin.ch/bcs-web/issuer-agent/oid4vci",
       "oid4vciMetadataUrl": "https://bcs.admin.ch/bcs-web/issuer-agent/oid4vci/.well-known/openid-credential-issuer",
       "logoUri": "https://play-lh.googleusercontent.com/24M9nEXiuSVZAfEnkDzJ2koRLLfd7s_sSw3CgfzVeNfQjALW800TPcVB_mwDrKpJhz0V",
@@ -3413,17 +3413,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-03-21T17:59:09+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:talao:acnliwayop:sandbox",
+      "id": "issuer:talao:acnliwayop:test",
       "organization": {
         "name": "Talao",
         "website": "https://talao.co",
         "logoUri": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/c7/7e/73c77ef4-e24a-65bd-df61-643c88da6963/Placeholder.mill/400x400bb-75.webp"
       },
       "displayName": "Talao Sandbox Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://talao.co/issuer/acnliwayop",
       "oid4vciMetadataUrl": "https://talao.co/issuer/acnliwayop/.well-known/openid-credential-issuer",
       "logoUri": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/c7/7e/73c77ef4-e24a-65bd-df61-643c88da6963/Placeholder.mill/400x400bb-75.webp",
@@ -3537,17 +3537,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-03-21T18:50:17+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:thales:unfold:sandbox",
+      "id": "issuer:thales:unfold:test",
       "organization": {
         "name": "Thales",
         "website": "https://www.thalesgroup.com",
         "logoUri": "https://digid-eks.dev.citizen-online.com/issuer-portal/assets/img/Thales.svg"
       },
       "displayName": "Thales Unfold OID4VCI Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://digid-eks.dev.citizen-online.com/oid4vci/dev/unfold",
       "oid4vciMetadataUrl": "https://digid-eks.dev.citizen-online.com/oid4vci/dev/unfold/.well-known/openid-credential-issuer",
       "logoUri": "https://digid-eks.dev.citizen-online.com/issuer-portal/assets/img/Thales.svg",
@@ -3650,17 +3650,17 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-03-22T20:40:48+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     },
     {
-      "id": "issuer:toppan:goid:sandbox",
+      "id": "issuer:toppan:goid:test",
       "organization": {
         "name": "TOPPAN",
         "website": "https://www.toppandigital.com",
         "logoUri": "https://toppandigital.com/wp-content/themes/tdl/assets/images/logo-toppan-digital-language.svg"
       },
       "displayName": "TOPPAN Sandbox Issuer",
-      "environment": "sandbox",
+      "environment": "test",
       "credentialIssuerUrl": "https://demo.goid.toppanapps.com:542",
       "oid4vciMetadataUrl": "https://demo.goid.toppanapps.com:542/.well-known/openid-credential-issuer/",
       "logoUri": "https://toppandigital.com/wp-content/themes/tdl/assets/images/logo-toppan-digital-language.svg",
@@ -3714,7 +3714,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-03-22T20:19:47+01:00",
-      "fetchedAt": "2026-03-23T07:17:35.145Z"
+      "fetchedAt": "2026-03-23T12:52:40.209Z"
     }
   ],
   "stats": {

@@ -102,8 +102,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^issuer:[a-z0-9]+:[a-z0-9-]+:(production|pilot|test|sandbox)$",
-          "description": "Format: issuer:<orgCode>:<issuerKey>:<environment>"
+          "pattern": "^issuer:[a-z0-9]+:[a-z0-9-]+:(production|test)$",
+          "description": "Format: issuer:<orgCode>:<issuerKey>:<environment> where environment is production or test (test = non-production: pilots, sandboxes, demos, QA)."
         },
         "displayName": {
           "type": "string",
@@ -115,8 +115,8 @@
         },
         "environment": {
           "type": "string",
-          "enum": ["production", "pilot", "test", "sandbox"],
-          "description": "Deployment environment of this issuer instance"
+          "enum": ["production", "test"],
+          "description": "production = live production issuance; test = all non-production instances (pilots, sandboxes, demos, internal QA). Use projectContext for finer detail."
         },
         "oid4vciMetadataUrl": {
           "type": "string",

@@ -32,9 +32,20 @@
 
   const ENVIRONMENT_LABELS = {
     production: 'Production',
-    pilot: 'Pilot',
-    test: 'Testing',
+    test: 'Test',
   };
+
+  /** Normalize legacy source/aggregated values to current enum (production | test). */
+  function canonicalIssuerEnvironment(env) {
+    if (env === 'sandbox' || env === 'pilot') return 'test';
+    return env;
+  }
+
+  function environmentDisplayLabel(env) {
+    if (!env) return '—';
+    const c = canonicalIssuerEnvironment(env);
+    return ENVIRONMENT_LABELS[c] || c;
+  }
 
   const VC_FORMAT_LABELS = {
     'sd_jwt_vc': 'SD-JWT VC',
@@ -270,7 +281,10 @@
       addedLast30Days: 0,
     };
     items.forEach((issuer) => {
-      if (issuer.environment) facets.environment[issuer.environment] = (facets.environment[issuer.environment] || 0) + 1;
+      if (issuer.environment) {
+        const c = canonicalIssuerEnvironment(issuer.environment);
+        facets.environment[c] = (facets.environment[c] || 0) + 1;
+      }
       if (issuer.organization?.name) facets.organization[issuer.organization.name] = (facets.organization[issuer.organization.name] || 0) + 1;
       (issuer.credentialConfigurations || []).forEach((cc) => {
         if (cc.vcFormat) facets.vcFormat[cc.vcFormat] = (facets.vcFormat[cc.vcFormat] || 0) + 1;
@@ -295,7 +309,7 @@
       if (filters.usedByRPsOnly && rpCatalogData !== null && (countRpsForIssuer(issuer, rpCatalogData) ?? 0) === 0) {
         return false;
       }
-      if (filters.environment.length && !filters.environment.includes(issuer.environment)) return false;
+      if (filters.environment.length && !filters.environment.includes(canonicalIssuerEnvironment(issuer.environment))) return false;
       if (filters.organization.length && !filters.organization.includes(issuer.organization?.name)) return false;
 
       const configs = issuer.credentialConfigurations || [];
@@ -413,7 +427,7 @@
           ${issuer.displayName ? `<span class="fides-row-name-id" title="${escapeHtml(issuer.displayName)}">${escapeHtml(issuer.displayName)}</span>` : ''}
         </div>
         <div class="fides-row-environment">
-          ${env ? escapeHtml(ENVIRONMENT_LABELS[env] || env) : '—'}
+          ${env ? escapeHtml(environmentDisplayLabel(env)) : '—'}
         </div>
         <div class="fides-row-count fides-list-col-right" title="${credCount} credential${credCount !== 1 ? 's' : ''}">${credCount}</div>
         <div class="fides-row-count fides-list-col-right fides-card-count-item--rp" data-issuer-id="${escapeHtml(issuer.id)}">
@@ -425,8 +439,9 @@
   }
 
   function renderEnvironmentBadge(env) {
-    const label = ENVIRONMENT_LABELS[env] || env;
-    return `<span class="fides-env-badge fides-env-${escapeHtml(env)}">${escapeHtml(label)}</span>`;
+    const c = canonicalIssuerEnvironment(env);
+    const label = ENVIRONMENT_LABELS[c] || c;
+    return `<span class="fides-env-badge fides-env-${escapeHtml(c)}">${escapeHtml(label)}</span>`;
   }
 
   function renderIssuerCard(issuer) {
@@ -549,6 +564,12 @@
       catalogConfigs.length > 0 && credCatBase
         ? `${credCatBase}?credentials=${catalogConfigs.map((cc) => encodeURIComponent(cc.credentialCatalogRef.id)).join(',')}`
         : '';
+    /** Primary modal CTA: only when issuer catalog JSON has issuerWebsiteUrl (not org.website fallback). */
+    const issuerVisitUrl = String(issuer.issuerWebsiteUrl || '').trim();
+    const issuerVisitButton =
+      issuerVisitUrl !== ''
+        ? `<a href="${escapeHtml(issuerVisitUrl)}" target="_blank" rel="noopener" class="fides-modal-visit-button" title="${escapeHtml(issuerVisitUrl)}" onclick="event.stopPropagation();">${icons.externalLink} Issuer Website</a>`
+        : '';
 
     return `
       <div class="fides-modal-overlay" id="fides-modal-overlay" data-theme="${escapeHtml(theme)}">
@@ -561,7 +582,10 @@
               }
               <div class="fides-modal-title-wrap">
                 <h2 class="fides-modal-title" id="fides-modal-title">${escapeHtml(issuer.displayName || issuer.id)}</h2>
-                <p class="fides-modal-provider">${escapeHtml(issuer.organization?.name || '')}</p>
+                ${issuer.organization?.name
+                  ? `<p class="fides-modal-provider">${icons.building} <span>${escapeHtml(issuer.organization.name)}</span></p>`
+                  : ''
+                }
               </div>
             </div>
             <div class="fides-modal-header-actions">
@@ -575,8 +599,14 @@
           </div>
 
           <div class="fides-modal-body">
-            <!-- Description (if available) -->
-            ${issuer.description ? `<div class="fides-modal-intro"><p class="fides-modal-description">${escapeHtml(issuer.description)}</p></div>` : ''}
+            <!-- Description + primary website (aligned with RP catalog visit button) -->
+            ${issuer.description || issuerVisitButton
+              ? `<div class="fides-modal-intro${issuerVisitButton ? ' fides-modal-intro--split' : ''}">
+                  ${issuer.description ? `<p class="fides-modal-description">${escapeHtml(issuer.description)}</p>` : ''}
+                  ${issuerVisitButton}
+                </div>`
+              : ''
+            }
 
             <!-- FIDES Ecosystem Model -->
             <div class="fides-accordion fides-modal-section">
@@ -766,7 +796,7 @@
                   </div>
                   <div class="fides-kv-row">
                     <span class="fides-kv-key">Environment</span>
-                    <span class="fides-kv-val">${escapeHtml(ENVIRONMENT_LABELS[issuer.environment] || issuer.environment || '—')}</span>
+                    <span class="fides-kv-val">${escapeHtml(environmentDisplayLabel(issuer.environment))}</span>
                   </div>
                   <div class="fides-kv-row">
                     <span class="fides-kv-key">Proof types</span>
@@ -869,7 +899,7 @@
     if (!settings.showFilters) return '';
     const activeFilterCount = getActiveFilterCount();
 
-    const environmentOptions = ['pilot', 'test', 'production'].filter(
+    const environmentOptions = ['test', 'production'].filter(
       (e) => e === 'production' || filterFacets?.environment?.[e] > 0 || filters.environment.includes(e)
     );
     const organizationOptions = uniqueValues(issuers, (i) => i.organization?.name);

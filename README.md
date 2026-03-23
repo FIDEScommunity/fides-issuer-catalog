@@ -80,7 +80,7 @@ npm run validate   # Validate source files against the JSON Schema
 | `issuer` | `issuer` |
 | `orgCode` | `fides`, `nl`, `animo` |
 | `issuerKey` | `lpid-issuer`, `ehic-issuer` |
-| `environment` | `production`, `pilot`, `test`, `sandbox` |
+| `environment` | `production` (live) or `test` (all non-production: pilots, sandboxes, demos, QA). Use `projectContext` for detail. |
 
 ### Optional Fields
 

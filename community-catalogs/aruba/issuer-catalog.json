@@ -7,10 +7,10 @@
   },
   "issuers": [
     {
-      "id": "issuer:aruba:wallet:sandbox",
+      "id": "issuer:aruba:wallet:test",
       "displayName": "Aruba.IT Wallet PID Issuer",
       "description": "OID4VCI issuer used in the Aruba wallet environment for issuing EUDI PID credentials in mso_mdoc format.",
-      "environment": "sandbox",
+      "environment": "test",
       "oid4vciMetadataUrl": "https://wallet.aruba.io/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://wallet.aruba.io",
       "projectContext": "Aruba EUDI wallet pilot"

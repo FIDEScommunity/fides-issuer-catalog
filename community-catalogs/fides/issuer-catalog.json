@@ -7,7 +7,7 @@
   },
   "issuers": [
     {
-      "id": "issuer:fides:credential-issuer:sandbox",
+      "id": "issuer:fides:credential-issuer:test",
       "displayName": "FIDES Issuer",
       "description": "The FIDES community credential issuer provides sandbox credentials for testing interoperability within the FIDES Community Platform. It issues a range of verifiable credentials for use in pilot projects.",
       "environment": "test",
@@ -15,7 +15,7 @@
       "projectContext": "FIDES Community Platform"
     },
     {
-      "id": "issuer:fides:mijnoverheid-issuer:sandbox",
+      "id": "issuer:fides:mijnoverheid-issuer:test",
       "description": "A sandbox issuer simulating MijnOverheid credential issuance for testing purposes within the FIDES Community Platform.",
       "environment": "test",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/a860157d-64d2-434f-9288-04f5b4d2b9dc/MijnOverheidIssuer/.well-known/openid-credential-issuer",

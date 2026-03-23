@@ -402,7 +402,7 @@ async function crawl(): Promise<void> {
   };
 
   const output: AggregatedIssuerCatalog = {
-    schemaVersion: '1.0',
+    schemaVersion: '1.1.0',
     catalogType: 'issuer-catalog',
     lastUpdated: fetchedAt,
     issuers: allIssuers,

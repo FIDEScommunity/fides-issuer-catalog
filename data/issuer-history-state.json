@@ -1,14 +1,14 @@
 {
-  "issuer:fides:credential-issuer:sandbox": {
+  "issuer:fides:credential-issuer:test": {
     "firstSeenAt": "2026-03-12T20:07:58.852Z"
   },
-  "issuer:fides:mijnoverheid-issuer:sandbox": {
+  "issuer:fides:mijnoverheid-issuer:test": {
     "firstSeenAt": "2026-03-12T20:11:57.399Z"
   },
-  "issuer:credenco:kvk:sandbox": {
+  "issuer:credenco:kvk:test": {
     "firstSeenAt": "2026-03-16T14:36:01.417Z"
   },
-  "issuer:credenco:belastingdienst:sandbox": {
+  "issuer:credenco:belastingdienst:test": {
     "firstSeenAt": "2026-03-16T14:36:01.417Z"
   },
   "issuer:eu:digital-credentials-issuer:test": {
@@ -32,31 +32,31 @@
   "issuer:namirial:wallet-studio:test": {
     "firstSeenAt": "2026-03-18T12:08:33.802Z"
   },
-  "issuer:credenco:tulip:sandbox": {
+  "issuer:credenco:tulip:test": {
     "firstSeenAt": "2026-03-20T08:33:47.815Z"
   },
-  "issuer:multipaz:mdl:sandbox": {
+  "issuer:multipaz:mdl:test": {
     "firstSeenAt": "2026-03-20T15:19:21.293Z"
   },
-  "issuer:mosip:insurance:sandbox": {
+  "issuer:mosip:insurance:test": {
     "firstSeenAt": "2026-03-20T15:48:38.832Z"
   },
-  "issuer:swiyu:beta-id:sandbox": {
+  "issuer:swiyu:beta-id:test": {
     "firstSeenAt": "2026-03-21T16:59:22.876Z"
   },
-  "issuer:igrant:demo:sandbox": {
+  "issuer:igrant:demo:test": {
     "firstSeenAt": "2026-03-21T17:24:16.301Z"
   },
-  "issuer:talao:acnliwayop:sandbox": {
+  "issuer:talao:acnliwayop:test": {
     "firstSeenAt": "2026-03-21T17:43:39.905Z"
   },
-  "issuer:toppan:goid:sandbox": {
+  "issuer:toppan:goid:test": {
     "firstSeenAt": "2026-03-22T19:20:00.820Z"
   },
-  "issuer:aruba:wallet:sandbox": {
+  "issuer:aruba:wallet:test": {
     "firstSeenAt": "2026-03-22T19:37:02.594Z"
   },
-  "issuer:thales:unfold:sandbox": {
+  "issuer:thales:unfold:test": {
     "firstSeenAt": "2026-03-22T19:41:04.052Z"
   }
 }
