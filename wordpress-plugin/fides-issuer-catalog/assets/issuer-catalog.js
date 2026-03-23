@@ -292,7 +292,9 @@
 
       if (filters.addedLast30Days && !isWithinLastDays(issuer.firstSeenAt, 30)) return false;
       if (filters.updatedLast30Days && !isWithinLastDays(issuer.updatedAt, 30)) return false;
-      if (filters.usedByRPsOnly && rpCatalogData !== null && countRpsForIssuer(issuer, rpCatalogData) === 0) return false;
+      if (filters.usedByRPsOnly && rpCatalogData !== null && (countRpsForIssuer(issuer, rpCatalogData) ?? 0) === 0) {
+        return false;
+      }
       if (filters.environment.length && !filters.environment.includes(issuer.environment)) return false;
       if (filters.organization.length && !filters.organization.includes(issuer.organization?.name)) return false;
 
@@ -415,7 +417,7 @@
         </div>
         <div class="fides-row-count fides-list-col-right" title="${credCount} credential${credCount !== 1 ? 's' : ''}">${credCount}</div>
         <div class="fides-row-count fides-list-col-right fides-card-count-item--rp" data-issuer-id="${escapeHtml(issuer.id)}">
-          <span class="fides-card-rp-count">—</span>
+          <span class="fides-card-rp-count">0</span>
         </div>
         <div class="fides-row-updated">${escapeHtml(activityLabel)}</div>
       </div>
@@ -463,7 +465,7 @@
               ${extraCount > 0 ? `<span class="fides-card-count-extra">+ ${extraCount} more</span>` : ''}
             </div>
             <div class="fides-card-count-item fides-card-count-item--rp" data-issuer-id="${escapeHtml(issuer.id)}">
-              <span class="fides-card-count-num fides-card-rp-count">—</span>
+              <span class="fides-card-count-num fides-card-rp-count">0</span>
               <span class="fides-card-count-label">Relying Parties</span>
             </div>
           </div>
@@ -500,6 +502,7 @@
     return rpCatalogFetchPromise;
   }
 
+  /** @returns {number|null} Match count, or null if issuer has no catalog-linked credential types (UI shows 0). */
   function countRpsForIssuer(issuer, rpList) {
     const credIds = new Set(
       (issuer.credentialConfigurations || [])
@@ -619,7 +622,7 @@
                     <div class="fides-eco-col fides-eco-stat-wrap fides-eco-rp-col">
                       <div class="fides-eco-wallet-box fides-eco-stat-box fides-eco-stat-box--blue" data-fides-eco-target="fides-accordion-rps">
                         <div class="fides-eco-stat-box-main">
-                          <span class="fides-eco-wallet-count fides-eco-rp-count">—</span>
+                          <span class="fides-eco-wallet-count fides-eco-rp-count">0</span>
                           <span class="fides-eco-wallet-label">Relying parties</span>
                         </div>
                         <span class="fides-eco-stat-hint" aria-hidden="true">${icons.chevronDoubleDown}</span>
@@ -696,7 +699,7 @@
             <div class="fides-accordion" id="fides-accordion-rps">
               <div class="fides-accordion-header-bar">
                 <button class="fides-accordion-header fides-accordion-toggle" type="button" aria-expanded="false">
-                  <span class="fides-accordion-title">${icons.building} Relying parties <span class="fides-accordion-count" id="fides-rp-accordion-count">—</span></span>
+                  <span class="fides-accordion-title">${icons.building} Relying parties <span class="fides-accordion-count" id="fides-rp-accordion-count">0</span></span>
                 </button>
                 <a id="fides-rp-catalog-explore" class="fides-accordion-explore-link fides-accordion-explore-link--hidden" href="#" aria-hidden="true" tabindex="-1" aria-label="Relying party catalog (filtered view)">Open in catalog</a>
                 <button type="button" class="fides-accordion-chevron-btn fides-accordion-toggle" aria-expanded="false" aria-label="Toggle relying parties section">
@@ -1073,8 +1076,8 @@
       }
 
       if (credIds.size === 0) {
-        if (countEl) countEl.textContent = '—';
-        if (accordionCountEl) accordionCountEl.textContent = '—';
+        if (countEl) countEl.textContent = '0';
+        if (accordionCountEl) accordionCountEl.textContent = '0';
         if (mountEl) {
           mountEl.innerHTML =
             '<p class="fides-modal-empty">No catalog-linked credential types, so relying parties cannot be matched from the RP catalog.</p>';
@@ -1333,9 +1336,9 @@
     fetchRpCatalog().then((rpList) => {
       issuerList.forEach((issuer) => {
         const count = countRpsForIssuer(issuer, rpList);
-        if (count === null) return;
+        const display = count === null ? 0 : count;
         root.querySelectorAll(`.fides-card-count-item--rp[data-issuer-id="${CSS.escape(issuer.id)}"] .fides-card-rp-count`).forEach((el) => {
-          el.textContent = count;
+          el.textContent = String(display);
         });
       });
       // Update the "used by relying parties" KPI count
