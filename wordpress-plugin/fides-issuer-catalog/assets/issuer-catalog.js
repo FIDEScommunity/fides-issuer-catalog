@@ -852,7 +852,7 @@
         </div>
         <div class="fides-kpi-card">
           <span class="fides-kpi-value">${metrics.credentials}</span>
-          <span class="fides-kpi-label">Credentials</span>
+          <span class="fides-kpi-label">Credential types</span>
         </div>
         <div class="fides-kpi-card">
           <span class="fides-kpi-value" data-kpi-metric="rp-issuers">—</span>
