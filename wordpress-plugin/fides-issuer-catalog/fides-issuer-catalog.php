@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers.
- * Version: 1.5.20
+ * Version: 1.5.21
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.5.20');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.5.21');
 
 /**
  * Detect if the site is running on a .local or localhost URL (local dev).
@@ -73,12 +73,10 @@ function fides_issuer_catalog_enqueue_assets() {
         ),
         'rpCatalogDataUrl' => $rp_data_url,
         'rpCatalogFallbackUrl' => $plugin_url . 'data/rp-aggregated.json',
-        'rpCatalogUrl' => $use_local
-            ? 'http://' . $_SERVER['HTTP_HOST'] . '/community-tools/relying-party-catalog/'
-            : get_option(
-                'fides_issuer_catalog_rp_catalog_url',
-                'https://fides.community/community-tools/relying-party-catalog/'
-            ),
+        'rpCatalogUrl' => get_option(
+            'fides_issuer_catalog_rp_catalog_url',
+            'https://fides.community/ecosystem-explorer/relying-party-catalog/'
+        ),
         'walletCatalogUrl' => $use_local
             ? 'http://' . $_SERVER['HTTP_HOST'] . '/community-tools/personal-wallets/'
             : get_option(
@@ -125,6 +123,9 @@ function fides_issuer_catalog_settings_init() {
     register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_rp_catalog_data_url', [
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
+    register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_rp_catalog_url', [
+        'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
+    ]);
 }
 add_action('admin_init', 'fides_issuer_catalog_settings_init');
 
@@ -161,6 +162,15 @@ function fides_issuer_catalog_settings_render() { ?>
                                value="<?php echo esc_attr(get_option('fides_issuer_catalog_credential_catalog_url', 'https://fides.community/community-tools/credential-catalog/')); ?>"
                                class="regular-text">
                         <p class="description">Base URL for credential catalog deep links in the modal.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="fides_issuer_catalog_rp_catalog_url">RP Catalog Base URL</label></th>
+                    <td>
+                        <input type="url" id="fides_issuer_catalog_rp_catalog_url" name="fides_issuer_catalog_rp_catalog_url"
+                               value="<?php echo esc_attr(get_option('fides_issuer_catalog_rp_catalog_url', 'https://fides.community/ecosystem-explorer/relying-party-catalog/')); ?>"
+                               class="regular-text">
+                        <p class="description">Base URL for relying party catalog links (e.g. “Open in catalog” and RP names in the issuer modal).</p>
                     </td>
                 </tr>
                 <tr>

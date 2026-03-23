@@ -126,7 +126,7 @@
     credentialCatalogUrl: 'https://fides.community/community-tools/credential-catalog/',
     rpCatalogDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/wordpress-plugin/fides-rp-catalog/data/aggregated.json',
     rpCatalogFallbackUrl: '',
-    rpCatalogUrl: 'https://fides.community/community-tools/relying-party-catalog/',
+    rpCatalogUrl: 'https://fides.community/ecosystem-explorer/relying-party-catalog/',
     walletCatalogUrl: 'https://fides.community/community-tools/personal-wallets/',
   };
 
