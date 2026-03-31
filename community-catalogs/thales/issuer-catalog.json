@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "Thales",
-    "website": "https://www.thalesgroup.com",
-    "logo": "https://digid-eks.dev.citizen-online.com/issuer-portal/assets/img/Thales.svg"
-  },
   "issuers": [
     {
       "id": "issuer:thales:unfold:test",
@@ -15,5 +10,6 @@
       "issuerWebsiteUrl": "https://digid-eks.dev.citizen-online.com/issuer-portal/",
       "projectContext": "Unfold / EUDI Wallet pilot environment"
     }
-  ]
+  ],
+  "orgId": "org:thales"
 }

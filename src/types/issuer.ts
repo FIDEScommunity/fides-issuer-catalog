@@ -1,16 +1,5 @@
 // Source types (what contributors write in community-catalogs/**/issuer-catalog.json)
 
-export interface SourceOrganization {
-  name: string;
-  did?: string;
-  website?: string;
-  logo?: string;
-  contact?: {
-    email?: string;
-    support?: string;
-  };
-}
-
 export interface SourceWalletReference {
   id: string;
   displayName?: string;
@@ -36,7 +25,8 @@ export interface SourceIssuer {
 
 export interface SourceIssuerCatalog {
   $schema: string;
-  organization: SourceOrganization;
+  /** Organization catalog id; crawler resolves name/DID/website/logo from organization aggregated.json */
+  orgId: string;
   issuers: SourceIssuer[];
   lastUpdated?: string;
 }
@@ -134,6 +124,7 @@ export interface AggregatedOrganization {
 
 export interface AggregatedIssuer {
   id: string;
+  orgId: string;
   organization: AggregatedOrganization;
   displayName: string;
   description?: string;

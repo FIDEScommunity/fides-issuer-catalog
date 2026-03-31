@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "Belastingdienst",
-    "website": "https://www.belastingdienst.nl",
-    "logo": "https://sliedrecht24.nl/wp-content/uploads/2023/10/Logo-Belastingdienst.png"
-  },
   "issuers": [
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -13,5 +8,6 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/e860234b-d60a-453d-a11e-c87a38583c15/Belastingdienst/.well-known/openid-credential-issuer"
     }
-  ]
+  ],
+  "orgId": "org:bd"
 }

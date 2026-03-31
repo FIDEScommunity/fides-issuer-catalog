@@ -3777,6 +3777,7 @@ span.fides-tag.platform {
   padding: 0.5rem;
   background: var(--fides-bg-primary);
   border-radius: 0 0 8px 8px;
+  --fides-eco-slot-surface: var(--fides-bg-secondary);
 }
 
 .fides-eco-wallet-row {
@@ -3784,6 +3785,12 @@ span.fides-tag.platform {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.fides-modal-ecosystem .fides-eco-wallet-box,
+.fides-modal-ecosystem .fides-eco-col-side,
+.fides-modal-ecosystem .fides-eco-credentials-box {
+  background: var(--fides-eco-slot-surface);
 }
 
 .fides-eco-wallet-box {
@@ -3998,7 +4005,7 @@ span.fides-tag.platform {
 /* Non-interactive stat box — after colored hovers so neutral hover wins */
 .fides-eco-stat-box--static:hover {
   border-color: var(--fides-border) !important;
-  background: var(--fides-bg-secondary) !important;
+  background: var(--fides-eco-slot-surface, var(--fides-bg-secondary)) !important;
   box-shadow: none !important;
 }
 
@@ -4437,13 +4444,13 @@ a.fides-eco-tag-blue:hover {
 .fides-modal-overlay[data-theme="fides"] .fides-modal-ecosystem,
 .fides-modal-overlay[data-theme="light"] .fides-modal-ecosystem {
   background: #ffffff;
+  --fides-eco-slot-surface: #f8fafc;
 }
 
-.fides-modal-overlay[data-theme="fides"] .fides-eco-wallet-box,
-.fides-modal-overlay[data-theme="light"] .fides-eco-wallet-box,
-.fides-modal-overlay[data-theme="fides"] .fides-eco-credentials-box,
-.fides-modal-overlay[data-theme="light"] .fides-eco-credentials-box {
-  background: #f8fafc;
+.fides-modal-overlay[data-theme="fides"] .fides-modal-ecosystem .fides-eco-wallet-box,
+.fides-modal-overlay[data-theme="light"] .fides-modal-ecosystem .fides-eco-wallet-box,
+.fides-modal-overlay[data-theme="fides"] .fides-modal-ecosystem .fides-eco-credentials-box,
+.fides-modal-overlay[data-theme="light"] .fides-modal-ecosystem .fides-eco-credentials-box {
   border-color: #e2e8f0;
 }
 

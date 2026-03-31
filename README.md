@@ -6,7 +6,7 @@ A community-driven catalog of OID4VCI credential issuers. Organizations contribu
 
 ## 🎯 Concept
 
-1. **Minimal contribution** — Provide only your organization info and `.well-known` URL; the crawler fetches everything else
+1. **Minimal contribution** — Reference your [organization catalog](https://github.com/FIDEScommunity/fides-organization-catalog) entry via `orgId` and provide `.well-known` URLs; the crawler resolves name, DID, website, and logo from the org catalog and fetches the rest from OID4VCI metadata
 2. **Auto-discovery** — Credential configurations, signing algorithms, proof types, and logos are extracted from your OID4VCI metadata endpoint
 3. **Cross-catalog linking** — Credential configurations are automatically matched to credential catalog entries via `vct`/`docType`
 4. **Consistent UX** — Identical look & feel to the FIDES Wallet, RP, and Credential catalogs
@@ -45,6 +45,8 @@ npm run crawl      # Fetch .well-known endpoints and write aggregated.json
 npm run validate   # Validate source files against the JSON Schema
 ```
 
+**Resolving `orgId`:** The crawler loads the [organization catalog](https://github.com/FIDEScommunity/fides-organization-catalog) `data/aggregated.json` from GitHub (raw), or falls back to `../organization-catalog/data/aggregated.json` when the fetch fails. Override with `ORGANIZATION_CATALOG_AGGREGATED_PATH` if needed.
+
 ## ➕ Add Your Issuer
 
 1. **Fork** this repository
@@ -53,14 +55,12 @@ npm run validate   # Validate source files against the JSON Schema
 
 ### Minimal Example
 
+Add your organization to the [FIDES Organization Catalog](https://github.com/FIDEScommunity/fides-organization-catalog) first, then reference it by id:
+
 ```json
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "Your Organization",
-    "did": "did:web:yourdomain.com",
-    "website": "https://yourdomain.com"
-  },
+  "orgId": "org:yourorg",
   "issuers": [
     {
       "id": "issuer:yourorg:my-issuer:production",
@@ -97,8 +97,8 @@ npm run validate   # Validate source files against the JSON Schema
 https://raw.githubusercontent.com/FIDEScommunity/fides-issuer-catalog/main/data/aggregated.json
 ```
 
-Each issuer entry includes all source fields plus data enriched from `.well-known`:
-- `displayName`, `logoUri` — from `display[]`
+Each issuer entry includes `orgId`, resolved `organization` (from the organization catalog), plus data enriched from `.well-known`:
+- `displayName`, `logoUri` — from `display[]` (logo may fall back to org catalog)
 - `credentialIssuerUrl` — from `credential_issuer`
 - `issuerWebsiteUrl` — optional; from source catalog when set (e.g. issuer web UI or playground link)
 - `credentialConfigurations[]` — one entry per supported credential, including:

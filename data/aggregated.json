@@ -1,20 +1,22 @@
 {
-  "schemaVersion": "1.1.0",
+  "schemaVersion": "1.2.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-03-31T07:22:29.188Z",
+  "lastUpdated": "2026-03-31T15:49:46.465Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
+      "orgId": "org:animo",
       "organization": {
-        "name": "Animo",
+        "name": "Animo Solutions",
+        "did": "did:web:animo.id",
         "website": "https://animo.id",
-        "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4"
+        "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128"
       },
       "displayName": "Bundesdruckerei (Animo Playground)",
       "environment": "test",
       "credentialIssuerUrl": "https://playground.animo.id/oid4vci/188e2459-6da8-4431-9062-2fcdac274f41",
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/188e2459-6da8-4431-9062-2fcdac274f41/.well-known/openid-credential-issuer",
-      "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4",
+      "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128",
       "description": "Simulated Bundesdruckerei issuer hosted on the Animo EUDI Playground. Issues PID, mDL and Age Verification credentials.",
       "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=188e2459-6da8-4431-9062-2fcdac274f41&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
@@ -179,20 +181,22 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:animo:rdw:test",
+      "orgId": "org:animo",
       "organization": {
-        "name": "Animo",
+        "name": "Animo Solutions",
+        "did": "did:web:animo.id",
         "website": "https://animo.id",
-        "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4"
+        "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128"
       },
       "displayName": "RDW (Animo Playground)",
       "environment": "test",
       "credentialIssuerUrl": "https://playground.animo.id/oid4vci/2943c018-8eac-4ddc-a234-da35857fa3e9",
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/2943c018-8eac-4ddc-a234-da35857fa3e9/.well-known/openid-credential-issuer",
-      "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4",
+      "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128",
       "description": "Simulated RDW (Dutch Vehicle Registration Authority) issuer hosted on the Animo EUDI Playground. Issues Vehicle Registration Certificate (mVRC).",
       "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=2943c018-8eac-4ddc-a234-da35857fa3e9&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
@@ -240,20 +244,22 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:animo:telorg:test",
+      "orgId": "org:animo",
       "organization": {
-        "name": "Animo",
+        "name": "Animo Solutions",
+        "did": "did:web:animo.id",
         "website": "https://animo.id",
-        "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4"
+        "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128"
       },
       "displayName": "TelOrg (Animo Playground)",
       "environment": "test",
       "credentialIssuerUrl": "https://playground.animo.id/oid4vci/a5292f18-3c9f-484a-8515-fb4ec4cb33e8",
       "oid4vciMetadataUrl": "https://playground.animo.id/oid4vci/a5292f18-3c9f-484a-8515-fb4ec4cb33e8/.well-known/openid-credential-issuer",
-      "logoUri": "https://avatars.githubusercontent.com/u/60350822?v=4",
+      "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128",
       "description": "Simulated telecom organisation issuer hosted on the Animo EUDI Playground. Issues MSISDN credentials.",
       "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=a5292f18-3c9f-484a-8515-fb4ec4cb33e8&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
@@ -340,10 +346,11 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-20T14:23:33+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
+      "orgId": "org:aruba",
       "organization": {
         "name": "Aruba IT",
         "website": "https://www.aruba.io",
@@ -898,10 +905,11 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
+      "orgId": "org:bd",
       "organization": {
         "name": "Belastingdienst",
         "website": "https://www.belastingdienst.nl",
@@ -1011,20 +1019,21 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
+      "orgId": "org:credenco",
       "organization": {
         "name": "Credenco",
-        "website": "https://credenco.com",
-        "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png"
+        "website": "https://www.credenco.com",
+        "logoUri": "https://wallet.acc.credenco.com/logo_white_background.png"
       },
       "displayName": "Tulip Bank Demo Issuer",
       "environment": "test",
       "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/a396df10-6645-44c3-9209-1f4e227cd35e/bankv4",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/a396df10-6645-44c3-9209-1f4e227cd35e/bankv4/.well-known/openid-credential-issuer",
-      "logoUri": "https://static.wixstatic.com/media/fadea3_d2eed032fe264705991b1a51381d6e30~mv2.png/v1/fill/w_74,h_68,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20credenco.png",
+      "logoUri": "https://wallet.acc.credenco.com/logo_white_background.png",
       "description": "This is a demo credential issuer for the fictitious \"Tulip Bank\", hosted by Credenco. It provides credentials that can be used across pilots, experiments, and demos.",
       "issuerWebsiteUrl": "https://tulip-bank.acc.credenco.com",
       "credentialConfigurations": [
@@ -1072,20 +1081,21 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
+      "orgId": "org:eu",
       "organization": {
-        "name": "European Commission",
+        "name": "European Commission - Government",
         "website": "https://github.com/eu-digital-identity-wallet",
-        "logoUri": "https://avatars.githubusercontent.com/u/123750850?v=4"
+        "logoUri": "https://www.google.com/s2/favicons?domain=ec.europa.eu&sz=128"
       },
       "displayName": "Digital Credentials Issuer",
       "environment": "test",
       "credentialIssuerUrl": "https://issuer.eudiw.dev",
       "oid4vciMetadataUrl": "https://issuer.eudiw.dev/.well-known/openid-credential-issuer",
-      "logoUri": "https://avatars.githubusercontent.com/u/123750850?v=4",
+      "logoUri": "https://www.google.com/s2/favicons?domain=ec.europa.eu&sz=128",
       "description": "This is the EUDI reference credential issuer that can be used for testing, demonstration, and pilot applications, providing a set of credentials aligned with the EUDI reference architecture.",
       "projectContext": "EUDI Wallet Reference Implementation",
       "credentialConfigurations": [
@@ -1639,10 +1649,11 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-20T09:47:26+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
+      "orgId": "org:ewc",
       "organization": {
         "name": "EWC - European Wallet Consortium",
         "website": "https://dss.aegean.gr",
@@ -1937,12 +1948,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-20T08:54:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
+      "orgId": "org:fides",
       "organization": {
         "name": "FIDES Labs",
+        "did": "did:web:fides.acc.credenco.com:did:da5a3c99-d45c-4ce2-8065-9db36c98868c",
         "website": "https://fides.community",
         "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4"
       },
@@ -2357,12 +2370,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
+      "orgId": "org:fides",
       "organization": {
         "name": "FIDES Labs",
+        "did": "did:web:fides.acc.credenco.com:did:da5a3c99-d45c-4ce2-8065-9db36c98868c",
         "website": "https://fides.community",
         "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4"
       },
@@ -2444,20 +2459,21 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
+      "orgId": "org:hovi",
       "organization": {
         "name": "Hovi",
-        "website": "https://hovi.id",
-        "logoUri": "https://avatars.githubusercontent.com/u/126883948?v=4"
+        "website": "https://www.hovi.id/",
+        "logoUri": "https://cdn.prod.website-files.com/659dad70ef0ae858f66ae208/6966ba7d3a1f6bb1adf4a924_hovi-logo-white.png"
       },
       "displayName": "Hovi EUDI Playground",
       "environment": "test",
       "credentialIssuerUrl": "https://core-agent.hovi.id/oid4vci/e7db294f-cb68-4643-851c-375d81bc3665",
       "oid4vciMetadataUrl": "https://core-agent.hovi.id/oid4vci/e7db294f-cb68-4643-851c-375d81bc3665/.well-known/openid-credential-issuer",
-      "logoUri": "https://avatars.githubusercontent.com/u/126883948?v=4",
+      "logoUri": "https://cdn.prod.website-files.com/659dad70ef0ae858f66ae208/6966ba7d3a1f6bb1adf4a924_hovi-logo-white.png",
       "description": "EUDI Wallet playground issuer by Hovi. Issues a broad range of EUDI credential types including PID, EHIC, Diploma, IBAN, Photo ID and more.",
       "projectContext": "Hovi EUDI Wallet Playground",
       "credentialConfigurations": [
@@ -2749,20 +2765,22 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:igrant:demo:test",
+      "orgId": "org:igrant",
       "organization": {
         "name": "iGrant.io",
-        "website": "https://www.igrant.io",
-        "logoUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq7T7oJ6tMP18AjPk9RrsbfPkObIj0dJYJQ&s"
+        "did": "did:web:igrant.io",
+        "website": "https://igrant.io",
+        "logoUri": "https://www.google.com/s2/favicons?domain=igrant.io&sz=128"
       },
       "displayName": "iGrant.io Demo Issuer",
       "environment": "test",
       "credentialIssuerUrl": "https://oid4vc.igrant.io/organisation/f8a7e3b9-09dc-4e45-88cc-3ce28e42e0ef/service/version-01",
       "oid4vciMetadataUrl": "https://oid4vc.igrant.io/.well-known/openid-credential-issuer/organisation/f8a7e3b9-09dc-4e45-88cc-3ce28e42e0ef/service",
-      "logoUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq7T7oJ6tMP18AjPk9RrsbfPkObIj0dJYJQ&s",
+      "logoUri": "https://www.google.com/s2/favicons?domain=igrant.io&sz=128",
       "description": "Sandbox credential issuer from iGrant.io used for demonstrating OpenID4VCI issuance flows and interoperability scenarios across multiple credential types.",
       "issuerWebsiteUrl": "https://www.igrant.io/demo.html",
       "projectContext": "iGrant.io OpenID4VCI demo issuer",
@@ -2825,10 +2843,11 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
+      "orgId": "org:kvk",
       "organization": {
         "name": "Kamer van Koophandel",
         "website": "https://www.kvk.nl",
@@ -2931,20 +2950,21 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
+      "orgId": "org:mosip",
       "organization": {
         "name": "MOSIP",
         "website": "https://www.mosip.io",
-        "logoUri": "https://avatars.githubusercontent.com/u/39733477?s=280&v=4"
+        "logoUri": "https://www.google.com/s2/favicons?domain=mosip.io&sz=128"
       },
       "displayName": "Inji Certify - Insurance Sandbox Issuer",
       "environment": "test",
       "credentialIssuerUrl": "https://injicertify-insurance.collab.mosip.net",
       "oid4vciMetadataUrl": "https://injicertify-insurance.collab.mosip.net/v1/certify/issuance/.well-known/openid-credential-issuer",
-      "logoUri": "https://avatars.githubusercontent.com/u/39733477?s=280&v=4",
+      "logoUri": "https://www.google.com/s2/favicons?domain=mosip.io&sz=128",
       "description": "This sandbox credential issuer from MOSIP Inji Certify supports the issuance of insurance-related credentials in the MOSIP collab environment for testing OpenID4VCI flows and interoperability scenarios.",
       "issuerWebsiteUrl": "https://collab.mosip.net/",
       "projectContext": "MOSIP Collab - Inji Certify",
@@ -2983,13 +3003,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
+      "orgId": "org:owf",
       "organization": {
         "name": "OpenWallet Foundation",
-        "website": "https://openwallet.foundation/projects/identity-credential/",
+        "website": "https://openwallet.foundation/",
         "logoUri": "https://avatars.githubusercontent.com/u/131064301?s=280&v=4"
       },
       "displayName": "MultiPaz Sandbox Issuer",
@@ -3140,20 +3161,21 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
+      "orgId": "org:namirial",
       "organization": {
         "name": "Namirial",
         "website": "https://www.namirial.com",
-        "logoUri": "https://avatars.githubusercontent.com/u/88099653?v=4"
+        "logoUri": "https://wallet-demo.namirial.com/static/img/fav-namirial-logo.png"
       },
       "displayName": "Namirial Demo Platform",
       "environment": "test",
       "credentialIssuerUrl": "https://wallet-studio.test.namirial.com/issuance/api/v1/2",
       "oid4vciMetadataUrl": "https://wallet-studio.test.namirial.com/issuance/api/v1/2/.well-known/openid-credential-issuer",
-      "logoUri": "https://avatars.githubusercontent.com/u/88099653?v=4",
+      "logoUri": "https://wallet-demo.namirial.com/static/img/fav-namirial-logo.png",
       "description": "Test issuer on the Namirial Wallet Studio platform. Issues PID, mDL, Age Verification and contact credentials.",
       "projectContext": "Namirial Wallet Studio Test Environment",
       "credentialConfigurations": [
@@ -3357,10 +3379,11 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-19T21:08:21+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
+      "orgId": "org:swiyu",
       "organization": {
         "name": "Swiss Confederation",
         "website": "https://www.eid.admin.ch/en",
@@ -3395,20 +3418,21 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
+      "orgId": "org:talao",
       "organization": {
         "name": "Talao",
-        "website": "https://talao.co",
-        "logoUri": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/c7/7e/73c77ef4-e24a-65bd-df61-643c88da6963/Placeholder.mill/400x400bb-75.webp"
+        "website": "https://talao.io",
+        "logoUri": "https://www.google.com/s2/favicons?domain=talao.io&sz=128"
       },
       "displayName": "Talao Sandbox Issuer",
       "environment": "test",
       "credentialIssuerUrl": "https://talao.co/issuer/acnliwayop",
       "oid4vciMetadataUrl": "https://talao.co/issuer/acnliwayop/.well-known/openid-credential-issuer",
-      "logoUri": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/c7/7e/73c77ef4-e24a-65bd-df61-643c88da6963/Placeholder.mill/400x400bb-75.webp",
+      "logoUri": "https://www.google.com/s2/favicons?domain=talao.io&sz=128",
       "description": "Sandbox OID4VCI issuer provided by Talao.",
       "issuerWebsiteUrl": "https://talao.co/issuer/oidc/test",
       "projectContext": "Talao demo issuer",
@@ -3519,10 +3543,11 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:thales:unfold:test",
+      "orgId": "org:thales",
       "organization": {
         "name": "Thales",
         "website": "https://www.thalesgroup.com",
@@ -3632,20 +3657,21 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     },
     {
       "id": "issuer:toppan:goid:test",
+      "orgId": "org:toppan",
       "organization": {
-        "name": "TOPPAN",
-        "website": "https://www.toppandigital.com",
-        "logoUri": "https://toppandigital.com/wp-content/themes/tdl/assets/images/logo-toppan-digital-language.svg"
+        "name": "Toppan",
+        "website": "https://www.toppan.com",
+        "logoUri": "https://www.google.com/s2/favicons?domain=toppan.com&sz=128"
       },
       "displayName": "TOPPAN Sandbox Issuer",
       "environment": "test",
       "credentialIssuerUrl": "https://demo.goid.toppanapps.com:542",
       "oid4vciMetadataUrl": "https://demo.goid.toppanapps.com:542/.well-known/openid-credential-issuer/",
-      "logoUri": "https://toppandigital.com/wp-content/themes/tdl/assets/images/logo-toppan-digital-language.svg",
+      "logoUri": "https://www.google.com/s2/favicons?domain=toppan.com&sz=128",
       "description": "Sandbox OID4VCI issuer operated by TOPPAN Digital for issuing PID credentials in both mso_mdoc and dc+sd-jwt formats.",
       "issuerWebsiteUrl": "https://demo.goid.toppanapps.com:542",
       "projectContext": "goID demo issuer",
@@ -3696,7 +3722,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-03-23T14:14:47+01:00",
-      "fetchedAt": "2026-03-31T07:22:29.188Z"
+      "fetchedAt": "2026-03-31T15:49:46.465Z"
     }
   ],
   "stats": {

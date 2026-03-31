@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "Animo",
-    "website": "https://animo.id",
-    "logo": "https://avatars.githubusercontent.com/u/60350822?v=4"
-  },
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -33,5 +28,6 @@
       "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=a5292f18-3c9f-484a-8515-fb4ec4cb33e8&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground"
     }
-  ]
+  ],
+  "orgId": "org:animo"
 }

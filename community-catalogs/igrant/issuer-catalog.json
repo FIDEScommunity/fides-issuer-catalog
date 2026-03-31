@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "iGrant.io",
-    "website": "https://www.igrant.io",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlq7T7oJ6tMP18AjPk9RrsbfPkObIj0dJYJQ&s"
-  },
   "issuers": [
     {
       "id": "issuer:igrant:demo:test",
@@ -15,5 +10,6 @@
       "issuerWebsiteUrl": "https://www.igrant.io/demo.html",
       "projectContext": "iGrant.io OpenID4VCI demo issuer"
     }
-  ]
+  ],
+  "orgId": "org:igrant"
 }

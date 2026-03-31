@@ -30,6 +30,23 @@ const CREDENTIAL_CATALOG_LOCAL_PATHS = [
   path.join(ROOT, '..', 'credential-catalog', 'data', 'aggregated.json'),
 ].filter(Boolean) as string[];
 
+const ORGANIZATION_CATALOG_URL =
+  'https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/data/aggregated.json';
+const ORGANIZATION_CATALOG_LOCAL_PATHS = [
+  process.env.ORGANIZATION_CATALOG_AGGREGATED_PATH,
+  path.join(ROOT, '..', 'organization-catalog', 'data', 'aggregated.json'),
+].filter(Boolean) as string[];
+
+interface OrgCatalogEntry {
+  id: string;
+  name: string;
+  identifiers?: { did?: string };
+  website?: string;
+  logoUri?: string;
+  contact?: { email?: string; support?: string };
+  legalName?: string;
+}
+
 // Fetch with timeout
 async function fetchJson<T>(url: string, timeoutMs = 10000): Promise<T> {
   const controller = new AbortController();
@@ -84,6 +101,68 @@ interface CredentialEntry {
 function isLocalDevHost(): boolean {
   const host = hostname();
   return host !== '' && (host.endsWith('.local') || host === 'localhost');
+}
+
+async function loadOrganizationCatalogMap(): Promise<Map<string, OrgCatalogEntry>> {
+  const useLocal = isLocalDevHost();
+
+  const tryParse = (raw: string): Map<string, OrgCatalogEntry> => {
+    const data = JSON.parse(raw) as { organizations?: OrgCatalogEntry[] };
+    const map = new Map<string, OrgCatalogEntry>();
+    for (const o of data.organizations || []) {
+      if (o?.id) map.set(o.id, o);
+    }
+    return map;
+  };
+
+  if (useLocal) {
+    for (const localPath of ORGANIZATION_CATALOG_LOCAL_PATHS) {
+      if (localPath && fs.existsSync(localPath)) {
+        try {
+          const raw = fs.readFileSync(localPath, 'utf-8');
+          const map = tryParse(raw);
+          console.log(`  (using local organization catalog: ${localPath}, ${map.size} organizations)`);
+          return map;
+        } catch (parseErr) {
+          console.warn('Could not parse local organization catalog:', (parseErr as Error).message);
+        }
+      }
+    }
+  }
+
+  try {
+    const data = await fetchJson<{ organizations?: OrgCatalogEntry[] }>(ORGANIZATION_CATALOG_URL);
+    const map = new Map<string, OrgCatalogEntry>();
+    for (const o of data.organizations || []) {
+      if (o?.id) map.set(o.id, o);
+    }
+    console.log(`  (using organization catalog from GitHub, ${map.size} organizations)`);
+    return map;
+  } catch (err) {
+    console.warn('Could not fetch organization catalog from GitHub:', (err as Error).message);
+    for (const localPath of ORGANIZATION_CATALOG_LOCAL_PATHS) {
+      if (localPath && fs.existsSync(localPath)) {
+        try {
+          const raw = fs.readFileSync(localPath, 'utf-8');
+          const map = tryParse(raw);
+          console.log(`  (fallback: using local ${localPath})`);
+          return map;
+        } catch (parseErr) {
+          console.warn('Could not parse local organization catalog:', (parseErr as Error).message);
+        }
+      }
+    }
+    return new Map();
+  }
+}
+
+function orgEntryToAggregatedOrganization(entry: OrgCatalogEntry): AggregatedOrganization {
+  return {
+    name: entry.name,
+    did: entry.identifiers?.did,
+    website: entry.website,
+    logoUri: entry.logoUri,
+  };
 }
 
 async function loadCredentialCatalog(): Promise<CredentialEntry[]> {
@@ -165,8 +244,9 @@ function extractSigningAlgorithms(config: Oid4vciCredentialConfiguration): strin
     if (algs.length) return [...new Set(algs)];
   }
   // Older drafts: cryptographic_suites_supported
-  if ((config as Record<string, unknown>).cryptographic_suites_supported) {
-    const suites = (config as Record<string, unknown>).cryptographic_suites_supported as string[];
+  const cfg = config as unknown as Record<string, unknown>;
+  if (cfg.cryptographic_suites_supported) {
+    const suites = cfg.cryptographic_suites_supported as string[];
     if (suites.length) return suites;
   }
   return [];
@@ -259,9 +339,9 @@ function getIssuerDisplayName(
 // Get logo URI from OID4VCI metadata
 function getIssuerLogoUri(
   metadata: Oid4vciMetadata,
-  sourceOrg: SourceIssuerCatalog['organization']
+  catalogLogoUri: string | undefined
 ): string | undefined {
-  if (sourceOrg.logo) return sourceOrg.logo;
+  if (catalogLogoUri) return catalogLogoUri;
   if (metadata.display && metadata.display.length > 0) {
     const englishDisplay = metadata.display.find((d) => !d.locale || d.locale.startsWith('en'));
     const display = englishDisplay || metadata.display[0];
@@ -303,14 +383,23 @@ async function crawl(): Promise<void> {
   const credentialEntries = await loadCredentialCatalog();
   console.log(`  → ${credentialEntries.length} credentials loaded\n`);
 
+  console.log('Loading organization catalog for orgId resolution...');
+  const organizationById = await loadOrganizationCatalogMap();
+  console.log(`  → ${organizationById.size} organizations loaded\n`);
+
   const allIssuers: AggregatedIssuer[] = [];
 
   for (const sourceFile of sourceFiles) {
     const catalog = JSON.parse(fs.readFileSync(sourceFile, 'utf-8')) as SourceIssuerCatalog;
-    const orgName = catalog.organization.name;
+    const orgEntry = organizationById.get(catalog.orgId);
+    if (!orgEntry) {
+      console.error(`  ❌ Unknown orgId ${catalog.orgId} in ${sourceFile} — add this organization to fides-organization-catalog first.`);
+      continue;
+    }
+    const organization = orgEntryToAggregatedOrganization(orgEntry);
     const gitDate = getGitLastCommitDateForPath(sourceFile);
 
-    console.log(`Organization: ${orgName} (${catalog.issuers.length} issuer(s))`);
+    console.log(`${catalog.orgId}: ${organization.name} (${catalog.issuers.length} issuer(s))`);
 
     for (const sourceIssuer of catalog.issuers) {
       console.log(`  → ${sourceIssuer.id} [${sourceIssuer.environment}]`);
@@ -329,11 +418,9 @@ async function crawl(): Promise<void> {
         console.warn(`    ⚠️  Fetch failed: ${fetchError}`);
       }
 
-      const organization: AggregatedOrganization = {
-        name: catalog.organization.name,
-        did: catalog.organization.did,
-        website: catalog.organization.website,
-        logoUri: getIssuerLogoUri(metadata, catalog.organization),
+      const organizationResolved: AggregatedOrganization = {
+        ...organization,
+        logoUri: getIssuerLogoUri(metadata, organization.logoUri),
       };
 
       const credentialConfigurations = enrichCredentialConfigurations(metadata, credentialEntries);
@@ -362,14 +449,15 @@ async function crawl(): Promise<void> {
 
       const aggregated: AggregatedIssuer = {
         id: sourceIssuer.id,
-        organization,
+        orgId: catalog.orgId,
+        organization: organizationResolved,
         displayName: getIssuerDisplayName(metadata, sourceIssuer),
         environment: sourceIssuer.environment,
         credentialIssuerUrl: metadata.credential_issuer || sourceIssuer.oid4vciMetadataUrl.replace(
           '/.well-known/openid-credential-issuer', ''
         ),
         oid4vciMetadataUrl: sourceIssuer.oid4vciMetadataUrl,
-        logoUri: getIssuerLogoUri(metadata, catalog.organization),
+        logoUri: getIssuerLogoUri(metadata, organization.logoUri),
         ...(sourceIssuer.description ? { description: sourceIssuer.description } : {}),
         ...(sourceIssuer.issuerWebsiteUrl
           ? { issuerWebsiteUrl: sourceIssuer.issuerWebsiteUrl }
@@ -394,7 +482,7 @@ async function crawl(): Promise<void> {
   const stats = {
     totalIssuers: allIssuers.length,
     productionIssuers: allIssuers.filter((i) => i.environment === 'production').length,
-    totalOrganizations: new Set(allIssuers.map((i) => i.organization.name)).size,
+    totalOrganizations: new Set(allIssuers.map((i) => i.orgId)).size,
     totalCredentialConfigurations: allIssuers.reduce(
       (sum, i) => sum + i.credentialConfigurations.length,
       0
@@ -402,7 +490,7 @@ async function crawl(): Promise<void> {
   };
 
   const output: AggregatedIssuerCatalog = {
-    schemaVersion: '1.1.0',
+    schemaVersion: '1.2.0',
     catalogType: 'issuer-catalog',
     lastUpdated: fetchedAt,
     issuers: allIssuers,

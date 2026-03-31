@@ -130,6 +130,16 @@
     walletCatalogUrl: 'https://fides.community/community-tools/personal-wallets/',
   };
 
+  function isFidesLocalDevHost() {
+    try {
+      const h = window.location.hostname || '';
+      const href = window.location.href || '';
+      return h.includes('.local') || href.includes('.local');
+    } catch {
+      return false;
+    }
+  }
+
   let issuers = [];
   let filterFacets = null;
   let sortBy = 'lastUpdated';
@@ -497,10 +507,9 @@
     if (rpCatalogData) return rpCatalogData;
     if (rpCatalogFetchPromise) return rpCatalogFetchPromise;
     rpCatalogFetchPromise = (async () => {
-      const sources = [
-        config.rpCatalogDataUrl,
-        config.rpCatalogFallbackUrl,
-      ].filter(Boolean);
+      const remote = config.rpCatalogDataUrl;
+      const local = config.rpCatalogFallbackUrl;
+      const sources = (isFidesLocalDevHost() ? [local, remote] : [remote, local]).filter(Boolean);
       for (const url of sources) {
         try {
           const r = await fetch(url);
@@ -1386,21 +1395,27 @@
   }
 
   async function loadVocabulary(primaryUrl, fallbackUrl) {
+    let first = primaryUrl;
+    let second = fallbackUrl;
+    if (isFidesLocalDevHost() && primaryUrl && fallbackUrl) {
+      first = fallbackUrl;
+      second = primaryUrl;
+    }
     const tryLoad = async (url) => {
       const res = await fetch(url);
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
       return data.terms || null;
     };
-    if (primaryUrl) {
-      try { return await tryLoad(primaryUrl); } catch (e) { console.warn('Vocabulary load failed (primary):', e.message); }
+    if (first) {
+      try { return await tryLoad(first); } catch (e) { console.warn('Vocabulary load failed (first):', e.message); }
     }
-    if (fallbackUrl) {
+    if (second) {
       try {
-        const terms = await tryLoad(fallbackUrl);
-        if (terms) console.log('Vocabulary loaded from fallback');
+        const terms = await tryLoad(second);
+        if (terms) console.log('Vocabulary loaded from second source');
         return terms;
-      } catch (e) { console.warn('Vocabulary load failed (fallback):', e.message); }
+      } catch (e) { console.warn('Vocabulary load failed (second):', e.message); }
     }
     return null;
   }

@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "TOPPAN",
-    "website": "https://www.toppandigital.com",
-    "logo": "https://toppandigital.com/wp-content/themes/tdl/assets/images/logo-toppan-digital-language.svg"
-  },
   "issuers": [
     {
       "id": "issuer:toppan:goid:test",
@@ -15,5 +10,6 @@
       "issuerWebsiteUrl": "https://demo.goid.toppanapps.com:542",
       "projectContext": "goID demo issuer"
     }
-  ]
+  ],
+  "orgId": "org:toppan"
 }

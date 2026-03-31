@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "Kamer van Koophandel",
-    "website": "https://www.kvk.nl",
-    "logo": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5f1610bc0cba87000181beed/0x0.png"
-  },
   "issuers": [
     {
       "id": "issuer:credenco:kvk:test",
@@ -13,5 +8,6 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/df803dd4-32c6-4a69-afe5-d807c6701ed7/company/.well-known/openid-credential-issuer"
     }
-  ]
+  ],
+  "orgId": "org:kvk"
 }

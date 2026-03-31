@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "FIDES Labs",
-    "website": "https://fides.community",
-    "logo": "https://avatars.githubusercontent.com/u/119322214?v=4"
-  },
   "issuers": [
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -21,5 +16,6 @@
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/a860157d-64d2-434f-9288-04f5b4d2b9dc/MijnOverheidIssuer/.well-known/openid-credential-issuer",
       "projectContext": "FIDES Community Platform"
     }
-  ]
+  ],
+  "orgId": "org:fides"
 }

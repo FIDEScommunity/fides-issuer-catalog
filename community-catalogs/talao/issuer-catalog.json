@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "Talao",
-    "website": "https://talao.co",
-    "logo": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/c7/7e/73c77ef4-e24a-65bd-df61-643c88da6963/Placeholder.mill/400x400bb-75.webp"
-  },
   "issuers": [
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -15,5 +10,6 @@
       "issuerWebsiteUrl": "https://talao.co/issuer/oidc/test",
       "projectContext": "Talao demo issuer"
     }
-  ]
+  ],
+  "orgId": "org:talao"
 }

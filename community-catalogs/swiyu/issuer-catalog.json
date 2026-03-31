@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "Swiss Confederation",
-    "website": "https://www.eid.admin.ch/en",
-    "logo": "https://play-lh.googleusercontent.com/24M9nEXiuSVZAfEnkDzJ2koRLLfd7s_sSw3CgfzVeNfQjALW800TPcVB_mwDrKpJhz0V"
-  },
   "issuers": [
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -15,5 +10,6 @@
       "issuerWebsiteUrl": "https://www.bcs.admin.ch/bcs-web/#/",
       "projectContext": "Swiss E-ID (swiyu) Public Beta – Beta Credential Service (BCS)"
     }
-  ]
+  ],
+  "orgId": "org:swiyu"
 }

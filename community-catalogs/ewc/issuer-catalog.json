@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "EWC - European Wallet Consortium",
-    "website": "https://dss.aegean.gr",
-    "logo": "https://avatars.githubusercontent.com/u/140810559?v=4"
-  },
   "issuers": [
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -14,5 +9,6 @@
       "oid4vciMetadataUrl": "https://dss.aegean.gr/rfc-issuer/.well-known/openid-credential-issuer",
       "projectContext": "EWC (European Wallet Consortium) Reference Implementation"
     }
-  ]
+  ],
+  "orgId": "org:ewc"
 }

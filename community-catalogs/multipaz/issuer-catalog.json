@@ -1,10 +1,6 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "OpenWallet Foundation",
-    "website": "https://openwallet.foundation/projects/identity-credential/",
-    "logo": "https://avatars.githubusercontent.com/u/131064301?s=280&v=4"
-  },
+  "orgId": "org:owf",
   "issuers": [
     {
       "id": "issuer:multipaz:mdl:test",

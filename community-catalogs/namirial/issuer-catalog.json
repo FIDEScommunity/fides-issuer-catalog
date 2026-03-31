@@ -1,10 +1,5 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
-  "organization": {
-    "name": "Namirial",
-    "website": "https://www.namirial.com",
-    "logo": "https://avatars.githubusercontent.com/u/88099653?v=4"
-  },
   "issuers": [
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -14,5 +9,6 @@
       "oid4vciMetadataUrl": "https://wallet-studio.test.namirial.com/issuance/api/v1/2/.well-known/openid-credential-issuer",
       "projectContext": "Namirial Wallet Studio Test Environment"
     }
-  ]
+  ],
+  "orgId": "org:namirial"
 }
