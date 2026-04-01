@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers.
- * Version: 1.5.22
+ * Version: 1.5.25
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.5.22');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.5.25');
 
 /**
  * Detect if the site is running on a .local or localhost URL (local dev).
@@ -83,6 +83,12 @@ function fides_issuer_catalog_enqueue_assets() {
                 'fides_issuer_catalog_wallet_catalog_url',
                 'https://fides.community/community-tools/personal-wallets/'
             ),
+        'organizationCatalogUrl' => $use_local
+            ? rtrim(get_site_url(), '/') . '/organizations/'
+            : get_option(
+                'fides_issuer_catalog_organization_catalog_url',
+                'https://fides.community/ecosystem-explorer/organization-catalog/'
+            ),
         'vocabularyUrl'         => 'https://raw.githubusercontent.com/FIDEScommunity/fides-interop-profiles/main/data/vocabulary.json',
         'vocabularyFallbackUrl' => $plugin_url . 'assets/vocabulary.json',
     ]);
@@ -124,6 +130,9 @@ function fides_issuer_catalog_settings_init() {
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
     register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_rp_catalog_url', [
+        'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
+    ]);
+    register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_organization_catalog_url', [
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
 }
@@ -180,6 +189,15 @@ function fides_issuer_catalog_settings_render() { ?>
                                value="<?php echo esc_attr(get_option('fides_issuer_catalog_rp_catalog_data_url', 'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/data/aggregated.json')); ?>"
                                class="regular-text">
                         <p class="description">URL to the RP catalog aggregated.json (used to count relying parties per issuer).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="fides_issuer_catalog_organization_catalog_url">Organization Catalog Base URL</label></th>
+                    <td>
+                        <input type="url" id="fides_issuer_catalog_organization_catalog_url" name="fides_issuer_catalog_organization_catalog_url"
+                               value="<?php echo esc_attr(get_option('fides_issuer_catalog_organization_catalog_url', 'https://fides.community/ecosystem-explorer/organization-catalog/')); ?>"
+                               class="regular-text">
+                        <p class="description">Base URL for organization deep links in the issuer modal (query <code>?org=</code> is appended). On local <code>.local</code> / <code>localhost</code> sites this setting is ignored; the plugin uses <code>/organizations/</code> on the same site instead.</p>
                     </td>
                 </tr>
             </table>

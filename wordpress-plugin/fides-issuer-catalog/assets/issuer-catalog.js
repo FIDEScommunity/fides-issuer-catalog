@@ -128,6 +128,7 @@
     rpCatalogFallbackUrl: '',
     rpCatalogUrl: 'https://fides.community/ecosystem-explorer/relying-party-catalog/',
     walletCatalogUrl: 'https://fides.community/community-tools/personal-wallets/',
+    organizationCatalogUrl: 'https://fides.community/ecosystem-explorer/organization-catalog/',
   };
 
   function isFidesLocalDevHost() {
@@ -580,6 +581,19 @@
         ? `<a href="${escapeHtml(issuerVisitUrl)}" target="_blank" rel="noopener" class="fides-modal-visit-button" title="${escapeHtml(issuerVisitUrl)}" onclick="event.stopPropagation();">${icons.externalLink} Issuer Website</a>`
         : '';
 
+    const orgCatBase = (config.organizationCatalogUrl || '').replace(/\/$/, '');
+    const orgIdForCatalog = String(issuer.orgId || issuer.organization?.id || '').trim();
+    const orgCatalogHref =
+      orgCatBase && orgIdForCatalog.startsWith('org:')
+        ? `${orgCatBase}/?org=${encodeURIComponent(orgIdForCatalog)}`
+        : '';
+    const orgProviderLine =
+      issuer.organization?.name
+        ? orgCatalogHref
+          ? `<p class="fides-modal-provider">${icons.building} <a href="${escapeHtml(orgCatalogHref)}" class="fides-modal-link-inline" aria-label="View organization in organization catalog" title="Organization catalog" onclick="event.stopPropagation();"><span>${escapeHtml(issuer.organization.name)}</span></a></p>`
+          : `<p class="fides-modal-provider">${icons.building} <span>${escapeHtml(issuer.organization.name)}</span></p>`
+        : '';
+
     return `
       <div class="fides-modal-overlay" id="fides-modal-overlay" data-theme="${escapeHtml(theme)}">
         <div class="fides-modal" role="dialog" aria-modal="true" aria-labelledby="fides-modal-title">
@@ -591,10 +605,7 @@
               }
               <div class="fides-modal-title-wrap">
                 <h2 class="fides-modal-title" id="fides-modal-title">${escapeHtml(issuer.displayName || issuer.id)}</h2>
-                ${issuer.organization?.name
-                  ? `<p class="fides-modal-provider">${icons.building} <span>${escapeHtml(issuer.organization.name)}</span></p>`
-                  : ''
-                }
+                ${orgProviderLine}
               </div>
             </div>
             <div class="fides-modal-header-actions">
@@ -821,29 +832,6 @@
                     <span class="fides-kv-val">${escapeHtml(issuer.updatedAt ? formatDate(issuer.updatedAt) : '—')}</span>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Organization info -->
-            <div class="fides-modal-provider-section">
-              <h4 class="fides-modal-section-title">Organization</h4>
-              <div class="fides-modal-provider-info">
-                <div class="fides-modal-provider-detail">
-                  <span class="fides-modal-provider-label">Name:</span>
-                  <span class="fides-modal-provider-value">${escapeHtml(issuer.organization?.name || '')}</span>
-                </div>
-                ${issuer.organization?.website ? `
-                  <div class="fides-modal-provider-detail">
-                    <span class="fides-modal-provider-label">Website:</span>
-                    <a href="${escapeHtml(issuer.organization.website)}" class="fides-modal-provider-value" target="_blank" rel="noopener" style="color:var(--fides-accent);">${escapeHtml(issuer.organization.website)}</a>
-                  </div>
-                ` : ''}
-                ${issuer.organization?.did ? `
-                  <div class="fides-modal-provider-detail">
-                    <span class="fides-modal-provider-label">DID:</span>
-                    <code class="fides-modal-provider-did">${escapeHtml(issuer.organization.did)}</code>
-                  </div>
-                ` : ''}
               </div>
             </div>
           </div>
@@ -1427,6 +1415,15 @@
     if (popup) popup.remove();
   }
 
+  /** Label text for a filter row, without the facet count span. */
+  function filterCheckboxLabelTextWithoutCount(label) {
+    const span = label.querySelector('span');
+    if (!span) return label.textContent.trim();
+    const clone = span.cloneNode(true);
+    clone.querySelectorAll('.fides-filter-option-count').forEach((el) => el.remove());
+    return clone.textContent.trim();
+  }
+
   function showVocabularyPopup(button, groupEl, vocabKey) {
     hideVocabularyPopup();
     const groupTerm = vocabulary[vocabKey];
@@ -1442,7 +1439,7 @@
         labels.forEach((label) => {
           const input = label.querySelector('input');
           const value = input ? (input.dataset.value || input.value) : '';
-          const labelText = (label.querySelector('span') || label).textContent.trim();
+          const labelText = filterCheckboxLabelTextWithoutCount(label);
           const term = vocabulary[value] || null;
           const desc = term && term.description ? escapeHtml(term.description) : '';
           listItems.push({ labelText, desc });
