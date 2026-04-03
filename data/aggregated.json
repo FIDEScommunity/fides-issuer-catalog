@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.2.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-04-02T07:19:43.590Z",
+  "lastUpdated": "2026-04-03T07:16:13.027Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -180,7 +180,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -242,7 +242,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -343,7 +343,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -902,7 +902,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1016,7 +1016,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1078,7 +1078,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1102,10 +1102,9 @@
           "vcFormat": "mdoc",
           "docType": "eu.europa.ec.eudi.cor.1",
           "signingAlgorithms": [
-            "ES256"
+            -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1168,7 +1167,6 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1189,7 +1187,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1210,7 +1207,7 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
+            "cwt",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1231,7 +1228,7 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
+            "cwt",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1252,7 +1249,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1273,7 +1269,6 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1286,6 +1281,22 @@
           }
         },
         {
+          "configurationId": "eu.europa.ec.eudi.learning_credential_vc_sd_jwt",
+          "displayName": "eu.europa.ec.eudi.learning_credential_vc_sd_jwt",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:eu.europa.ec.eudi:learning:credential:1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.ec.eudi.loyalty_mdoc",
           "displayName": "eu.europa.ec.eudi.loyalty_mdoc",
           "vcFormat": "mdoc",
@@ -1294,7 +1305,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1315,7 +1325,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1336,7 +1345,7 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
+            "cwt",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1357,7 +1366,6 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1378,7 +1386,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1399,7 +1406,7 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
+            "cwt",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1420,7 +1427,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1441,7 +1447,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1462,7 +1467,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1483,7 +1487,6 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1504,7 +1507,7 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
+            "cwt",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1525,7 +1528,7 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
+            "cwt",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1546,7 +1549,6 @@
             -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1564,10 +1566,10 @@
           "vcFormat": "mdoc",
           "docType": "eu.europa.ec.eudi.tax.1",
           "signingAlgorithms": [
-            -7
+            "ES256"
           ],
           "proofTypes": [
-            "attestation",
+            "cwt",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1588,7 +1590,6 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1609,7 +1610,7 @@
             "ES256"
           ],
           "proofTypes": [
-            "attestation",
+            "cwt",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1627,10 +1628,9 @@
           "vcFormat": "mdoc",
           "docType": "org.iso.18013.5.1.reservation",
           "signingAlgorithms": [
-            "ES256"
+            -7
           ],
           "proofTypes": [
-            "attestation",
             "jwt"
           ],
           "cryptographicBindingMethods": [
@@ -1646,7 +1646,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1945,7 +1945,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -2367,7 +2367,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -2456,7 +2456,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2762,7 +2762,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -2839,7 +2839,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -2946,7 +2946,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -2999,7 +2999,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -3157,7 +3157,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -3375,7 +3375,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -3408,13 +3408,17 @@
           "cryptographicBindingMethods": [
             "jwk"
           ],
-          "logoUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAQAAADa613fAAAAt0lEQVR42u3YMQ4BQRiG4a2p3UMi0Wlcih5n2GYTWS6gcBahdZGfSqHZWdNMxvN+/WSe9m8aSZIkSaqiWMYzcV3ZkFWkdgEBAQEBAQEBAQEBAQEBAQEBKQ4S6zi8tx/Y7rM+GfIYfPV70xzIOcppBlIT5AQCAgICApIB6UFAQEBAQDIgx1og89iMWpv8rXtsR25S5jnoWstdCwQEBAQEBAQEBAQEBAQEBOSfIYu4Ja5tJEmSJP3UC98M2ozRcV9yAAAAAElFTkSuQmCC"
+          "logoUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAQAAADa613fAAAAt0lEQVR42u3YMQ4BQRiG4a2p3UMi0Wlcih5n2GYTWS6gcBahdZGfSqHZWdNMxvN+/WSe9m8aSZIkSaqiWMYzcV3ZkFWkdgEBAQEBAQEBAQEBAQEBAQEBKQ4S6zi8tx/Y7rM+GfIYfPV70xzIOcppBlIT5AQCAgICApIB6UFAQEBAQDIgx1og89iMWpv8rXtsR25S5jnoWstdCwQEBAQEBAQEBAQEBAQEBOSfIYu4Ja5tJEmSJP3UC98M2ozRcV9yAAAAAElFTkSuQmCC",
+          "credentialCatalogRef": {
+            "id": "cred:swiyu:betaid-sdjwt:sd-jwt-vc",
+            "displayName": "Beta-ID"
+          }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -3539,7 +3543,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -3653,7 +3657,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -3718,13 +3722,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-02T07:19:43.590Z"
+      "fetchedAt": "2026-04-03T07:16:13.027Z"
     }
   ],
   "stats": {
     "totalIssuers": 20,
     "productionIssuers": 0,
     "totalOrganizations": 17,
-    "totalCredentialConfigurations": 168
+    "totalCredentialConfigurations": 169
   }
 }
