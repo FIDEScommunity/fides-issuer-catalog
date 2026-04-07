@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers.
- * Version: 1.5.25
+ * Version: 1.5.27
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.5.25');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.5.27');
 
 /**
  * Detect if the site is running on a .local or localhost URL (local dev).
@@ -89,6 +89,10 @@ function fides_issuer_catalog_enqueue_assets() {
                 'fides_issuer_catalog_organization_catalog_url',
                 'https://fides.community/ecosystem-explorer/organization-catalog/'
             ),
+        'organizationDataUrl' => get_option(
+            'fides_issuer_catalog_organization_data_url',
+            'https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/data/aggregated.json'
+        ),
         'vocabularyUrl'         => 'https://raw.githubusercontent.com/FIDEScommunity/fides-interop-profiles/main/data/vocabulary.json',
         'vocabularyFallbackUrl' => $plugin_url . 'assets/vocabulary.json',
     ]);

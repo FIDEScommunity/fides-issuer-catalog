@@ -54,6 +54,54 @@
     'mdoc':      'mDL/mDoc',
   };
 
+  /** Canonical sector codes — keep in sync with fides-credential-catalog SECTOR_LABELS. */
+  const SECTOR_LABELS = {
+    public_sector: 'Public Sector',
+    finance: 'Finance',
+    trade: 'Trade',
+    supply_chain: 'Supply Chain',
+    manufacturing: 'Manufacturing',
+    energy: 'Energy',
+    agriculture: 'Agriculture',
+    food: 'Food',
+    retail: 'Retail',
+    healthcare: 'Healthcare',
+    education: 'Education',
+    construction: 'Construction',
+    mobility: 'Mobility',
+    digital: 'Digital',
+  };
+
+  const LEGACY_SECTOR_TO_CANONICAL = {
+    government: 'public_sector',
+    finance: 'finance',
+    healthcare: 'healthcare',
+    education: 'education',
+    retail: 'retail',
+    travel: 'mobility',
+    hospitality: 'retail',
+    employment: 'digital',
+    telecom: 'digital',
+    utilities: 'energy',
+    insurance: 'finance',
+    'real-estate': 'construction',
+    automotive: 'mobility',
+    entertainment: 'retail',
+    other: 'digital',
+  };
+
+  const SECTOR_CODES_ALPHABETIC = Object.keys(SECTOR_LABELS).sort((a, b) =>
+    SECTOR_LABELS[a].localeCompare(SECTOR_LABELS[b], 'en', { sensitivity: 'base' }),
+  );
+
+  function normalizeSectorFilterCode(code) {
+    if (!code || typeof code !== 'string') return '';
+    const t = code.trim().toLowerCase();
+    if (!t) return '';
+    if (Object.prototype.hasOwnProperty.call(SECTOR_LABELS, t)) return t;
+    return LEGACY_SECTOR_TO_CANONICAL[t] || '';
+  }
+
   /** COSE algorithm integers from OID4VCI / mdoc (IANA + common deployments). JOSE names pass through. */
   const COSE_SIGNING_ALG_LABELS = {
     '-257': 'RS256',
@@ -115,6 +163,7 @@
   const ISSUER_FILTER_TO_VOCAB = {
     environment:      'availability',
     organization:     'provider',
+    sector:           'sector',
     vcFormat:         'credentialFormat',
     credential:       'credential',
     signingAlgorithm: 'signingAlgorithm',
@@ -129,6 +178,7 @@
     rpCatalogUrl: 'https://fides.community/ecosystem-explorer/relying-party-catalog/',
     walletCatalogUrl: 'https://fides.community/community-tools/personal-wallets/',
     organizationCatalogUrl: 'https://fides.community/ecosystem-explorer/organization-catalog/',
+    organizationDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/data/aggregated.json',
   };
 
   function isFidesLocalDevHost() {
@@ -176,10 +226,14 @@
   let root;
   let rpCatalogData = null;
   let rpCatalogFetchPromise = null;
+  /** orgId -> list of canonical sector codes (from organization catalog aggregated.json). */
+  const organizationSectorsByOrgId = new Map();
+  let organizationSectorMapReady = false;
 
   const filterGroupState = {
     environment: true,
     organization: false,
+    sector: false,
     vcFormat: false,
     credential: false,
     signingAlgorithm: false,
@@ -192,6 +246,7 @@
     vcFormat: [],
     credential: [],
     signingAlgorithm: [],
+    sector: [],
     addedLast30Days: false,
     updatedLast30Days: false,
     usedByRPsOnly: false,
@@ -259,6 +314,7 @@
       filters.vcFormat.length +
       filters.credential.length +
       filters.signingAlgorithm.length +
+      filters.sector.length +
       filters.ids.length +
       (filters.addedLast30Days ? 1 : 0) +
       (filters.updatedLast30Days ? 1 : 0) +
@@ -286,6 +342,7 @@
     const facets = {
       environment: {},
       organization: {},
+      sector: {},
       vcFormat: {},
       credential: {},
       signingAlgorithm: {},
@@ -297,6 +354,17 @@
         facets.environment[c] = (facets.environment[c] || 0) + 1;
       }
       if (issuer.organization?.name) facets.organization[issuer.organization.name] = (facets.organization[issuer.organization.name] || 0) + 1;
+      if (organizationSectorMapReady) {
+        const oid = issuer.orgId;
+        if (oid) {
+          const secs = organizationSectorsByOrgId.get(oid);
+          if (secs && secs.length) {
+            secs.forEach((s) => {
+              facets.sector[s] = (facets.sector[s] || 0) + 1;
+            });
+          }
+        }
+      }
       (issuer.credentialConfigurations || []).forEach((cc) => {
         if (cc.vcFormat) facets.vcFormat[cc.vcFormat] = (facets.vcFormat[cc.vcFormat] || 0) + 1;
         if (cc.credentialCatalogRef?.displayName) facets.credential[cc.credentialCatalogRef.displayName] = (facets.credential[cc.credentialCatalogRef.displayName] || 0) + 1;
@@ -314,6 +382,13 @@
     return issuers.filter((issuer) => {
       // ID pre-filter (from ?issuers= URL param)
       if (filters.ids.length > 0 && !filters.ids.includes(issuer.id)) return false;
+
+      if (filters.sector.length && organizationSectorMapReady) {
+        const oid = issuer.orgId;
+        if (!oid) return false;
+        const secs = organizationSectorsByOrgId.get(oid);
+        if (!secs || !filters.sector.some((s) => secs.includes(s))) return false;
+      }
 
       if (filters.addedLast30Days && !isWithinLastDays(issuer.firstSeenAt, 30)) return false;
       if (filters.updatedLast30Days && !isWithinLastDays(issuer.updatedAt, 30)) return false;
@@ -883,13 +958,21 @@
               <span>${escapeHtml(
                 key === 'signingAlgorithm'
                   ? opt
-                  : (ENVIRONMENT_LABELS[opt] || VC_FORMAT_LABELS[opt] || opt)
+                  : (ENVIRONMENT_LABELS[opt] || VC_FORMAT_LABELS[opt] || SECTOR_LABELS[opt] || opt)
               )}<span class="fides-filter-option-count">(${facets?.[key]?.[opt] || 0})</span></span>
             </label>
           `).join('')}
         </div>
       </div>
     `;
+  }
+
+  function renderSectorCheckboxGroup(facets) {
+    const sectorOptions = SECTOR_CODES_ALPHABETIC.filter(
+      (code) => (facets?.sector?.[code] || 0) > 0 || filters.sector.includes(code),
+    );
+    if (sectorOptions.length === 0) return '';
+    return renderCheckboxGroup('Sector', 'sector', sectorOptions, facets);
   }
 
   function renderFiltersPanel() {
@@ -941,6 +1024,7 @@
           </div>
           ${renderCheckboxGroup('Environment', 'environment', environmentOptions, filterFacets)}
           ${renderCheckboxGroup('Issuer organization', 'organization', organizationOptions, filterFacets)}
+          ${renderSectorCheckboxGroup(filterFacets)}
           ${renderCheckboxGroup('VC Format', 'vcFormat', vcFormatOptions, filterFacets)}
           ${renderCheckboxGroup('Credential Type', 'credential', credentialOptions, filterFacets)}
           ${renderCheckboxGroup('Signing Algorithm', 'signingAlgorithm', signingAlgOptions, filterFacets)}
@@ -1260,10 +1344,11 @@
 
     const clearBtn = root.querySelector('#fides-clear');
     if (clearBtn) clearBtn.addEventListener('click', () => {
-      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], addedLast30Days: false, ids: [] };
+      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], sector: [], addedLast30Days: false, updatedLast30Days: false, usedByRPsOnly: false, ids: [] };
       originalIssuerIds = [];
       const url = new URL(window.location.href);
       url.searchParams.delete('issuers');
+      url.searchParams.delete('sector');
       history.replaceState(null, '', url.toString());
       render();
     });
@@ -1524,6 +1609,29 @@
     });
   }
 
+  async function loadOrganizationSectorsMap() {
+    organizationSectorsByOrgId.clear();
+    organizationSectorMapReady = false;
+    const url = config.organizationDataUrl;
+    if (!url) return;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      const orgs = data.organizations || [];
+      for (let i = 0; i < orgs.length; i++) {
+        const o = orgs[i];
+        if (!o || typeof o.id !== 'string' || !Array.isArray(o.sectors)) continue;
+        const valid = o.sectors.filter((s) => typeof s === 'string' && Object.prototype.hasOwnProperty.call(SECTOR_LABELS, s));
+        if (valid.length) organizationSectorsByOrgId.set(o.id, valid);
+      }
+      organizationSectorMapReady = true;
+      console.log(`Loaded organization sector map (${organizationSectorsByOrgId.size} orgs with sectors)`);
+    } catch (err) {
+      console.warn('Organization catalog fetch for sector filter failed:', err.message);
+    }
+  }
+
   async function loadIssuers() {
     const sources = [
       { url: config.githubDataUrl, name: 'GitHub' },
@@ -1543,6 +1651,7 @@
         console.warn(`Failed to load from ${source.name}:`, err.message);
       }
     }
+    await loadOrganizationSectorsMap();
     filterFacets = computeFilterFacets(issuers);
     normalizeIssuerSigningAlgorithmFilters();
     if (config.vocabularyUrl || config.vocabularyFallbackUrl) {
@@ -1562,6 +1671,10 @@
       const ids = issuersParam.split(',').map((id) => decodeURIComponent(id.trim())).filter(Boolean);
       originalIssuerIds = ids;
       filters.ids = [...ids];
+    }
+    const sectorCode = normalizeSectorFilterCode(params.get('sector') || '');
+    if (sectorCode) {
+      filters.sector = [sectorCode];
     }
   }
 
