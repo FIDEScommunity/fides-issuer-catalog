@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers.
- * Version: 1.5.27
+ * Version: 1.5.28
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.5.27');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.5.28');
 
 /**
  * Detect if the site is running on a .local or localhost URL (local dev).
@@ -29,6 +29,28 @@ function fides_issuer_catalog_is_local_site() {
     }
     $host = strtolower(trim($host));
     return ($host !== '' && (preg_match('/\.local$/i', $host) || $host === 'localhost'));
+}
+
+/**
+ * URL for organization catalog aggregated.json (sector + country maps in issuer UI).
+ * Explicit option wins; on local sites, use bundled org plugin JSON if present; else GitHub raw.
+ *
+ * @param bool $use_local From fides_issuer_catalog_is_local_site().
+ */
+function fides_issuer_catalog_resolve_organization_data_url($use_local) {
+    $github = 'https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/data/aggregated.json';
+    $opt    = trim((string) get_option('fides_issuer_catalog_organization_data_url', ''));
+    if ($opt !== '') {
+        return esc_url_raw($opt);
+    }
+    if ($use_local) {
+        $org_main = WP_PLUGIN_DIR . '/fides-organization-catalog/fides-organization-catalog.php';
+        $org_json = WP_PLUGIN_DIR . '/fides-organization-catalog/data/aggregated.json';
+        if (file_exists($org_json) && file_exists($org_main)) {
+            return plugins_url('data/aggregated.json', $org_main);
+        }
+    }
+    return $github;
 }
 
 function fides_issuer_catalog_enqueue_assets() {
@@ -89,10 +111,7 @@ function fides_issuer_catalog_enqueue_assets() {
                 'fides_issuer_catalog_organization_catalog_url',
                 'https://fides.community/ecosystem-explorer/organization-catalog/'
             ),
-        'organizationDataUrl' => get_option(
-            'fides_issuer_catalog_organization_data_url',
-            'https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/data/aggregated.json'
-        ),
+        'organizationDataUrl' => fides_issuer_catalog_resolve_organization_data_url($use_local),
         'vocabularyUrl'         => 'https://raw.githubusercontent.com/FIDEScommunity/fides-interop-profiles/main/data/vocabulary.json',
         'vocabularyFallbackUrl' => $plugin_url . 'assets/vocabulary.json',
     ]);
@@ -137,6 +156,9 @@ function fides_issuer_catalog_settings_init() {
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
     register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_organization_catalog_url', [
+        'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
+    ]);
+    register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_organization_data_url', [
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
 }
@@ -202,6 +224,15 @@ function fides_issuer_catalog_settings_render() { ?>
                                value="<?php echo esc_attr(get_option('fides_issuer_catalog_organization_catalog_url', 'https://fides.community/ecosystem-explorer/organization-catalog/')); ?>"
                                class="regular-text">
                         <p class="description">Base URL for organization deep links in the issuer modal (query <code>?org=</code> is appended). On local <code>.local</code> / <code>localhost</code> sites this setting is ignored; the plugin uses <code>/organizations/</code> on the same site instead.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="fides_issuer_catalog_organization_data_url">Organization catalog data URL</label></th>
+                    <td>
+                        <input type="url" id="fides_issuer_catalog_organization_data_url" name="fides_issuer_catalog_organization_data_url"
+                               value="<?php echo esc_attr(get_option('fides_issuer_catalog_organization_data_url', '')); ?>"
+                               class="regular-text" placeholder="<?php echo esc_attr('https://raw.githubusercontent.com/.../aggregated.json'); ?>">
+                        <p class="description">Optional. JSON used for sector and <strong>country</strong> filters (issuer authority country from the organization catalog). Leave empty to use the GitHub default, or on local sites the <code>fides-organization-catalog</code> plugin <code>data/aggregated.json</code> when that plugin is installed.</p>
                     </td>
                 </tr>
             </table>

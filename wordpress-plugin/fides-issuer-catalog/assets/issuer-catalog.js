@@ -102,6 +102,24 @@
     return LEGACY_SECTOR_TO_CANONICAL[t] || '';
   }
 
+  /** ISO 3166-1 alpha-2 for organization country and ?country= deep links. */
+  function normalizeCountryFilterCode(raw) {
+    if (raw == null || typeof raw !== 'string') return '';
+    const s = String(raw).trim().replace(/[^a-z]/gi, '').toUpperCase();
+    return s.length === 2 ? s : '';
+  }
+
+  function countryDisplayName(code) {
+    if (!code || typeof code !== 'string') return '';
+    const c = code.toUpperCase();
+    try {
+      const dn = new Intl.DisplayNames(['en'], { type: 'region' });
+      return dn.of(c) || c;
+    } catch {
+      return c;
+    }
+  }
+
   /** COSE algorithm integers from OID4VCI / mdoc (IANA + common deployments). JOSE names pass through. */
   const COSE_SIGNING_ALG_LABELS = {
     '-257': 'RS256',
@@ -163,6 +181,7 @@
   const ISSUER_FILTER_TO_VOCAB = {
     environment:      'availability',
     organization:     'provider',
+    country:          'country',
     sector:           'sector',
     vcFormat:         'credentialFormat',
     credential:       'credential',
@@ -229,10 +248,14 @@
   /** orgId -> list of canonical sector codes (from organization catalog aggregated.json). */
   const organizationSectorsByOrgId = new Map();
   let organizationSectorMapReady = false;
+  /** orgId -> ISO 3166-1 alpha-2 authority country (same JSON). */
+  const organizationCountryByOrgId = new Map();
+  let organizationCountryMapReady = false;
 
   const filterGroupState = {
     environment: true,
     organization: false,
+    country: false,
     sector: false,
     vcFormat: false,
     credential: false,
@@ -243,6 +266,7 @@
     search: '',
     environment: [],
     organization: [],
+    country: [],
     vcFormat: [],
     credential: [],
     signingAlgorithm: [],
@@ -311,6 +335,7 @@
     return (
       filters.environment.length +
       filters.organization.length +
+      filters.country.length +
       filters.vcFormat.length +
       filters.credential.length +
       filters.signingAlgorithm.length +
@@ -342,6 +367,7 @@
     const facets = {
       environment: {},
       organization: {},
+      country: {},
       sector: {},
       vcFormat: {},
       credential: {},
@@ -362,6 +388,16 @@
             secs.forEach((s) => {
               facets.sector[s] = (facets.sector[s] || 0) + 1;
             });
+          }
+        }
+      }
+      if (organizationCountryMapReady) {
+        const oid = issuer.orgId;
+        if (oid) {
+          const rawCc = organizationCountryByOrgId.get(oid);
+          const norm = normalizeCountryFilterCode(rawCc || '');
+          if (norm) {
+            facets.country[norm] = (facets.country[norm] || 0) + 1;
           }
         }
       }
@@ -388,6 +424,14 @@
         if (!oid) return false;
         const secs = organizationSectorsByOrgId.get(oid);
         if (!secs || !filters.sector.some((s) => secs.includes(s))) return false;
+      }
+
+      if (filters.country.length && organizationCountryMapReady) {
+        const oid = issuer.orgId;
+        if (!oid) return false;
+        const rawCc = organizationCountryByOrgId.get(oid);
+        const norm = normalizeCountryFilterCode(rawCc || '');
+        if (!norm || !filters.country.includes(norm)) return false;
       }
 
       if (filters.addedLast30Days && !isWithinLastDays(issuer.firstSeenAt, 30)) return false;
@@ -975,6 +1019,37 @@
     return renderCheckboxGroup('Sector', 'sector', sectorOptions, facets);
   }
 
+  function renderCountryCheckboxGroup(facets) {
+    if (!organizationCountryMapReady) return '';
+    const facetCountry = facets?.country || {};
+    const fromFacets = Object.keys(facetCountry).filter((c) => (facetCountry[c] || 0) > 0);
+    const selected = filters.country || [];
+    const merged = [...new Set([...fromFacets, ...selected])].sort((a, b) =>
+      countryDisplayName(a).localeCompare(countryDisplayName(b), 'en', { sensitivity: 'base' }),
+    );
+    if (merged.length === 0) return '';
+    const expanded = filterGroupState.country !== false;
+    const groupClass = expanded ? '' : 'collapsed';
+    const hasActiveClass = selected.length > 0 ? 'has-active' : '';
+    return `
+      <div class="fides-filter-group collapsible ${groupClass} ${hasActiveClass}" data-filter-group="country">
+        <button class="fides-filter-label-toggle" type="button" aria-expanded="${expanded}">
+          <span class="fides-filter-label">Country</span>
+          <span class="fides-filter-active-indicator"></span>
+          ${icons.chevronDown}
+        </button>
+        <div class="fides-filter-options">
+          ${merged.map((code) => `
+            <label class="fides-filter-checkbox">
+              <input type="checkbox" data-filter-group="country" value="${escapeHtml(code)}" ${selected.includes(code) ? 'checked' : ''}>
+              <span><img src="https://flagcdn.com/w20/${escapeHtml(code.toLowerCase())}.png" alt="" class="fides-country-flag"> ${escapeHtml(countryDisplayName(code))}<span class="fides-filter-option-count">(${facetCountry[code] || 0})</span></span>
+            </label>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
   function renderFiltersPanel() {
     if (!settings.showFilters) return '';
     const activeFilterCount = getActiveFilterCount();
@@ -1024,6 +1099,7 @@
           </div>
           ${renderCheckboxGroup('Environment', 'environment', environmentOptions, filterFacets)}
           ${renderCheckboxGroup('Issuer organization', 'organization', organizationOptions, filterFacets)}
+          ${renderCountryCheckboxGroup(filterFacets)}
           ${renderSectorCheckboxGroup(filterFacets)}
           ${renderCheckboxGroup('VC Format', 'vcFormat', vcFormatOptions, filterFacets)}
           ${renderCheckboxGroup('Credential Type', 'credential', credentialOptions, filterFacets)}
@@ -1344,11 +1420,12 @@
 
     const clearBtn = root.querySelector('#fides-clear');
     if (clearBtn) clearBtn.addEventListener('click', () => {
-      filters = { search: '', environment: [], organization: [], vcFormat: [], credential: [], signingAlgorithm: [], sector: [], addedLast30Days: false, updatedLast30Days: false, usedByRPsOnly: false, ids: [] };
+      filters = { search: '', environment: [], organization: [], country: [], vcFormat: [], credential: [], signingAlgorithm: [], sector: [], addedLast30Days: false, updatedLast30Days: false, usedByRPsOnly: false, ids: [] };
       originalIssuerIds = [];
       const url = new URL(window.location.href);
       url.searchParams.delete('issuers');
       url.searchParams.delete('sector');
+      url.searchParams.delete('country');
       history.replaceState(null, '', url.toString());
       render();
     });
@@ -1609,11 +1686,16 @@
     });
   }
 
-  async function loadOrganizationSectorsMap() {
+  async function loadOrganizationCatalogMaps() {
     organizationSectorsByOrgId.clear();
+    organizationCountryByOrgId.clear();
     organizationSectorMapReady = false;
-    const url = config.organizationDataUrl;
-    if (!url) return;
+    organizationCountryMapReady = false;
+    const url = (config.organizationDataUrl || '').trim();
+    if (!url) {
+      console.warn('Organization catalog data URL missing; sector and country filters disabled.');
+      return;
+    }
     try {
       const res = await fetch(url);
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -1621,14 +1703,21 @@
       const orgs = data.organizations || [];
       for (let i = 0; i < orgs.length; i++) {
         const o = orgs[i];
-        if (!o || typeof o.id !== 'string' || !Array.isArray(o.sectors)) continue;
-        const valid = o.sectors.filter((s) => typeof s === 'string' && Object.prototype.hasOwnProperty.call(SECTOR_LABELS, s));
-        if (valid.length) organizationSectorsByOrgId.set(o.id, valid);
+        if (!o || typeof o.id !== 'string') continue;
+        if (Array.isArray(o.sectors)) {
+          const valid = o.sectors.filter((s) => typeof s === 'string' && Object.prototype.hasOwnProperty.call(SECTOR_LABELS, s));
+          if (valid.length) organizationSectorsByOrgId.set(o.id, valid);
+        }
+        const cc = normalizeCountryFilterCode(o.country);
+        if (cc) organizationCountryByOrgId.set(o.id, cc);
       }
       organizationSectorMapReady = true;
-      console.log(`Loaded organization sector map (${organizationSectorsByOrgId.size} orgs with sectors)`);
+      organizationCountryMapReady = true;
+      console.log(
+        `Loaded organization maps (${organizationSectorsByOrgId.size} orgs with sectors, ${organizationCountryByOrgId.size} with country)`,
+      );
     } catch (err) {
-      console.warn('Organization catalog fetch for sector filter failed:', err.message);
+      console.warn('Organization catalog fetch for issuer filters failed:', err.message);
     }
   }
 
@@ -1651,7 +1740,7 @@
         console.warn(`Failed to load from ${source.name}:`, err.message);
       }
     }
-    await loadOrganizationSectorsMap();
+    await loadOrganizationCatalogMaps();
     filterFacets = computeFilterFacets(issuers);
     normalizeIssuerSigningAlgorithmFilters();
     if (config.vocabularyUrl || config.vocabularyFallbackUrl) {
@@ -1675,6 +1764,10 @@
     const sectorCode = normalizeSectorFilterCode(params.get('sector') || '');
     if (sectorCode) {
       filters.sector = [sectorCode];
+    }
+    const countryCode = normalizeCountryFilterCode(params.get('country') || '');
+    if (countryCode) {
+      filters.country = [countryCode];
     }
   }
 
