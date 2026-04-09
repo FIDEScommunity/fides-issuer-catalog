@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers.
- * Version: 1.5.28
+ * Version: 1.5.32
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.5.28');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.5.32');
 
 /**
  * Detect if the site is running on a .local or localhost URL (local dev).
@@ -48,6 +48,25 @@ function fides_issuer_catalog_resolve_organization_data_url($use_local) {
         $org_json = WP_PLUGIN_DIR . '/fides-organization-catalog/data/aggregated.json';
         if (file_exists($org_json) && file_exists($org_main)) {
             return plugins_url('data/aggregated.json', $org_main);
+        }
+    }
+    return $github;
+}
+
+/**
+ * URL for credential catalog aggregated.json (theme filter / credential id → themes map in issuer UI).
+ */
+function fides_issuer_catalog_resolve_credential_aggregated_url($use_local) {
+    $github = 'https://raw.githubusercontent.com/FIDEScommunity/fides-credential-catalog/main/data/aggregated.json';
+    $opt    = trim((string) get_option('fides_issuer_catalog_credential_aggregated_url', ''));
+    if ($opt !== '') {
+        return esc_url_raw($opt);
+    }
+    if ($use_local) {
+        $cred_main = WP_PLUGIN_DIR . '/fides-credential-catalog/fides-credential-catalog.php';
+        $cred_json = WP_PLUGIN_DIR . '/fides-credential-catalog/data/aggregated.json';
+        if (file_exists($cred_json) && file_exists($cred_main)) {
+            return plugins_url('data/aggregated.json', $cred_main);
         }
     }
     return $github;
@@ -112,31 +131,66 @@ function fides_issuer_catalog_enqueue_assets() {
                 'https://fides.community/ecosystem-explorer/organization-catalog/'
             ),
         'organizationDataUrl' => fides_issuer_catalog_resolve_organization_data_url($use_local),
+        'credentialAggregatedDataUrl' => fides_issuer_catalog_resolve_credential_aggregated_url($use_local),
         'vocabularyUrl'         => 'https://raw.githubusercontent.com/FIDEScommunity/fides-interop-profiles/main/data/vocabulary.json',
         'vocabularyFallbackUrl' => $plugin_url . 'assets/vocabulary.json',
     ]);
 }
 add_action('wp_enqueue_scripts', 'fides_issuer_catalog_enqueue_assets');
 
+/**
+ * Register catalog deep-link query vars (helps SEO plugins and canonical URL handling).
+ *
+ * @param string[] $vars Public query variables.
+ * @return string[]
+ */
+function fides_issuer_catalog_query_vars($vars) {
+    foreach (['theme', 'issuer', 'issuers', 'sector', 'country'] as $q) {
+        $vars[] = $q;
+    }
+    return $vars;
+}
+add_filter('query_vars', 'fides_issuer_catalog_query_vars');
+
+/**
+ * Avoid redirect_canonical dropping FIDES issuer catalog deep-link parameters (empty search in JS).
+ *
+ * @param string|false $redirect_url Computed canonical URL, or false.
+ * @return string|false
+ */
+function fides_issuer_catalog_preserve_redirect_canonical($redirect_url) {
+    $keys = ['theme', 'issuer', 'issuers', 'sector', 'country'];
+    foreach ($keys as $key) {
+        if (isset($_GET[$key]) && (string) $_GET[$key] !== '') {
+            return false;
+        }
+    }
+    return $redirect_url;
+}
+add_filter('redirect_canonical', 'fides_issuer_catalog_preserve_redirect_canonical', 10, 1);
+
 function fides_issuer_catalog_shortcode($atts) {
     $atts = shortcode_atts([
-        'show_filters' => 'true',
-        'show_search'  => 'true',
-        'columns'      => '3',
-        'theme'        => 'fides',
+        'show_filters'     => 'true',
+        'show_search'      => 'true',
+        'columns'          => '3',
+        'theme'            => 'fides',
+        'taxonomy_theme' => '',
     ], $atts);
 
     $show_filters = $atts['show_filters'] === 'true' ? 'true' : 'false';
     $show_search  = $atts['show_search']  === 'true' ? 'true' : 'false';
     $columns      = in_array($atts['columns'], ['2', '3', '4']) ? $atts['columns'] : '3';
     $theme        = in_array($atts['theme'], ['dark', 'light', 'fides']) ? $atts['theme'] : 'fides';
+    $taxonomy_theme = sanitize_text_field((string) $atts['taxonomy_theme']);
 
     return sprintf(
-        '<div id="fides-issuer-catalog-root" class="fides-issuer-catalog" data-show-filters="%s" data-show-search="%s" data-columns="%s" data-theme="%s"><p style="padding:2rem;opacity:.6;">Loading issuer catalog…</p></div>',
+        '<div id="fides-issuer-catalog-root" class="fides-issuer-catalog" data-show-filters="%s" data-show-search="%s" data-columns="%s" data-theme="%s" data-taxonomy-theme="%s"><p style="padding:2rem;opacity:.6;">Loading issuer catalog…</p></div>',
         esc_attr($show_filters),
         esc_attr($show_search),
         esc_attr($columns),
-        esc_attr($theme)
+        esc_attr($theme),
+        esc_attr($taxonomy_theme)
     );
 }
 add_shortcode('fides_issuer_catalog', 'fides_issuer_catalog_shortcode');
@@ -159,6 +213,9 @@ function fides_issuer_catalog_settings_init() {
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
     register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_organization_data_url', [
+        'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
+    ]);
+    register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_credential_aggregated_url', [
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
 }
@@ -235,11 +292,20 @@ function fides_issuer_catalog_settings_render() { ?>
                         <p class="description">Optional. JSON used for sector and <strong>country</strong> filters (issuer authority country from the organization catalog). Leave empty to use the GitHub default, or on local sites the <code>fides-organization-catalog</code> plugin <code>data/aggregated.json</code> when that plugin is installed.</p>
                     </td>
                 </tr>
+                <tr>
+                    <th scope="row"><label for="fides_issuer_catalog_credential_aggregated_url">Credential catalog data URL</label></th>
+                    <td>
+                        <input type="url" id="fides_issuer_catalog_credential_aggregated_url" name="fides_issuer_catalog_credential_aggregated_url"
+                               value="<?php echo esc_attr(get_option('fides_issuer_catalog_credential_aggregated_url', '')); ?>"
+                               class="regular-text" placeholder="<?php echo esc_attr('https://raw.githubusercontent.com/.../aggregated.json'); ?>">
+                        <p class="description">Optional. Credential catalog <code>aggregated.json</code> used for the <strong>Theme</strong> filter and <code>?theme=</code> deep links. Leave empty for GitHub default or bundled credential plugin JSON on local sites.</p>
+                    </td>
+                </tr>
             </table>
             <?php submit_button(); ?>
         </form>
         <h2>Shortcode</h2>
         <p><code>[fides_issuer_catalog]</code></p>
-        <p>Optional attributes: <code>show_filters</code>, <code>show_search</code>, <code>columns</code>, <code>theme</code>.</p>
+        <p>Optional attributes: <code>show_filters</code>, <code>show_search</code>, <code>columns</code>, <code>theme</code> (UI color), <code>taxonomy_theme</code> (preset taxonomy filter).</p>
     </div>
 <?php }

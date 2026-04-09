@@ -94,6 +94,29 @@
     SECTOR_LABELS[a].localeCompare(SECTOR_LABELS[b], 'en', { sensitivity: 'base' }),
   );
 
+  /** Canonical taxonomy theme codes — keep in sync with fides-credential-catalog THEME_LABELS. */
+  const THEME_LABELS = {
+    person_identity: 'Person identity',
+    organizational_identity: 'Organizational identity',
+    payments: 'Payments',
+    compliance_reporting: 'Compliance & reporting',
+    trade_documents: 'Trade documents',
+    education: 'Education',
+    digital_product_passports: 'Digital product passports',
+    dataspaces: 'Data spaces',
+    agentic_ai: 'Agentic AI',
+  };
+
+  const THEME_CODES_ALPHABETIC = Object.keys(THEME_LABELS).sort((a, b) =>
+    THEME_LABELS[a].localeCompare(THEME_LABELS[b], 'en', { sensitivity: 'base' }),
+  );
+
+  function normalizeCredentialThemeCode(code) {
+    if (!code || typeof code !== 'string') return '';
+    const t = code.trim();
+    return Object.prototype.hasOwnProperty.call(THEME_LABELS, t) ? t : '';
+  }
+
   function normalizeSectorFilterCode(code) {
     if (!code || typeof code !== 'string') return '';
     const t = code.trim().toLowerCase();
@@ -183,6 +206,7 @@
     organization:     'provider',
     country:          'country',
     sector:           'sector',
+    credentialTheme:  'credentialTheme',
     vcFormat:         'credentialFormat',
     credential:       'credential',
     signingAlgorithm: 'signingAlgorithm',
@@ -192,6 +216,7 @@
     pluginUrl: '',
     githubDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-issuer-catalog/main/data/aggregated.json',
     credentialCatalogUrl: 'https://fides.community/community-tools/credential-catalog/',
+    credentialAggregatedDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-credential-catalog/main/data/aggregated.json',
     rpCatalogDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/wordpress-plugin/fides-rp-catalog/data/aggregated.json',
     rpCatalogFallbackUrl: '',
     rpCatalogUrl: 'https://fides.community/ecosystem-explorer/relying-party-catalog/',
@@ -245,6 +270,8 @@
   let root;
   let rpCatalogData = null;
   let rpCatalogFetchPromise = null;
+  /** cred:… id -> taxonomy theme codes from credential catalog aggregated.json */
+  let credentialThemesById = Object.create(null);
   /** orgId -> list of canonical sector codes (from organization catalog aggregated.json). */
   const organizationSectorsByOrgId = new Map();
   let organizationSectorMapReady = false;
@@ -257,6 +284,7 @@
     organization: false,
     country: false,
     sector: false,
+    credentialTheme: false,
     vcFormat: false,
     credential: false,
     signingAlgorithm: false,
@@ -271,6 +299,7 @@
     credential: [],
     signingAlgorithm: [],
     sector: [],
+    credentialTheme: [],
     addedLast30Days: false,
     updatedLast30Days: false,
     usedByRPsOnly: false,
@@ -340,6 +369,7 @@
       filters.credential.length +
       filters.signingAlgorithm.length +
       filters.sector.length +
+      filters.credentialTheme.length +
       filters.ids.length +
       (filters.addedLast30Days ? 1 : 0) +
       (filters.updatedLast30Days ? 1 : 0) +
@@ -369,6 +399,7 @@
       organization: {},
       country: {},
       sector: {},
+      credentialTheme: {},
       vcFormat: {},
       credential: {},
       signingAlgorithm: {},
@@ -390,6 +421,14 @@
             });
           }
         }
+      }
+      const dct = issuer.derivedCredentialThemes;
+      if (Array.isArray(dct)) {
+        dct.forEach((t) => {
+          if (typeof t === 'string' && THEME_LABELS[t]) {
+            facets.credentialTheme[t] = (facets.credentialTheme[t] || 0) + 1;
+          }
+        });
       }
       if (organizationCountryMapReady) {
         const oid = issuer.orgId;
@@ -424,6 +463,11 @@
         if (!oid) return false;
         const secs = organizationSectorsByOrgId.get(oid);
         if (!secs || !filters.sector.some((s) => secs.includes(s))) return false;
+      }
+
+      if (filters.credentialTheme.length) {
+        const derived = issuer.derivedCredentialThemes || [];
+        if (!filters.credentialTheme.some((t) => derived.includes(t))) return false;
       }
 
       if (filters.country.length && organizationCountryMapReady) {
@@ -1002,7 +1046,7 @@
               <span>${escapeHtml(
                 key === 'signingAlgorithm'
                   ? opt
-                  : (ENVIRONMENT_LABELS[opt] || VC_FORMAT_LABELS[opt] || SECTOR_LABELS[opt] || opt)
+                  : (ENVIRONMENT_LABELS[opt] || VC_FORMAT_LABELS[opt] || SECTOR_LABELS[opt] || THEME_LABELS[opt] || opt)
               )}<span class="fides-filter-option-count">(${facets?.[key]?.[opt] || 0})</span></span>
             </label>
           `).join('')}
@@ -1017,6 +1061,14 @@
     );
     if (sectorOptions.length === 0) return '';
     return renderCheckboxGroup('Sector', 'sector', sectorOptions, facets);
+  }
+
+  function renderCredentialThemeCheckboxGroup(facets) {
+    const themeOptions = THEME_CODES_ALPHABETIC.filter(
+      (code) => (facets?.credentialTheme?.[code] || 0) > 0 || filters.credentialTheme.includes(code),
+    );
+    if (themeOptions.length === 0) return '';
+    return renderCheckboxGroup('Theme', 'credentialTheme', themeOptions, facets);
   }
 
   function renderCountryCheckboxGroup(facets) {
@@ -1101,6 +1153,7 @@
           ${renderCheckboxGroup('Issuer organization', 'organization', organizationOptions, filterFacets)}
           ${renderCountryCheckboxGroup(filterFacets)}
           ${renderSectorCheckboxGroup(filterFacets)}
+          ${renderCredentialThemeCheckboxGroup(filterFacets)}
           ${renderCheckboxGroup('VC Format', 'vcFormat', vcFormatOptions, filterFacets)}
           ${renderCheckboxGroup('Credential Type', 'credential', credentialOptions, filterFacets)}
           ${renderCheckboxGroup('Signing Algorithm', 'signingAlgorithm', signingAlgOptions, filterFacets)}
@@ -1420,12 +1473,13 @@
 
     const clearBtn = root.querySelector('#fides-clear');
     if (clearBtn) clearBtn.addEventListener('click', () => {
-      filters = { search: '', environment: [], organization: [], country: [], vcFormat: [], credential: [], signingAlgorithm: [], sector: [], addedLast30Days: false, updatedLast30Days: false, usedByRPsOnly: false, ids: [] };
+      filters = { search: '', environment: [], organization: [], country: [], vcFormat: [], credential: [], signingAlgorithm: [], sector: [], credentialTheme: [], addedLast30Days: false, updatedLast30Days: false, usedByRPsOnly: false, ids: [] };
       originalIssuerIds = [];
       const url = new URL(window.location.href);
       url.searchParams.delete('issuers');
       url.searchParams.delete('sector');
       url.searchParams.delete('country');
+      url.searchParams.delete('theme');
       history.replaceState(null, '', url.toString());
       render();
     });
@@ -1686,6 +1740,40 @@
     });
   }
 
+  async function loadCredentialThemeIndex() {
+    credentialThemesById = Object.create(null);
+    const url = (config.credentialAggregatedDataUrl || '').trim();
+    if (!url) return;
+    try {
+      const res = await fetch(url);
+      if (!res.ok) return;
+      const data = await res.json();
+      const creds = Array.isArray(data.credentials) ? data.credentials : [];
+      creds.forEach((c) => {
+        if (!c || typeof c.id !== 'string') return;
+        const themes = Array.isArray(c.themes) ? c.themes : [];
+        credentialThemesById[c.id] = themes.filter(
+          (t) => typeof t === 'string' && Object.prototype.hasOwnProperty.call(THEME_LABELS, t),
+        );
+      });
+    } catch (err) {
+      console.warn('Credential catalog theme index load failed:', err.message);
+    }
+  }
+
+  function enrichIssuersCredentialThemes(list) {
+    list.forEach((issuer) => {
+      const set = new Set();
+      (issuer.credentialConfigurations || []).forEach((cc) => {
+        const id = cc.credentialCatalogRef?.id;
+        if (!id || typeof id !== 'string') return;
+        const arr = credentialThemesById[id];
+        if (arr) arr.forEach((t) => set.add(t));
+      });
+      issuer.derivedCredentialThemes = Array.from(set);
+    });
+  }
+
   async function loadOrganizationCatalogMaps() {
     organizationSectorsByOrgId.clear();
     organizationCountryByOrgId.clear();
@@ -1741,6 +1829,8 @@
       }
     }
     await loadOrganizationCatalogMaps();
+    await loadCredentialThemeIndex();
+    enrichIssuersCredentialThemes(issuers);
     filterFacets = computeFilterFacets(issuers);
     normalizeIssuerSigningAlgorithmFilters();
     if (config.vocabularyUrl || config.vocabularyFallbackUrl) {
@@ -1768,6 +1858,12 @@
     const countryCode = normalizeCountryFilterCode(params.get('country') || '');
     if (countryCode) {
       filters.country = [countryCode];
+    }
+    const themeFromUrl = normalizeCredentialThemeCode(params.get('theme') || '');
+    const themeFromData = normalizeCredentialThemeCode(root.dataset.taxonomyTheme || '');
+    const themeCode = themeFromUrl || themeFromData;
+    if (themeCode) {
+      filters.credentialTheme = [themeCode];
     }
   }
 
