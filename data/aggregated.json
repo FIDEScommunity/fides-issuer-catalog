@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.2.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-04-09T07:44:01.581Z",
+  "lastUpdated": "2026-04-10T07:48:44.318Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -180,7 +180,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -242,7 +242,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -343,7 +343,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -902,7 +902,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1016,7 +1016,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1078,7 +1078,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1646,7 +1646,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1945,7 +1945,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -2367,7 +2367,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -2456,7 +2456,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2762,7 +2762,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -2839,7 +2839,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -2946,7 +2946,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -2999,7 +2999,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -3157,7 +3157,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -3241,7 +3241,7 @@
             "did:jwk",
             "did:key"
           ],
-          "logoUri": "data:image/png;base64,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",
+          "logoUri": "https://wallet-studio.test.namirial.com/static/img/service/namirial/logo-white-small.png",
           "credentialCatalogRef": {
             "id": "cred:eu:pid-mdoc:mdoc",
             "displayName": "PID (MSO Mdoc)"
@@ -3375,7 +3375,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -3418,7 +3418,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -3543,7 +3543,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -3657,7 +3657,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -3722,7 +3722,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-09T07:44:01.581Z"
+      "fetchedAt": "2026-04-10T07:48:44.318Z"
     }
   ],
   "stats": {
