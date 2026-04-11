@@ -20,6 +20,13 @@ fides-issuer-catalog/
 ├── community-catalogs/                    # Source files per organization
 │   └── fides/
 │       └── issuer-catalog.json
+├── api/public/                           # Vercel serverless public API
+│   ├── issuer.ts
+│   └── api-docs.ts
+├── public/                               # Static landing + Swagger UI
+│   ├── index.html
+│   └── swagger.html
+├── vercel.json                           # Vercel build/output + function limits
 ├── src/
 │   ├── types/issuer.ts                   # TypeScript type definitions
 │   └── crawler/index.ts                  # Crawler: fetches .well-known, enriches data
@@ -27,6 +34,7 @@ fides-issuer-catalog/
 │   ├── aggregated.json                   # Machine-readable output
 │   └── issuer-history-state.json         # firstSeenAt persistence
 ├── docs/
+│   ├── API.md                            # Public HTTP API contract
 │   └── DESIGN_DECISIONS.md              # Architecture decisions
 ├── wordpress-plugin/
 │   └── fides-issuer-catalog/
@@ -46,6 +54,16 @@ npm run validate   # Validate source files against the JSON Schema
 ```
 
 **Resolving `orgId`:** The crawler loads the [organization catalog](https://github.com/FIDEScommunity/fides-organization-catalog) `data/aggregated.json` from GitHub (raw), or falls back to `../organization-catalog/data/aggregated.json` when the fetch fails. Override with `ORGANIZATION_CATALOG_AGGREGATED_PATH` if needed.
+
+## Public API (Vercel)
+
+The issuer catalog can be deployed as a **read-only API** on Vercel (`api/public/`, `vercel.json`, `public/`). Import this repository in Vercel (root = repo root); build settings follow `vercel.json`.
+
+- `GET /api/public/issuer` — List, search, and filter issuers (see [docs/API.md](docs/API.md))
+- `GET /api/public/api-docs` — OpenAPI 3.1 (JSON)
+- `/swagger.html` — Swagger UI
+
+For a single public hostname across catalogs, use the [FIDES API Gateway](https://github.com/FIDEScommunity/fides-api-gateway) and set `FIDES_ISSUER_CATALOG_ORIGIN` to this project’s `*.vercel.app` URL.
 
 ## ➕ Add Your Issuer
 
