@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.2.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-04-11T07:06:24.295Z",
+  "lastUpdated": "2026-04-12T07:21:57.264Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -180,7 +180,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -242,7 +242,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -343,7 +343,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -902,7 +902,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1016,7 +1016,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1078,7 +1078,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -1646,7 +1646,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -1945,7 +1945,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -2367,7 +2367,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -2456,7 +2456,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -2762,7 +2762,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -2839,7 +2839,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -2946,7 +2946,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -2999,7 +2999,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -3157,7 +3157,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -3375,7 +3375,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -3418,7 +3418,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -3543,7 +3543,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -3657,7 +3657,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -3722,7 +3722,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-03-31T19:01:21+02:00",
-      "fetchedAt": "2026-04-11T07:06:24.295Z"
+      "fetchedAt": "2026-04-12T07:21:57.264Z"
     }
   ],
   "stats": {
