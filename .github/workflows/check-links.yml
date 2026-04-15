@@ -46,7 +46,16 @@ jobs:
             let body = 'Weekly linkcheck run: ' + new Date().toISOString().slice(0, 10) + '\n\n';
             if (fs.existsSync(reportPath)) {
               const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
-              body += `- Total URLs checked: ${report.totalUrls}\n`;
+              if (typeof report.totalCatalogUrls === 'number') {
+                body += `- Catalog URLs collected: ${report.totalCatalogUrls}\n`;
+              }
+              if (report.skippedCount > 0) {
+                body += `- Skipped (excluded): ${report.skippedCount}\n`;
+              }
+              body += `- Catalog URLs checked: ${report.totalUrls}\n`;
+              if (typeof report.effectiveCheckCount === 'number') {
+                body += `- HTTP checks performed: ${report.effectiveCheckCount}\n`;
+              }
               body += `- Broken: ${report.brokenCount}\n\n`;
               if (fs.existsSync(summaryPath)) {
                 body += fs.readFileSync(summaryPath, 'utf8');
