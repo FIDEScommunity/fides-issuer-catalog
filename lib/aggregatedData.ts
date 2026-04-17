@@ -7,6 +7,8 @@ export interface CredentialConfiguration {
   vcFormat?: string;
   vct?: string;
   docType?: string;
+  /** Resolved link to the FIDES credential catalog entry when the crawler could match a configuration. */
+  credentialCatalogRef?: { id?: string; displayName?: string };
 }
 
 export interface IssuerRow {

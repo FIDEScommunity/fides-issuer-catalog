@@ -14,6 +14,17 @@ function issuerVcFormats(i: IssuerRow): string[] {
     .filter(Boolean);
 }
 
+function issuerCredentialCatalogIds(i: IssuerRow): string[] {
+  const cfgs = i.credentialConfigurations;
+  if (!cfgs?.length) return [];
+  const ids: string[] = [];
+  for (const c of cfgs) {
+    const id = c.credentialCatalogRef?.id;
+    if (typeof id === "string" && id.length) ids.push(id);
+  }
+  return ids;
+}
+
 function searchHaystack(i: IssuerRow): string {
   const orgName = i.organization?.name ?? "";
   const parts = [
@@ -34,6 +45,7 @@ function searchHaystack(i: IssuerRow): string {
       c.vct ?? "",
       c.docType ?? "",
       c.configurationId ?? "",
+      c.credentialCatalogRef?.id ?? "",
     );
   }
   return parts.join(" ").toLowerCase();
@@ -68,6 +80,11 @@ export default function handler(req: VercelRequest, res: VercelResponse): void {
     typeof req.query.orgId === "string" ? req.query.orgId : undefined;
   const vcFormat =
     typeof req.query.vcFormat === "string" ? req.query.vcFormat : undefined;
+  const credentialCatalogId =
+    typeof req.query.credentialCatalogId === "string" &&
+    req.query.credentialCatalogId.length
+      ? req.query.credentialCatalogId
+      : undefined;
   const search =
     typeof req.query.search === "string"
       ? req.query.search.toLowerCase()
@@ -81,6 +98,11 @@ export default function handler(req: VercelRequest, res: VercelResponse): void {
   }
   if (vcFormat) {
     list = list.filter((i) => issuerVcFormats(i).includes(vcFormat));
+  }
+  if (credentialCatalogId) {
+    list = list.filter((i) =>
+      issuerCredentialCatalogIds(i).includes(credentialCatalogId),
+    );
   }
   if (search) {
     list = list.filter((i) => searchHaystack(i).includes(search));

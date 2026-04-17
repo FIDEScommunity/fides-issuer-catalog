@@ -4,7 +4,7 @@ const spec = {
   openapi: "3.1.0",
   info: {
     title: "FIDES Issuer Catalog API",
-    version: "1.1.0",
+    version: "1.2.0",
     description:
       "Public API for querying OID4VCI issuers from the FIDES Issuer Catalog aggregated data.",
   },
@@ -40,6 +40,13 @@ const spec = {
             schema: { type: "string" },
             description:
               "Filter issuers that expose at least one credential configuration with this vcFormat (e.g. sd_jwt_vc, mdoc, jwt_vc_json)",
+          },
+          {
+            name: "credentialCatalogId",
+            in: "query",
+            schema: { type: "string" },
+            description:
+              "Exact match on FIDES credential catalog id: issuers that have at least one credential configuration linked to this id (credentialCatalogRef.id, e.g. cred:eu:pid-vc-sd-jwt:sd-jwt-vc)",
           },
           {
             name: "sort",

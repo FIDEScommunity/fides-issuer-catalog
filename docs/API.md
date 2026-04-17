@@ -18,6 +18,7 @@ Returns a paginated, filterable list of issuers.
 | `environment` | string | — | Exact match (e.g. `test`, `production`) |
 | `orgId` | string | — | Exact organization catalog id (e.g. `org:animo`) |
 | `vcFormat` | string | — | Issuer has at least one configuration with this format (e.g. `sd_jwt_vc`, `mdoc`) |
+| `credentialCatalogId` | string | — | Issuer has at least one configuration whose `credentialCatalogRef.id` equals this FIDES credential catalog id (e.g. `cred:eu:pid-vc-sd-jwt:sd-jwt-vc`) |
 | `sort` | string | `displayName` | `displayName`, `environment`, `id`, `orgId`, `updatedAt` |
 | `direction` | string | `asc` | `asc` or `desc` |
 | `page` | integer | `0` | Zero-based page |
