@@ -1,50 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import fs from "fs";
-import path from "path";
-
-interface CredentialConfiguration {
-  configurationId?: string;
-  displayName?: string;
-  vcFormat?: string;
-  vct?: string;
-  docType?: string;
-}
-
-interface IssuerRow {
-  id: string;
-  orgId: string;
-  displayName: string;
-  environment: string;
-  description?: string;
-  projectContext?: string;
-  issuerWebsiteUrl?: string;
-  oid4vciMetadataUrl?: string;
-  credentialIssuerUrl?: string;
-  organization?: { name?: string; website?: string };
-  credentialConfigurations?: CredentialConfiguration[];
-  updatedAt?: string;
-}
-
-interface AggregatedData {
-  issuers: IssuerRow[];
-}
-
-let dataCache: AggregatedData | null = null;
-let lastLoad = 0;
-const CACHE_TTL_MS = 60_000;
-
-function loadData(): AggregatedData {
-  const now = Date.now();
-  if (dataCache && now - lastLoad < CACHE_TTL_MS) return dataCache;
-  const raw = fs.readFileSync(
-    path.join(process.cwd(), "data", "aggregated.json"),
-    "utf-8",
-  );
-  const parsed = JSON.parse(raw) as { issuers?: IssuerRow[] };
-  dataCache = { issuers: parsed.issuers ?? [] };
-  lastLoad = now;
-  return dataCache;
-}
+import { loadIssuerData, type IssuerRow } from "../../lib/aggregatedData";
 
 function toNumber(val: unknown, fallback: number): number {
   const n = Number(val);
@@ -104,7 +59,7 @@ export default function handler(req: VercelRequest, res: VercelResponse): void {
     return;
   }
 
-  const data = loadData();
+  const data = loadIssuerData();
   let list = [...data.issuers];
 
   const environment =

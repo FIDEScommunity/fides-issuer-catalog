@@ -60,6 +60,7 @@ npm run validate   # Validate source files against the JSON Schema
 The issuer catalog can be deployed as a **read-only API** on Vercel (`api/public/`, `vercel.json`, `public/`). Import this repository in Vercel (root = repo root); build settings follow `vercel.json`.
 
 - `GET /api/public/issuer` — List, search, and filter issuers (see [docs/API.md](docs/API.md))
+- `GET /api/public/issuer/{id}` — One issuer by id
 - `GET /api/public/api-docs` — OpenAPI 3.1 (JSON)
 - `/swagger.html` — Swagger UI
 

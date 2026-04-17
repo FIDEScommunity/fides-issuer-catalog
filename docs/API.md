@@ -35,6 +35,10 @@ Returns a paginated, filterable list of issuers.
 }
 ```
 
+### `GET /api/public/issuer/{id}`
+
+Returns a **single** issuer by catalog `id` (same JSON shape as one element of `content`). Encode reserved characters in the path segment when needed.
+
 ### `GET /api/public/api-docs`
 
 OpenAPI 3.1 specification (JSON).

@@ -4,7 +4,7 @@ const spec = {
   openapi: "3.1.0",
   info: {
     title: "FIDES Issuer Catalog API",
-    version: "1.0.0",
+    version: "1.1.0",
     description:
       "Public API for querying OID4VCI issuers from the FIDES Issuer Catalog aggregated data.",
   },
@@ -74,6 +74,45 @@ const spec = {
                     totalPages: { type: "integer" },
                     number: { type: "integer" },
                     size: { type: "integer" },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "/issuer/{id}": {
+      get: {
+        summary: "Get issuer by id",
+        operationId: "getIssuerById",
+        parameters: [
+          {
+            name: "id",
+            in: "path",
+            required: true,
+            description: "Issuer catalog id (URL-encoded when it contains reserved characters)",
+            schema: { type: "string" },
+          },
+        ],
+        responses: {
+          "200": {
+            description: "Issuer",
+            content: {
+              "application/json": {
+                schema: { $ref: "#/components/schemas/Issuer" },
+              },
+            },
+          },
+          "404": {
+            description: "Not found",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    message: { type: "string" },
+                    timestamp: { type: "string", format: "date-time" },
                   },
                 },
               },
