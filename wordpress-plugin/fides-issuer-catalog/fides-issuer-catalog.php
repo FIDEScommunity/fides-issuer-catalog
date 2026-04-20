@@ -1,15 +1,18 @@
 <?php
 /**
  * Plugin Name: FIDES Issuer Catalog
- * Description: Searchable catalog of OID4VCI credential issuers.
- * Version: 1.5.32
+ * Description: Searchable catalog of OID4VCI credential issuers. When the master fides_catalog_ssr_enabled flag (provided by FIDES Community Tools Tiles ≥ 1.6.3) is enabled, the plugin also emits a server-rendered listing fallback, per-deeplink SEO meta tags and an Organization JSON-LD payload so issuer detail URLs become indexable by search engines.
+ * Version: 1.6.0
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.5.32');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.6.0');
+
+require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-ssr.php';
+Fides_Issuer_Catalog_SSR::bootstrap();
 
 /**
  * Detect if the site is running on a .local or localhost URL (local dev).
@@ -184,13 +187,32 @@ function fides_issuer_catalog_shortcode($atts) {
     $theme        = in_array($atts['theme'], ['dark', 'light', 'fides']) ? $atts['theme'] : 'fides';
     $taxonomy_theme = sanitize_text_field((string) $atts['taxonomy_theme']);
 
+    // Build the initial HTML inside the root container. When the master
+    // SSR switch is on, this returns a hidden SSR fallback (visible to
+    // crawlers + no-JS visitors via <noscript>) plus the visible loading
+    // spinner that JS users see until issuer-catalog.js mounts.
+    $initial_html = '';
+    if (class_exists('Fides_Issuer_Catalog_SSR')) {
+        $initial_html = Fides_Issuer_Catalog_SSR::build_initial_html(array(
+            'show_filters'   => $show_filters,
+            'show_search'    => $show_search,
+            'columns'        => $columns,
+            'theme'          => $theme,
+            'taxonomy_theme' => $taxonomy_theme,
+        ));
+    }
+    if ($initial_html === '') {
+        $initial_html = '<p style="padding:2rem;opacity:.6;">Loading issuer catalog…</p>';
+    }
+
     return sprintf(
-        '<div id="fides-issuer-catalog-root" class="fides-issuer-catalog" data-show-filters="%s" data-show-search="%s" data-columns="%s" data-theme="%s" data-taxonomy-theme="%s"><p style="padding:2rem;opacity:.6;">Loading issuer catalog…</p></div>',
+        '<div id="fides-issuer-catalog-root" class="fides-issuer-catalog" data-show-filters="%s" data-show-search="%s" data-columns="%s" data-theme="%s" data-taxonomy-theme="%s">%s</div>',
         esc_attr($show_filters),
         esc_attr($show_search),
         esc_attr($columns),
         esc_attr($theme),
-        esc_attr($taxonomy_theme)
+        esc_attr($taxonomy_theme),
+        $initial_html
     );
 }
 add_shortcode('fides_issuer_catalog', 'fides_issuer_catalog_shortcode');
