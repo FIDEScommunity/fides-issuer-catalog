@@ -220,10 +220,13 @@ function matchCredentialCatalog(
 
   if (!identifier) return undefined;
 
-  const match = credentialEntries.find(
-    (c) => c.nativeIdentifier === identifier
-  );
-  if (!match) return undefined;
+  const matches = credentialEntries.filter((c) => c.nativeIdentifier === identifier);
+  if (!matches.length) return undefined;
+
+  // When several catalog credentials share the same native identifier (e.g. EU vs ISO mDL),
+  // prefer the ISO-anchored entry as the normative authority.
+  const isoPreferred = matches.find((c) => typeof c.id === 'string' && c.id.startsWith('cred:iso:'));
+  const match = isoPreferred || matches[0];
 
   return {
     id: match.id,
