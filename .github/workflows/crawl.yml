@@ -11,6 +11,7 @@ on:
       - main
     paths:
       - 'community-catalogs/**/issuer-catalog.json'
+      - 'src/crawler/**'
 
 jobs:
   crawl:
