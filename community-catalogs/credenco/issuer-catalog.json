@@ -7,7 +7,8 @@
       "description": "This is a demo credential issuer for the fictitious \"Tulip Bank\", hosted by Credenco. It provides credentials that can be used across pilots, experiments, and demos.",
       "environment": "test",
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/a396df10-6645-44c3-9209-1f4e227cd35e/bankv4/.well-known/openid-credential-issuer",
-      "issuerWebsiteUrl": "https://tulip-bank.acc.credenco.com"
+      "issuerWebsiteUrl": "https://tulip-bank.acc.credenco.com",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:credenco"

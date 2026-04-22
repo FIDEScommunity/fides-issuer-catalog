@@ -8,7 +8,8 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://oid4vc.igrant.io/.well-known/openid-credential-issuer/organisation/f8a7e3b9-09dc-4e45-88cc-3ce28e42e0ef/service",
       "issuerWebsiteUrl": "https://www.igrant.io/demo.html",
-      "projectContext": "iGrant.io OpenID4VCI demo issuer"
+      "projectContext": "iGrant.io OpenID4VCI demo issuer",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:igrant"

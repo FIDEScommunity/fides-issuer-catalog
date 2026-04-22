@@ -8,7 +8,8 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://injicertify-insurance.collab.mosip.net/v1/certify/issuance/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://collab.mosip.net/",
-      "projectContext": "MOSIP Collab - Inji Certify"
+      "projectContext": "MOSIP Collab - Inji Certify",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:mosip"

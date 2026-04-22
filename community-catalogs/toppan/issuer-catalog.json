@@ -8,7 +8,8 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://demo.goid.toppanapps.com:542/.well-known/openid-credential-issuer/",
       "issuerWebsiteUrl": "https://demo.goid.toppanapps.com:542",
-      "projectContext": "goID demo issuer"
+      "projectContext": "goID demo issuer",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:toppan"

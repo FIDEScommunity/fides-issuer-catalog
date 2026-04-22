@@ -8,7 +8,8 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://digid-eks.dev.citizen-online.com/oid4vci/dev/unfold/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://digid-eks.dev.citizen-online.com/issuer-portal/",
-      "projectContext": "Unfold / EUDI Wallet pilot environment"
+      "projectContext": "Unfold / EUDI Wallet pilot environment",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:thales"

@@ -31,6 +31,8 @@ function searchHaystack(i: IssuerRow): string {
     i.id,
     i.orgId,
     i.displayName,
+    i.environment,
+    i.issuanceProtocol ?? "",
     i.description ?? "",
     i.projectContext ?? "",
     i.issuerWebsiteUrl ?? "",

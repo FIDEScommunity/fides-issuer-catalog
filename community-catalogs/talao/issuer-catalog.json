@@ -8,7 +8,8 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://talao.co/issuer/acnliwayop/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://talao.co/issuer/oidc/test",
-      "projectContext": "Talao demo issuer"
+      "projectContext": "Talao demo issuer",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:talao"

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:iata",
+  "issuers": [
+    {
+      "id": "issuer:iata:indigo:production",
+      "displayName": "IndiGo",
+      "description": "IATA contactless travel credentials (boarding pass and booking order) for IndiGo.",
+      "environment": "production",
+      "issuanceProtocol": "other",
+      "projectContext": "IATA Digital Identity and Contactless Travel",
+      "credentialRefs": [
+        {
+          "id": "cred:iata:boarding-pass-mdoc:mdoc",
+          "displayName": "Boarding Pass (MSO Mdoc)"
+        },
+        {
+          "id": "cred:iata:booking-order-mdoc:mdoc",
+          "displayName": "Booking Order (MSO Mdoc)"
+        }
+      ]
+    },
+    {
+      "id": "issuer:iata:british-airways:production",
+      "displayName": "British Airways",
+      "description": "IATA contactless travel credentials (boarding pass and booking order) for British Airways.",
+      "environment": "production",
+      "issuanceProtocol": "other",
+      "projectContext": "IATA Digital Identity and Contactless Travel",
+      "credentialRefs": [
+        {
+          "id": "cred:iata:boarding-pass-mdoc:mdoc",
+          "displayName": "Boarding Pass (MSO Mdoc)"
+        },
+        {
+          "id": "cred:iata:booking-order-mdoc:mdoc",
+          "displayName": "Booking Order (MSO Mdoc)"
+        }
+      ]
+    },
+    {
+      "id": "issuer:iata:japan-airlines:production",
+      "displayName": "Japan Airlines",
+      "description": "IATA contactless travel credentials (boarding pass and booking order) for Japan Airlines (JAL).",
+      "environment": "production",
+      "issuanceProtocol": "other",
+      "projectContext": "IATA Digital Identity and Contactless Travel",
+      "credentialRefs": [
+        {
+          "id": "cred:iata:boarding-pass-mdoc:mdoc",
+          "displayName": "Boarding Pass (MSO Mdoc)"
+        },
+        {
+          "id": "cred:iata:booking-order-mdoc:mdoc",
+          "displayName": "Booking Order (MSO Mdoc)"
+        }
+      ]
+    },
+    {
+      "id": "issuer:iata:air-new-zealand:production",
+      "displayName": "Air New Zealand",
+      "description": "IATA contactless travel credentials (boarding pass and booking order) for Air New Zealand.",
+      "environment": "production",
+      "issuanceProtocol": "other",
+      "projectContext": "IATA Digital Identity and Contactless Travel",
+      "credentialRefs": [
+        {
+          "id": "cred:iata:boarding-pass-mdoc:mdoc",
+          "displayName": "Boarding Pass (MSO Mdoc)"
+        },
+        {
+          "id": "cred:iata:booking-order-mdoc:mdoc",
+          "displayName": "Booking Order (MSO Mdoc)"
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2026-04-22T12:00:00Z"
+}

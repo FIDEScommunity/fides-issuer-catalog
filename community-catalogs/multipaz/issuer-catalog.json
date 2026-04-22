@@ -9,7 +9,8 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://issuer.multipaz.org/.well-known/openid-credential-issuer/issuer",
       "issuerWebsiteUrl": "https://issuer.multipaz.org",
-      "projectContext": "MultiPaz OpenID4VCI demo issuer"
+      "projectContext": "MultiPaz OpenID4VCI demo issuer",
+      "issuanceProtocol": "oid4vci"
     }
   ]
 }

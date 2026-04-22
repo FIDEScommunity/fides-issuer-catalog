@@ -47,6 +47,14 @@
     return ENVIRONMENT_LABELS[c] || c;
   }
 
+  /** Matches aggregated `issuanceProtocol` from issuer catalog crawler. */
+  function issuanceProtocolDisplayLabel(protocol) {
+    if (protocol === 'oid4vci') return 'OID4VCI';
+    if (protocol === 'other') return 'Other (non-OID4VCI)';
+    if (!protocol) return '—';
+    return String(protocol);
+  }
+
   const VC_FORMAT_LABELS = {
     'sd_jwt_vc': 'SD-JWT VC',
     'vcdm_1_1':  'JWT-VC',
@@ -501,11 +509,14 @@
         const inOrg = (issuer.organization?.name || '').toLowerCase().includes(q);
         const inUrl = (issuer.credentialIssuerUrl || '').toLowerCase().includes(q);
         const inIssuerSite = (issuer.issuerWebsiteUrl || '').toLowerCase().includes(q);
+        const inProtocol =
+          (issuer.issuanceProtocol || '').toLowerCase().includes(q) ||
+          issuanceProtocolDisplayLabel(issuer.issuanceProtocol).toLowerCase().includes(q);
         const inCredentials = configs.some((cc) =>
           (cc.displayName || '').toLowerCase().includes(q) ||
           (cc.credentialCatalogRef?.displayName || '').toLowerCase().includes(q)
         );
-        if (!inName && !inOrg && !inUrl && !inIssuerSite && !inCredentials) return false;
+        if (!inName && !inOrg && !inUrl && !inIssuerSite && !inProtocol && !inCredentials) return false;
       }
       return true;
     }).sort((a, b) => {
@@ -938,15 +949,18 @@
               </div>
               <div class="fides-accordion-body">
                 <div class="fides-details-kv">
+                  <div class="fides-kv-row">
+                    <span class="fides-kv-key">Issuance protocol</span>
+                    <span class="fides-kv-val">${escapeHtml(issuanceProtocolDisplayLabel(issuer.issuanceProtocol))}</span>
+                  </div>
+                  ${issuer.oid4vciMetadataUrl ? `
                   <div class="fides-kv-row fides-kv-row-wide">
                     <span class="fides-kv-key">URL</span>
                     <span class="fides-kv-val fides-kv-val--url">
-                      ${issuer.oid4vciMetadataUrl
-                        ? `<a href="${escapeHtml(issuer.oid4vciMetadataUrl)}" target="_blank" rel="noopener" class="fides-modal-link-inline fides-url-ellipsis" title="${escapeHtml(issuer.oid4vciMetadataUrl)}" onclick="event.stopPropagation();">${escapeHtml(issuer.oid4vciMetadataUrl)} ${icons.externalLinkSmall}</a>`
-                        : '—'
-                      }
+                      <a href="${escapeHtml(issuer.oid4vciMetadataUrl)}" target="_blank" rel="noopener" class="fides-modal-link-inline fides-url-ellipsis" title="${escapeHtml(issuer.oid4vciMetadataUrl)}" onclick="event.stopPropagation();">${escapeHtml(issuer.oid4vciMetadataUrl)} ${icons.externalLinkSmall}</a>
                     </span>
                   </div>
+                  ` : ''}
                   ${issuer.issuerWebsiteUrl ? `
                   <div class="fides-kv-row fides-kv-row-wide">
                     <span class="fides-kv-key">Issuer website</span>
@@ -1810,12 +1824,20 @@
   }
 
   async function loadIssuers() {
-    const sources = [
-      { url: config.githubDataUrl, name: 'GitHub' },
-      { url: `${config.pluginUrl}data/aggregated.json`, name: 'Local' },
-    ];
+    const remote = (config.githubDataUrl || '').trim();
+    const local = `${config.pluginUrl || ''}data/aggregated.json`;
+    /** Same idea as fetchRpCatalog / loadVocabulary: on *.local prefer bundled plugin data, then GitHub. */
+    const sources = (isFidesLocalDevHost()
+      ? [
+          { url: local, name: 'Local' },
+          { url: remote, name: 'GitHub' },
+        ]
+      : [
+          { url: remote, name: 'GitHub' },
+          { url: local, name: 'Local' },
+        ]
+    ).filter((s) => s.url);
     for (const source of sources) {
-      if (!source.url) continue;
       try {
         const res = await fetch(source.url);
         if (res.ok) {

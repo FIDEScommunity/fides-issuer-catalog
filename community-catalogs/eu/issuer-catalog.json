@@ -7,7 +7,8 @@
       "description": "This is the EUDI reference credential issuer that can be used for testing, demonstration, and pilot applications, providing a set of credentials aligned with the EUDI reference architecture.",
       "environment": "test",
       "oid4vciMetadataUrl": "https://issuer.eudiw.dev/.well-known/openid-credential-issuer",
-      "projectContext": "EUDI Wallet Reference Implementation"
+      "projectContext": "EUDI Wallet Reference Implementation",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:eu"

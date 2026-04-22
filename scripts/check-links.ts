@@ -47,6 +47,7 @@ interface IssuerItem {
   id: string;
   displayName?: string;
   organization?: { name?: string; website?: string; logoUri?: string };
+  issuerWebsiteUrl?: string;
   oid4vciMetadataUrl?: string;
   credentialIssuerUrl?: string;
   logoUri?: string;
@@ -66,6 +67,7 @@ function collectIssuerUrls(
 
     if (i.organization?.website) addUrl(urlToContexts, i.organization.website, ctx('organization.website'));
     if (i.organization?.logoUri) addUrl(urlToContexts, i.organization.logoUri, ctx('organization.logoUri'));
+    if (i.issuerWebsiteUrl) addUrl(urlToContexts, i.issuerWebsiteUrl, ctx('issuerWebsiteUrl'));
     if (i.oid4vciMetadataUrl) addUrl(urlToContexts, i.oid4vciMetadataUrl, ctx('oid4vciMetadataUrl'));
     if (i.credentialIssuerUrl) addUrl(urlToContexts, i.credentialIssuerUrl, ctx('credentialIssuerUrl'));
     if (i.logoUri) addUrl(urlToContexts, i.logoUri, ctx('logoUri'));

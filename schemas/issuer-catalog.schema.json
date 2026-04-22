@@ -61,7 +61,32 @@
     "Issuer": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "environment", "oid4vciMetadataUrl"],
+      "required": ["id", "environment", "issuanceProtocol"],
+      "allOf": [
+        {
+          "if": {
+            "properties": { "issuanceProtocol": { "const": "oid4vci" } },
+            "required": ["issuanceProtocol"]
+          },
+          "then": { "required": ["oid4vciMetadataUrl"] }
+        },
+        {
+          "if": {
+            "properties": { "issuanceProtocol": { "const": "other" } },
+            "required": ["issuanceProtocol"]
+          },
+          "then": {
+            "required": ["credentialRefs"],
+            "properties": {
+              "credentialRefs": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "$ref": "#/$defs/CredentialReference" }
+              }
+            }
+          }
+        }
+      ],
       "properties": {
         "id": {
           "type": "string",
@@ -81,10 +106,15 @@
           "enum": ["production", "test"],
           "description": "production = live production issuance; test = all non-production instances (pilots, sandboxes, demos, internal QA). Use projectContext for finer detail."
         },
+        "issuanceProtocol": {
+          "type": "string",
+          "enum": ["oid4vci", "other"],
+          "description": "oid4vci = OpenID for Verifiable Credential Issuance (.well-known metadata); other = non-OID4VCI issuance (link credentials via credentialRefs only)."
+        },
         "oid4vciMetadataUrl": {
           "type": "string",
           "format": "uri",
-          "description": "URL to the OID4VCI .well-known/openid-credential-issuer metadata endpoint"
+          "description": "Required when issuanceProtocol is oid4vci: URL to the OID4VCI .well-known/openid-credential-issuer metadata endpoint"
         },
         "issuerWebsiteUrl": {
           "type": "string",

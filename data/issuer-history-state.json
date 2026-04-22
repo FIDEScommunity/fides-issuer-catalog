@@ -58,5 +58,17 @@
   },
   "issuer:thales:unfold:test": {
     "firstSeenAt": "2026-03-22T19:41:04.052Z"
+  },
+  "issuer:iata:indigo:production": {
+    "firstSeenAt": "2026-04-22T14:03:52.578Z"
+  },
+  "issuer:iata:british-airways:production": {
+    "firstSeenAt": "2026-04-22T14:03:52.578Z"
+  },
+  "issuer:iata:japan-airlines:production": {
+    "firstSeenAt": "2026-04-22T14:03:52.578Z"
+  },
+  "issuer:iata:air-new-zealand:production": {
+    "firstSeenAt": "2026-04-22T14:03:52.578Z"
   }
 }

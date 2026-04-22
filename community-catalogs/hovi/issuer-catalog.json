@@ -7,7 +7,8 @@
       "description": "EUDI Wallet playground issuer by Hovi. Issues a broad range of EUDI credential types including PID, EHIC, Diploma, IBAN, Photo ID and more.",
       "environment": "test",
       "oid4vciMetadataUrl": "https://core-agent.hovi.id/oid4vci/e7db294f-cb68-4643-851c-375d81bc3665/.well-known/openid-credential-issuer",
-      "projectContext": "Hovi EUDI Wallet Playground"
+      "projectContext": "Hovi EUDI Wallet Playground",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:hovi"

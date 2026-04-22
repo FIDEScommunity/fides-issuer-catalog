@@ -95,6 +95,7 @@ interface CredentialEntry {
   displayName?: string;
   nativeIdentifier?: string;
   nativeIdentifierType?: string;
+  vcFormat?: string;
 }
 
 /** Same logic as WordPress plugin: .local or localhost = local dev → use local credential catalog when available */
@@ -322,6 +323,39 @@ function enrichCredentialConfigurations(
   );
 }
 
+function catalogVcFormatToAggregated(fmt: string | undefined): string {
+  if (!fmt) return 'unknown';
+  if (fmt === 'mdoc' || fmt === 'sd_jwt_vc') return fmt;
+  return fmt;
+}
+
+/** Non-OID4VCI issuers: build credentialConfigurations from manual credentialRefs (for cross-catalog linking). */
+function configurationsFromCredentialRefs(
+  refs: NonNullable<SourceIssuer['credentialRefs']>,
+  credentialEntries: CredentialEntry[]
+): AggregatedCredentialConfiguration[] {
+  return refs.map((ref) => {
+    const catalogEntry = credentialEntries.find((c) => c.id === ref.id);
+    const docType =
+      catalogEntry?.nativeIdentifierType === 'docType'
+        ? catalogEntry.nativeIdentifier
+        : undefined;
+    return {
+      configurationId: `manual:${ref.id}`,
+      displayName: ref.displayName || catalogEntry?.displayName || ref.id,
+      vcFormat: catalogVcFormatToAggregated(catalogEntry?.vcFormat),
+      docType,
+      signingAlgorithms: [],
+      proofTypes: [],
+      cryptographicBindingMethods: [],
+      credentialCatalogRef: {
+        id: ref.id,
+        displayName: ref.displayName || catalogEntry?.displayName,
+      },
+    };
+  });
+}
+
 // Get issuer display name from OID4VCI metadata
 function getIssuerDisplayName(
   metadata: Oid4vciMetadata,
@@ -402,20 +436,26 @@ async function crawl(): Promise<void> {
     console.log(`${catalog.orgId}: ${organization.name} (${catalog.issuers.length} issuer(s))`);
 
     for (const sourceIssuer of catalog.issuers) {
-      console.log(`  → ${sourceIssuer.id} [${sourceIssuer.environment}]`);
-      console.log(`    Fetching ${sourceIssuer.oid4vciMetadataUrl} ...`);
+      const protocol = sourceIssuer.issuanceProtocol;
+      console.log(`  → ${sourceIssuer.id} [${sourceIssuer.environment}] [${protocol}]`);
 
       let metadata: Oid4vciMetadata = { credential_issuer: '' };
       let fetchError: string | undefined;
 
-      try {
-        metadata = await fetchJson<Oid4vciMetadata>(sourceIssuer.oid4vciMetadataUrl);
-        console.log(
-          `    ✅ OK — ${Object.keys(metadata.credential_configurations_supported || {}).length} credential configuration(s)`
-        );
-      } catch (err) {
-        fetchError = (err as Error).message;
-        console.warn(`    ⚠️  Fetch failed: ${fetchError}`);
+      if (protocol === 'oid4vci') {
+        const metaUrl = sourceIssuer.oid4vciMetadataUrl!;
+        console.log(`    Fetching ${metaUrl} ...`);
+        try {
+          metadata = await fetchJson<Oid4vciMetadata>(metaUrl);
+          console.log(
+            `    ✅ OK — ${Object.keys(metadata.credential_configurations_supported || {}).length} credential configuration(s)`
+          );
+        } catch (err) {
+          fetchError = (err as Error).message;
+          console.warn(`    ⚠️  Fetch failed: ${fetchError}`);
+        }
+      } else {
+        console.log(`    Skipping OID4VCI fetch (issuanceProtocol=other)`);
       }
 
       const organizationResolved: AggregatedOrganization = {
@@ -423,21 +463,27 @@ async function crawl(): Promise<void> {
         logoUri: getIssuerLogoUri(metadata, organization.logoUri),
       };
 
-      const credentialConfigurations = enrichCredentialConfigurations(metadata, credentialEntries);
+      let credentialConfigurations: AggregatedCredentialConfiguration[];
 
-      // Apply manual credential refs as fallback for unmatched configurations
-      if (sourceIssuer.credentialRefs && sourceIssuer.credentialRefs.length > 0) {
-        for (const config of credentialConfigurations) {
-          if (!config.credentialCatalogRef) {
-            // Try to match by configurationId or display name
-            const manualRef = sourceIssuer.credentialRefs.find(
-              (r) => r.id === config.configurationId || r.displayName === config.displayName
-            );
-            if (manualRef) {
-              config.credentialCatalogRef = { id: manualRef.id, displayName: manualRef.displayName };
+      if (protocol === 'oid4vci') {
+        credentialConfigurations = enrichCredentialConfigurations(metadata, credentialEntries);
+        if (sourceIssuer.credentialRefs && sourceIssuer.credentialRefs.length > 0) {
+          for (const config of credentialConfigurations) {
+            if (!config.credentialCatalogRef) {
+              const manualRef = sourceIssuer.credentialRefs.find(
+                (r) => r.id === config.configurationId || r.displayName === config.displayName
+              );
+              if (manualRef) {
+                config.credentialCatalogRef = { id: manualRef.id, displayName: manualRef.displayName };
+              }
             }
           }
         }
+      } else {
+        credentialConfigurations = configurationsFromCredentialRefs(
+          sourceIssuer.credentialRefs || [],
+          credentialEntries
+        );
       }
 
       // Persist firstSeenAt
@@ -447,16 +493,25 @@ async function crawl(): Promise<void> {
 
       const updatedAt = gitDate || catalog.lastUpdated || fetchedAt;
 
+      const credentialIssuerUrl =
+        protocol === 'oid4vci'
+          ? metadata.credential_issuer ||
+            sourceIssuer.oid4vciMetadataUrl!.replace('/.well-known/openid-credential-issuer', '')
+          : sourceIssuer.issuerWebsiteUrl ||
+            organization.website ||
+            'https://www.iata.org';
+
       const aggregated: AggregatedIssuer = {
         id: sourceIssuer.id,
         orgId: catalog.orgId,
         organization: organizationResolved,
         displayName: getIssuerDisplayName(metadata, sourceIssuer),
         environment: sourceIssuer.environment,
-        credentialIssuerUrl: metadata.credential_issuer || sourceIssuer.oid4vciMetadataUrl.replace(
-          '/.well-known/openid-credential-issuer', ''
-        ),
-        oid4vciMetadataUrl: sourceIssuer.oid4vciMetadataUrl,
+        issuanceProtocol: protocol,
+        credentialIssuerUrl,
+        ...(protocol === 'oid4vci' && sourceIssuer.oid4vciMetadataUrl
+          ? { oid4vciMetadataUrl: sourceIssuer.oid4vciMetadataUrl }
+          : {}),
         logoUri: getIssuerLogoUri(metadata, organization.logoUri),
         ...(sourceIssuer.description ? { description: sourceIssuer.description } : {}),
         ...(sourceIssuer.issuerWebsiteUrl
@@ -490,7 +545,7 @@ async function crawl(): Promise<void> {
   };
 
   const output: AggregatedIssuerCatalog = {
-    schemaVersion: '1.2.0',
+    schemaVersion: '1.3.0',
     catalogType: 'issuer-catalog',
     lastUpdated: fetchedAt,
     issuers: allIssuers,

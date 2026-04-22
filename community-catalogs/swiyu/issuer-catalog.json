@@ -8,7 +8,8 @@
       "environment": "test",
       "oid4vciMetadataUrl": "https://bcs.admin.ch/bcs-web/issuer-agent/oid4vci/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://www.bcs.admin.ch/bcs-web/#/",
-      "projectContext": "Swiss E-ID (swiyu) Public Beta – Beta Credential Service (BCS)"
+      "projectContext": "Swiss E-ID (swiyu) Public Beta – Beta Credential Service (BCS)",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:swiyu"

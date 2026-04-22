@@ -7,7 +7,8 @@
       "description": "Test issuer on the Namirial Wallet Studio platform. Issues PID, mDL, Age Verification and contact credentials.",
       "environment": "test",
       "oid4vciMetadataUrl": "https://wallet-studio.test.namirial.com/issuance/api/v1/2/.well-known/openid-credential-issuer",
-      "projectContext": "Namirial Wallet Studio Test Environment"
+      "projectContext": "Namirial Wallet Studio Test Environment",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:namirial"

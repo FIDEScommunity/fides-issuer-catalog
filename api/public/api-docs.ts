@@ -4,9 +4,9 @@ const spec = {
   openapi: "3.1.0",
   info: {
     title: "FIDES Issuer Catalog API",
-    version: "1.2.0",
+    version: "1.3.0",
     description:
-      "Public API for querying OID4VCI issuers from the FIDES Issuer Catalog aggregated data.",
+      "Public API for querying issuers from the FIDES Issuer Catalog aggregated data (OID4VCI and other issuance protocols).",
   },
   servers: [{ url: "/api/public" }],
   paths: {
@@ -141,6 +141,7 @@ const spec = {
           orgId: { type: "string" },
           displayName: { type: "string" },
           environment: { type: "string" },
+          issuanceProtocol: { type: "string", enum: ["oid4vci", "other"] },
           description: { type: "string" },
           credentialIssuerUrl: { type: "string", format: "uri" },
           oid4vciMetadataUrl: { type: "string", format: "uri" },

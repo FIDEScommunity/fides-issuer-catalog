@@ -16,6 +16,7 @@ export interface IssuerRow {
   orgId: string;
   displayName: string;
   environment: string;
+  issuanceProtocol?: string;
   description?: string;
   projectContext?: string;
   issuerWebsiteUrl?: string;

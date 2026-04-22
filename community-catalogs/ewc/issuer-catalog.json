@@ -7,7 +7,8 @@
       "description": "This is the reference credential issuer from the EWC project, hosted by the University of the Aegean. It issues a range of credentials used for various use cases in the EWC EUDI Large Scale Pilot",
       "environment": "test",
       "oid4vciMetadataUrl": "https://dss.aegean.gr/rfc-issuer/.well-known/openid-credential-issuer",
-      "projectContext": "EWC (European Wallet Consortium) Reference Implementation"
+      "projectContext": "EWC (European Wallet Consortium) Reference Implementation",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:ewc"
