@@ -1,0 +1,37 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:finema",
+  "issuers": [
+    {
+      "id": "issuer:finema:vlei:production",
+      "displayName": "Finema vLEI Issuer",
+      "description": "Finema issues GLEIF vLEI credentials in ACDC format, enabling organizational identity and role-based assertions for trusted digital interactions across government, finance, and enterprise use cases.",
+      "environment": "production",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://finema.co/",
+      "credentialRefs": [
+        {
+          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "displayName": "Legal Entity vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "displayName": "Official Organizational Role vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:oor-authorization-vlei:acdc",
+          "displayName": "OOR Authorization vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:ecr-authorization-vlei:acdc",
+          "displayName": "ECR Authorization vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "displayName": "Engagement Context Role vLEI Credential"
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2026-04-23T10:00:00Z"
+}
