@@ -5,30 +5,22 @@
     {
       "id": "issuer:globalvlei:vlei:production",
       "displayName": "Global vLEI Issuer",
-      "description": "Global vLEI issues GLEIF vLEI credentials in ACDC format for organizational identity and role-based assertions, enabling trusted digital interactions across finance, trade, and compliance use cases.",
+      "description": "Global vLEI is a Qualified vLEI Issuer (QVI) accredited by GLEIF, issuing Legal Entity, Official Organizational Role (OOR), and Engagement Context Role (ECR) credentials in ACDC format for trusted digital interactions.",
       "environment": "production",
       "issuanceProtocol": "other",
       "issuerWebsiteUrl": "https://globalvlei.com/",
       "credentialRefs": [
         {
           "id": "cred:gleif:legal-entity-vlei:acdc",
-          "displayName": "Legal Entity vLEI Credential"
+          "displayName": "vLEI – Legal Entity"
         },
         {
           "id": "cred:gleif:official-organizational-role-vlei:acdc",
-          "displayName": "Official Organizational Role vLEI Credential"
-        },
-        {
-          "id": "cred:gleif:oor-authorization-vlei:acdc",
-          "displayName": "OOR Authorization vLEI Credential"
-        },
-        {
-          "id": "cred:gleif:ecr-authorization-vlei:acdc",
-          "displayName": "ECR Authorization vLEI Credential"
+          "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
           "id": "cred:gleif:engagement-context-role-vlei:acdc",
-          "displayName": "Engagement Context Role vLEI Credential"
+          "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ]
     }
