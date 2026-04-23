@@ -85,5 +85,8 @@
   },
   "issuer:finema:vlei:production": {
     "firstSeenAt": "2026-04-23T05:51:43.465Z"
+  },
+  "issuer:cfca:vlei:production": {
+    "firstSeenAt": "2026-04-23T05:52:21.519Z"
   }
 }
