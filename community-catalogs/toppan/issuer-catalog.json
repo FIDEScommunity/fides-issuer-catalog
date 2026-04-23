@@ -1,16 +1,45 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:toppan",
   "issuers": [
     {
       "id": "issuer:toppan:goid:test",
       "displayName": "TOPPAN Sandbox Issuer",
       "description": "Sandbox OID4VCI issuer operated by TOPPAN Digital for issuing PID credentials in both mso_mdoc and dc+sd-jwt formats.",
       "environment": "test",
+      "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://demo.goid.toppanapps.com:542/.well-known/openid-credential-issuer/",
-      "issuerWebsiteUrl": "https://demo.goid.toppanapps.com:542",
-      "projectContext": "goID demo issuer",
-      "issuanceProtocol": "oid4vci"
+      "projectContext": "goID demo issuer"
+    },
+    {
+      "id": "issuer:toppan:vlei:production",
+      "displayName": "TOPPAN vLEI Issuer",
+      "description": "TOPPAN issues GLEIF vLEI credentials in ACDC format for manufacturing, supply chain, trade, and financial scenarios, including organizational identity and role-based credentials used in trusted cross-border business processes.",
+      "environment": "production",
+      "issuanceProtocol": "other",
+      "credentialRefs": [
+        {
+          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "displayName": "Legal Entity vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "displayName": "Official Organizational Role vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:oor-authorization-vlei:acdc",
+          "displayName": "OOR Authorization vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:ecr-authorization-vlei:acdc",
+          "displayName": "ECR Authorization vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "displayName": "Engagement Context Role vLEI Credential"
+        }
+      ]
     }
   ],
-  "orgId": "org:toppan"
+  "lastUpdated": "2026-04-23T10:00:00Z"
 }
