@@ -19,14 +19,6 @@
           "displayName": "Official Organizational Role vLEI Credential"
         },
         {
-          "id": "cred:gleif:oor-authorization-vlei:acdc",
-          "displayName": "OOR Authorization vLEI Credential"
-        },
-        {
-          "id": "cred:gleif:ecr-authorization-vlei:acdc",
-          "displayName": "ECR Authorization vLEI Credential"
-        },
-        {
           "id": "cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "Engagement Context Role vLEI Credential"
         }
