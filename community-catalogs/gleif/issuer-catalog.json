@@ -1,0 +1,20 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:gleif",
+  "issuers": [
+    {
+      "id": "issuer:gleif:vlei-root:production",
+      "displayName": "GLEIF vLEI Root Issuer",
+      "description": "Issuer operated by GLEIF for issuing Qualified vLEI Issuer (QVI) credentials within the vLEI ecosystem.",
+      "environment": "production",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://www.gleif.org/",
+      "credentialRefs": [
+        {
+          "id": "cred:gleif:qualified-vlei-issuer:acdc",
+          "displayName": "vLEI - Qualified vLEI Issuer (QVI)"
+        }
+      ]
+    }
+  ]
+}
