@@ -79,5 +79,8 @@
   },
   "issuer:toppan:vlei:production": {
     "firstSeenAt": "2026-04-23T05:42:20.316Z"
+  },
+  "issuer:global-vlei:vlei:production": {
+    "firstSeenAt": "2026-04-23T05:49:56.436Z"
   }
 }
