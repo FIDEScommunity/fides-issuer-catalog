@@ -76,5 +76,8 @@
   },
   "issuer:tradego:vlei:production": {
     "firstSeenAt": "2026-04-23T05:37:57.208Z"
+  },
+  "issuer:toppan:vlei:production": {
+    "firstSeenAt": "2026-04-23T05:42:20.316Z"
   }
 }
