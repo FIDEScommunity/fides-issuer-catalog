@@ -70,5 +70,8 @@
   },
   "issuer:iata:air-new-zealand:production": {
     "firstSeenAt": "2026-04-22T14:03:52.578Z"
+  },
+  "issuer:sheca:vlei:production": {
+    "firstSeenAt": "2026-04-23T05:32:23.165Z"
   }
 }
