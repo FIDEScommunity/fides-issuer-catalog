@@ -1,0 +1,37 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:tradego",
+  "issuers": [
+    {
+      "id": "issuer:tradego:vlei:production",
+      "displayName": "TradeGo vLEI Issuer",
+      "description": "TradeGo issues GLEIF vLEI credentials in ACDC format for digital trade and supply chain scenarios, including organizational identity and role-based credentials used in trade document exchange, financing, and cross-border business processes.",
+      "environment": "production",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://tradego.com/",
+      "credentialRefs": [
+        {
+          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "displayName": "Legal Entity vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "displayName": "Official Organizational Role vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:oor-authorization-vlei:acdc",
+          "displayName": "OOR Authorization vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:ecr-authorization-vlei:acdc",
+          "displayName": "ECR Authorization vLEI Credential"
+        },
+        {
+          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "displayName": "Engagement Context Role vLEI Credential"
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2026-04-23T10:00:00Z"
+}
