@@ -82,5 +82,8 @@
   },
   "issuer:global-vlei:vlei:production": {
     "firstSeenAt": "2026-04-23T05:49:56.436Z"
+  },
+  "issuer:finema:vlei:production": {
+    "firstSeenAt": "2026-04-23T05:51:43.465Z"
   }
 }
