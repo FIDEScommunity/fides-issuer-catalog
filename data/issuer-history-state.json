@@ -94,5 +94,8 @@
   },
   "issuer:certizen:vlei:production": {
     "firstSeenAt": "2026-04-23T07:19:38.014Z"
+  },
+  "issuer:globalvlei:vlei:production": {
+    "firstSeenAt": "2026-04-23T07:32:35.459Z"
   }
 }
