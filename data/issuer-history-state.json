@@ -88,5 +88,8 @@
   },
   "issuer:cfca:vlei:production": {
     "firstSeenAt": "2026-04-23T05:52:21.519Z"
+  },
+  "issuer:provenant:vlei:production": {
+    "firstSeenAt": "2026-04-23T05:53:21.448Z"
   }
 }
