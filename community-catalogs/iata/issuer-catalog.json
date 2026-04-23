@@ -6,7 +6,7 @@
       "id": "issuer:iata:indigo:production",
       "displayName": "IndiGo",
       "description": "IATA contactless travel credentials (boarding pass and booking order) for IndiGo.",
-      "environment": "production",
+      "environment": "test",
       "issuanceProtocol": "other",
       "projectContext": "IATA Digital Identity and Contactless Travel",
       "credentialRefs": [
@@ -24,7 +24,7 @@
       "id": "issuer:iata:british-airways:production",
       "displayName": "British Airways",
       "description": "IATA contactless travel credentials (boarding pass and booking order) for British Airways.",
-      "environment": "production",
+      "environment": "test",
       "issuanceProtocol": "other",
       "projectContext": "IATA Digital Identity and Contactless Travel",
       "credentialRefs": [
@@ -42,7 +42,7 @@
       "id": "issuer:iata:japan-airlines:production",
       "displayName": "Japan Airlines",
       "description": "IATA contactless travel credentials (boarding pass and booking order) for Japan Airlines (JAL).",
-      "environment": "production",
+      "environment": "test",
       "issuanceProtocol": "other",
       "projectContext": "IATA Digital Identity and Contactless Travel",
       "credentialRefs": [
@@ -60,7 +60,7 @@
       "id": "issuer:iata:air-new-zealand:production",
       "displayName": "Air New Zealand",
       "description": "IATA contactless travel credentials (boarding pass and booking order) for Air New Zealand.",
-      "environment": "production",
+      "environment": "test",
       "issuanceProtocol": "other",
       "projectContext": "IATA Digital Identity and Contactless Travel",
       "credentialRefs": [
