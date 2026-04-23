@@ -3,7 +3,7 @@
   "orgId": "org:global-vlei",
   "issuers": [
     {
-      "id": "issuer:global-vlei:vlei:production",
+      "id": "issuer:globalvlei:vlei:production",
       "displayName": "Global vLEI Issuer",
       "description": "Global vLEI issues GLEIF vLEI credentials in ACDC format for organizational identity and role-based assertions, enabling trusted digital interactions across finance, trade, and compliance use cases.",
       "environment": "production",
