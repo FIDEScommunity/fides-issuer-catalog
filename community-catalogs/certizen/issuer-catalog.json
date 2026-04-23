@@ -5,7 +5,7 @@
     {
       "id": "issuer:certizen:vlei:production",
       "displayName": "Certizen vLEI Issuer",
-      "description": "Certizen issues GLEIF vLEI credentials in ACDC format through its CertLei platform, enabling organizational identity and role-based assertions for secure and interoperable digital interactions across finance, trade, and compliance use cases. ",
+      "description": "Certizen issues GLEIF vLEI credentials in ACDC format through its CertLei platform, enabling organizational identity and role-based assertions for secure and interoperable digital interactions across finance, trade, and compliance use cases.",
       "environment": "production",
       "issuanceProtocol": "other",
       "issuerWebsiteUrl": "https://www.certlei.com/",
@@ -17,14 +17,6 @@
         {
           "id": "cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "Official Organizational Role vLEI Credential"
-        },
-        {
-          "id": "cred:gleif:oor-authorization-vlei:acdc",
-          "displayName": "OOR Authorization vLEI Credential"
-        },
-        {
-          "id": "cred:gleif:ecr-authorization-vlei:acdc",
-          "displayName": "ECR Authorization vLEI Credential"
         },
         {
           "id": "cred:gleif:engagement-context-role-vlei:acdc",
