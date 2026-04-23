@@ -8,7 +8,6 @@
       "description": "TradeGo issues GLEIF vLEI credentials in ACDC format for digital trade and supply chain scenarios, including organizational identity and role-based credentials used in trade document exchange, financing, and cross-border business processes.",
       "environment": "production",
       "issuanceProtocol": "other",
-      "issuerWebsiteUrl": "https://tradego.com/",
       "credentialRefs": [
         {
           "id": "cred:gleif:legal-entity-vlei:acdc",
