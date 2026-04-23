@@ -73,5 +73,8 @@
   },
   "issuer:sheca:vlei:production": {
     "firstSeenAt": "2026-04-23T05:32:23.165Z"
+  },
+  "issuer:tradego:vlei:production": {
+    "firstSeenAt": "2026-04-23T05:37:57.208Z"
   }
 }
