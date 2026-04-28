@@ -109,5 +109,8 @@
   },
   "issuer:findynet:pension-demo-sphereon:test": {
     "firstSeenAt": "2026-04-28T18:39:25.499Z"
+  },
+  "issuer:findynet:pension-demo-paradym:test": {
+    "firstSeenAt": "2026-04-28T18:43:25.977Z"
   }
 }
