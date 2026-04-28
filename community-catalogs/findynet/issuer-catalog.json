@@ -1,0 +1,15 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:findynet",
+  "issuers": [
+    {
+      "id": "issuer:findynet:pension-demo-hovi:test",
+      "displayName": "Pension demo - HOVI issuer",
+      "description": "OID4VCI issuer for the Findynet pension demo",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://core-agent.hovi.id/oid4vci/8835f09b-f778-4e1b-88ec-523e2b921ea3/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://issuer.hovi.pensiondemo.findy.fi/"
+    }
+  ]
+}
