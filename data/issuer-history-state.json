@@ -100,5 +100,8 @@
   },
   "issuer:gleif:vlei-root:production": {
     "firstSeenAt": "2026-04-23T08:25:05.204Z"
+  },
+  "issuer:findynet:pension-demo-hovi:test": {
+    "firstSeenAt": "2026-04-28T18:23:24.764Z"
   }
 }
