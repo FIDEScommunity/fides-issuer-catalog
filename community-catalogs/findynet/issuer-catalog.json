@@ -28,6 +28,15 @@
       "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://agent.findynet.demo.sphereon.com/oid4vci/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://issuer.sphereon.pensiondemo.findy.fi/"
+    },
+    {
+      "id": "issuer:findynet:pension-demo-paradym:test",
+      "displayName": "Pension demo - Paradym issuer",
+      "description": "OID4VCI issuer for the Findynet pension demo",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://agent.paradym.id/oid4vci/582c8ed7-2b5c-461c-b5f7-7ad299205757/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://issuer.paradym.pensiondemo.findy.fi/"
     }
   ]
 }
