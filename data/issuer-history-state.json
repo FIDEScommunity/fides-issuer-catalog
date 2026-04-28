@@ -103,5 +103,8 @@
   },
   "issuer:findynet:pension-demo-hovi:test": {
     "firstSeenAt": "2026-04-28T18:23:24.764Z"
+  },
+  "issuer:findynet:pension-demo-waltid:test": {
+    "firstSeenAt": "2026-04-28T18:36:15.479Z"
   }
 }
