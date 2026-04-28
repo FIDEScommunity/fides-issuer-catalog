@@ -19,6 +19,15 @@
       "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://issuer.waltid.staging.findy.fi/draft13/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://issuer.waltid.pensiondemo.findy.fi/"
+    },
+    {
+      "id": "issuer:findynet:pension-demo-sphereon:test",
+      "displayName": "Pension demo - Sphereon issuer",
+      "description": "OID4VCI issuer for the Findynet pension demo",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://agent.findynet.demo.sphereon.com/oid4vci/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://issuer.sphereon.pensiondemo.findy.fi/"
     }
   ]
 }
