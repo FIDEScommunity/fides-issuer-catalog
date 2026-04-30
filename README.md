@@ -4,6 +4,15 @@
 
 A community-driven catalog of OID4VCI credential issuers. Organizations contribute a minimal source file with their `.well-known/openid-credential-issuer` URL; the crawler auto-discovers all metadata and links credential configurations to the [FIDES Credential Catalog](https://github.com/FIDEScommunity/fides-credential-catalog).
 
+## Changelog
+
+### 1.7.1
+
+- WordPress plugin version bump to `1.7.1`.
+- KPI cards now compute from the currently filtered/search result set.
+- The "Used by relying parties" KPI now also follows the filtered issuer subset.
+- KPI cards remain informational only (no quick-filter click behavior).
+
 ## 🎯 Concept
 
 1. **Minimal contribution** — Reference your [organization catalog](https://github.com/FIDEScommunity/fides-organization-catalog) entry via `orgId` and provide `.well-known` URLs; the crawler resolves name, DID, website, and logo from the org catalog and fetches the rest from OID4VCI metadata

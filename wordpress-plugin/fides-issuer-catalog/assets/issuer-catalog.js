@@ -247,6 +247,7 @@
   let filterFacets = null;
   let sortBy = 'lastUpdated';
   let selectedIssuer = null;
+  let forcedModalTheme = null;
 
   /**
    * VIEW TOGGLE STATE
@@ -385,17 +386,18 @@
     );
   }
 
-  function computeMetrics() {
+  function computeMetrics(items) {
+    const list = Array.isArray(items) ? items : [];
     const uniqueCredIds = new Set();
     let recentActivity = 0;
-    for (const issuer of issuers) {
+    for (const issuer of list) {
       (issuer.credentialConfigurations || []).forEach((cc) => {
         if (cc.credentialCatalogRef?.id) uniqueCredIds.add(cc.credentialCatalogRef.id);
       });
       if (isWithinLastDays(issuer.firstSeenAt, 30) || isWithinLastDays(issuer.updatedAt, 30)) recentActivity += 1;
     }
     return {
-      total: issuers.length,
+      total: list.length,
       credentials: uniqueCredIds.size,
       recentActivity,
     };
@@ -736,7 +738,7 @@
     const logo = issuer.logoUri || issuer.organization?.logoUri;
     const configs = issuer.credentialConfigurations || [];
     const credentialsWithRef = configs.filter((c) => c.credentialCatalogRef);
-    const theme = root?.dataset?.theme || 'fides';
+    const theme = forcedModalTheme || root?.dataset?.theme || 'fides';
 
     const allFormats = [...new Set(configs.map((c) => c.vcFormat).filter(Boolean))];
     const allAlgorithms = [...new Set(configs.flatMap((c) => c.signingAlgorithms || []))];
@@ -769,7 +771,7 @@
         : '';
 
     return `
-      <div class="fides-modal-overlay" id="fides-modal-overlay" data-theme="${escapeHtml(theme)}">
+      <div class="fides-modal-overlay fides-modal-overlay--issuer" id="fides-modal-overlay" data-theme="${escapeHtml(theme)}">
         <div class="fides-modal" role="dialog" aria-modal="true" aria-labelledby="fides-modal-title">
           <div class="fides-modal-header">
             <div class="fides-modal-header-content">
@@ -1178,7 +1180,7 @@
 
   function render() {
     const filtered = getFilteredIssuers();
-    const metrics = computeMetrics();
+    const metrics = computeMetrics(filtered);
 
     root.innerHTML = `
       <div class="fides-issuer-layout">
@@ -1277,20 +1279,7 @@
     document.body.removeChild(ta);
   }
 
-  function openModal(id) {
-    selectedIssuer = issuers.find((i) => i.id === id) || null;
-    if (!selectedIssuer) return;
-    const existing = document.getElementById('fides-modal-overlay');
-    if (existing) existing.remove();
-    document.body.insertAdjacentHTML('beforeend', renderModal());
-    document.body.style.overflow = 'hidden';
-    bindModalEvents();
-    const params = new URLSearchParams(window.location.search);
-    params.set('issuer', id);
-    history.replaceState(null, '', '?' + params.toString());
-
-    // Async: fill in RP count and tags once RP catalog is loaded
-    const issuerForRp = selectedIssuer;
+  function populateIssuerModalRelationships(issuerForRp) {
     fetchRpCatalog().then((rpList) => {
       const overlay = document.getElementById('fides-modal-overlay');
       if (!overlay) return;
@@ -1371,7 +1360,6 @@
         }
       }
 
-      // Collect unique personal wallets from matching RPs
       const walletById = new Map();
       for (const rp of matchingRps) {
         for (const w of (rp.supportedWallets || [])) {
@@ -1394,8 +1382,23 @@
     });
   }
 
+  function openModal(id) {
+    selectedIssuer = issuers.find((i) => i.id === id) || null;
+    if (!selectedIssuer) return;
+    const existing = document.getElementById('fides-modal-overlay');
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML('beforeend', renderModal());
+    document.body.style.overflow = 'hidden';
+    bindModalEvents();
+    const params = new URLSearchParams(window.location.search);
+    params.set('issuer', id);
+    history.replaceState(null, '', '?' + params.toString());
+    populateIssuerModalRelationships(selectedIssuer);
+  }
+
   function closeModal() {
     selectedIssuer = null;
+    forcedModalTheme = null;
     const overlay = document.getElementById('fides-modal-overlay');
     if (overlay) {
       overlay.classList.add('closing');
@@ -1577,6 +1580,13 @@
     const ev = effectiveView();
     grid.setAttribute('data-view', ev);
     const filtered = getFilteredIssuers();
+    const metrics = computeMetrics(filtered);
+    const kpiValues = root.querySelectorAll('.fides-kpi-card .fides-kpi-value');
+    if (kpiValues.length >= 4) {
+      kpiValues[0].textContent = String(metrics.total);
+      kpiValues[1].textContent = String(metrics.credentials);
+      kpiValues[3].textContent = String(metrics.recentActivity);
+    }
     const header = ev === 'list' ? renderIssuerListHeader() : '';
     const items = filtered.length > 0
       ? filtered.map(ev === 'list' ? renderIssuerRow : renderIssuerCard).join('')
@@ -1599,7 +1609,7 @@
         });
       });
       // Update the "used by relying parties" KPI count
-      const issuersWithRps = issuers.filter((i) => (countRpsForIssuer(i, rpList) ?? 0) > 0).length;
+      const issuersWithRps = issuerList.filter((i) => (countRpsForIssuer(i, rpList) ?? 0) > 0).length;
       root.querySelectorAll('[data-kpi-metric="rp-issuers"]').forEach((el) => {
         el.textContent = issuersWithRps;
       });
@@ -1888,6 +1898,27 @@
       filters.credentialTheme = [themeCode];
     }
   }
+
+  function openModalFromData(issuer, options) {
+    if (!issuer || typeof issuer !== 'object') return false;
+    if (options && options.configOverrides && typeof options.configOverrides === 'object') {
+      Object.assign(config, options.configOverrides);
+    }
+    selectedIssuer = issuer;
+    forcedModalTheme = (options && options.theme) ? String(options.theme) : null;
+    const existing = document.getElementById('fides-modal-overlay');
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML('beforeend', renderModal());
+    document.body.style.overflow = 'hidden';
+    bindModalEvents();
+    populateIssuerModalRelationships(selectedIssuer);
+    return true;
+  }
+
+  window.FidesIssuerCatalogModal = {
+    openFromData: openModalFromData,
+    close: closeModal,
+  };
 
   function init() {
     root = document.getElementById('fides-issuer-catalog-root');
