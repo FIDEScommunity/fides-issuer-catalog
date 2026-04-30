@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers. When the master fides_catalog_ssr_enabled flag (provided by FIDES Community Tools Tiles ≥ 1.6.3) is enabled, the plugin also emits a server-rendered listing fallback, per-deeplink SEO meta tags and an Organization JSON-LD payload so issuer detail URLs become indexable by search engines.
- * Version: 1.7.0
+ * Version: 1.7.3
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.7.0');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.7.3');
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-ssr.php';
 Fides_Issuer_Catalog_SSR::bootstrap();
@@ -76,9 +76,17 @@ function fides_issuer_catalog_resolve_credential_aggregated_url($use_local) {
 }
 
 function fides_issuer_catalog_enqueue_assets() {
+    if (!fides_issuer_catalog_should_enqueue_assets()) {
+        return;
+    }
+
     $plugin_url = plugin_dir_url(__FILE__);
     $plugin_dir = plugin_dir_path(__FILE__);
     $use_local = fides_issuer_catalog_is_local_site();
+    $ui_lib_css_path = $plugin_dir . 'assets/lib/fides-catalog-ui.css';
+    $ui_lib_js_path = $plugin_dir . 'assets/lib/fides-catalog-ui.js';
+    $ui_lib_css_version = file_exists($ui_lib_css_path) ? filemtime($ui_lib_css_path) : FIDES_ISSUER_CATALOG_VERSION;
+    $ui_lib_js_version = file_exists($ui_lib_js_path) ? filemtime($ui_lib_js_path) : FIDES_ISSUER_CATALOG_VERSION;
 
     wp_enqueue_style(
         'fides-issuer-catalog',
@@ -86,11 +94,24 @@ function fides_issuer_catalog_enqueue_assets() {
         [],
         file_exists($plugin_dir . 'assets/style.css') ? filemtime($plugin_dir . 'assets/style.css') : FIDES_ISSUER_CATALOG_VERSION
     );
+    wp_enqueue_style(
+        'fides-issuer-catalog-ui-lib',
+        $plugin_url . 'assets/lib/fides-catalog-ui.css',
+        array('fides-issuer-catalog'),
+        $ui_lib_css_version
+    );
+    wp_enqueue_script(
+        'fides-issuer-catalog-ui-lib',
+        $plugin_url . 'assets/lib/fides-catalog-ui.js',
+        array(),
+        $ui_lib_js_version,
+        true
+    );
 
     wp_enqueue_script(
         'fides-issuer-catalog',
         $plugin_url . 'assets/issuer-catalog.js',
-        [],
+        array('fides-issuer-catalog-ui-lib'),
         file_exists($plugin_dir . 'assets/issuer-catalog.js') ? filemtime($plugin_dir . 'assets/issuer-catalog.js') : FIDES_ISSUER_CATALOG_VERSION,
         true
     );
@@ -140,6 +161,25 @@ function fides_issuer_catalog_enqueue_assets() {
     ]);
 }
 add_action('wp_enqueue_scripts', 'fides_issuer_catalog_enqueue_assets');
+
+/**
+ * Enqueue frontend assets only when the issuer shortcode is present.
+ * A filter hook is provided for template-driven pages.
+ */
+function fides_issuer_catalog_should_enqueue_assets() {
+    if (is_admin()) {
+        return false;
+    }
+
+    if (is_singular()) {
+        $post = get_post();
+        if ($post instanceof WP_Post && has_shortcode($post->post_content, 'fides_issuer_catalog')) {
+            return true;
+        }
+    }
+
+    return (bool) apply_filters('fides_issuer_catalog_force_enqueue_assets', false);
+}
 
 /**
  * Register catalog deep-link query vars (helps SEO plugins and canonical URL handling).
