@@ -25,8 +25,30 @@ function issuerCredentialCatalogIds(i: IssuerRow): string[] {
   return ids;
 }
 
+function issuerSubjectTypes(i: IssuerRow): string[] {
+  const cfgs = i.credentialConfigurations;
+  if (!cfgs?.length) return [];
+  return cfgs
+    .map((c) => (typeof c.subjectType === "string" ? c.subjectType : ""))
+    .filter(Boolean);
+}
+
+function issuerTags(i: IssuerRow): string[] {
+  const cfgs = i.credentialConfigurations;
+  if (!cfgs?.length) return [];
+  const tags: string[] = [];
+  for (const c of cfgs) {
+    if (!Array.isArray(c.tags)) continue;
+    for (const t of c.tags) {
+      if (typeof t === "string" && t.length) tags.push(t);
+    }
+  }
+  return tags;
+}
+
 function searchHaystack(i: IssuerRow): string {
   const orgName = i.organization?.name ?? "";
+  const orgCountry = i.organization?.country ?? "";
   const parts = [
     i.id,
     i.orgId,
@@ -39,16 +61,23 @@ function searchHaystack(i: IssuerRow): string {
     i.oid4vciMetadataUrl ?? "",
     i.credentialIssuerUrl ?? "",
     orgName,
+    orgCountry,
   ];
   for (const c of i.credentialConfigurations ?? []) {
     parts.push(
       c.displayName ?? "",
       c.vcFormat ?? "",
+      c.subjectType ?? "",
       c.vct ?? "",
       c.docType ?? "",
       c.configurationId ?? "",
       c.credentialCatalogRef?.id ?? "",
     );
+    if (Array.isArray(c.tags)) {
+      for (const tag of c.tags) {
+        if (typeof tag === "string") parts.push(tag);
+      }
+    }
   }
   return parts.join(" ").toLowerCase();
 }
@@ -87,6 +116,18 @@ export default function handler(req: VercelRequest, res: VercelResponse): void {
     req.query.credentialCatalogId.length
       ? req.query.credentialCatalogId
       : undefined;
+  const subjectType =
+    typeof req.query.subjectType === "string" && req.query.subjectType.length
+      ? req.query.subjectType.toLowerCase()
+      : undefined;
+  const tags =
+    typeof req.query.tags === "string" && req.query.tags.length
+      ? req.query.tags.toLowerCase()
+      : undefined;
+  const country =
+    typeof req.query.country === "string" && req.query.country.length
+      ? req.query.country.toUpperCase()
+      : undefined;
   const search =
     typeof req.query.search === "string"
       ? req.query.search.toLowerCase()
@@ -104,6 +145,21 @@ export default function handler(req: VercelRequest, res: VercelResponse): void {
   if (credentialCatalogId) {
     list = list.filter((i) =>
       issuerCredentialCatalogIds(i).includes(credentialCatalogId),
+    );
+  }
+  if (subjectType) {
+    list = list.filter((i) =>
+      issuerSubjectTypes(i).some((value) => value.toLowerCase() === subjectType),
+    );
+  }
+  if (tags) {
+    list = list.filter((i) =>
+      issuerTags(i).some((tag) => tag.toLowerCase().includes(tags)),
+    );
+  }
+  if (country) {
+    list = list.filter(
+      (i) => (i.organization?.country ?? "").toUpperCase() === country,
     );
   }
   if (search) {

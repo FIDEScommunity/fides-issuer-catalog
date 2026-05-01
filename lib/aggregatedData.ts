@@ -5,6 +5,8 @@ export interface CredentialConfiguration {
   configurationId?: string;
   displayName?: string;
   vcFormat?: string;
+  subjectType?: string;
+  tags?: string[];
   vct?: string;
   docType?: string;
   /** Resolved link to the FIDES credential catalog entry when the crawler could match a configuration. */
@@ -22,7 +24,7 @@ export interface IssuerRow {
   issuerWebsiteUrl?: string;
   oid4vciMetadataUrl?: string;
   credentialIssuerUrl?: string;
-  organization?: { name?: string; website?: string };
+  organization?: { name?: string; website?: string; country?: string };
   credentialConfigurations?: CredentialConfiguration[];
   updatedAt?: string;
 }

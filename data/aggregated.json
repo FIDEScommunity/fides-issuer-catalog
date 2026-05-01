@@ -1,13 +1,14 @@
 {
-  "schemaVersion": "1.3.0",
+  "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-04-30T08:27:51.766Z",
+  "lastUpdated": "2026-05-01T04:26:25.014Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
       "orgId": "org:animo",
       "organization": {
         "name": "Animo Solutions",
+        "country": "NL",
         "website": "https://animo.id",
         "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128"
       },
@@ -25,6 +26,13 @@
           "configurationId": "mdl-mdoc-bdr",
           "displayName": "Driving Licence",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "mdl"
+          ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
             -9
@@ -44,6 +52,13 @@
           "configurationId": "mdl-mdoc-bdr-key-attestations",
           "displayName": "Driving Licence",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "mdl"
+          ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
             -9
@@ -64,6 +79,12 @@
           "configurationId": "eudi-pid-sd-jwt-bdr",
           "displayName": "EUDI PID",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pid"
+          ],
           "vct": "urn:eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -83,6 +104,12 @@
           "configurationId": "eudi-pid-sd-jwt-bdr-key-attestations",
           "displayName": "EUDI PID",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pid"
+          ],
           "vct": "urn:eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -103,6 +130,13 @@
           "configurationId": "eudi-pid-mdoc-bdr",
           "displayName": "EUDI PID",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             -9
@@ -122,6 +156,13 @@
           "configurationId": "eudi-pid-mdoc-bdr-key-attestations",
           "displayName": "EUDI PID",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             -9
@@ -142,6 +183,13 @@
           "configurationId": "proof_of_age-bdr",
           "displayName": "Age",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "age-verification"
+          ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
             -9
@@ -161,6 +209,13 @@
           "configurationId": "proof_of_age-bdr-key-attestations",
           "displayName": "Age",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "age-verification"
+          ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
             -9
@@ -181,13 +236,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:animo:rdw:test",
       "orgId": "org:animo",
       "organization": {
         "name": "Animo Solutions",
+        "country": "NL",
         "website": "https://animo.id",
         "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128"
       },
@@ -205,6 +261,14 @@
           "configurationId": "mvrc-mdoc",
           "displayName": "Vehicle Registration",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "vehicle",
+            "registration"
+          ],
           "docType": "org.iso.7367.1.mVRC",
           "signingAlgorithms": [
             -9
@@ -224,6 +288,14 @@
           "configurationId": "mvrc-mdoc-key-attestations",
           "displayName": "Vehicle Registration",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "vehicle",
+            "registration"
+          ],
           "docType": "org.iso.7367.1.mVRC",
           "signingAlgorithms": [
             -9
@@ -244,13 +316,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:animo:telorg:test",
       "orgId": "org:animo",
       "organization": {
         "name": "Animo Solutions",
+        "country": "NL",
         "website": "https://animo.id",
         "logoUri": "https://www.google.com/s2/favicons?domain=animo.id&sz=128"
       },
@@ -268,6 +341,13 @@
           "configurationId": "msisdn-sd-jwt",
           "displayName": "MSISDN",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "msisdn"
+          ],
           "vct": "eu.europa.ec.eudi.msisdn.1",
           "signingAlgorithms": [
             "ES256"
@@ -287,6 +367,13 @@
           "configurationId": "msisdn-sd-jwt-key-attestations",
           "displayName": "MSISDN",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "msisdn"
+          ],
           "vct": "eu.europa.ec.eudi.msisdn.1",
           "signingAlgorithms": [
             "ES256"
@@ -307,6 +394,13 @@
           "configurationId": "msisdn-mdoc",
           "displayName": "MSISDN",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "msisdn"
+          ],
           "docType": "eu.europa.ec.eudi.msisdn.1",
           "signingAlgorithms": [
             -9
@@ -326,6 +420,13 @@
           "configurationId": "msisdn-mdoc-key-attestations",
           "displayName": "MSISDN",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "msisdn"
+          ],
           "docType": "eu.europa.ec.eudi.msisdn.1",
           "signingAlgorithms": [
             -9
@@ -346,13 +447,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
       "orgId": "org:aruba",
       "organization": {
         "name": "Aruba IT",
+        "country": "IT",
         "website": "https://www.aruba.io",
         "logoUri": "https://www.aruba.io/assets/images/logo.svg"
       },
@@ -386,6 +488,12 @@
           "configurationId": "eu.europa.ec.eudi.hiid_sd_jwt_vc",
           "displayName": "Health ID (sd-jwt-vc)",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "hiid"
+          ],
           "vct": "urn:eu.europa.ec.eudi:hiid:1",
           "signingAlgorithms": [
             "ES256"
@@ -408,6 +516,12 @@
           "configurationId": "eu.europa.ec.eudi.iban_sd_jwt_vc",
           "displayName": "IBAN (sd-jwt-vc)",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "iban"
+          ],
           "vct": "urn:eu.europa.ec.eudi:iban:1",
           "signingAlgorithms": [
             "ES256"
@@ -541,6 +655,13 @@
           "configurationId": "eu.europa.ec.eudi.pid_mso_mdoc",
           "displayName": "Electronic Identity Card",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             "ES256"
@@ -625,6 +746,12 @@
           "configurationId": "eu.europa.ec.eudi.ehic_sd_jwt_vc",
           "displayName": "EHIC (sd-jwt-vc)",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "ehic"
+          ],
           "vct": "urn:eudi:ehic:1",
           "signingAlgorithms": [
             "ES256"
@@ -663,6 +790,13 @@
           "configurationId": "org.iso.18013.5.1.mDL",
           "displayName": "Mobile Driving Licence",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "mdl"
+          ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
             "ES256"
@@ -683,6 +817,13 @@
           "configurationId": "eu.europa.ec.eudi.ehic_mdoc",
           "displayName": "EHIC",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "ehic"
+          ],
           "docType": "eu.europa.ec.eudi.ehic.1",
           "signingAlgorithms": [
             "ES256"
@@ -720,6 +861,13 @@
           "configurationId": "eu.europa.ec.eudi.hiid_mdoc",
           "displayName": "Health ID",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "hiid"
+          ],
           "docType": "eu.europa.ec.eudi.hiid.1",
           "signingAlgorithms": [
             "ES256"
@@ -774,6 +922,13 @@
           "configurationId": "eu.europa.ec.eudi.cor_mdoc",
           "displayName": "Certificate of Residence",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "cor"
+          ],
           "docType": "eu.europa.ec.eudi.cor.1",
           "signingAlgorithms": [
             "ES256"
@@ -795,6 +950,13 @@
           "configurationId": "eu.europa.ec.eudi.iban_mdoc",
           "displayName": "IBAN",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "iban"
+          ],
           "docType": "eu.europa.ec.eudi.iban.1",
           "signingAlgorithms": [
             "ES256"
@@ -848,6 +1010,12 @@
           "configurationId": "eu.europa.ec.eudi.pid_dc_sd_jwt",
           "displayName": "PID (sd-jwt)",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pid"
+          ],
           "vct": "urn:eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -885,6 +1053,13 @@
           "configurationId": "eu.europa.ec.eudi.loyalty_mdoc",
           "displayName": "Loyalty Card",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "loyalty"
+          ],
           "docType": "eu.europa.ec.eudi.loyalty.1",
           "signingAlgorithms": [
             "ES256"
@@ -906,13 +1081,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
       "orgId": "org:bd",
       "organization": {
         "name": "Belastingdienst",
+        "country": "NL",
         "website": "https://www.belastingdienst.nl",
         "logoUri": "https://sliedrecht24.nl/wp-content/uploads/2023/10/Logo-Belastingdienst.png"
       },
@@ -939,13 +1115,19 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
           "configurationId": "urn:org:fides:vat:1",
           "displayName": "VAT",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Organization",
+          "tags": [
+            "fides",
+            "vat"
+          ],
           "vct": "urn:org:fides:vat:1",
           "signingAlgorithms": [
             "ES256K",
@@ -957,7 +1139,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:vat:sd-jwt-vc",
@@ -979,7 +1162,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -997,7 +1181,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -1014,20 +1199,22 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
       "orgId": "org:certizen",
       "organization": {
         "name": "Certizen",
+        "country": "HK",
         "website": "https://www.certlei.com/index_en.html",
         "logoUri": "https://www.certlei.com/images/Logo-CertLei-v02.png"
       },
@@ -1043,6 +1230,13 @@
           "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "legal-entity",
+            "lei",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -1055,6 +1249,13 @@
           "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "official-role",
+            "oor",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -1067,6 +1268,13 @@
           "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "engagement-context",
+            "ecr",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -1079,13 +1287,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
       "orgId": "org:cfca",
       "organization": {
         "name": "CFCA",
+        "country": "CN",
         "website": "https://www.cfca.com.cn/",
         "logoUri": "https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/community-catalogs/cfca/cfca_logo.png"
       },
@@ -1101,6 +1310,13 @@
           "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "legal-entity",
+            "lei",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -1113,6 +1329,13 @@
           "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "official-role",
+            "oor",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -1125,6 +1348,13 @@
           "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "engagement-context",
+            "ecr",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -1137,13 +1367,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
       "orgId": "org:credenco",
       "organization": {
         "name": "Credenco",
+        "country": "NL",
         "website": "https://www.credenco.com",
         "logoUri": "https://wallet.acc.credenco.com/logo_white_background.png"
       },
@@ -1160,6 +1391,11 @@
           "configurationId": "urn:org:fides:iban:1",
           "displayName": "IBAN",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "iban"
+          ],
           "vct": "urn:org:fides:iban:1",
           "signingAlgorithms": [
             "ES256K",
@@ -1171,7 +1407,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iban:sd-jwt-vc",
@@ -1193,20 +1430,22 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
       "orgId": "org:eu",
       "organization": {
         "name": "European Commission - Government",
+        "country": "EU",
         "website": "https://github.com/eu-digital-identity-wallet",
         "logoUri": "https://www.google.com/s2/favicons?domain=ec.europa.eu&sz=128"
       },
@@ -1223,6 +1462,13 @@
           "configurationId": "eu.europa.ec.eudi.cor_mdoc",
           "displayName": "eu.europa.ec.eudi.cor_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "cor"
+          ],
           "docType": "eu.europa.ec.eudi.cor.1",
           "signingAlgorithms": [
             -7
@@ -1243,6 +1489,12 @@
           "configurationId": "eu.europa.ec.eudi.diploma_vc_sd_jwt",
           "displayName": "eu.europa.ec.eudi.diploma_vc_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "diploma"
+          ],
           "vct": "urn:eu.europa.ec.eudi:diploma:1:1",
           "signingAlgorithms": [
             "ES256"
@@ -1264,6 +1516,13 @@
           "configurationId": "eu.europa.ec.eudi.ehic_mdoc",
           "displayName": "eu.europa.ec.eudi.ehic_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "ehic"
+          ],
           "docType": "eu.europa.ec.eudi.ehic.1",
           "signingAlgorithms": [
             -7
@@ -1285,6 +1544,12 @@
           "configurationId": "eu.europa.ec.eudi.ehic_sd_jwt_vc",
           "displayName": "eu.europa.ec.eudi.ehic_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "ehic"
+          ],
           "vct": "urn:eudi:ehic:1",
           "signingAlgorithms": [
             "ES256"
@@ -1305,6 +1570,13 @@
           "configurationId": "eu.europa.ec.eudi.employee_mdoc",
           "displayName": "eu.europa.ec.eudi.employee_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "employee"
+          ],
           "docType": "eu.europa.ec.eudi.employee.1",
           "signingAlgorithms": [
             -7
@@ -1325,6 +1597,13 @@
           "configurationId": "eu.europa.ec.eudi.hiid_mdoc",
           "displayName": "eu.europa.ec.eudi.hiid_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "hiid"
+          ],
           "docType": "eu.europa.ec.eudi.hiid.1",
           "signingAlgorithms": [
             -7
@@ -1346,6 +1625,12 @@
           "configurationId": "eu.europa.ec.eudi.hiid_sd_jwt_vc",
           "displayName": "eu.europa.ec.eudi.hiid_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "hiid"
+          ],
           "vct": "urn:eu.europa.ec.eudi:hiid:1",
           "signingAlgorithms": [
             "ES256"
@@ -1367,6 +1652,13 @@
           "configurationId": "eu.europa.ec.eudi.iban_mdoc",
           "displayName": "eu.europa.ec.eudi.iban_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "iban"
+          ],
           "docType": "eu.europa.ec.eudi.iban.1",
           "signingAlgorithms": [
             -7
@@ -1387,6 +1679,12 @@
           "configurationId": "eu.europa.ec.eudi.iban_sd_jwt_vc",
           "displayName": "eu.europa.ec.eudi.iban_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "iban"
+          ],
           "vct": "urn:eu.europa.ec.eudi:iban:1",
           "signingAlgorithms": [
             "ES256"
@@ -1423,6 +1721,13 @@
           "configurationId": "eu.europa.ec.eudi.loyalty_mdoc",
           "displayName": "eu.europa.ec.eudi.loyalty_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "loyalty"
+          ],
           "docType": "eu.europa.ec.eudi.loyalty.1",
           "signingAlgorithms": [
             -7
@@ -1443,6 +1748,13 @@
           "configurationId": "eu.europa.ec.eudi.mdl_mdoc",
           "displayName": "eu.europa.ec.eudi.mdl_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "mdl"
+          ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
             -7
@@ -1463,6 +1775,13 @@
           "configurationId": "eu.europa.ec.eudi.msisdn_mdoc",
           "displayName": "eu.europa.ec.eudi.msisdn_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "msisdn"
+          ],
           "docType": "eu.europa.ec.eudi.msisdn.1",
           "signingAlgorithms": [
             -7
@@ -1484,6 +1803,12 @@
           "configurationId": "eu.europa.ec.eudi.msisdn_sd_jwt_vc",
           "displayName": "eu.europa.ec.eudi.msisdn_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "msisdn"
+          ],
           "vct": "urn:eu.europa.ec.eudi:msisdn:1",
           "signingAlgorithms": [
             "ES256"
@@ -1504,6 +1829,13 @@
           "configurationId": "eu.europa.ec.eudi.pda1_mdoc",
           "displayName": "eu.europa.ec.eudi.pda1_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pda1"
+          ],
           "docType": "eu.europa.ec.eudi.pda1.1",
           "signingAlgorithms": [
             -7
@@ -1524,6 +1856,12 @@
           "configurationId": "eu.europa.ec.eudi.pda1_sd_jwt_vc",
           "displayName": "eu.europa.ec.eudi.pda1_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pda1"
+          ],
           "vct": "urn:eu.europa.ec.eudi:pda1:1",
           "signingAlgorithms": [
             "ES256"
@@ -1545,6 +1883,13 @@
           "configurationId": "eu.europa.ec.eudi.photoid",
           "displayName": "eu.europa.ec.eudi.photoid",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "photoid"
+          ],
           "docType": "org.iso.23220.2.photoid.1",
           "signingAlgorithms": [
             -7
@@ -1565,6 +1910,13 @@
           "configurationId": "eu.europa.ec.eudi.pid_mdoc",
           "displayName": "eu.europa.ec.eudi.pid_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             -7
@@ -1585,6 +1937,13 @@
           "configurationId": "eu.europa.ec.eudi.pid_mdoc_deferred",
           "displayName": "eu.europa.ec.eudi.pid_mdoc_deferred",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             -7
@@ -1605,6 +1964,12 @@
           "configurationId": "eu.europa.ec.eudi.pid_vc_sd_jwt",
           "displayName": "eu.europa.ec.eudi.pid_vc_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pid"
+          ],
           "vct": "urn:eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -1625,6 +1990,13 @@
           "configurationId": "eu.europa.ec.eudi.por_mdoc",
           "displayName": "eu.europa.ec.eudi.por_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "por"
+          ],
           "docType": "eu.europa.ec.eudi.por.1",
           "signingAlgorithms": [
             -7
@@ -1646,6 +2018,12 @@
           "configurationId": "eu.europa.ec.eudi.por_sd_jwt_vc",
           "displayName": "eu.europa.ec.eudi.por_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "por"
+          ],
           "vct": "urn:eu.europa.ec.eudi:por:1",
           "signingAlgorithms": [
             "ES256"
@@ -1667,6 +2045,13 @@
           "configurationId": "eu.europa.ec.eudi.seafarer_mdoc",
           "displayName": "eu.europa.ec.eudi.seafarer_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "seafarer"
+          ],
           "docType": "eu.europa.ec.eudi.seafarer.1",
           "signingAlgorithms": [
             -7
@@ -1687,6 +2072,13 @@
           "configurationId": "eu.europa.ec.eudi.tax_mdoc",
           "displayName": "eu.europa.ec.eudi.tax_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "tax"
+          ],
           "docType": "eu.europa.ec.eudi.tax.1",
           "signingAlgorithms": [
             "ES256"
@@ -1708,6 +2100,12 @@
           "configurationId": "eu.europa.ec.eudi.tax_residency_vc_sd_jwt",
           "displayName": "eu.europa.ec.eudi.tax_residency_vc_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "tax"
+          ],
           "vct": "urn:eu.europa.ec.eudi:tax:1:1",
           "signingAlgorithms": [
             "ES256"
@@ -1728,6 +2126,12 @@
           "configurationId": "eu.europa.ec.eudi.tax_sd_jwt_vc",
           "displayName": "eu.europa.ec.eudi.tax_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "tax"
+          ],
           "vct": "urn:eu.europa.ec.eudi:tax:1",
           "signingAlgorithms": [
             "ES256"
@@ -1749,6 +2153,13 @@
           "configurationId": "org.iso.18013.5.1.reservation_mdoc",
           "displayName": "org.iso.18013.5.1.reservation_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "reservation"
+          ],
           "docType": "org.iso.18013.5.1.reservation",
           "signingAlgorithms": [
             -7
@@ -1769,13 +2180,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
       "orgId": "org:ewc",
       "organization": {
         "name": "EWC - European Wallet Consortium",
+        "country": "EU",
         "website": "https://dss.aegean.gr",
         "logoUri": "https://avatars.githubusercontent.com/u/140810559?v=4"
       },
@@ -1792,6 +2204,12 @@
           "configurationId": "VerifiablePortableDocumentA1SDJWT",
           "displayName": "SD-JWT Portable Document A1",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "pda1",
+            "social-security"
+          ],
           "vct": "VerifiablePortableDocumentA1SDJWT",
           "signingAlgorithms": [
             "ES256"
@@ -1811,6 +2229,12 @@
           "configurationId": "VerifiablePortableDocumentA2SDJWT",
           "displayName": "SD-JWT Portable Document A2",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "pda2",
+            "social-security"
+          ],
           "vct": "VerifiablePortableDocumentA2SDJWT",
           "signingAlgorithms": [
             "ES256"
@@ -1830,6 +2254,12 @@
           "configurationId": "VerifiableIdCardJwtVc",
           "displayName": "Verifiable ID Card (jwt_vc)",
           "vcFormat": "vcdm_1_1",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "id-card",
+            "identity"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1849,6 +2279,12 @@
           "configurationId": "VerifiablePIDSDJWT",
           "displayName": "PID",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "pid",
+            "identity"
+          ],
           "vct": "VerifiablePIDSDJWT",
           "signingAlgorithms": [
             "ES256"
@@ -1869,6 +2305,12 @@
           "configurationId": "VerifiableePassportCredentialSDJWT",
           "displayName": "ePassportCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "epassport",
+            "travel"
+          ],
           "vct": "VerifiableePassportCredentialSDJWT",
           "signingAlgorithms": [
             "ES256"
@@ -1889,6 +2331,12 @@
           "configurationId": "VerifiableStudentIDSDJWT",
           "displayName": "Student ID",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "student-id",
+            "education"
+          ],
           "vct": "VerifiableStudentIDSDJWT",
           "signingAlgorithms": [
             "ES256"
@@ -1909,6 +2357,13 @@
           "configurationId": "VerifiableFerryBoardingPassCredentialSDJWT",
           "displayName": "Fast Ferries Boarding Pass",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "boarding-pass",
+            "travel",
+            "ferry"
+          ],
           "vct": "VerifiableFerryBoardingPassCredentialSDJWT",
           "signingAlgorithms": [
             "ES256"
@@ -1929,6 +2384,12 @@
           "configurationId": "VerifiableReceipt",
           "displayName": "vReceipt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Document",
+          "tags": [
+            "ewc",
+            "receipt",
+            "payment"
+          ],
           "vct": "VerifiablevReceiptSDJWT",
           "signingAlgorithms": [
             "ES256"
@@ -1949,6 +2410,13 @@
           "configurationId": "urn:eu.europa.ec.eudi:pid:1",
           "displayName": "Person Identification Data",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "pid",
+            "eudi",
+            "identity"
+          ],
           "vct": "urn:eu.europa.ec.eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -1969,6 +2437,13 @@
           "configurationId": "urn:eu.europa.ec.eudi:pid:1:mso_mdoc",
           "displayName": "Person Identification Data (mDoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "pid",
+            "eudi",
+            "identity"
+          ],
           "docType": "urn:eu.europa.ec.eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -1989,6 +2464,12 @@
           "configurationId": "PaymentWalletAttestation",
           "displayName": "PSP Credentials",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "payment",
+            "wallet-attestation"
+          ],
           "vct": "PaymentWalletAttestation",
           "signingAlgorithms": [
             "ES256"
@@ -2009,6 +2490,12 @@
           "configurationId": "PhotoID",
           "displayName": "Photo ID",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "photo-id",
+            "identity"
+          ],
           "vct": "eu.europa.ec.eudi.photoid.1",
           "signingAlgorithms": [
             "ES256"
@@ -2029,6 +2516,11 @@
           "configurationId": "PCD",
           "displayName": "Personal Contact Details",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "contact-details"
+          ],
           "vct": "eu.europa.ec.eudi.pcd.1",
           "signingAlgorithms": [
             "ES256"
@@ -2049,6 +2541,11 @@
           "configurationId": "LoyaltyCard",
           "displayName": "Fast Friends Card",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "loyalty-card"
+          ],
           "vct": "LoyaltyCard",
           "signingAlgorithms": [
             "ES256"
@@ -2069,13 +2566,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
       "orgId": "org:fides",
       "organization": {
         "name": "FIDES Labs",
+        "country": "NL",
         "did": "did:web:fides.acc.credenco.com:did:da5a3c99-d45c-4ce2-8065-9db36c98868c",
         "website": "https://fides.community",
         "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4"
@@ -2104,7 +2602,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -2122,7 +2621,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -2140,7 +2640,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -2158,13 +2659,19 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
           "configurationId": "FIDESLPID",
           "displayName": "Legal Person Identification Data (LPID)",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Organization",
+          "tags": [
+            "fides",
+            "lpid"
+          ],
           "vct": "urn:org:fides:lpid:1",
           "signingAlgorithms": [
             "ES256K",
@@ -2176,7 +2683,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:lpid:sd-jwt-vc",
@@ -2198,7 +2706,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -2216,13 +2725,19 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
           "configurationId": "PID",
           "displayName": "Personal Identification Data (PID)",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "pid"
+          ],
           "vct": "urn:org:fides:pid:1",
           "signingAlgorithms": [
             "ES256K",
@@ -2234,7 +2749,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:pid:sd-jwt-vc",
@@ -2245,6 +2761,12 @@
           "configurationId": "OrganizationProfile",
           "displayName": "OrganizationProfile",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Organization",
+          "tags": [
+            "fides",
+            "organization",
+            "profile"
+          ],
           "vct": "Organization Profile",
           "signingAlgorithms": [
             "ES256K",
@@ -2256,7 +2778,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:organization-profile:sd-jwt-vc",
@@ -2267,6 +2790,12 @@
           "configurationId": "CriminalRecordCheck",
           "displayName": "Criminal Record Check",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "criminal-record",
+            "screening"
+          ],
           "vct": "CriminalRecordCheck",
           "signingAlgorithms": [
             "ES256K",
@@ -2278,7 +2807,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:criminal-record-check:sd-jwt-vc",
@@ -2289,6 +2819,11 @@
           "configurationId": "FIDESVAT",
           "displayName": "VAT",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Organization",
+          "tags": [
+            "fides",
+            "vat"
+          ],
           "vct": "urn:org:fides:vat:1",
           "signingAlgorithms": [
             "ES256K",
@@ -2300,7 +2835,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:vat:sd-jwt-vc",
@@ -2311,6 +2847,12 @@
           "configurationId": "VerifiedEmployee",
           "displayName": "Verified Employee",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "employee",
+            "employment"
+          ],
           "vct": "VerifiedEmployee",
           "signingAlgorithms": [
             "ES256K",
@@ -2322,7 +2864,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:verified-employee:sd-jwt-vc",
@@ -2344,7 +2887,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -2362,7 +2906,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -2379,13 +2924,19 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
           "configurationId": "FIDESIBAN",
           "displayName": "IBAN",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "iban"
+          ],
           "vct": "urn:org:fides:iban:1",
           "signingAlgorithms": [
             "ES256K",
@@ -2397,7 +2948,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iban:sd-jwt-vc",
@@ -2419,13 +2971,20 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
           "configurationId": "HigherEducationDiploma",
           "displayName": "Higher Education Diploma",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "education",
+            "diploma"
+          ],
           "vct": "HigherEducationDiploma",
           "signingAlgorithms": [
             "ES256K",
@@ -2437,7 +2996,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:higher-education-diploma:sd-jwt-vc",
@@ -2448,6 +3008,13 @@
           "configurationId": "ISOcertificate",
           "displayName": "ISO certificate",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Organization",
+          "tags": [
+            "fides",
+            "iso",
+            "certificate",
+            "certification"
+          ],
           "vct": "ISO14001",
           "signingAlgorithms": [
             "ES256K",
@@ -2459,7 +3026,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iso-certificate:sd-jwt-vc",
@@ -2470,6 +3038,12 @@
           "configurationId": "UpperSecondaryEducationCertificate",
           "displayName": "Upper Secondary Education Certificate",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "education",
+            "certificate"
+          ],
           "vct": "UpperSecondaryEducationCertificate",
           "signingAlgorithms": [
             "ES256K",
@@ -2481,7 +3055,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:upper-secondary-education:sd-jwt-vc",
@@ -2492,13 +3067,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
       "orgId": "org:fides",
       "organization": {
         "name": "FIDES Labs",
+        "country": "NL",
         "did": "did:web:fides.acc.credenco.com:did:da5a3c99-d45c-4ce2-8065-9db36c98868c",
         "website": "https://fides.community",
         "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4"
@@ -2516,6 +3092,11 @@
           "configurationId": "BRPAddressCredential",
           "displayName": "BRPAddressCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "brp"
+          ],
           "vct": "urn:org:fides:brp:1",
           "signingAlgorithms": [
             "ES256K",
@@ -2527,7 +3108,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:brp:sd-jwt-vc",
@@ -2538,6 +3120,11 @@
           "configurationId": "VerifiedContactCredential",
           "displayName": "Verified Contact Credential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "contact-details"
+          ],
           "vct": "urn:org:fides:contact-details:1",
           "signingAlgorithms": [
             "ES256K",
@@ -2549,7 +3136,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:contact-details:sd-jwt-vc",
@@ -2560,6 +3148,11 @@
           "configurationId": "BRICredential",
           "displayName": "BRI Credential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "bri"
+          ],
           "vct": "urn:org:fides:nl_bld_bri:1",
           "signingAlgorithms": [
             "ES256K",
@@ -2571,7 +3164,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:bri:sd-jwt-vc",
@@ -2582,13 +3176,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
       "orgId": "org:findynet",
       "organization": {
         "name": "Findynet",
+        "country": "FI",
         "website": "https://findynet.fi/en/",
         "logoUri": "https://www.google.com/s2/favicons?domain=findynet.fi&sz=128"
       },
@@ -2623,13 +3218,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-04-28T20:43:11+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
       "orgId": "org:findynet",
       "organization": {
         "name": "Findynet",
+        "country": "FI",
         "website": "https://findynet.fi/en/",
         "logoUri": "https://www.google.com/s2/favicons?domain=findynet.fi&sz=128"
       },
@@ -2797,13 +3393,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-04-28T20:43:11+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
       "orgId": "org:findynet",
       "organization": {
         "name": "Findynet",
+        "country": "FI",
         "website": "https://findynet.fi/en/",
         "logoUri": "https://www.google.com/s2/favicons?domain=findynet.fi&sz=128"
       },
@@ -2853,13 +3450,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-04-28T20:43:11+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
       "orgId": "org:findynet",
       "organization": {
         "name": "Findynet",
+        "country": "FI",
         "website": "https://findynet.fi/en/",
         "logoUri": "https://www.google.com/s2/favicons?domain=findynet.fi&sz=128"
       },
@@ -2894,13 +3492,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-04-28T20:43:11+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:finema:vlei:production",
       "orgId": "org:finema",
       "organization": {
         "name": "Finema",
+        "country": "TH",
         "website": "https://finema.co/",
         "logoUri": "https://cdn.prod.website-files.com/635a4be8c66f9db81341f2e8/635abfa6d1ec697da9b3da29_Group.svg"
       },
@@ -2916,6 +3515,13 @@
           "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "legal-entity",
+            "lei",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -2928,6 +3534,13 @@
           "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "official-role",
+            "oor",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -2940,6 +3553,13 @@
           "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "engagement-context",
+            "ecr",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -2952,13 +3572,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
       "orgId": "org:gleif",
       "organization": {
         "name": "Global Legal Entity Identifier Foundation",
+        "country": "CH",
         "website": "https://www.gleif.org",
         "logoUri": "https://www.gleif.org/assets/build/img/logo/gleif-logo-new.svg"
       },
@@ -2974,6 +3595,13 @@
           "configurationId": "manual:cred:gleif:qualified-vlei-issuer:acdc",
           "displayName": "vLEI - Qualified vLEI Issuer (QVI)",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "issuer",
+            "qvi",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -2986,13 +3614,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
       "orgId": "org:global-vlei",
       "organization": {
         "name": "Global vLEI",
+        "country": "SE",
         "website": "https://globalvlei.com/",
         "logoUri": "https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/community-catalogs/global-vlei/global_vlei.png"
       },
@@ -3008,6 +3637,13 @@
           "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
           "displayName": "vLEI – Legal Entity",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "legal-entity",
+            "lei",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -3020,6 +3656,13 @@
           "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "official-role",
+            "oor",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -3032,6 +3675,13 @@
           "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "engagement-context",
+            "ecr",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -3044,13 +3694,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
       "orgId": "org:hovi",
       "organization": {
         "name": "Hovi",
+        "country": "FI",
         "website": "https://www.hovi.id/",
         "logoUri": "https://cdn.prod.website-files.com/659dad70ef0ae858f66ae208/6966ba7d3a1f6bb1adf4a924_hovi-logo-white.png"
       },
@@ -3067,6 +3718,13 @@
           "configurationId": "employee_id_(eaa)_1.0.0_mdoc",
           "displayName": "employee_id_(eaa)_1.0.0_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "employee"
+          ],
           "docType": "eu.europa.ec.eudi.employee.1",
           "signingAlgorithms": [
             -19,
@@ -3119,6 +3777,13 @@
           "configurationId": "certificate_of_residence_(qeaa)_1.0.0_mdoc",
           "displayName": "certificate_of_residence_(qeaa)_1.0.0_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "cor"
+          ],
           "docType": "eu.europa.ec.eudi.cor.1",
           "signingAlgorithms": [
             -19,
@@ -3139,6 +3804,13 @@
           "configurationId": "health_id_(hiid)_qeaa_1.0.0_mdoc",
           "displayName": "health_id_(hiid)_qeaa_1.0.0_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "hiid"
+          ],
           "docType": "eu.europa.ec.eudi.hiid.1",
           "signingAlgorithms": [
             -19,
@@ -3159,6 +3831,13 @@
           "configurationId": "photo_id_(qeaa)_1.0.0_mdoc",
           "displayName": "photo_id_(qeaa)_1.0.0_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "photoid"
+          ],
           "docType": "org.iso.23220.photoid.1",
           "signingAlgorithms": [
             -19,
@@ -3179,6 +3858,12 @@
           "configurationId": "diploma_(qeaa)_1.0.0_sd_jwt",
           "displayName": "diploma_(qeaa)_1.0.0_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "diploma"
+          ],
           "vct": "urn:eu.europa.ec.eudi:diploma:1:1",
           "signingAlgorithms": [
             "EdDSA",
@@ -3201,6 +3886,12 @@
           "configurationId": "iban_(qeaa)_1.0.0_sd_jwt",
           "displayName": "iban_(qeaa)_1.0.0_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "iban"
+          ],
           "vct": "urn:eu.europa.ec.eudi:iban:1",
           "signingAlgorithms": [
             "EdDSA",
@@ -3223,6 +3914,12 @@
           "configurationId": "power_of_representation_(qeaa)_1.0.0_sd_jwt",
           "displayName": "power_of_representation_(qeaa)_1.0.0_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "por"
+          ],
           "vct": "urn:eu.europa.ec.eudi:por:1",
           "signingAlgorithms": [
             "EdDSA",
@@ -3245,6 +3942,12 @@
           "configurationId": "tax_id_(qeaa)_1.0.0_sd_jwt",
           "displayName": "tax_id_(qeaa)_1.0.0_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "tax"
+          ],
           "vct": "urn:eu.europa.ec.eudi:tax:1",
           "signingAlgorithms": [
             "EdDSA",
@@ -3267,6 +3970,13 @@
           "configurationId": "person_identification_data_(pid)_1.0.0_mdoc",
           "displayName": "person_identification_data_(pid)_1.0.0_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             -19,
@@ -3287,6 +3997,12 @@
           "configurationId": "person_identification_data_(pid)_1.0.0_sd_jwt",
           "displayName": "person_identification_data_(pid)_1.0.0_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pid"
+          ],
           "vct": "urn:eudi:pid:1",
           "signingAlgorithms": [
             "EdDSA",
@@ -3309,6 +4025,12 @@
           "configurationId": "ehic_(qeaa)_1.0.0_sd_jwt",
           "displayName": "ehic_(qeaa)_1.0.0_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "ehic"
+          ],
           "vct": "urn:eudi:ehic:1",
           "signingAlgorithms": [
             "EdDSA",
@@ -3331,6 +4053,13 @@
           "configurationId": "person_identification_data_(pid)_[age]_1.0.0_mdoc",
           "displayName": "person_identification_data_(pid)_[age]_1.0.0_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             -19,
@@ -3351,6 +4080,13 @@
           "configurationId": "age_verification_1.0.0_mdoc",
           "displayName": "age_verification_1.0.0_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "age-verification"
+          ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
             -19,
@@ -3479,13 +4215,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:iata:indigo:production",
       "orgId": "org:iata",
       "organization": {
         "name": "International Air Transport Association",
+        "country": "CA",
         "website": "https://www.iata.org",
         "logoUri": "https://www.iata.org/contentassets/3e83770142a040d688e269bb2f709b7b/iata-logo-header.svg"
       },
@@ -3501,6 +4238,13 @@
           "configurationId": "manual:cred:iata:boarding-pass-mdoc:mdoc",
           "displayName": "Boarding Pass (MSO Mdoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iata",
+            "travel",
+            "boarding-pass",
+            "mdoc"
+          ],
           "docType": "org.iata.boardingpass.1",
           "signingAlgorithms": [],
           "proofTypes": [],
@@ -3514,6 +4258,13 @@
           "configurationId": "manual:cred:iata:booking-order-mdoc:mdoc",
           "displayName": "Booking Order (MSO Mdoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iata",
+            "travel",
+            "booking",
+            "mdoc"
+          ],
           "docType": "org.iata.bookingorder.1",
           "signingAlgorithms": [],
           "proofTypes": [],
@@ -3527,13 +4278,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
       "orgId": "org:iata",
       "organization": {
         "name": "International Air Transport Association",
+        "country": "CA",
         "website": "https://www.iata.org",
         "logoUri": "https://www.iata.org/contentassets/3e83770142a040d688e269bb2f709b7b/iata-logo-header.svg"
       },
@@ -3549,6 +4301,13 @@
           "configurationId": "manual:cred:iata:boarding-pass-mdoc:mdoc",
           "displayName": "Boarding Pass (MSO Mdoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iata",
+            "travel",
+            "boarding-pass",
+            "mdoc"
+          ],
           "docType": "org.iata.boardingpass.1",
           "signingAlgorithms": [],
           "proofTypes": [],
@@ -3562,6 +4321,13 @@
           "configurationId": "manual:cred:iata:booking-order-mdoc:mdoc",
           "displayName": "Booking Order (MSO Mdoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iata",
+            "travel",
+            "booking",
+            "mdoc"
+          ],
           "docType": "org.iata.bookingorder.1",
           "signingAlgorithms": [],
           "proofTypes": [],
@@ -3575,13 +4341,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
       "orgId": "org:iata",
       "organization": {
         "name": "International Air Transport Association",
+        "country": "CA",
         "website": "https://www.iata.org",
         "logoUri": "https://www.iata.org/contentassets/3e83770142a040d688e269bb2f709b7b/iata-logo-header.svg"
       },
@@ -3597,6 +4364,13 @@
           "configurationId": "manual:cred:iata:boarding-pass-mdoc:mdoc",
           "displayName": "Boarding Pass (MSO Mdoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iata",
+            "travel",
+            "boarding-pass",
+            "mdoc"
+          ],
           "docType": "org.iata.boardingpass.1",
           "signingAlgorithms": [],
           "proofTypes": [],
@@ -3610,6 +4384,13 @@
           "configurationId": "manual:cred:iata:booking-order-mdoc:mdoc",
           "displayName": "Booking Order (MSO Mdoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iata",
+            "travel",
+            "booking",
+            "mdoc"
+          ],
           "docType": "org.iata.bookingorder.1",
           "signingAlgorithms": [],
           "proofTypes": [],
@@ -3623,13 +4404,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
       "orgId": "org:iata",
       "organization": {
         "name": "International Air Transport Association",
+        "country": "CA",
         "website": "https://www.iata.org",
         "logoUri": "https://www.iata.org/contentassets/3e83770142a040d688e269bb2f709b7b/iata-logo-header.svg"
       },
@@ -3645,6 +4427,13 @@
           "configurationId": "manual:cred:iata:boarding-pass-mdoc:mdoc",
           "displayName": "Boarding Pass (MSO Mdoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iata",
+            "travel",
+            "boarding-pass",
+            "mdoc"
+          ],
           "docType": "org.iata.boardingpass.1",
           "signingAlgorithms": [],
           "proofTypes": [],
@@ -3658,6 +4447,13 @@
           "configurationId": "manual:cred:iata:booking-order-mdoc:mdoc",
           "displayName": "Booking Order (MSO Mdoc)",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iata",
+            "travel",
+            "booking",
+            "mdoc"
+          ],
           "docType": "org.iata.bookingorder.1",
           "signingAlgorithms": [],
           "proofTypes": [],
@@ -3671,13 +4467,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:igrant:demo:test",
       "orgId": "org:igrant",
       "organization": {
         "name": "iGrant.io",
+        "country": "SE",
         "website": "https://igrant.io",
         "logoUri": "https://www.google.com/s2/favicons?domain=igrant.io&sz=128"
       },
@@ -3694,13 +4491,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
       "orgId": "org:kvk",
       "organization": {
         "name": "Kamer van Koophandel",
+        "country": "NL",
         "website": "https://www.kvk.nl",
         "logoUri": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5f1610bc0cba87000181beed/0x0.png"
       },
@@ -3726,7 +4524,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3743,7 +4542,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3760,7 +4560,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3778,7 +4579,8 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3795,20 +4597,22 @@
           "cryptographicBindingMethods": [
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
       "orgId": "org:mosip",
       "organization": {
         "name": "MOSIP",
+        "country": "IN",
         "website": "https://www.mosip.io",
         "logoUri": "https://www.google.com/s2/favicons?domain=mosip.io&sz=128"
       },
@@ -3856,13 +4660,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
       "orgId": "org:owf",
       "organization": {
         "name": "OpenWallet Foundation",
+        "country": "US",
         "website": "https://openwallet.foundation/",
         "logoUri": "https://avatars.githubusercontent.com/u/131064301?s=280&v=4"
       },
@@ -3880,6 +4685,13 @@
           "configurationId": "mDL",
           "displayName": "mDL",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "mdl"
+          ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
             -9
@@ -3899,6 +4711,13 @@
           "configurationId": "pid_mdoc",
           "displayName": "pid_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             -9
@@ -3918,6 +4737,12 @@
           "configurationId": "pid_sd_jwt",
           "displayName": "pid_sd_jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pid"
+          ],
           "vct": "urn:eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -3964,6 +4789,13 @@
           "configurationId": "mDoc-AgeVerification",
           "displayName": "mDoc-AgeVerification",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "age-verification"
+          ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
             -9
@@ -4015,13 +4847,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
       "orgId": "org:namirial",
       "organization": {
         "name": "Namirial",
+        "country": "IT",
         "website": "https://www.namirial.com",
         "logoUri": "https://wallet-demo.namirial.com/static/img/fav-namirial-logo.png"
       },
@@ -4038,6 +4871,13 @@
           "configurationId": "eu.europa.ec.av.1#mso_mdoc#352",
           "displayName": "Proof of age",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "age-verification"
+          ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
             "ES256"
@@ -4062,6 +4902,13 @@
           "configurationId": "org.iso.18013.5.1.mDL#mso_mdoc#326",
           "displayName": "mDL",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "mdl"
+          ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
             "ES256"
@@ -4086,6 +4933,13 @@
           "configurationId": "eu.europa.ec.eudi.pid.1#mso_mdoc#321",
           "displayName": "Potential PID",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             "ES256"
@@ -4170,6 +5024,13 @@
           "configurationId": "urn:eu.europa.ec.eudi:pid:1#sd-jwt#108",
           "displayName": "Potential PID [SD-JWT]",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "ewc",
+            "pid",
+            "eudi",
+            "identity"
+          ],
           "vct": "urn:eu.europa.ec.eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -4234,13 +5095,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
       "orgId": "org:provenant",
       "organization": {
         "name": "Provenant",
+        "country": "US",
         "website": "https://provenant.net/",
         "logoUri": "https://avatars.githubusercontent.com/u/114195532?s=200&v=4"
       },
@@ -4256,6 +5118,13 @@
           "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "legal-entity",
+            "lei",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4268,6 +5137,13 @@
           "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "official-role",
+            "oor",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4280,6 +5156,13 @@
           "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "engagement-context",
+            "ecr",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4292,13 +5175,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
       "orgId": "org:sheca",
       "organization": {
         "name": "SHECA",
+        "country": "CN",
         "website": "https://static.sheca.com/vlei-web/",
         "logoUri": "https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/community-catalogs/sheca/SHECA.png"
       },
@@ -4314,6 +5198,13 @@
           "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "legal-entity",
+            "lei",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4326,6 +5217,13 @@
           "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "official-role",
+            "oor",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4338,6 +5236,13 @@
           "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "engagement-context",
+            "ecr",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4350,13 +5255,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
       "orgId": "org:swiyu",
       "organization": {
         "name": "Swiss Confederation",
+        "country": "CH",
         "website": "https://www.eid.admin.ch/en",
         "logoUri": "https://play-lh.googleusercontent.com/24M9nEXiuSVZAfEnkDzJ2koRLLfd7s_sSw3CgfzVeNfQjALW800TPcVB_mwDrKpJhz0V"
       },
@@ -4374,6 +5280,14 @@
           "configurationId": "betaid-sdjwt",
           "displayName": "Beta ID",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "swiyu",
+            "beta credential service",
+            "eid",
+            "age verification",
+            "person identity"
+          ],
           "vct": "betaid-sdjwt",
           "signingAlgorithms": [
             "ES256"
@@ -4394,13 +5308,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
       "orgId": "org:talao",
       "organization": {
         "name": "Talao",
+        "country": "FR",
         "website": "https://talao.io",
         "logoUri": "https://www.google.com/s2/favicons?domain=talao.io&sz=128"
       },
@@ -4520,13 +5435,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:thales:unfold:test",
       "orgId": "org:thales",
       "organization": {
         "name": "Thales",
+        "country": "FR",
         "website": "https://www.thalesgroup.com",
         "logoUri": "https://www.google.com/s2/favicons?domain=www.thalesgroup.com&sz=128"
       },
@@ -4544,6 +5460,13 @@
           "configurationId": "pid_mso_mdoc",
           "displayName": "pid_mso_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             "ES256",
@@ -4565,6 +5488,12 @@
           "configurationId": "pid_dc+sd-jwt",
           "displayName": "pid_dc+sd-jwt",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pid"
+          ],
           "vct": "urn:eudi:pid:1",
           "signingAlgorithms": [
             "RS256",
@@ -4593,6 +5522,13 @@
           "configurationId": "mdl_mso_mdoc",
           "displayName": "mdl_mso_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "iso",
+            "eudi",
+            "mdoc",
+            "mdl"
+          ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
             "ES256",
@@ -4614,6 +5550,13 @@
           "configurationId": "age-verification_mso_mdoc",
           "displayName": "age-verification_mso_mdoc",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "age-verification"
+          ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
             "ES256",
@@ -4635,13 +5578,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:toppan:goid:test",
       "orgId": "org:toppan",
       "organization": {
         "name": "Toppan",
+        "country": "JP",
         "website": "https://www.toppan.com",
         "logoUri": "https://www.google.com/s2/favicons?domain=www.toppan.com&sz=128"
       },
@@ -4658,6 +5602,13 @@
           "configurationId": "eu.europa.ec.eudi.pid_mdoc",
           "displayName": "PID",
           "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
           "docType": "eu.europa.ec.eudi.pid.1",
           "signingAlgorithms": [
             "ES256"
@@ -4679,6 +5630,12 @@
           "configurationId": "eu.europa.ec.eudi.pid_vc_sd_jwt",
           "displayName": "PID test (sd-jwt-vc)",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "pid"
+          ],
           "vct": "urn:eudi:pid:1",
           "signingAlgorithms": [
             "ES256"
@@ -4700,13 +5657,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
       "orgId": "org:toppan",
       "organization": {
         "name": "Toppan",
+        "country": "JP",
         "website": "https://www.toppan.com",
         "logoUri": "https://www.google.com/s2/favicons?domain=www.toppan.com&sz=128"
       },
@@ -4721,6 +5679,13 @@
           "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "legal-entity",
+            "lei",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4733,6 +5698,13 @@
           "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "official-role",
+            "oor",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4745,6 +5717,13 @@
           "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "engagement-context",
+            "ecr",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4757,13 +5736,14 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
       "orgId": "org:tradego",
       "organization": {
         "name": "TradeGo",
+        "country": "SG",
         "website": "https://tradego.com/",
         "logoUri": "https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/community-catalogs/tradego/tradego.jpeg"
       },
@@ -4778,6 +5758,13 @@
           "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
+          "subjectType": "Organization",
+          "tags": [
+            "vlei",
+            "legal-entity",
+            "lei",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4790,6 +5777,13 @@
           "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "official-role",
+            "oor",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4802,6 +5796,13 @@
           "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
+          "subjectType": "Person",
+          "tags": [
+            "vlei",
+            "engagement-context",
+            "ecr",
+            "gleif"
+          ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
@@ -4814,7 +5815,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-04-30T08:27:51.766Z"
+      "fetchedAt": "2026-05-01T04:26:25.014Z"
     }
   ],
   "stats": {

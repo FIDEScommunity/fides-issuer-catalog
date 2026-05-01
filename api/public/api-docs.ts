@@ -4,7 +4,7 @@ const spec = {
   openapi: "3.1.0",
   info: {
     title: "FIDES Issuer Catalog API",
-    version: "1.3.0",
+    version: "1.4.0",
     description:
       "Public API for querying issuers from the FIDES Issuer Catalog aggregated data (OID4VCI and other issuance protocols).",
   },
@@ -47,6 +47,27 @@ const spec = {
             schema: { type: "string" },
             description:
               "Exact match on FIDES credential catalog id: issuers that have at least one credential configuration linked to this id (credentialCatalogRef.id, e.g. cred:eu:pid-vc-sd-jwt:sd-jwt-vc)",
+          },
+          {
+            name: "subjectType",
+            in: "query",
+            schema: { type: "string" },
+            description:
+              "Filter issuers that expose at least one credential configuration with this subject type (e.g. Person, Organization)",
+          },
+          {
+            name: "tags",
+            in: "query",
+            schema: { type: "string" },
+            description:
+              "Free text filter over credential configuration tags (case-insensitive, partial match)",
+          },
+          {
+            name: "country",
+            in: "query",
+            schema: { type: "string" },
+            description:
+              "Exact filter on organization country (ISO code, e.g. NL)",
           },
           {
             name: "sort",
@@ -145,8 +166,29 @@ const spec = {
           description: { type: "string" },
           credentialIssuerUrl: { type: "string", format: "uri" },
           oid4vciMetadataUrl: { type: "string", format: "uri" },
-          organization: { type: "object", additionalProperties: true },
-          credentialConfigurations: { type: "array", items: { type: "object", additionalProperties: true } },
+          organization: {
+            type: "object",
+            additionalProperties: true,
+            properties: {
+              name: { type: "string" },
+              website: { type: "string", format: "uri" },
+              country: { type: "string" },
+            },
+          },
+          credentialConfigurations: {
+            type: "array",
+            items: {
+              type: "object",
+              additionalProperties: true,
+              properties: {
+                configurationId: { type: "string" },
+                displayName: { type: "string" },
+                vcFormat: { type: "string" },
+                subjectType: { type: "string" },
+                tags: { type: "array", items: { type: "string" } },
+              },
+            },
+          },
           updatedAt: { type: "string" },
         },
       },

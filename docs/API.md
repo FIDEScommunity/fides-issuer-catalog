@@ -19,6 +19,9 @@ Returns a paginated, filterable list of issuers.
 | `orgId` | string | — | Exact organization catalog id (e.g. `org:animo`) |
 | `vcFormat` | string | — | Issuer has at least one configuration with this format (e.g. `sd_jwt_vc`, `mdoc`) |
 | `credentialCatalogId` | string | — | Issuer has at least one configuration whose `credentialCatalogRef.id` equals this FIDES credential catalog id (e.g. `cred:eu:pid-vc-sd-jwt:sd-jwt-vc`) |
+| `subjectType` | string | — | Issuer has at least one credential configuration with this subject type (e.g. `Person`, `Organization`) |
+| `tags` | string | — | Free text match against tags from credential configurations (case-insensitive, partial match) |
+| `country` | string | — | Exact country filter on issuer organization (ISO code, e.g. `NL`) |
 | `sort` | string | `displayName` | `displayName`, `environment`, `id`, `orgId`, `updatedAt` |
 | `direction` | string | `asc` | `asc` or `desc` |
 | `page` | integer | `0` | Zero-based page |
@@ -35,6 +38,11 @@ Returns a paginated, filterable list of issuers.
   "size": 20
 }
 ```
+
+Each issuer item in `content` includes:
+- `organization.country` (when available from organization catalog)
+- `credentialConfigurations[].subjectType` (when available via matched credential catalog entry)
+- `credentialConfigurations[].tags` (when available via matched credential catalog entry)
 
 ### `GET /api/public/issuer/{id}`
 

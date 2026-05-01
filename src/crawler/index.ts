@@ -40,6 +40,7 @@ const ORGANIZATION_CATALOG_LOCAL_PATHS = [
 interface OrgCatalogEntry {
   id: string;
   name: string;
+  country?: string;
   identifiers?: { did?: string };
   website?: string;
   logoUri?: string;
@@ -93,6 +94,8 @@ function findSourceFiles(): string[] {
 interface CredentialEntry {
   id: string;
   displayName?: string;
+  subjectType?: string;
+  tags?: string[];
   nativeIdentifier?: string;
   nativeIdentifierType?: string;
   vcFormat?: string;
@@ -160,6 +163,7 @@ async function loadOrganizationCatalogMap(): Promise<Map<string, OrgCatalogEntry
 function orgEntryToAggregatedOrganization(entry: OrgCatalogEntry): AggregatedOrganization {
   return {
     name: entry.name,
+    country: entry.country,
     did: entry.identifiers?.did,
     website: entry.website,
     logoUri: entry.logoUri,
@@ -310,10 +314,15 @@ function enrichCredentialConfigurations(
   return Object.entries(metadata.credential_configurations_supported).map(
     ([configId, config]) => {
       const catalogRef = matchCredentialCatalog(config, credentialEntries);
+      const catalogEntry = catalogRef
+        ? credentialEntries.find((entry) => entry.id === catalogRef.id)
+        : undefined;
       return {
         configurationId: configId,
         displayName: getConfigDisplayName(configId, config),
         vcFormat: mapVcFormat(config.format),
+        subjectType: catalogEntry?.subjectType,
+        tags: catalogEntry?.tags,
         vct: config.vct,
         docType: config.doctype,
         signingAlgorithms: extractSigningAlgorithms(config),
@@ -347,6 +356,8 @@ function configurationsFromCredentialRefs(
       configurationId: `manual:${ref.id}`,
       displayName: ref.displayName || catalogEntry?.displayName || ref.id,
       vcFormat: catalogVcFormatToAggregated(catalogEntry?.vcFormat),
+      subjectType: catalogEntry?.subjectType,
+      tags: catalogEntry?.tags,
       docType,
       signingAlgorithms: [],
       proofTypes: [],
@@ -548,7 +559,7 @@ async function crawl(): Promise<void> {
   };
 
   const output: AggregatedIssuerCatalog = {
-    schemaVersion: '1.3.0',
+    schemaVersion: '1.4.0',
     catalogType: 'issuer-catalog',
     lastUpdated: fetchedAt,
     issuers: allIssuers,

@@ -102,6 +102,8 @@ export interface AggregatedCredentialConfiguration {
   configurationId: string;
   displayName?: string;
   vcFormat: string;
+  subjectType?: string;
+  tags?: string[];
   vct?: string;
   docType?: string;
   signingAlgorithms: string[];
@@ -118,6 +120,7 @@ export interface AggregatedWalletRef {
 
 export interface AggregatedOrganization {
   name: string;
+  country?: string;
   did?: string;
   website?: string;
   logoUri?: string;
