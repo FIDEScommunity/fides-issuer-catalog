@@ -25,7 +25,7 @@ const spec = {
           {
             name: "environment",
             in: "query",
-            schema: { type: "string" },
+            schema: { type: "string", enum: ["production", "test"] },
             description: "Exact match on issuer environment (e.g. test, production)",
           },
           {
@@ -51,7 +51,17 @@ const spec = {
           {
             name: "subjectType",
             in: "query",
-            schema: { type: "string" },
+            schema: {
+              type: "string",
+              enum: [
+                "Person",
+                "Organization",
+                "Product",
+                "Dataset",
+                "Software",
+                "Document",
+              ],
+            },
             description:
               "Filter issuers that expose at least one credential configuration with this subject type (e.g. Person, Organization)",
           },
