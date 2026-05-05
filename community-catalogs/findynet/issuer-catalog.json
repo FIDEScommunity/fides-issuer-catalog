@@ -57,8 +57,8 @@
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
-      "displayName": "IPS - Procivis issuer",
-      "description": "OID4VCI issuer for Findynet IPS credentials",
+      "displayName": "International Patient Summary demo - Procivis issuer",
+      "description": "OID4VCI issuer for Findynet IPS (International Patient Summary) credentials",
       "environment": "test",
       "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://procivis.staging.findy.fi/.well-known/openid-credential-issuer/ssi/openid4vci/final-1.0/OPENID4VCI_FINAL1/a2651b36-6138-4741-831b-a57020fce3a6/be3809a5-bfa2-4fec-a148-904a053b72dd"
