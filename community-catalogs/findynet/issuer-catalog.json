@@ -37,6 +37,15 @@
       "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://agent.paradym.id/oid4vci/582c8ed7-2b5c-461c-b5f7-7ad299205757/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://issuer.paradym.pensiondemo.findy.fi/"
+    },
+    {
+      "id": "issuer:findynet:pension-demo-gataca:test",
+      "displayName": "Pension demo - Gataca issuer",
+      "description": "OID4VCI issuer for the Findynet pension demo",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://certify.gataca.io/api/v3/tenants/zGT59tYrVL8bXC73HAbAxWUJQUu9qpdL/oidc-issuance/PensionCredentialIssuance/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://issuer.gataca.pensiondemo.findy.fi/"
     }
   ]
 }
