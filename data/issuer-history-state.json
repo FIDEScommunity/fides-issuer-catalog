@@ -115,5 +115,11 @@
   },
   "issuer:findynet:pension-demo-gataca:test": {
     "firstSeenAt": "2026-05-05T12:10:23.288Z"
+  },
+  "issuer:findynet:pension-demo-procivis:test": {
+    "firstSeenAt": "2026-05-05T13:00:02.914Z"
+  },
+  "issuer:findynet:ips-procivis:test": {
+    "firstSeenAt": "2026-05-05T13:00:02.914Z"
   }
 }
