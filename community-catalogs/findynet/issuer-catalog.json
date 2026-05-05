@@ -46,6 +46,22 @@
       "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://certify.gataca.io/api/v3/tenants/zGT59tYrVL8bXC73HAbAxWUJQUu9qpdL/oidc-issuance/PensionCredentialIssuance/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://issuer.gataca.pensiondemo.findy.fi/"
+    },
+    {
+      "id": "issuer:findynet:pension-demo-procivis:test",
+      "displayName": "Pension demo - Procivis issuer",
+      "description": "OID4VCI issuer for the Findynet pension demo",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://procivis.staging.findy.fi/.well-known/openid-credential-issuer/ssi/openid4vci/final-1.0/OPENID4VCI_FINAL1/f5849d98-8701-4b24-abea-857c41c488ae/a241e623-d0b9-4283-abc4-037f29a09c00"
+    },
+    {
+      "id": "issuer:findynet:ips-procivis:test",
+      "displayName": "IPS - Procivis issuer",
+      "description": "OID4VCI issuer for Findynet IPS credentials",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://procivis.staging.findy.fi/.well-known/openid-credential-issuer/ssi/openid4vci/final-1.0/OPENID4VCI_FINAL1/a2651b36-6138-4741-831b-a57020fce3a6/be3809a5-bfa2-4fec-a148-904a053b72dd"
     }
   ]
 }

@@ -48,12 +48,19 @@ interface OrgCatalogEntry {
   legalName?: string;
 }
 
+const DEFAULT_JSON_HEADERS = {
+  Accept: 'application/json',
+};
+
 // Fetch with timeout
 async function fetchJson<T>(url: string, timeoutMs = 10000): Promise<T> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const res = await fetch(url, { signal: controller.signal });
+    const res = await fetch(url, {
+      signal: controller.signal,
+      headers: DEFAULT_JSON_HEADERS,
+    });
     if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
     return (await res.json()) as T;
   } finally {
