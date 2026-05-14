@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-05-13T08:49:29.707Z",
+  "lastUpdated": "2026-05-14T08:42:44.261Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -236,7 +236,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -316,7 +316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -447,7 +447,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -470,7 +470,7 @@
       "credentialConfigurations": [
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.ChangeManagementJira",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.ChangeManagementJira",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.ChangeManagementJira",
           "signingAlgorithms": [
@@ -486,7 +486,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.hiid_sd_jwt_vc",
-          "displayName": "Health ID (sd-jwt-vc)",
+          "displayName": "eu.europa.ec.eudi.hiid_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
@@ -506,7 +506,6 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png",
           "credentialCatalogRef": {
             "id": "cred:eu:hiid-sd-jwt-vc:sd-jwt-vc",
             "displayName": "Health ID (SD-JWT VC)"
@@ -514,7 +513,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.iban_sd_jwt_vc",
-          "displayName": "IBAN (sd-jwt-vc)",
+          "displayName": "eu.europa.ec.eudi.iban_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
@@ -533,7 +532,6 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png",
           "credentialCatalogRef": {
             "id": "cred:eu:iban-sd-jwt-vc:sd-jwt-vc",
             "displayName": "IBAN (SD-JWT VC)"
@@ -541,7 +539,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.mdl_mdoc",
-          "displayName": "Mobile Driving License",
+          "displayName": "eu.europa.ec.eudi.mdl_mdoc",
           "vcFormat": "mdoc",
           "docType": "org.iso.18013.5.1",
           "signingAlgorithms": [
@@ -553,12 +551,11 @@
           "cryptographicBindingMethods": [
             "jwk",
             "cose_key"
-          ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png"
+          ]
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.GestioneAccessiFisici",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.GestioneAccessiFisici",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.GestioneAccessiFisici",
           "signingAlgorithms": [
@@ -574,7 +571,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.pid",
-          "displayName": "Aruba PID",
+          "displayName": "eu.europa.eudi.aruba.pid",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.pid.1",
           "signingAlgorithms": [
@@ -589,8 +586,24 @@
           ]
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.sign_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.sign_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.sign.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.eudi.aruba.learning.course.TeamLeaderAcademy",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.TeamLeaderAcademy",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.TeamLeaderAcademy",
           "signingAlgorithms": [
@@ -606,7 +619,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.SecurityAwareness",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.SecurityAwareness",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.SecurityAwareness",
           "signingAlgorithms": [
@@ -622,7 +635,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.FormazioneLavoratori",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.FormazioneLavoratori",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.FormazioneLavoratori",
           "signingAlgorithms": [
@@ -637,8 +650,24 @@
           ]
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.payment_card_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.payment_card_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.payment_card.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.eudi.aruba.learning.course.SpringBoot_Sd_Jwt",
-          "displayName": "Learning Course - SpringBoot (sd-jwt)",
+          "displayName": "eu.europa.eudi.aruba.learning.course.SpringBoot_Sd_Jwt",
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:eudi:aruba:learning:course:springboot",
           "signingAlgorithms": [
@@ -653,7 +682,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.pid_mso_mdoc",
-          "displayName": "Electronic Identity Card",
+          "displayName": "eu.europa.ec.eudi.pid_mso_mdoc",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
@@ -680,7 +709,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.Copilot",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.Copilot",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.Copilot",
           "signingAlgorithms": [
@@ -696,7 +725,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.Istio",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.Istio",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.Istio",
           "signingAlgorithms": [
@@ -711,8 +740,24 @@
           ]
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.event_ticket_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.event_ticket_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.event_ticket.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.eudi.aruba.learning.course.CarbonFootprint",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.CarbonFootprint",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.CarbonFootprint",
           "signingAlgorithms": [
@@ -728,7 +773,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.CodiceDiCondotta",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.CodiceDiCondotta",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.CodiceDiCondotta",
           "signingAlgorithms": [
@@ -744,7 +789,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.ehic_sd_jwt_vc",
-          "displayName": "EHIC (sd-jwt-vc)",
+          "displayName": "eu.europa.ec.eudi.ehic_sd_jwt_vc",
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
@@ -764,15 +809,30 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png",
           "credentialCatalogRef": {
             "id": "cred:eu:ehic-sd-jwt-vc:sd-jwt-vc",
             "displayName": "EHIC (SD-JWT VC)"
           }
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.security_awareness_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.security_awareness_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.security_awareness.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.eudi.aruba.learning.course.GestioneEmergenze",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.GestioneEmergenze",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.GestioneEmergenze",
           "signingAlgorithms": [
@@ -787,8 +847,24 @@
           ]
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.event_pass_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.event_pass_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.event_pass.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "org.iso.18013.5.1.mDL",
-          "displayName": "Mobile Driving Licence",
+          "displayName": "org.iso.18013.5.1.mDL",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
@@ -815,7 +891,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.ehic_mdoc",
-          "displayName": "EHIC",
+          "displayName": "eu.europa.ec.eudi.ehic_mdoc",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
@@ -835,15 +911,30 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png",
           "credentialCatalogRef": {
             "id": "cred:eu:ehic-mdoc:mdoc",
             "displayName": "EHIC (MSO Mdoc)"
           }
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.loyalty_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.loyalty_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.loyalty.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.eudi.aruba.learning.course.Kubernetes",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.Kubernetes",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.Kubernetes",
           "signingAlgorithms": [
@@ -859,7 +950,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.hiid_mdoc",
-          "displayName": "Health ID",
+          "displayName": "eu.europa.ec.eudi.hiid_mdoc",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
@@ -880,7 +971,6 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png",
           "credentialCatalogRef": {
             "id": "cred:eu:hiid-mdoc:mdoc",
             "displayName": "Health ID (MSO Mdoc)"
@@ -888,7 +978,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.SpringBoot",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.SpringBoot",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.SpringBoot",
           "signingAlgorithms": [
@@ -904,7 +994,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.Jira",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.Jira",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.Jira",
           "signingAlgorithms": [
@@ -919,8 +1009,24 @@
           ]
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.iban_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.iban_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.iban.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.ec.eudi.cor_mdoc",
-          "displayName": "Certificate of Residence",
+          "displayName": "eu.europa.ec.eudi.cor_mdoc",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
@@ -940,7 +1046,6 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png",
           "credentialCatalogRef": {
             "id": "cred:eu:cor-mdoc:mdoc",
             "displayName": "Certificate of Residence (MSO Mdoc)"
@@ -948,7 +1053,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.iban_mdoc",
-          "displayName": "IBAN",
+          "displayName": "eu.europa.ec.eudi.iban_mdoc",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
@@ -968,7 +1073,6 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png",
           "credentialCatalogRef": {
             "id": "cred:eu:iban-mdoc:mdoc",
             "displayName": "IBAN (MSO Mdoc)"
@@ -976,7 +1080,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.PrevenzioneCorruzione",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.PrevenzioneCorruzione",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.PrevenzioneCorruzione",
           "signingAlgorithms": [
@@ -992,7 +1096,7 @@
         },
         {
           "configurationId": "eu.europa.eudi.aruba.learning.course.DPI",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.DPI",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.DPI",
           "signingAlgorithms": [
@@ -1008,7 +1112,7 @@
         },
         {
           "configurationId": "eu.europa.ec.eudi.pid_dc_sd_jwt",
-          "displayName": "PID (sd-jwt)",
+          "displayName": "eu.europa.ec.eudi.pid_dc_sd_jwt",
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
@@ -1027,15 +1131,30 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://examplestate.com/public/pid.png",
           "credentialCatalogRef": {
             "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
             "displayName": "PID (SD-JWT VC)"
           }
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.age_over_18_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.age_over_18_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.age_over_18.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.eudi.aruba.learning.course.GDPR",
-          "displayName": "Learning Course",
+          "displayName": "eu.europa.eudi.aruba.learning.course.GDPR",
           "vcFormat": "mdoc",
           "docType": "eu.europa.eudi.aruba.learning.course.GDPR",
           "signingAlgorithms": [
@@ -1050,8 +1169,40 @@
           ]
         },
         {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.employee_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.employee_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.employee.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
+          "configurationId": "eu.europa.eudi.aruba.portal.demo.legal_person_mdoc",
+          "displayName": "eu.europa.eudi.aruba.portal.demo.legal_person_mdoc",
+          "vcFormat": "mdoc",
+          "docType": "eu.europa.eudi.aruba.portal.demo.legal_person.1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk",
+            "cose_key"
+          ]
+        },
+        {
           "configurationId": "eu.europa.ec.eudi.loyalty_mdoc",
-          "displayName": "Loyalty Card",
+          "displayName": "eu.europa.ec.eudi.loyalty_mdoc",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
@@ -1071,7 +1222,6 @@
             "jwk",
             "cose_key"
           ],
-          "logoUri": "https://wallet.aruba.io/pid-issuer/public/img/eudiw-logo-aruba-issuer.png",
           "credentialCatalogRef": {
             "id": "cred:eu:loyalty-mdoc:mdoc",
             "displayName": "Loyalty (MSO Mdoc)"
@@ -1081,7 +1231,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1106,17 +1256,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "LoonheffingenGedifferentieerdPremiepercentageWerkhervattingskas",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -1130,17 +1280,17 @@
           ],
           "vct": "urn:org:fides:vat:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:vat:sd-jwt-vc",
@@ -1153,17 +1303,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "VerklaringBetalingsgedragNakomingFiscaleVerplichtingen",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -1172,17 +1322,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "DigitalAssetIdentifier",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -1190,24 +1340,24 @@
           "displayName": "Tax registration statement",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1287,7 +1437,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1367,7 +1517,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1398,17 +1548,17 @@
           ],
           "vct": "urn:org:fides:iban:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iban:sd-jwt-vc",
@@ -1421,24 +1571,24 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "BankAccountCredential",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -2180,7 +2330,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -2203,7 +2353,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z",
+      "fetchedAt": "2026-05-14T08:42:44.261Z",
       "metadataFetchError": "fetch failed"
     },
     {
@@ -2231,17 +2381,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einvoice:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2250,17 +2400,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "IBAN",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2269,17 +2419,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "VAT",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2288,17 +2438,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "DigitalAssetIdentifier",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2312,17 +2462,17 @@
           ],
           "vct": "urn:org:fides:lpid:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:lpid:sd-jwt-vc",
@@ -2335,17 +2485,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "LPID_sd_jwt_vc",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2354,17 +2504,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einvoice:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2378,17 +2528,17 @@
           ],
           "vct": "urn:org:fides:pid:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:pid:sd-jwt-vc",
@@ -2407,17 +2557,17 @@
           ],
           "vct": "Organization Profile",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:organization-profile:sd-jwt-vc",
@@ -2436,17 +2586,17 @@
           ],
           "vct": "CriminalRecordCheck",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:criminal-record-check:sd-jwt-vc",
@@ -2464,17 +2614,17 @@
           ],
           "vct": "urn:org:fides:vat:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:vat:sd-jwt-vc",
@@ -2493,17 +2643,17 @@
           ],
           "vct": "VerifiedEmployee",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:verified-employee:sd-jwt-vc",
@@ -2516,17 +2666,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einv-peppol:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2535,17 +2685,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einv-ppf-fr:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2553,17 +2703,17 @@
           "displayName": "Fuel Delivery Credential",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2577,17 +2727,17 @@
           ],
           "vct": "urn:org:fides:iban:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iban:sd-jwt-vc",
@@ -2600,17 +2750,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einv-direct:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -2625,17 +2775,17 @@
           ],
           "vct": "HigherEducationDiploma",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:higher-education-diploma:sd-jwt-vc",
@@ -2655,17 +2805,17 @@
           ],
           "vct": "ISO14001",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iso-certificate:sd-jwt-vc",
@@ -2684,17 +2834,17 @@
           ],
           "vct": "UpperSecondaryEducationCertificate",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:upper-secondary-education:sd-jwt-vc",
@@ -2705,7 +2855,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -2737,17 +2887,17 @@
           ],
           "vct": "urn:org:fides:brp:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:brp:sd-jwt-vc",
@@ -2765,17 +2915,17 @@
           ],
           "vct": "urn:org:fides:contact-details:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:contact-details:sd-jwt-vc",
@@ -2793,17 +2943,17 @@
           ],
           "vct": "urn:org:fides:nl_bld_bri:1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:bri:sd-jwt-vc",
@@ -2814,7 +2964,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -2856,7 +3006,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3031,7 +3181,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3088,7 +3238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -3130,7 +3280,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -3153,7 +3303,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -3176,6 +3326,13 @@
           "configurationId": "https://alennusperuste.todiste.fi/credentials/v1/PensionCredential",
           "displayName": "https://alennusperuste.todiste.fi/credentials/v1/PensionCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "pension",
+            "eligibility",
+            "findynet",
+            "sd-jwt"
+          ],
           "vct": "https://alennusperuste.todiste.fi/credentials/v1/PensionCredential",
           "signingAlgorithms": [
             "ES256",
@@ -3192,13 +3349,17 @@
             "did:jwk",
             "did:ion",
             "did:tdw"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:findynet:pension-credential:sd-jwt-vc",
+            "displayName": "Pension Credential"
+          }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -3243,7 +3404,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -3323,7 +3484,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -3365,7 +3526,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -3445,7 +3606,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -3966,7 +4127,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -4029,7 +4190,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -4092,7 +4253,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -4155,7 +4316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -4218,7 +4379,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -4242,7 +4403,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -4266,17 +4427,17 @@
           "displayName": "Chamber of Commerce Registration",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -4284,17 +4445,17 @@
           "displayName": "UBO",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -4302,17 +4463,17 @@
           "displayName": "LPID",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -4321,17 +4482,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "PersonIdentificationData",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         },
         {
@@ -4339,24 +4500,24 @@
           "displayName": "RSIN",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256",
-            "ES256K"
+            "ES256K",
+            "ES256"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "jwk",
+            "did:jwk",
             "did:ebsi",
-            "did:jwk"
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -4411,7 +4572,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -4599,7 +4760,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -4847,7 +5008,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -4927,7 +5088,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -5007,7 +5168,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -5060,7 +5221,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -5187,7 +5348,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -5330,7 +5491,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -5409,7 +5570,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -5488,7 +5649,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -5567,13 +5728,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-05-13T08:49:29.707Z"
+      "fetchedAt": "2026-05-14T08:42:44.261Z"
     }
   ],
   "stats": {
     "totalIssuers": 40,
     "productionIssuers": 9,
     "totalOrganizations": 27,
-    "totalCredentialConfigurations": 208
+    "totalCredentialConfigurations": 218
   }
 }
