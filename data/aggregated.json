@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-05-14T08:42:44.261Z",
+  "lastUpdated": "2026-05-15T08:53:55.884Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -236,7 +236,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -316,7 +316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -447,7 +447,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -1231,7 +1231,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1256,17 +1256,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "LoonheffingenGedifferentieerdPremiepercentageWerkhervattingskas",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -1280,17 +1280,17 @@
           ],
           "vct": "urn:org:fides:vat:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:vat:sd-jwt-vc",
@@ -1303,17 +1303,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "VerklaringBetalingsgedragNakomingFiscaleVerplichtingen",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -1322,17 +1322,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "DigitalAssetIdentifier",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -1340,24 +1340,24 @@
           "displayName": "Tax registration statement",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1437,7 +1437,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1517,7 +1517,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1548,17 +1548,17 @@
           ],
           "vct": "urn:org:fides:iban:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iban:sd-jwt-vc",
@@ -1571,24 +1571,24 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "BankAccountCredential",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -2330,7 +2330,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:ewc:ewc-issuer:test",
@@ -2353,7 +2353,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-17T16:18:55.008Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z",
+      "fetchedAt": "2026-05-15T08:53:55.884Z",
       "metadataFetchError": "fetch failed"
     },
     {
@@ -2381,17 +2381,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einvoice:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2400,17 +2400,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "IBAN",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2419,17 +2419,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "VAT",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2438,17 +2438,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "DigitalAssetIdentifier",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2462,17 +2462,17 @@
           ],
           "vct": "urn:org:fides:lpid:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:lpid:sd-jwt-vc",
@@ -2485,17 +2485,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "LPID_sd_jwt_vc",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2504,17 +2504,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einvoice:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2528,17 +2528,17 @@
           ],
           "vct": "urn:org:fides:pid:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:pid:sd-jwt-vc",
@@ -2557,17 +2557,17 @@
           ],
           "vct": "Organization Profile",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:organization-profile:sd-jwt-vc",
@@ -2586,17 +2586,17 @@
           ],
           "vct": "CriminalRecordCheck",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:criminal-record-check:sd-jwt-vc",
@@ -2614,17 +2614,17 @@
           ],
           "vct": "urn:org:fides:vat:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:vat:sd-jwt-vc",
@@ -2643,17 +2643,17 @@
           ],
           "vct": "VerifiedEmployee",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:verified-employee:sd-jwt-vc",
@@ -2666,17 +2666,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einv-peppol:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2685,17 +2685,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einv-ppf-fr:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2703,17 +2703,17 @@
           "displayName": "Fuel Delivery Credential",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2727,17 +2727,17 @@
           ],
           "vct": "urn:org:fides:iban:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iban:sd-jwt-vc",
@@ -2750,17 +2750,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "urn:org:fides:einv-direct:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -2775,17 +2775,17 @@
           ],
           "vct": "HigherEducationDiploma",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:higher-education-diploma:sd-jwt-vc",
@@ -2805,17 +2805,17 @@
           ],
           "vct": "ISO14001",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:iso-certificate:sd-jwt-vc",
@@ -2834,17 +2834,17 @@
           ],
           "vct": "UpperSecondaryEducationCertificate",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:upper-secondary-education:sd-jwt-vc",
@@ -2855,7 +2855,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -2887,17 +2887,17 @@
           ],
           "vct": "urn:org:fides:brp:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:brp:sd-jwt-vc",
@@ -2915,17 +2915,17 @@
           ],
           "vct": "urn:org:fides:contact-details:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:contact-details:sd-jwt-vc",
@@ -2943,17 +2943,17 @@
           ],
           "vct": "urn:org:fides:nl_bld_bri:1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:bri:sd-jwt-vc",
@@ -2964,7 +2964,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -3006,7 +3006,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3181,7 +3181,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3238,7 +3238,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -3280,7 +3280,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -3303,7 +3303,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -3359,7 +3359,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -3404,7 +3404,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -3484,7 +3484,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -3526,7 +3526,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -3606,7 +3606,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -4127,7 +4127,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -4190,7 +4190,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -4253,7 +4253,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -4316,7 +4316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -4379,7 +4379,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -4403,7 +4403,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -4427,17 +4427,17 @@
           "displayName": "Chamber of Commerce Registration",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -4445,17 +4445,17 @@
           "displayName": "UBO",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -4463,17 +4463,17 @@
           "displayName": "LPID",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -4482,17 +4482,17 @@
           "vcFormat": "sd_jwt_vc",
           "vct": "PersonIdentificationData",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         },
         {
@@ -4500,24 +4500,24 @@
           "displayName": "RSIN",
           "vcFormat": "vcdm_1_1",
           "signingAlgorithms": [
-            "ES256K",
-            "ES256"
+            "ES256",
+            "ES256K"
           ],
           "proofTypes": [
             "jwt"
           ],
           "cryptographicBindingMethods": [
             "did:web",
-            "did:jwk",
+            "jwk",
             "did:ebsi",
-            "jwk"
+            "did:jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -4572,7 +4572,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -4760,7 +4760,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -5008,7 +5008,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -5088,7 +5088,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -5168,7 +5168,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -5221,7 +5221,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -5348,7 +5348,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -5491,7 +5491,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -5570,7 +5570,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -5649,7 +5649,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -5728,7 +5728,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-05-14T08:42:44.261Z"
+      "fetchedAt": "2026-05-15T08:53:55.884Z"
     }
   ],
   "stats": {
