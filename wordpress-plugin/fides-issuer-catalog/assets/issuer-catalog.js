@@ -366,7 +366,9 @@
       if (Array.isArray(v)) v.forEach((x) => x && set.add(x));
       else if (v) set.add(v);
     });
-    return [...set].sort();
+    return [...set].sort((a, b) =>
+      String(a).localeCompare(String(b), 'en', { sensitivity: 'base' })
+    );
   }
 
   function getActiveFilterCount() {
