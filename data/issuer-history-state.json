@@ -121,5 +121,8 @@
   },
   "issuer:findynet:ips-procivis:test": {
     "firstSeenAt": "2026-05-05T13:00:02.914Z"
+  },
+  "issuer:igrant:playground:test": {
+    "firstSeenAt": "2026-05-18T05:15:29.773Z"
   }
 }
