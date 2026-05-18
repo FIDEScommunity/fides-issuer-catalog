@@ -10,6 +10,16 @@
       "issuerWebsiteUrl": "https://www.igrant.io/demo.html",
       "projectContext": "iGrant.io OpenID4VCI demo issuer",
       "issuanceProtocol": "oid4vci"
+    },
+    {
+      "id": "issuer:igrant:playground:test",
+      "displayName": "Issuer Playground by iGrant.io",
+      "description": "iGrant.io Issuer Playground environment for testing OpenID4VCI issuance workflows and interoperability sessions.",
+      "environment": "test",
+      "oid4vciMetadataUrl": "https://issuer-playground-service.igrant.io/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://issuer-playground.igrant.io/admin/",
+      "projectContext": "iGrant.io Issuer Playground",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:igrant"
