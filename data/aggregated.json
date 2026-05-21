@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-05-21T09:50:23.658Z",
+  "lastUpdated": "2026-05-21T14:04:37.030Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -236,7 +236,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -316,7 +316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -447,7 +447,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -1231,7 +1231,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1357,7 +1357,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1437,7 +1437,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1517,7 +1517,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1588,7 +1588,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -2330,7 +2330,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -2830,8 +2830,8 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
-      "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "updatedAt": "2026-05-21T16:04:17+02:00",
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -2939,8 +2939,81 @@
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
-      "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "updatedAt": "2026-05-21T16:04:17+02:00",
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
+    },
+    {
+      "id": "issuer:fides:fides-labs-issuer:test",
+      "orgId": "org:fides",
+      "organization": {
+        "name": "FIDES Labs",
+        "country": "NL",
+        "did": "did:web:fides.acc.credenco.com:did:da5a3c99-d45c-4ce2-8065-9db36c98868c",
+        "website": "https://fides.community",
+        "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4"
+      },
+      "displayName": "FIDES Labs Issuer",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://wallet.acc.credenco.com/public/5ebe0351-f7a3-46dc-97e8-fdb356fb6f5b/fides-labs-issuer",
+      "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/.well-known/openid-credential-issuer/public/5ebe0351-f7a3-46dc-97e8-fdb356fb6f5b/fides-labs-issuer",
+      "logoUri": "https://avatars.githubusercontent.com/u/119322214?v=4",
+      "description": "Sandbox issuer for FIDES Labs credential issuance and interoperability testing within the FIDES Community Platform.",
+      "projectContext": "FIDES Community Platform",
+      "credentialConfigurations": [
+        {
+          "configurationId": "verified-email",
+          "displayName": "verified-email",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "verified-email",
+          "signingAlgorithms": [
+            "ES256K",
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:web",
+            "did:jwk",
+            "did:ebsi",
+            "jwk"
+          ]
+        },
+        {
+          "configurationId": "proof-of-mail",
+          "displayName": "proof-of-mail",
+          "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "fides",
+            "proof-of-mail",
+            "email"
+          ],
+          "vct": "urn:org:fides:proof-of-mail:1",
+          "signingAlgorithms": [
+            "ES256K",
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:web",
+            "did:jwk",
+            "did:ebsi",
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:fides:proof-of-mail:sd-jwt-vc",
+            "displayName": "Proof of Mail"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "firstSeenAt": "2026-05-21T14:04:37.030Z",
+      "updatedAt": "2026-05-21T16:04:17+02:00",
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -2982,7 +3055,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3157,7 +3230,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3214,7 +3287,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -3256,7 +3329,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -3279,7 +3352,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -3335,7 +3408,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -3380,7 +3453,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -3460,7 +3533,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -3502,7 +3575,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -3582,7 +3655,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -4103,7 +4176,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -4166,7 +4239,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -4229,7 +4302,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -4292,7 +4365,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -4355,7 +4428,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -4379,7 +4452,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:igrant:playground:test",
@@ -4532,7 +4605,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-18T05:15:29.773Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -4646,7 +4719,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -4701,7 +4774,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -4889,7 +4962,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -5137,7 +5210,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -5217,7 +5290,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -5297,7 +5370,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -5350,7 +5423,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -5477,7 +5550,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -5498,6 +5571,34 @@
       "issuerWebsiteUrl": "https://digid-eks.dev.citizen-online.com/issuer-portal/",
       "projectContext": "Unfold / EUDI Wallet pilot environment",
       "credentialConfigurations": [
+        {
+          "configurationId": "pid_mso_mdoc",
+          "displayName": "pid_mso_mdoc",
+          "vcFormat": "mdoc",
+          "subjectType": "Person",
+          "tags": [
+            "eu",
+            "eudi",
+            "mdoc",
+            "pid"
+          ],
+          "docType": "eu.europa.ec.eudi.pid.1",
+          "signingAlgorithms": [
+            "ES256",
+            "ES384",
+            "ES512"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "cose_key"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eu:pid-mdoc:mdoc",
+            "displayName": "PID (MSO Mdoc)"
+          }
+        },
         {
           "configurationId": "pid_dc+sd-jwt",
           "displayName": "pid_dc+sd-jwt",
@@ -5530,34 +5631,6 @@
           "credentialCatalogRef": {
             "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
             "displayName": "PID (SD-JWT VC)"
-          }
-        },
-        {
-          "configurationId": "pid_mso_mdoc",
-          "displayName": "pid_mso_mdoc",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "pid"
-          ],
-          "docType": "eu.europa.ec.eudi.pid.1",
-          "signingAlgorithms": [
-            "ES256",
-            "ES384",
-            "ES512"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
           }
         },
         {
@@ -5654,7 +5727,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -5733,7 +5806,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -5812,7 +5885,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -5891,13 +5964,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-05-21T09:50:23.658Z"
+      "fetchedAt": "2026-05-21T14:04:37.030Z"
     }
   ],
   "stats": {
-    "totalIssuers": 40,
+    "totalIssuers": 41,
     "productionIssuers": 9,
     "totalOrganizations": 26,
-    "totalCredentialConfigurations": 225
+    "totalCredentialConfigurations": 227
   }
 }

@@ -124,5 +124,8 @@
   },
   "issuer:igrant:playground:test": {
     "firstSeenAt": "2026-05-18T05:15:29.773Z"
+  },
+  "issuer:fides:fides-labs-issuer:test": {
+    "firstSeenAt": "2026-05-21T14:04:37.030Z"
   }
 }
