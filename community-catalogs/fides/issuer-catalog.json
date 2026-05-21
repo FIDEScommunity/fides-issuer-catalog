@@ -17,6 +17,15 @@
       "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/public/a860157d-64d2-434f-9288-04f5b4d2b9dc/MijnOverheidIssuer/.well-known/openid-credential-issuer",
       "projectContext": "FIDES Community Platform",
       "issuanceProtocol": "oid4vci"
+    },
+    {
+      "id": "issuer:fides:fides-labs-issuer:test",
+      "displayName": "FIDES Labs Issuer",
+      "description": "Sandbox issuer for FIDES Labs credential issuance and interoperability testing within the FIDES Community Platform.",
+      "environment": "test",
+      "oid4vciMetadataUrl": "https://wallet.acc.credenco.com/.well-known/openid-credential-issuer/public/5ebe0351-f7a3-46dc-97e8-fdb356fb6f5b/fides-labs-issuer",
+      "projectContext": "FIDES Community Platform",
+      "issuanceProtocol": "oid4vci"
     }
   ],
   "orgId": "org:fides"
