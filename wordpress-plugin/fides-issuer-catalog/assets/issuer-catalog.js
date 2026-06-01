@@ -232,6 +232,17 @@
     organizationCatalogUrl: 'https://fides.community/ecosystem-explorer/organization-catalog/',
     organizationDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/data/aggregated.json',
   };
+  const RATINGS_API_BASE = (window.fidesIssuerCatalog && window.fidesIssuerCatalog.ratingsApiBase)
+    ? String(window.fidesIssuerCatalog.ratingsApiBase).trim().replace(/\/$/, '')
+    : '';
+  const RATINGS_NONCE = (window.fidesIssuerCatalog && window.fidesIssuerCatalog.ratingsNonce)
+    ? String(window.fidesIssuerCatalog.ratingsNonce)
+    : '';
+  const RATINGS_IS_LOGGED_IN = !!(window.fidesIssuerCatalog && window.fidesIssuerCatalog.ratingsIsLoggedIn);
+  const RATINGS_LOGIN_URL = (window.fidesIssuerCatalog && window.fidesIssuerCatalog.ratingsLoginUrl)
+    ? String(window.fidesIssuerCatalog.ratingsLoginUrl)
+    : '';
+  const RATINGS_BATCH_LIMIT = 100;
 
   function isFidesLocalDevHost() {
     try {
@@ -245,7 +256,10 @@
 
   let issuers = [];
   let filterFacets = null;
-  let sortBy = 'lastUpdated';
+  let sortBy = 'rating';
+  let ratingSummariesByIssuerId = Object.create(null);
+  let ratingSummariesByRpId = Object.create(null);
+  let ratingSummariesByCredentialId = Object.create(null);
   let selectedIssuer = null;
   let forcedModalTheme = null;
 
@@ -357,6 +371,101 @@
     const d = new Date(dateStr);
     if (isNaN(d.getTime())) return false;
     return d.getTime() >= Date.now() - days * 24 * 60 * 60 * 1000;
+  }
+
+  function buildRatingsEndpoint(baseUrl, path, queryParams) {
+    const rawBase = String(baseUrl || '').trim();
+    const safePath = String(path || '').replace(/^\/+/, '');
+    if (!rawBase) return '';
+    try {
+      const url = new URL(rawBase, window.location.origin);
+      if (url.origin !== window.location.origin) {
+        url.protocol = window.location.protocol;
+        url.host = window.location.host;
+      }
+      if (url.searchParams.has('rest_route')) {
+        const currentRoute = String(url.searchParams.get('rest_route') || '').replace(/\/+$/, '');
+        url.searchParams.set('rest_route', currentRoute + '/' + safePath);
+      } else {
+        const basePath = url.pathname.replace(/\/+$/, '');
+        url.pathname = basePath + '/' + safePath;
+      }
+      if (queryParams && typeof queryParams === 'object') {
+        Object.keys(queryParams).forEach((key) => {
+          const value = queryParams[key];
+          if (value === null || value === undefined || value === '') return;
+          url.searchParams.set(key, String(value));
+        });
+      }
+      return url.toString();
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function setIssuerRatingSummary(issuerId, rawSummary) {
+    if (!issuerId || !rawSummary) return;
+    const likeCount = Number(rawSummary.likes);
+    ratingSummariesByIssuerId[issuerId] = {
+      count: isFinite(likeCount) ? likeCount : (Number(rawSummary.count) || 0),
+      myRating: Number(rawSummary.my_like) > 0 || Number(rawSummary.my_rating) > 0 ? 1 : null
+    };
+  }
+
+  function ratingMapForType(type) {
+    if (type === 'issuer') return ratingSummariesByIssuerId;
+    if (type === 'rp') return ratingSummariesByRpId;
+    if (type === 'credential') return ratingSummariesByCredentialId;
+    return null;
+  }
+
+  function setRatingSummaryForType(type, itemId, rawSummary) {
+    if (!type || !itemId || !rawSummary) return;
+    const map = ratingMapForType(type);
+    if (!map) return;
+    const likeCount = Number(rawSummary.likes);
+    map[itemId] = {
+      count: isFinite(likeCount) ? likeCount : (Number(rawSummary.count) || 0),
+      myRating: Number(rawSummary.my_like) > 0 || Number(rawSummary.my_rating) > 0 ? 1 : null
+    };
+  }
+
+  function renderModalEntityLike(type, itemId) {
+    const map = ratingMapForType(type);
+    const summary = map && itemId ? map[itemId] : null;
+    const count = summary ? (Number(summary.count) || 0) : 0;
+    if (count < 1) return '';
+    const likedClass = summary && summary.myRating === 1 ? ' is-liked' : '';
+    return '<span class="fides-modal-entity-like' + likedClass + '">' +
+      '<span class="fides-modal-entity-like-star">★</span><span class="fides-modal-entity-like-count">' + escapeHtml(count) + '</span>' +
+      '</span>';
+  }
+
+  function renderIssuerRatingSummary(issuerId) {
+    const summary = ratingSummariesByIssuerId[issuerId];
+    if (!summary || summary.count < 1) {
+      return '<span class="fides-item-rating fides-item-rating-empty"><span class="fides-item-rating-text">No likes yet</span></span>';
+    }
+    const label = summary.count + ' like' + (summary.count === 1 ? '' : 's');
+    const likedClass = summary.myRating === 1 ? ' is-liked' : '';
+    return '<span class="fides-item-rating' + likedClass + '" title="Community likes">' +
+      '<span class="fides-item-rating-star">★</span><span class="fides-item-rating-text">' + escapeHtml(label) + '</span>' +
+      '</span>';
+  }
+
+  function renderIssuerListLikeSummary(issuerId) {
+    const summary = ratingSummariesByIssuerId[issuerId];
+    const count = summary ? (Number(summary.count) || 0) : 0;
+    if (count < 1) return '';
+    const likedClass = summary && summary.myRating === 1 ? ' is-liked' : '';
+    return '<span class="fides-list-like' + likedClass + '" title="Community likes">' +
+      '<span class="fides-list-like-star">★</span><span class="fides-list-like-count">' + escapeHtml(count) + '</span>' +
+      '</span>';
+  }
+
+  function issuerRatingSortValue(issuer) {
+    const summary = issuer && issuer.id ? ratingSummariesByIssuerId[issuer.id] : null;
+    return summary ? (Number(summary.count) || 0) : 0;
   }
 
   function uniqueValues(arr, fn) {
@@ -526,6 +635,13 @@
     }).sort((a, b) => {
       if (sortBy === 'az') return compareIssuerDisplayName(a, b);
 
+      if (sortBy === 'rating') {
+        const ra = issuerRatingSortValue(a);
+        const rb = issuerRatingSortValue(b);
+        if (rb !== ra) return rb - ra;
+        return compareIssuerDisplayName(a, b);
+      }
+
       if (sortBy === 'relyingParties') {
         const ra = issuerRpCountForSort(a);
         const rb = issuerRpCountForSort(b);
@@ -577,6 +693,7 @@
       <div class="fides-issuer-list-header" aria-hidden="true">
         <div></div>
         <div>Name</div>
+        <div class="fides-list-col-likes"></div>
         <div>Environment</div>
         <div class="fides-list-col-right" title="Credentials">${icons.fileCheck}</div>
         <div class="fides-list-col-right" title="Relying parties">${icons.shield}</div>
@@ -615,6 +732,7 @@
           <span class="fides-row-name-text" title="${escapeHtml(issuer.organization?.name || issuer.id)}">${escapeHtml(issuer.organization?.name || issuer.id)}</span>
           ${issuer.displayName ? `<span class="fides-row-name-id" title="${escapeHtml(issuer.displayName)}">${escapeHtml(issuer.displayName)}</span>` : ''}
         </div>
+        <div class="fides-row-likes">${renderIssuerListLikeSummary(issuer.id)}</div>
         <div class="fides-row-environment">
           ${env ? escapeHtml(environmentDisplayLabel(env)) : '—'}
         </div>
@@ -636,10 +754,6 @@
   function renderIssuerCard(issuer) {
     const configs = issuer.credentialConfigurations || [];
     const catalogCreds = configs.filter((c) => c.credentialCatalogRef);
-    const activityDate = issuer.updatedAt || issuer.firstSeenAt;
-    const activityLabel = activityDate
-      ? `${issuer.updatedAt ? 'Updated' : 'Added'} ${formatDate(activityDate)}`
-      : '';
     const logo = issuer.logoUri || issuer.organization?.logoUri;
     const catalogCount = catalogCreds.length;
     const totalCount = configs.length;
@@ -661,7 +775,7 @@
           </div>
         </header>
         <div class="fides-wallet-body">
-          ${activityLabel ? `<p class="fides-wallet-updated">${escapeHtml(activityLabel)}</p>` : ''}
+          <p class="fides-issuer-rating-summary">${renderIssuerRatingSummary(issuer.id)}</p>
           <div class="fides-card-counts">
             <div class="fides-card-count-item">
               <span class="fides-card-count-num">${catalogCount}</span>
@@ -734,6 +848,168 @@
     return (a.displayName || '').localeCompare(b.displayName || '');
   }
 
+  function buildLoginUrlWithReturnTo(loginUrl, returnToUrl) {
+    const base = String(loginUrl || '').trim();
+    const returnTo = String(returnToUrl || '').trim();
+    if (!base) return '';
+    if (!returnTo) return base;
+    try {
+      const u = new URL(base, window.location.origin);
+      u.searchParams.set('return_to', returnTo);
+      return u.toString();
+    } catch (e) {
+      const sep = base.indexOf('?') === -1 ? '?' : '&';
+      return base + sep + 'return_to=' + encodeURIComponent(returnTo);
+    }
+  }
+
+  function issuerModalDeepLink(issuerId) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('issuer', issuerId);
+    return url.toString();
+  }
+
+  function formatLikeCount(count) {
+    const n = Number(count) || 0;
+    if (n <= 0) return 'No likes yet';
+    return n + ' like' + (n === 1 ? '' : 's');
+  }
+
+  async function fetchIssuerLikeSummary(issuerId) {
+    const url = buildRatingsEndpoint(RATINGS_API_BASE, 'ratings/batch', {
+      type: 'issuer',
+      ids: String(issuerId || '').slice(0, 512),
+      _wpnonce: RATINGS_NONCE || ''
+    });
+    if (!url) throw new Error('ratings_url_invalid');
+    const res = await fetch(url, {
+      method: 'GET',
+      credentials: 'same-origin',
+      headers: { 'X-WP-Nonce': RATINGS_NONCE || '' }
+    });
+    if (!res.ok) throw new Error('ratings_batch_failed');
+    const data = await res.json();
+    const result = data && data.results && data.results[issuerId]
+      ? data.results[issuerId]
+      : { likes: 0, count: 0, my_like: null, my_rating: null };
+    const likes = Number(result.likes);
+    return {
+      count: isFinite(likes) ? likes : (Number(result.count) || 0),
+      myRating: Number(result.my_like) > 0 || Number(result.my_rating) > 0 ? 1 : null
+    };
+  }
+
+  async function submitIssuerLike(issuerId) {
+    const url = buildRatingsEndpoint(RATINGS_API_BASE, 'ratings', {
+      _wpnonce: RATINGS_NONCE || ''
+    });
+    if (!url) throw new Error('ratings_url_invalid');
+    const res = await fetch(url, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': RATINGS_NONCE || ''
+      },
+      body: JSON.stringify({
+        type: 'issuer',
+        item_id: issuerId,
+        rating: 1
+      })
+    });
+    const payload = await res.json().catch(() => null);
+    if (!res.ok) {
+      const reason = payload && (payload.error || payload.code || payload.message);
+      throw new Error(reason || 'like_submit_failed');
+    }
+    return payload || {};
+  }
+
+  async function deleteIssuerLike(issuerId) {
+    const url = buildRatingsEndpoint(RATINGS_API_BASE, 'ratings', {
+      _wpnonce: RATINGS_NONCE || '',
+      type: 'issuer',
+      item_id: issuerId
+    });
+    if (!url) throw new Error('ratings_url_invalid');
+    const res = await fetch(url, {
+      method: 'DELETE',
+      credentials: 'same-origin',
+      headers: { 'X-WP-Nonce': RATINGS_NONCE || '' }
+    });
+    const payload = await res.json().catch(() => null);
+    if (!res.ok) {
+      const reason = payload && (payload.error || payload.code || payload.message);
+      throw new Error(reason || 'like_delete_failed');
+    }
+    return payload || {};
+  }
+
+  function renderIssuerModalLike(slot, state) {
+    if (!slot) return;
+    const summaryLabel = formatLikeCount(state.count);
+    const isLiked = state.myRating === 1;
+    const deepLink = selectedIssuer ? issuerModalDeepLink(selectedIssuer.id) : '';
+    const loginUrl = buildLoginUrlWithReturnTo(RATINGS_LOGIN_URL, deepLink);
+    const starButton = RATINGS_IS_LOGGED_IN
+      ? '<button type="button" class="fides-rating-star fides-rating-star-single' + (isLiked ? ' is-filled' : '') + '" data-rating-toggle="1" ' + (state.saving ? 'disabled' : '') + ' aria-label="' + (isLiked ? 'Remove your like' : 'Like this item') + '">★</button>'
+      : '<button type="button" class="fides-rating-star fides-rating-star-single is-readonly' + (isLiked ? ' is-filled' : '') + '" disabled aria-hidden="true">★</button>';
+    const actionLine = RATINGS_IS_LOGGED_IN
+      ? '<span class="fides-modal-rating-note fides-modal-rating-note-inline">' + (state.saving ? 'Updating like...' : (isLiked ? 'You like this item. Click again to remove.' : 'Click the star to like this item.')) + '</span>'
+      : (loginUrl
+          ? '<span class="fides-modal-rating-note fides-modal-rating-note-inline"><a href="' + escapeHtml(loginUrl) + '" class="fides-modal-rating-login">Sign in to like</a></span>'
+          : '<span class="fides-modal-rating-note fides-modal-rating-note-inline">Sign in to like</span>');
+    slot.innerHTML =
+      '<div class="fides-modal-rating">' +
+        '<div class="fides-modal-rating-summary">' +
+          starButton +
+          '<span class="fides-modal-rating-value">' + escapeHtml(summaryLabel) + '</span>' +
+          actionLine +
+        '</div>' +
+      '</div>';
+  }
+
+  async function initIssuerModalLike(issuerId) {
+    const slot = document.getElementById('fides-modal-rating-slot');
+    if (!slot || !issuerId || !RATINGS_API_BASE) return;
+    let state = { count: 0, myRating: null, saving: false };
+    renderIssuerModalLike(slot, state);
+    try {
+      state = Object.assign(state, await fetchIssuerLikeSummary(issuerId));
+      renderIssuerModalLike(slot, state);
+    } catch (e) {
+      renderIssuerModalLike(slot, state);
+    }
+    if (!RATINGS_IS_LOGGED_IN) return;
+    slot.addEventListener('click', async (e) => {
+      const btn = e.target && e.target.closest ? e.target.closest('[data-rating-toggle]') : null;
+      if (!btn || state.saving) return;
+      const previous = { count: state.count, myRating: state.myRating };
+      const removing = state.myRating === 1;
+      state = Object.assign(state, { saving: true, myRating: removing ? null : 1 });
+      renderIssuerModalLike(slot, state);
+      try {
+        const data = removing ? await deleteIssuerLike(issuerId) : await submitIssuerLike(issuerId);
+        const summary = data && data.summary ? data.summary : {};
+        const likes = Number(summary.likes);
+        state = {
+          count: isFinite(likes) ? likes : (Number(summary.count) || 0),
+          myRating: Number(data && data.my_like) > 0 || Number(data && data.my_rating) > 0 ? 1 : null,
+          saving: false
+        };
+        ratingSummariesByIssuerId[issuerId] = {
+          count: state.count,
+          myRating: state.myRating
+        };
+        renderIssuerModalLike(slot, state);
+        renderIssuerGridOnly();
+      } catch (err) {
+        state = Object.assign(state, { count: previous.count, myRating: previous.myRating, saving: false });
+        renderIssuerModalLike(slot, state);
+      }
+    });
+  }
+
   function renderModal() {
     if (!selectedIssuer) return '';
     const issuer = selectedIssuer;
@@ -797,6 +1073,7 @@
           </div>
 
           <div class="fides-modal-body">
+            <div id="fides-modal-rating-slot"></div>
             <!-- Description + primary website (aligned with RP catalog visit button) -->
             ${issuer.description || issuerVisitButton
               ? `<div class="fides-modal-intro${issuerVisitButton ? ' fides-modal-intro--split' : ''}">
@@ -889,6 +1166,7 @@
                       <thead>
                         <tr>
                           <th>Credential Type</th>
+                          <th class="fides-modal-entity-col-likes" title="Likes"><span aria-label="Likes">★</span></th>
                           <th>VC Format</th>
                         </tr>
                       </thead>
@@ -904,14 +1182,16 @@
                             const typeCell = href
                               ? `<a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${escapeHtml(label)}</a>`
                               : `<span>${escapeHtml(label)}</span>`;
-                            return `<tr><td>${typeCell}</td>${formatTd}</tr>`;
+                            const likeCell = `<td class="fides-modal-entity-col-likes">${renderModalEntityLike('credential', ref.id)}</td>`;
+                            return `<tr><td>${typeCell}</td>${likeCell}${formatTd}</tr>`;
                           }
                           const name = escapeHtml(cc.displayName || cc.configurationId);
                           const star =
                             uncataloguedConfigs.length > 0
                               ? `<sup class="fides-catalog-fn-sup"><a class="fides-catalog-fnref" href="#fides-catalog-footnote" title="Not listed in the credential catalog" aria-label="See footnote: not listed in credential catalog">*</a></sup>`
                               : '';
-                          return `<tr><td><span>${name}</span>${star}</td>${formatTd}</tr>`;
+                          const likeCell = '<td class="fides-modal-entity-col-likes"></td>';
+                          return `<tr><td><span>${name}</span>${star}</td>${likeCell}${formatTd}</tr>`;
                         }).join('')}
                       </tbody>
                     </table>
@@ -1202,6 +1482,7 @@
               <label class="fides-sort-label" for="fides-sort-select">
                 <span class="fides-sort-text">Sort by:</span>
                 <select id="fides-sort-select" class="fides-sort-select">
+                  <option value="rating" ${sortBy === 'rating' ? 'selected' : ''}>Likes</option>
                   <option value="lastUpdated" ${sortBy === 'lastUpdated' ? 'selected' : ''}>Last updated</option>
                   <option value="az" ${sortBy === 'az' ? 'selected' : ''}>A–Z</option>
                   <option value="credentialTypes" ${sortBy === 'credentialTypes' ? 'selected' : ''}>Credential types</option>
@@ -1282,7 +1563,7 @@
   }
 
   function populateIssuerModalRelationships(issuerForRp) {
-    fetchRpCatalog().then((rpList) => {
+    fetchRpCatalog().then(async (rpList) => {
       const overlay = document.getElementById('fides-modal-overlay');
       if (!overlay) return;
 
@@ -1336,25 +1617,31 @@
             mountEl.innerHTML =
               '<p class="fides-modal-empty">No relying parties in the loaded RP catalog accept these credential types.</p>';
           } else {
+            try {
+              await loadRatingSummariesForType('rp', matchingRps.map((rp) => rp.id));
+            } catch (rpRatingsError) {
+              console.warn('Failed to load RP likes for issuer modal:', rpRatingsError.message);
+            }
             const rpBase = config.rpCatalogUrl ? config.rpCatalogUrl.replace(/\/$/, '') : '';
             const showRpOrgCol = matchingRps.some(
               (rp) => trimStr(rp.organization?.name) || trimStr(rp.provider?.name)
             );
             const thead = showRpOrgCol
-              ? '<thead><tr><th>Relying party</th><th>Organization</th></tr></thead>'
-              : '<thead><tr><th>Relying party</th></tr></thead>';
+              ? '<thead><tr><th>Relying party</th><th class="fides-modal-entity-col-likes" title="Likes"><span aria-label="Likes">★</span></th><th>Organization</th></tr></thead>'
+              : '<thead><tr><th>Relying party</th><th class="fides-modal-entity-col-likes" title="Likes"><span aria-label="Likes">★</span></th></tr></thead>';
             const rows = matchingRps
               .map((rp) => {
                 const label = escapeHtml(rp.name || rp.id);
                 const orgRaw = trimStr(rp.organization?.name) || trimStr(rp.provider?.name);
+                const likeCell = `<td class="fides-modal-entity-col-likes">${renderModalEntityLike('rp', rp.id)}</td>`;
                 const orgCell = showRpOrgCol
                   ? `<td>${orgRaw ? escapeHtml(orgRaw) : '—'}</td>`
                   : '';
                 if (rpBase) {
                   const href = `${rpBase}/?rp=${encodeURIComponent(rp.id)}`;
-                  return `<tr><td><a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${label}</a></td>${orgCell}</tr>`;
+                  return `<tr><td><a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${label}</a></td>${likeCell}${orgCell}</tr>`;
                 }
-                return `<tr><td><span class="fides-modal-rp-td-text">${label}</span></td>${orgCell}</tr>`;
+                return `<tr><td><span class="fides-modal-rp-td-text">${label}</span></td>${likeCell}${orgCell}</tr>`;
               })
               .join('');
             mountEl.innerHTML = `<div class="fides-attributes-table-wrap"><table class="fides-attributes-table fides-modal-rp-table fides-modal-entity-table" aria-label="Relying parties">${thead}<tbody>${rows}</tbody></table></div>`;
@@ -1392,6 +1679,7 @@
     document.body.insertAdjacentHTML('beforeend', renderModal());
     document.body.style.overflow = 'hidden';
     bindModalEvents();
+    initIssuerModalLike(selectedIssuer.id);
     const params = new URLSearchParams(window.location.search);
     params.set('issuer', id);
     history.replaceState(null, '', '?' + params.toString());
@@ -1835,6 +2123,38 @@
     }
   }
 
+  async function loadIssuerRatingSummaries(items) {
+    ratingSummariesByIssuerId = Object.create(null);
+    const ids = Array.from(new Set((items || []).map((issuer) => issuer && issuer.id).filter(Boolean)));
+    await loadRatingSummariesForType('issuer', ids);
+  }
+
+  async function loadRatingSummariesForType(type, ids) {
+    if (!RATINGS_API_BASE || !Array.isArray(ids) || ids.length === 0) return;
+    const map = ratingMapForType(type);
+    if (!map) return;
+    for (let i = 0; i < ids.length; i += RATINGS_BATCH_LIMIT) {
+      const chunk = ids.slice(i, i + RATINGS_BATCH_LIMIT);
+      const url = buildRatingsEndpoint(RATINGS_API_BASE, 'ratings/batch', {
+        type: type,
+        ids: chunk.join(','),
+        _wpnonce: RATINGS_NONCE || ''
+      });
+      if (!url) continue;
+      const response = await fetch(url, {
+        method: 'GET',
+        credentials: 'same-origin',
+        headers: {
+          'X-WP-Nonce': RATINGS_NONCE || ''
+        }
+      });
+      if (!response.ok) continue;
+      const data = await response.json();
+      const results = data && data.results ? data.results : {};
+      Object.keys(results).forEach((itemId) => setRatingSummaryForType(type, itemId, results[itemId]));
+    }
+  }
+
   async function loadIssuers() {
     const remote = (config.githubDataUrl || '').trim();
     const local = `${config.pluginUrl || ''}data/aggregated.json`;
@@ -1862,16 +2182,58 @@
         console.warn(`Failed to load from ${source.name}:`, err.message);
       }
     }
-    await loadOrganizationCatalogMaps();
-    await loadCredentialThemeIndex();
+    await Promise.allSettled([
+      loadOrganizationCatalogMaps(),
+      loadCredentialThemeIndex(),
+    ]);
+
+    if (sortBy === 'rating') {
+      try {
+        await loadIssuerRatingSummaries(issuers);
+      } catch (ratingsError) {
+        console.warn('Failed to load issuer likes:', ratingsError.message);
+      }
+    }
+
     enrichIssuersCredentialThemes(issuers);
     filterFacets = computeFilterFacets(issuers);
     normalizeIssuerSigningAlgorithmFilters();
-    if (config.vocabularyUrl || config.vocabularyFallbackUrl) {
-      vocabulary = await loadVocabulary(config.vocabularyUrl, config.vocabularyFallbackUrl);
-    }
     render();
     checkDeepLink();
+
+    if (sortBy !== 'rating') {
+      loadIssuerRatingSummaries(issuers)
+        .then(() => {
+          renderIssuerGridOnly();
+        })
+        .catch((ratingsError) => {
+          console.warn('Failed to load issuer likes:', ratingsError.message);
+        });
+    }
+
+    const credentialIds = Array.from(new Set(
+      issuers.flatMap((issuer) =>
+        (issuer.credentialConfigurations || [])
+          .map((cc) => cc && cc.credentialCatalogRef && cc.credentialCatalogRef.id)
+          .filter(Boolean)
+      )
+    ));
+    loadRatingSummariesForType('credential', credentialIds)
+      .catch((credentialRatingsError) => {
+        console.warn('Failed to load credential likes for issuer modal:', credentialRatingsError.message);
+      });
+
+    if (config.vocabularyUrl || config.vocabularyFallbackUrl) {
+      loadVocabulary(config.vocabularyUrl, config.vocabularyFallbackUrl)
+        .then((terms) => {
+          vocabulary = terms;
+          if (vocabulary) initVocabularyInfo(root);
+        })
+        .catch((vocabError) => {
+          console.warn('Issuer vocabulary load failed:', vocabError.message);
+        });
+    }
+
     fetchRpCatalog().then(() => {
       if (sortBy === 'relyingParties') render();
     });
@@ -1913,6 +2275,7 @@
     document.body.insertAdjacentHTML('beforeend', renderModal());
     document.body.style.overflow = 'hidden';
     bindModalEvents();
+    initIssuerModalLike(selectedIssuer.id);
     populateIssuerModalRelationships(selectedIssuer);
     return true;
   }

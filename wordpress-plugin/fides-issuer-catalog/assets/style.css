@@ -1115,13 +1115,13 @@
 }
 
 /*
- * Column layout — 6 columns matching renderIssuerListHeader() and renderIssuerRow().
- * icon | name | environment | credentials | relying parties | updated
+ * Column layout — 7 columns matching renderIssuerListHeader() and renderIssuerRow().
+ * icon | name | likes | environment | credentials | relying parties | updated
  * If you add/remove a column, update this template AND both render functions.
  */
 .fides-issuer-list-header,
 .fides-issuer-grid[data-view="list"] .fides-issuer-card {
-  grid-template-columns: 32px 2fr 1fr 52px 52px minmax(0, 110px);
+  grid-template-columns: 32px 2fr minmax(54px, 64px) 1fr 52px 52px minmax(0, 110px);
   gap: 0.75rem;
   padding: 0.625rem 1rem;
 }
@@ -1166,6 +1166,10 @@
   height: 13px;
 }
 
+.fides-list-col-likes {
+  min-height: 1px;
+}
+
 /* List row — overrides card styles */
 .fides-issuer-grid[data-view="list"] .fides-issuer-card {
   display: grid;
@@ -1198,6 +1202,7 @@
 
 .fides-row-icon,
 .fides-row-name,
+.fides-row-likes,
 .fides-row-environment,
 .fides-row-count,
 .fides-row-updated {
@@ -1206,6 +1211,7 @@
 
 .fides-issuer-grid[data-view="list"] .fides-row-icon,
 .fides-issuer-grid[data-view="list"] .fides-row-name,
+.fides-issuer-grid[data-view="list"] .fides-row-likes,
 .fides-issuer-grid[data-view="list"] .fides-row-environment,
 .fides-issuer-grid[data-view="list"] .fides-row-count,
 .fides-issuer-grid[data-view="list"] .fides-row-updated {
@@ -1262,6 +1268,33 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.fides-row-likes {
+  justify-content: flex-start;
+  min-height: 1rem;
+}
+
+.fides-list-like {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fides-text-secondary);
+}
+
+.fides-list-like-star {
+  color: #111827;
+  line-height: 1;
+}
+
+.fides-list-like.is-liked .fides-list-like-star {
+  color: #facc15;
+}
+
+.fides-list-like-count {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Environment cell */
@@ -1570,6 +1603,48 @@
   font-size: 0.75rem;
   color: var(--fides-text-muted);
   line-height: 1.3;
+}
+
+.fides-issuer-rating-summary {
+  margin: 0 0 0.75rem;
+  font-size: 0.84rem;
+  min-height: 1.35rem;
+  display: flex;
+  align-items: center;
+}
+
+.fides-issuer-rating-summary .fides-item-rating {
+  margin-left: 0;
+  font-weight: 700;
+  color: var(--fides-text-primary, #0f172a);
+  gap: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35rem;
+  line-height: 1.2;
+}
+
+.fides-issuer-rating-summary .fides-item-rating-star {
+  color: #111827;
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+.fides-issuer-rating-summary .fides-item-rating.is-liked .fides-item-rating-star {
+  color: #facc15;
+}
+
+.fides-issuer-rating-summary .fides-item-rating-empty {
+  color: var(--fides-text-muted, #64748b);
+  font-weight: 600;
+}
+
+.fides-modal-overlay.fides-modal-overlay--issuer #fides-modal-rating-slot {
+  margin-bottom: 0.9rem;
+}
+
+.fides-modal-overlay.fides-modal-overlay--issuer #fides-modal-rating-slot:empty {
+  margin-bottom: 0;
 }
 
 .fides-env-badge {
@@ -4105,6 +4180,20 @@ span.fides-tag.platform {
   width: 48%;
 }
 
+.fides-modal-overlay .fides-modal-entity-table th.fides-modal-entity-col-likes,
+.fides-modal-overlay .fides-modal-entity-table td.fides-modal-entity-col-likes {
+  width: 88px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.fides-modal-overlay .fides-attributes-table th.fides-modal-entity-col-likes,
+.fides-modal-overlay .fides-attributes-table td.fides-modal-entity-col-likes {
+  width: 88px;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .fides-modal-overlay .fides-modal-entity-table td {
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -4124,6 +4213,16 @@ span.fides-tag.platform {
   .fides-modal-overlay .fides-modal-entity-table th:nth-child(2),
   .fides-modal-overlay .fides-modal-entity-table td:nth-child(2) {
     width: 60%;
+  }
+
+  .fides-modal-overlay .fides-modal-entity-table th.fides-modal-entity-col-likes,
+  .fides-modal-overlay .fides-modal-entity-table td.fides-modal-entity-col-likes {
+    width: 68px;
+  }
+
+  .fides-modal-overlay .fides-attributes-table th.fides-modal-entity-col-likes,
+  .fides-modal-overlay .fides-attributes-table td.fides-modal-entity-col-likes {
+    width: 68px;
   }
 
   .fides-modal-overlay .fides-modal-entity-table th {
@@ -4160,6 +4259,30 @@ span.fides-tag.platform {
 .fides-modal-rp-table td .fides-modal-rp-td-text {
   color: var(--fides-text-secondary);
   font-size: 0.8125rem;
+}
+
+.fides-modal-entity-like {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--fides-text-secondary);
+  min-width: 2.5rem;
+}
+
+.fides-modal-entity-like-star {
+  color: #111827;
+  line-height: 1;
+}
+
+.fides-modal-entity-like.is-liked .fides-modal-entity-like-star {
+  color: #facc15;
+}
+
+.fides-modal-entity-like-empty {
+  color: var(--fides-text-muted);
 }
 
 /* Eco tags */

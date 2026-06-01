@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers. When the master fides_catalog_ssr_enabled flag (provided by FIDES Community Tools Tiles ≥ 1.6.3) is enabled, the plugin also emits a server-rendered listing fallback, per-deeplink SEO meta tags and an Organization JSON-LD payload so issuer detail URLs become indexable by search engines.
- * Version: 1.7.4
+ * Version: 1.7.6
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.7.4');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.7.6');
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-ssr.php';
 Fides_Issuer_Catalog_SSR::bootstrap();
@@ -128,6 +128,17 @@ function fides_issuer_catalog_enqueue_assets() {
             'fides_issuer_catalog_rp_catalog_data_url',
             'https://raw.githubusercontent.com/FIDEScommunity/fides-rp-catalog/main/wordpress-plugin/fides-rp-catalog/data/aggregated.json'
         );
+    $current_request_uri = isset($_SERVER['REQUEST_URI']) ? wp_unslash($_SERVER['REQUEST_URI']) : '';
+    $current_host = isset($_SERVER['HTTP_HOST']) ? sanitize_text_field(wp_unslash($_SERVER['HTTP_HOST'])) : '';
+    $current_url = $current_host !== ''
+        ? ((is_ssl() ? 'https://' : 'http://') . $current_host . $current_request_uri)
+        : home_url('/');
+    $oid4vp_options = get_option('universal_openid4vp_options', array());
+    $oid4vp_login_url = '';
+    if (is_array($oid4vp_options) && ! empty($oid4vp_options['loginUrl'])) {
+        $oid4vp_login_url = esc_url_raw((string) $oid4vp_options['loginUrl']);
+    }
+    $ratings_login_url = $oid4vp_login_url !== '' ? $oid4vp_login_url : wp_login_url($current_url);
 
     wp_localize_script('fides-issuer-catalog', 'fidesIssuerCatalog', [
         'pluginUrl'       => $plugin_url,
@@ -158,6 +169,10 @@ function fides_issuer_catalog_enqueue_assets() {
         'credentialAggregatedDataUrl' => fides_issuer_catalog_resolve_credential_aggregated_url($use_local),
         'vocabularyUrl'         => 'https://raw.githubusercontent.com/FIDEScommunity/fides-interop-profiles/main/data/vocabulary.json',
         'vocabularyFallbackUrl' => $plugin_url . 'assets/vocabulary.json',
+        'ratingsApiBase' => rest_url('fides-catalog/v1'),
+        'ratingsNonce' => wp_create_nonce('wp_rest'),
+        'ratingsIsLoggedIn' => is_user_logged_in(),
+        'ratingsLoginUrl' => $ratings_login_url,
     ]);
 }
 add_action('wp_enqueue_scripts', 'fides_issuer_catalog_enqueue_assets');
