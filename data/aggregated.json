@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-06-10T10:09:43.455Z",
+  "lastUpdated": "2026-06-11T10:43:28.684Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -21,222 +21,12 @@
       "description": "Simulated Bundesdruckerei issuer hosted on the Animo EUDI Playground. Issues PID, mDL and Age Verification credentials.",
       "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=188e2459-6da8-4431-9062-2fcdac274f41&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
-      "credentialConfigurations": [
-        {
-          "configurationId": "mdl-mdoc-bdr",
-          "displayName": "Driving Licence",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "iso",
-            "eudi",
-            "mdoc",
-            "mdl"
-          ],
-          "docType": "org.iso.18013.5.1.mDL",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "mdl-mdoc-bdr-key-attestations",
-          "displayName": "Driving Licence",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "iso",
-            "eudi",
-            "mdoc",
-            "mdl"
-          ],
-          "docType": "org.iso.18013.5.1.mDL",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt",
-            "attestation"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "eudi-pid-sd-jwt-bdr",
-          "displayName": "EUDI PID",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "pid"
-          ],
-          "vct": "urn:eudi:pid:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
-          }
-        },
-        {
-          "configurationId": "eudi-pid-sd-jwt-bdr-key-attestations",
-          "displayName": "EUDI PID",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "pid"
-          ],
-          "vct": "urn:eudi:pid:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt",
-            "attestation"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
-          }
-        },
-        {
-          "configurationId": "eudi-pid-mdoc-bdr",
-          "displayName": "EUDI PID",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "pid"
-          ],
-          "docType": "eu.europa.ec.eudi.pid.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "eudi-pid-mdoc-bdr-key-attestations",
-          "displayName": "EUDI PID",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "pid"
-          ],
-          "docType": "eu.europa.ec.eudi.pid.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt",
-            "attestation"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "proof_of_age-bdr",
-          "displayName": "Age",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "age-verification"
-          ],
-          "docType": "eu.europa.ec.av.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "proof_of_age-bdr-key-attestations",
-          "displayName": "Age",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "age-verification"
-          ],
-          "docType": "eu.europa.ec.av.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt",
-            "attestation"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
-          }
-        }
-      ],
+      "credentialConfigurations": [],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z",
+      "metadataFetchError": "HTTP 404 Not Found"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -256,67 +46,12 @@
       "description": "Simulated RDW (Dutch Vehicle Registration Authority) issuer hosted on the Animo EUDI Playground. Issues Vehicle Registration Certificate (mVRC).",
       "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=2943c018-8eac-4ddc-a234-da35857fa3e9&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
-      "credentialConfigurations": [
-        {
-          "configurationId": "mvrc-mdoc",
-          "displayName": "Vehicle Registration",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "iso",
-            "eudi",
-            "mdoc",
-            "vehicle",
-            "registration"
-          ],
-          "docType": "org.iso.7367.1.mVRC",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:iso:mvrc-mdoc:mdoc",
-            "displayName": "Vehicle Registration Certificate (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "mvrc-mdoc-key-attestations",
-          "displayName": "Vehicle Registration",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "iso",
-            "eudi",
-            "mdoc",
-            "vehicle",
-            "registration"
-          ],
-          "docType": "org.iso.7367.1.mVRC",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt",
-            "attestation"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:iso:mvrc-mdoc:mdoc",
-            "displayName": "Vehicle Registration Certificate (MSO Mdoc)"
-          }
-        }
-      ],
+      "credentialConfigurations": [],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z",
+      "metadataFetchError": "HTTP 404 Not Found"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -336,118 +71,12 @@
       "description": "Simulated telecom organisation issuer hosted on the Animo EUDI Playground. Issues MSISDN credentials.",
       "issuerWebsiteUrl": "https://playground.animo.id/?authorization=none&credentialType=0&deferBy=none&dpop=false&format=mso_mdoc&issuerId=a5292f18-3c9f-484a-8515-fb4ec4cb33e8&keyAttestation=false&tab=issue&walletAttestation=false",
       "projectContext": "Animo EUDI Wallet Playground",
-      "credentialConfigurations": [
-        {
-          "configurationId": "msisdn-sd-jwt",
-          "displayName": "MSISDN",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "msisdn"
-          ],
-          "vct": "eu.europa.ec.eudi.msisdn.1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "msisdn-sd-jwt-key-attestations",
-          "displayName": "MSISDN",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "msisdn"
-          ],
-          "vct": "eu.europa.ec.eudi.msisdn.1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt",
-            "attestation"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "msisdn-mdoc",
-          "displayName": "MSISDN",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "msisdn"
-          ],
-          "docType": "eu.europa.ec.eudi.msisdn.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
-          }
-        },
-        {
-          "configurationId": "msisdn-mdoc-key-attestations",
-          "displayName": "MSISDN",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "msisdn"
-          ],
-          "docType": "eu.europa.ec.eudi.msisdn.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt",
-            "attestation"
-          ],
-          "cryptographicBindingMethods": [
-            "cose_key"
-          ],
-          "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
-          }
-        }
-      ],
+      "credentialConfigurations": [],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z",
+      "metadataFetchError": "HTTP 404 Not Found"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -1231,7 +860,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1357,7 +986,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1437,7 +1066,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1517,7 +1146,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1588,7 +1217,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -2330,7 +1959,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -2831,7 +2460,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -2940,7 +2569,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:fides:fides-labs-issuer:test",
@@ -2994,7 +2623,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-21T14:04:37.030Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -3036,7 +2665,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3211,7 +2840,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3268,7 +2897,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -3310,7 +2939,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -3333,7 +2962,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -3389,7 +3018,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -3434,7 +3063,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -3514,7 +3143,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -3556,7 +3185,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -3636,7 +3265,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -4175,7 +3804,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -4238,7 +3867,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -4301,7 +3930,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -4364,7 +3993,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -4427,7 +4056,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -4451,7 +4080,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:igrant:playground:test",
@@ -4553,7 +4182,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-18T05:15:29.773Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -4705,7 +4334,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -4760,7 +4389,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -4963,7 +4592,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -5211,7 +4840,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -5291,7 +4920,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -5371,7 +5000,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -5424,7 +5053,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -5551,7 +5180,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -5728,7 +5357,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -5807,7 +5436,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -5886,7 +5515,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -5965,13 +5594,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-06-10T10:09:43.455Z"
+      "fetchedAt": "2026-06-11T10:43:28.684Z"
     }
   ],
   "stats": {
     "totalIssuers": 41,
     "productionIssuers": 9,
     "totalOrganizations": 26,
-    "totalCredentialConfigurations": 228
+    "totalCredentialConfigurations": 214
   }
 }
