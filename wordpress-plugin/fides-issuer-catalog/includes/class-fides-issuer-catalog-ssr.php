@@ -88,6 +88,7 @@ if (! class_exists('Fides_Issuer_Catalog_SSR')) {
                 Fides_Catalog_Registry::register(self::TYPE, array(
                     'label'             => __('Issuers', 'fides-issuer-catalog'),
                     'json_url'          => 'https://raw.githubusercontent.com/FIDEScommunity/fides-issuer-catalog/main/data/aggregated.json',
+                    'local_json_path'   => dirname(__DIR__) . '/data/aggregated.json',
                     'collection_key'    => 'issuers',
                     'id_field'          => 'id',
                     'name_field'        => 'displayName',
