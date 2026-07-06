@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers. When the master fides_catalog_ssr_enabled flag (provided by FIDES Community Tools Tiles ≥ 1.6.3) is enabled, the plugin also emits a server-rendered listing fallback, per-deeplink SEO meta tags and an Organization JSON-LD payload so issuer detail URLs become indexable by search engines.
- * Version: 1.7.7
+ * Version: 1.7.8
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.7.7');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.7.8');
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-ssr.php';
 Fides_Issuer_Catalog_SSR::bootstrap();
@@ -173,6 +173,10 @@ function fides_issuer_catalog_enqueue_assets() {
         'ratingsNonce' => wp_create_nonce('wp_rest'),
         'ratingsIsLoggedIn' => is_user_logged_in(),
         'ratingsLoginUrl' => $ratings_login_url,
+        'ecosystemExplorerUrl' => get_option(
+            'fides_issuer_catalog_ecosystem_explorer_url',
+            'https://fides.community/topics/ecosystem-explorer/'
+        ),
     ]);
 }
 add_action('wp_enqueue_scripts', 'fides_issuer_catalog_enqueue_assets');
