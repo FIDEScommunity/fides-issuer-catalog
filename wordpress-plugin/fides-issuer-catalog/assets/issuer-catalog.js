@@ -371,7 +371,14 @@
     if (!dateStr) return '';
     const d = new Date(dateStr);
     if (isNaN(d.getTime())) return '';
-    return d.toLocaleDateString('en-US');
+    return d.toLocaleDateString(undefined);
+  }
+
+  function renderModalLastUpdatedHtml(item) {
+    if (window.FidesCatalogUI && typeof window.FidesCatalogUI.buildModalLastUpdatedHtml === 'function') {
+      return window.FidesCatalogUI.buildModalLastUpdatedHtml(item, ['updatedAt', 'updated', 'fetchedAt']);
+    }
+    return '';
   }
 
   function isWithinLastDays(dateStr, days) {
@@ -1297,13 +1304,10 @@
                       }
                     </span>
                   </div>
-                  <div class="fides-kv-row">
-                    <span class="fides-kv-key">Last updated</span>
-                    <span class="fides-kv-val">${escapeHtml(issuer.updatedAt ? formatDate(issuer.updatedAt) : '—')}</span>
-                  </div>
                 </div>
               </div>
             </div>
+            ${renderModalLastUpdatedHtml(issuer)}
           </div>
         </div>
       </div>
