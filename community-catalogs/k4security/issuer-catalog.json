@@ -1,0 +1,37 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "issuers": [
+    {
+      "id": "issuer:k4security:kspts:test",
+      "displayName": "KSPTS",
+      "description": "K4security's standards-based Digital Product Passport (DPP) issuance solution.",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://k4-dpp.com/",
+      "projectContext": "Standards-based DPP implementation",
+      "credentialRefs": [
+        {
+          "id": "cred:uncefact:dpp:vcdm-2-0",
+          "displayName": "Digital Product Passport"
+        },
+        {
+          "id": "cred:uncefact:dte:vcdm-2-0",
+          "displayName": "Digital Traceability Event"
+        },
+        {
+          "id": "cred:uncefact:dfr:vcdm-2-0",
+          "displayName": "Digital Facility Record"
+        },
+        {
+          "id": "cred:uncefact:dia:vcdm-2-0",
+          "displayName": "Digital Identity Anchor"
+        },
+        {
+          "id": "cred:uncefact:dcc:vcdm-2-0",
+          "displayName": "Conformity Credential"
+        }
+      ]
+    }
+  ],
+  "orgId": "org:k4security"
+}
