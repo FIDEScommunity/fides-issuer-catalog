@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-07-09T09:49:27.978Z",
+  "lastUpdated": "2026-07-09T13:10:12.907Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -236,7 +236,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -316,7 +316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -447,7 +447,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -1231,7 +1231,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1357,7 +1357,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1437,7 +1437,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1517,7 +1517,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1588,7 +1588,727 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
+    },
+    {
+      "id": "issuer:eduwallet:uvh:test",
+      "orgId": "org:surf",
+      "organization": {
+        "name": "SURF",
+        "country": "NL",
+        "website": "https://www.surf.nl/en",
+        "logoUri": "https://www.surf.nl/themes/surf/logo.svg"
+      },
+      "displayName": "Universiteit van Harderwijk (Eduwallet proeftuin)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://agent.dev.eduwallet.nl/uvh",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/uvh/.well-known/openid-credential-issuer",
+      "logoUri": "https://www.surf.nl/themes/surf/logo.svg",
+      "description": "Fictional research university (wo) issuer in the Npuls/SURF eduwallet proeftuin. Issues education credentials (Academic Base, Academic Enrollment, Student Card, Study Data, Exam Enrollment, Support and Open Badge) via OpenID4VCI.",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "AcademicBaseCredential",
+          "displayName": "AcademicBaseCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicBaseCredential_SD",
+          "displayName": "AcademicBaseCredential_SD",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://agent.dev.eduwallet.nl/vct/abc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicEnrollmentCredential",
+          "displayName": "AcademicEnrollmentCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "SupportCredential",
+          "displayName": "SupportCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "StudyDataCredential",
+          "displayName": "StudyDataCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "StudentCardCredential",
+          "displayName": "StudentCardCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "ExamEnrollmentCredential",
+          "displayName": "ExamEnrollmentCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "OpenBadgeCredential",
+          "displayName": "OpenBadgeCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        }
+      ],
+      "supportedWallets": [
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
+      ],
+      "firstSeenAt": "2026-07-09T13:10:12.907Z",
+      "updatedAt": "2026-07-09T15:07:43+02:00",
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
+    },
+    {
+      "id": "issuer:eduwallet:mbob:test",
+      "orgId": "org:surf",
+      "organization": {
+        "name": "SURF",
+        "country": "NL",
+        "website": "https://www.surf.nl/en",
+        "logoUri": "https://www.surf.nl/themes/surf/logo.svg"
+      },
+      "displayName": "MBO Beek (Eduwallet proeftuin)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://agent.dev.eduwallet.nl/mbob",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/mbob/.well-known/openid-credential-issuer",
+      "logoUri": "https://www.surf.nl/themes/surf/logo.svg",
+      "description": "Fictional vocational education (mbo) issuer in the Npuls/SURF eduwallet proeftuin, issuing the same set of education credentials as the other pilot institutions.",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "AcademicBaseCredential",
+          "displayName": "AcademicBaseCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicBaseCredential_SD",
+          "displayName": "AcademicBaseCredential_SD",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://agent.dev.eduwallet.nl/vct/abc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicEnrollmentCredential",
+          "displayName": "AcademicEnrollmentCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "SupportCredential",
+          "displayName": "SupportCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "StudyDataCredential",
+          "displayName": "StudyDataCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "StudentCardCredential",
+          "displayName": "StudentCardCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "ExamEnrollmentCredential",
+          "displayName": "ExamEnrollmentCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "OpenBadgeCredential",
+          "displayName": "OpenBadgeCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        }
+      ],
+      "supportedWallets": [
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
+      ],
+      "firstSeenAt": "2026-07-09T13:10:12.907Z",
+      "updatedAt": "2026-07-09T15:07:43+02:00",
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
+    },
+    {
+      "id": "issuer:eduwallet:hbot:test",
+      "orgId": "org:surf",
+      "organization": {
+        "name": "SURF",
+        "country": "NL",
+        "website": "https://www.surf.nl/en",
+        "logoUri": "https://www.surf.nl/themes/surf/logo.svg"
+      },
+      "displayName": "HBO Texel (Eduwallet proeftuin)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://agent.dev.eduwallet.nl/hbot",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/hbot/.well-known/openid-credential-issuer",
+      "logoUri": "https://www.surf.nl/themes/surf/logo.svg",
+      "description": "Fictional university of applied sciences (hbo) issuer in the Npuls/SURF eduwallet proeftuin.",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "AcademicBaseCredential",
+          "displayName": "AcademicBaseCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicBaseCredential_SD",
+          "displayName": "AcademicBaseCredential_SD",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://agent.dev.eduwallet.nl/vct/abc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicEnrollmentCredential",
+          "displayName": "AcademicEnrollmentCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "SupportCredential",
+          "displayName": "SupportCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "StudyDataCredential",
+          "displayName": "StudyDataCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "StudentCardCredential",
+          "displayName": "StudentCardCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "ExamEnrollmentCredential",
+          "displayName": "ExamEnrollmentCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "OpenBadgeCredential",
+          "displayName": "OpenBadgeCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        }
+      ],
+      "supportedWallets": [
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
+      ],
+      "firstSeenAt": "2026-07-09T13:10:12.907Z",
+      "updatedAt": "2026-07-09T15:07:43+02:00",
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
+    },
+    {
+      "id": "issuer:eduwallet:tun:test",
+      "orgId": "org:surf",
+      "organization": {
+        "name": "SURF",
+        "country": "NL",
+        "website": "https://www.surf.nl/en",
+        "logoUri": "https://www.surf.nl/themes/surf/logo.svg"
+      },
+      "displayName": "Theed University of Naboo (Eduwallet proeftuin)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://agent.dev.eduwallet.nl/tun",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/tun/.well-known/openid-credential-issuer",
+      "logoUri": "https://www.surf.nl/themes/surf/logo.svg",
+      "description": "Fictional international demo institution in the Npuls/SURF eduwallet proeftuin, issuing an Academic Base Credential to demonstrate cross-border education credential flows.",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "AcademicBaseCredential",
+          "displayName": "AcademicBaseCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicBaseCredential_SD",
+          "displayName": "AcademicBaseCredential_SD",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://agent.dev.eduwallet.nl/vct/abc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        }
+      ],
+      "supportedWallets": [
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
+      ],
+      "firstSeenAt": "2026-07-09T13:10:12.907Z",
+      "updatedAt": "2026-07-09T15:07:43+02:00",
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
+    },
+    {
+      "id": "issuer:eduwallet:epi:test",
+      "orgId": "org:surf",
+      "organization": {
+        "name": "SURF",
+        "country": "NL",
+        "website": "https://www.surf.nl/en",
+        "logoUri": "https://www.surf.nl/themes/surf/logo.svg"
+      },
+      "displayName": "eduID Proeftuin Issuer (Eduwallet proeftuin)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://agent.dev.eduwallet.nl/epi",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/epi/.well-known/openid-credential-issuer",
+      "logoUri": "https://www.surf.nl/themes/surf/logo.svg",
+      "description": "eduID-linked issuer in the Npuls/SURF eduwallet proeftuin, issuing an Academic Base Credential and an eduID credential.",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "AcademicBaseCredential",
+          "displayName": "AcademicBaseCredential",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "EduID",
+          "displayName": "EduID",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        }
+      ],
+      "supportedWallets": [
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
+      ],
+      "firstSeenAt": "2026-07-09T13:10:12.907Z",
+      "updatedAt": "2026-07-09T15:07:43+02:00",
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
+    },
+    {
+      "id": "issuer:eduwallet:sandbox:test",
+      "orgId": "org:surf",
+      "organization": {
+        "name": "SURF",
+        "country": "NL",
+        "website": "https://www.surf.nl/en",
+        "logoUri": "https://www.surf.nl/themes/surf/logo.svg"
+      },
+      "displayName": "Eduwallet Sandbox Issuer",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://agent.dev.eduwallet.nl/sandbox",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/sandbox/.well-known/openid-credential-issuer",
+      "logoUri": "https://www.surf.nl/themes/surf/logo.svg",
+      "description": "Interop sandbox issuer in the Npuls/SURF eduwallet proeftuin, offering credentials in multiple OpenID4VCI formats (vc+sd-jwt, dc+sd-jwt, jwt_vc_json, ldp_vc) for conformance and interoperability testing.",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "AcademicBaseCredential_JWT",
+          "displayName": "AcademicBaseCredential_JWT",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicBaseCredential_LD",
+          "displayName": "AcademicBaseCredential_LD",
+          "vcFormat": "vcdm_1_1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "AcademicBaseCredential_SD",
+          "displayName": "AcademicBaseCredential_SD",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://agent.dev.eduwallet.nl/vct/abc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "PID_JWT",
+          "displayName": "PID_JWT",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "PID_SD",
+          "displayName": "PID_SD",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "https://agent.dev.eduwallet.nl/vct/pid",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "GenericCredential_JWT",
+          "displayName": "GenericCredential_JWT",
+          "vcFormat": "sd_jwt_vc",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "GenericCredential_JWT_1",
+          "displayName": "GenericCredential_JWT_1",
+          "vcFormat": "vcdm_1_1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        },
+        {
+          "configurationId": "GenericCredential_LD",
+          "displayName": "GenericCredential_LD",
+          "vcFormat": "vcdm_1_1",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:key"
+          ]
+        }
+      ],
+      "supportedWallets": [
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
+      ],
+      "firstSeenAt": "2026-07-09T13:10:12.907Z",
+      "updatedAt": "2026-07-09T15:07:43+02:00",
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -2330,7 +3050,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -2831,7 +3551,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -2940,7 +3660,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:fides:fides-labs-issuer:test",
@@ -2994,7 +3714,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-21T14:04:37.030Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -3036,7 +3756,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3211,7 +3931,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3268,7 +3988,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -3310,7 +4030,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -3333,7 +4053,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -3389,7 +4109,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -3434,7 +4154,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -3514,7 +4234,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -3556,7 +4276,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -3636,7 +4356,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -4175,7 +4895,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -4238,7 +4958,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -4301,7 +5021,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -4364,7 +5084,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -4427,7 +5147,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -4451,7 +5171,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:igrant:playground:test",
@@ -4553,7 +5273,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-18T05:15:29.773Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -4705,7 +5425,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -4760,7 +5480,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -4963,7 +5683,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -5211,7 +5931,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -5291,7 +6011,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -5371,7 +6091,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -5391,12 +6111,28 @@
       "description": "Sandbox credential issuer for the Swiss E-ID (swiyu) Public Beta. Supports issuance of Beta-ID credentials using OpenID4VCI with SD-JWT format via pre-authorized flows.",
       "issuerWebsiteUrl": "https://www.bcs.admin.ch/bcs-web/#/",
       "projectContext": "Swiss E-ID (swiyu) Public Beta – Beta Credential Service (BCS)",
-      "credentialConfigurations": [],
+      "credentialConfigurations": [
+        {
+          "configurationId": "betaid-sdjwt",
+          "displayName": "Beta ID",
+          "vcFormat": "sd_jwt_vc",
+          "vct": "urn:vct:ch.admin.bcs.betaid",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "logoUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAQAAADa613fAAAAt0lEQVR42u3YMQ4BQRiG4a2p3UMi0Wlcih5n2GYTWS6gcBahdZGfSqHZWdNMxvN+/WSe9m8aSZIkSaqiWMYzcV3ZkFWkdgEBAQEBAQEBAQEBAQEBAQEBKQ4S6zi8tx/Y7rM+GfIYfPV70xzIOcppBlIT5AQCAgICApIB6UFAQEBAQDIgx1og89iMWpv8rXtsR25S5jnoWstdCwQEBAQEBAQEBAQEBAQEBOSfIYu4Ja5tJEmSJP3UC98M2ozRcV9yAAAAAElFTkSuQmCC"
+        }
+      ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z",
-      "metadataFetchError": "This operation was aborted"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -5523,7 +6259,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -5700,7 +6436,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -5779,7 +6515,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -5858,7 +6594,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -5937,13 +6673,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-07-09T09:49:27.978Z"
+      "fetchedAt": "2026-07-09T13:10:12.907Z"
     }
   ],
   "stats": {
-    "totalIssuers": 41,
+    "totalIssuers": 47,
     "productionIssuers": 9,
-    "totalOrganizations": 26,
-    "totalCredentialConfigurations": 227
+    "totalOrganizations": 27,
+    "totalCredentialConfigurations": 264
   }
 }
