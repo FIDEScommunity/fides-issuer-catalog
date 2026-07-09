@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-07-09T13:10:12.907Z",
+  "lastUpdated": "2026-07-09T13:19:33.192Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -236,7 +236,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -316,7 +316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -447,7 +447,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -1231,7 +1231,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1357,7 +1357,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1437,7 +1437,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1517,7 +1517,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1588,7 +1588,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:eduwallet:uvh:test",
@@ -1627,6 +1627,13 @@
           "configurationId": "AcademicBaseCredential_SD",
           "displayName": "AcademicBaseCredential_SD",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "diip-v4",
+            "eduperson"
+          ],
           "vct": "https://agent.dev.eduwallet.nl/vct/abc",
           "signingAlgorithms": [
             "ES256"
@@ -1637,12 +1644,22 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:academic-base:sd-jwt-vc",
+            "displayName": "Academic Base Credential (ABC)"
+          }
         },
         {
           "configurationId": "AcademicEnrollmentCredential",
           "displayName": "AcademicEnrollmentCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "enrollment"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1652,12 +1669,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:academic-enrollment:sd-jwt-vc",
+            "displayName": "Academic Enrollment Credential (AEC)"
+          }
         },
         {
           "configurationId": "SupportCredential",
           "displayName": "SupportCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "accessibility",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1667,12 +1695,22 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:support:sd-jwt-vc",
+            "displayName": "Support Credential (SC)"
+          }
         },
         {
           "configurationId": "StudyDataCredential",
           "displayName": "StudyDataCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1682,12 +1720,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:study-data:sd-jwt-vc",
+            "displayName": "Study Data Credential (SDC)"
+          }
         },
         {
           "configurationId": "StudentCardCredential",
           "displayName": "StudentCardCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "student-card",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1697,12 +1746,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:student-card:sd-jwt-vc",
+            "displayName": "Student Card Credential (SCC)"
+          }
         },
         {
           "configurationId": "ExamEnrollmentCredential",
           "displayName": "ExamEnrollmentCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "exam",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1712,12 +1772,25 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:exam-enrollment:sd-jwt-vc",
+            "displayName": "Exam Enrollment Credential (EEC)"
+          }
         },
         {
           "configurationId": "OpenBadgeCredential",
           "displayName": "OpenBadgeCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "open-badges",
+            "microcredential",
+            "edubadge",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1727,7 +1800,11 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:open-badge:sd-jwt-vc",
+            "displayName": "Open Badge Credential (OBC)"
+          }
         }
       ],
       "supportedWallets": [
@@ -1737,8 +1814,8 @@
         }
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
-      "updatedAt": "2026-07-09T15:07:43+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "updatedAt": "2026-07-09T15:18:14+02:00",
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:eduwallet:mbob:test",
@@ -1777,6 +1854,13 @@
           "configurationId": "AcademicBaseCredential_SD",
           "displayName": "AcademicBaseCredential_SD",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "diip-v4",
+            "eduperson"
+          ],
           "vct": "https://agent.dev.eduwallet.nl/vct/abc",
           "signingAlgorithms": [
             "ES256"
@@ -1787,12 +1871,22 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:academic-base:sd-jwt-vc",
+            "displayName": "Academic Base Credential (ABC)"
+          }
         },
         {
           "configurationId": "AcademicEnrollmentCredential",
           "displayName": "AcademicEnrollmentCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "enrollment"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1802,12 +1896,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:academic-enrollment:sd-jwt-vc",
+            "displayName": "Academic Enrollment Credential (AEC)"
+          }
         },
         {
           "configurationId": "SupportCredential",
           "displayName": "SupportCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "accessibility",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1817,12 +1922,22 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:support:sd-jwt-vc",
+            "displayName": "Support Credential (SC)"
+          }
         },
         {
           "configurationId": "StudyDataCredential",
           "displayName": "StudyDataCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1832,12 +1947,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:study-data:sd-jwt-vc",
+            "displayName": "Study Data Credential (SDC)"
+          }
         },
         {
           "configurationId": "StudentCardCredential",
           "displayName": "StudentCardCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "student-card",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1847,12 +1973,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:student-card:sd-jwt-vc",
+            "displayName": "Student Card Credential (SCC)"
+          }
         },
         {
           "configurationId": "ExamEnrollmentCredential",
           "displayName": "ExamEnrollmentCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "exam",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1862,12 +1999,25 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:exam-enrollment:sd-jwt-vc",
+            "displayName": "Exam Enrollment Credential (EEC)"
+          }
         },
         {
           "configurationId": "OpenBadgeCredential",
           "displayName": "OpenBadgeCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "open-badges",
+            "microcredential",
+            "edubadge",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1877,7 +2027,11 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:open-badge:sd-jwt-vc",
+            "displayName": "Open Badge Credential (OBC)"
+          }
         }
       ],
       "supportedWallets": [
@@ -1887,8 +2041,8 @@
         }
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
-      "updatedAt": "2026-07-09T15:07:43+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "updatedAt": "2026-07-09T15:18:14+02:00",
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:eduwallet:hbot:test",
@@ -1927,6 +2081,13 @@
           "configurationId": "AcademicBaseCredential_SD",
           "displayName": "AcademicBaseCredential_SD",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "diip-v4",
+            "eduperson"
+          ],
           "vct": "https://agent.dev.eduwallet.nl/vct/abc",
           "signingAlgorithms": [
             "ES256"
@@ -1937,12 +2098,22 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:academic-base:sd-jwt-vc",
+            "displayName": "Academic Base Credential (ABC)"
+          }
         },
         {
           "configurationId": "AcademicEnrollmentCredential",
           "displayName": "AcademicEnrollmentCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "enrollment"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1952,12 +2123,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:academic-enrollment:sd-jwt-vc",
+            "displayName": "Academic Enrollment Credential (AEC)"
+          }
         },
         {
           "configurationId": "SupportCredential",
           "displayName": "SupportCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "accessibility",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1967,12 +2149,22 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:support:sd-jwt-vc",
+            "displayName": "Support Credential (SC)"
+          }
         },
         {
           "configurationId": "StudyDataCredential",
           "displayName": "StudyDataCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1982,12 +2174,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:study-data:sd-jwt-vc",
+            "displayName": "Study Data Credential (SDC)"
+          }
         },
         {
           "configurationId": "StudentCardCredential",
           "displayName": "StudentCardCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "student-card",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -1997,12 +2200,23 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:student-card:sd-jwt-vc",
+            "displayName": "Student Card Credential (SCC)"
+          }
         },
         {
           "configurationId": "ExamEnrollmentCredential",
           "displayName": "ExamEnrollmentCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "exam",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -2012,12 +2226,25 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:exam-enrollment:sd-jwt-vc",
+            "displayName": "Exam Enrollment Credential (EEC)"
+          }
         },
         {
           "configurationId": "OpenBadgeCredential",
           "displayName": "OpenBadgeCredential",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "open-badges",
+            "microcredential",
+            "edubadge",
+            "schema-pending"
+          ],
           "signingAlgorithms": [
             "ES256"
           ],
@@ -2027,7 +2254,11 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:open-badge:sd-jwt-vc",
+            "displayName": "Open Badge Credential (OBC)"
+          }
         }
       ],
       "supportedWallets": [
@@ -2037,8 +2268,8 @@
         }
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
-      "updatedAt": "2026-07-09T15:07:43+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "updatedAt": "2026-07-09T15:18:14+02:00",
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:eduwallet:tun:test",
@@ -2077,6 +2308,13 @@
           "configurationId": "AcademicBaseCredential_SD",
           "displayName": "AcademicBaseCredential_SD",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "diip-v4",
+            "eduperson"
+          ],
           "vct": "https://agent.dev.eduwallet.nl/vct/abc",
           "signingAlgorithms": [
             "ES256"
@@ -2087,7 +2325,11 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:academic-base:sd-jwt-vc",
+            "displayName": "Academic Base Credential (ABC)"
+          }
         }
       ],
       "supportedWallets": [
@@ -2097,8 +2339,8 @@
         }
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
-      "updatedAt": "2026-07-09T15:07:43+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "updatedAt": "2026-07-09T15:18:14+02:00",
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:eduwallet:epi:test",
@@ -2156,8 +2398,8 @@
         }
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
-      "updatedAt": "2026-07-09T15:07:43+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "updatedAt": "2026-07-09T15:18:14+02:00",
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:eduwallet:sandbox:test",
@@ -2211,6 +2453,13 @@
           "configurationId": "AcademicBaseCredential_SD",
           "displayName": "AcademicBaseCredential_SD",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "eduwallet",
+            "education",
+            "diip-v4",
+            "eduperson"
+          ],
           "vct": "https://agent.dev.eduwallet.nl/vct/abc",
           "signingAlgorithms": [
             "ES256"
@@ -2221,7 +2470,11 @@
           "cryptographicBindingMethods": [
             "did:jwk",
             "did:key"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:eduwallet:academic-base:sd-jwt-vc",
+            "displayName": "Academic Base Credential (ABC)"
+          }
         },
         {
           "configurationId": "PID_JWT",
@@ -2307,8 +2560,8 @@
         }
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
-      "updatedAt": "2026-07-09T15:07:43+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "updatedAt": "2026-07-09T15:18:14+02:00",
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -3050,7 +3303,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -3551,7 +3804,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -3660,7 +3913,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:fides:fides-labs-issuer:test",
@@ -3714,7 +3967,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-21T14:04:37.030Z",
       "updatedAt": "2026-05-21T16:04:17+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -3756,7 +4009,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3931,7 +4184,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3988,7 +4241,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -4030,7 +4283,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -4053,7 +4306,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -4109,7 +4362,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -4154,7 +4407,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -4234,7 +4487,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -4276,7 +4529,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -4356,7 +4609,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -4895,7 +5148,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -4958,7 +5211,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -5021,7 +5274,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -5084,7 +5337,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -5147,7 +5400,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -5171,7 +5424,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:igrant:playground:test",
@@ -5273,7 +5526,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-18T05:15:29.773Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -5425,7 +5678,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -5480,7 +5733,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -5683,7 +5936,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -5931,7 +6184,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -6011,7 +6264,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -6091,7 +6344,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -6132,7 +6385,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -6259,7 +6512,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -6436,7 +6689,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -6515,7 +6768,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -6594,7 +6847,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -6673,7 +6926,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-07-09T13:10:12.907Z"
+      "fetchedAt": "2026-07-09T13:19:33.192Z"
     }
   ],
   "stats": {
