@@ -1,0 +1,78 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:surf",
+  "issuers": [
+    {
+      "id": "issuer:eduwallet:uvh:test",
+      "displayName": "Universiteit van Harderwijk (Eduwallet proeftuin)",
+      "description": "Fictional research university (wo) issuer in the Npuls/SURF eduwallet proeftuin. Issues education credentials (Academic Base, Academic Enrollment, Student Card, Study Data, Exam Enrollment, Support and Open Badge) via OpenID4VCI.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/uvh/.well-known/openid-credential-issuer",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "supportedWallets": [
+        { "id": "wwwallet", "displayName": "wwWallet" }
+      ]
+    },
+    {
+      "id": "issuer:eduwallet:mbob:test",
+      "displayName": "MBO Beek (Eduwallet proeftuin)",
+      "description": "Fictional vocational education (mbo) issuer in the Npuls/SURF eduwallet proeftuin, issuing the same set of education credentials as the other pilot institutions.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/mbob/.well-known/openid-credential-issuer",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "supportedWallets": [
+        { "id": "wwwallet", "displayName": "wwWallet" }
+      ]
+    },
+    {
+      "id": "issuer:eduwallet:hbot:test",
+      "displayName": "HBO Texel (Eduwallet proeftuin)",
+      "description": "Fictional university of applied sciences (hbo) issuer in the Npuls/SURF eduwallet proeftuin.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/hbot/.well-known/openid-credential-issuer",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "supportedWallets": [
+        { "id": "wwwallet", "displayName": "wwWallet" }
+      ]
+    },
+    {
+      "id": "issuer:eduwallet:tun:test",
+      "displayName": "Theed University of Naboo (Eduwallet proeftuin)",
+      "description": "Fictional international demo institution in the Npuls/SURF eduwallet proeftuin, issuing an Academic Base Credential to demonstrate cross-border education credential flows.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/tun/.well-known/openid-credential-issuer",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "supportedWallets": [
+        { "id": "wwwallet", "displayName": "wwWallet" }
+      ]
+    },
+    {
+      "id": "issuer:eduwallet:epi:test",
+      "displayName": "eduID Proeftuin Issuer (Eduwallet proeftuin)",
+      "description": "eduID-linked issuer in the Npuls/SURF eduwallet proeftuin, issuing an Academic Base Credential and an eduID credential.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/epi/.well-known/openid-credential-issuer",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "supportedWallets": [
+        { "id": "wwwallet", "displayName": "wwWallet" }
+      ]
+    },
+    {
+      "id": "issuer:eduwallet:sandbox:test",
+      "displayName": "Eduwallet Sandbox Issuer",
+      "description": "Interop sandbox issuer in the Npuls/SURF eduwallet proeftuin, offering credentials in multiple OpenID4VCI formats (vc+sd-jwt, dc+sd-jwt, jwt_vc_json, ldp_vc) for conformance and interoperability testing.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/sandbox/.well-known/openid-credential-issuer",
+      "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
+      "supportedWallets": [
+        { "id": "wwwallet", "displayName": "wwWallet" }
+      ]
+    }
+  ]
+}
