@@ -145,5 +145,8 @@
   },
   "issuer:eduwallet:sandbox:test": {
     "firstSeenAt": "2026-07-09T13:10:12.907Z"
+  },
+  "issuer:k4security:kspts:test": {
+    "firstSeenAt": "2026-07-15T06:00:43.266Z"
   }
 }
