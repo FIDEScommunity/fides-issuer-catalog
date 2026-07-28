@@ -289,16 +289,32 @@
     return window.innerWidth < LIST_BREAKPOINT ? 'grid' : viewMode;
   }
 
+  let vocabulary = null;
+  let root;
+
+  let mobileFiltersController = null;
+  function getMobileFilters() {
+    if (mobileFiltersController) return mobileFiltersController;
+    if (!window.FidesCatalogUI || typeof window.FidesCatalogUI.createMobileFiltersController !== 'function') {
+      return null;
+    }
+    mobileFiltersController = window.FidesCatalogUI.createMobileFiltersController({
+      root: () => root,
+      breakpoint: LIST_BREAKPOINT,
+    });
+    return mobileFiltersController;
+  }
+
   let _lastEffective = effectiveView();
   window.addEventListener('resize', () => {
+    getMobileFilters()?.onLeavingMobileViewport();
     const cur = effectiveView();
     if (cur !== _lastEffective) {
       _lastEffective = cur;
       renderIssuerGridOnly();
     }
   });
-  let vocabulary = null;
-  let root;
+
   let rpCatalogData = null;
   let rpCatalogFetchPromise = null;
   /** cred:… id -> taxonomy theme codes from credential catalog aggregated.json */
@@ -1477,6 +1493,7 @@
     const filtered = getFilteredIssuers();
     const metrics = computeMetrics(filtered);
 
+    const mobileFiltersOpen = getMobileFilters()?.captureOpenState() || false;
     root.innerHTML = `
       <div class="fides-issuer-layout">
         <div class="fides-main-layout fides-main ${settings.showFilters ? '' : 'no-filters'}">
@@ -1529,6 +1546,7 @@
     `;
 
     bindEvents();
+    getMobileFilters()?.applyAfterRender(mobileFiltersOpen);
   }
 
   function showToast(message, type = 'success', theme = 'fides') {
@@ -1707,9 +1725,19 @@
     const overlay = document.getElementById('fides-modal-overlay');
     if (overlay) {
       overlay.classList.add('closing');
-      setTimeout(() => { overlay.remove(); }, 200);
+      setTimeout(() => {
+        overlay.remove();
+        if (window.FidesCatalogUI && typeof window.FidesCatalogUI.syncCatalogBodyScrollLock === 'function') {
+          window.FidesCatalogUI.syncCatalogBodyScrollLock({ root: root });
+        } else if (!(root && root.querySelector('.fides-sidebar.mobile-open'))) {
+          document.body.style.overflow = '';
+        }
+      }, 200);
+    } else if (window.FidesCatalogUI && typeof window.FidesCatalogUI.syncCatalogBodyScrollLock === 'function') {
+      window.FidesCatalogUI.syncCatalogBodyScrollLock({ root: root });
+    } else if (!(root && root.querySelector('.fides-sidebar.mobile-open'))) {
+      document.body.style.overflow = '';
     }
-    document.body.style.overflow = '';
     const params = new URLSearchParams(window.location.search);
     params.delete('issuer');
     const qs = params.toString();
@@ -1828,12 +1856,7 @@
       });
     }
 
-    root.querySelectorAll('.fides-filter-label-toggle').forEach((toggle) => {
-      toggle.addEventListener('click', () => {
-        const group = toggle.closest('.fides-filter-group')?.dataset.filterGroup;
-        if (group && group in filterGroupState) { filterGroupState[group] = !filterGroupState[group]; render(); }
-      });
-    });
+    getMobileFilters()?.bindCollapsibleToggles(filterGroupState);
 
     // Card clicks
     root.querySelectorAll('.fides-issuer-card').forEach((card) => {
@@ -1841,19 +1864,7 @@
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.id); } });
     });
 
-    // Mobile filter drawer
-    const mobileToggle = root.querySelector('#fides-mobile-filter-toggle');
-    const sidebar = root.querySelector('.fides-sidebar');
-    if (mobileToggle && sidebar) {
-      mobileToggle.addEventListener('click', () => { sidebar.classList.add('mobile-open'); document.body.style.overflow = 'hidden'; });
-    }
-    const sidebarClose = root.querySelector('#fides-sidebar-close');
-    if (sidebarClose && sidebar) {
-      sidebarClose.addEventListener('click', () => { sidebar.classList.remove('mobile-open'); document.body.style.overflow = ''; });
-    }
-    if (sidebar) {
-      sidebar.addEventListener('click', (e) => { if (e.target === sidebar && sidebar.classList.contains('mobile-open')) { sidebar.classList.remove('mobile-open'); document.body.style.overflow = ''; } });
-    }
+    getMobileFilters()?.bindShell();
 
     // View toggle — targeted update to avoid rebuilding the full results bar
     root.querySelectorAll('.fides-view-btn').forEach((btn) => {
