@@ -6,6 +6,11 @@ A community-driven catalog of OID4VCI credential issuers. Organizations contribu
 
 ## Changelog
 
+### 1.7.11
+
+- Added create/update Catalog Submissions forms, validation, modal update links,
+  and the moderated WordPress-to-GitHub import pipeline.
+
 ### 1.7.1
 
 - WordPress plugin version bump to `1.7.1`.
@@ -60,6 +65,7 @@ fides-issuer-catalog/
 npm install
 npm run crawl      # Fetch .well-known endpoints and write aggregated.json
 npm run validate   # Validate source files against the JSON Schema
+npm run test:import-wp-submissions
 ```
 
 **Resolving `orgId`:** The crawler loads the [organization catalog](https://github.com/FIDEScommunity/fides-organization-catalog) `data/aggregated.json` from GitHub (raw), or falls back to `../organization-catalog/data/aggregated.json` when the fetch fails. Override with `ORGANIZATION_CATALOG_AGGREGATED_PATH` if needed.
@@ -138,7 +144,19 @@ Each issuer entry includes `orgId`, resolved `organization` (from the organizati
 
 ```
 [fides_issuer_catalog]
+[fides_issuer_submit_form]
+[fides_issuer_update_form]
 ```
+
+The submission forms require a logged-in user and the Catalog Submissions core
+from `fides-community-tools-tiles`. Create submissions select an organization
+and generate the stable issuer id. Update links use `/issuers-update/?issuer=…`
+by default; configure a different page in the plugin settings. All schema source
+fields are editable without plan-tier restrictions. Published submissions are
+merged into `community-catalogs/<org-slug>/issuer-catalog.json` by
+`.github/workflows/wp-submissions-sync.yml`, preserving sibling issuers.
+The crawler already reads these local source files directly, so this workflow
+does not need a separate remote issuer import or skip-remote flag.
 
 | Option | Values | Default | Description |
 |--------|--------|---------|-------------|

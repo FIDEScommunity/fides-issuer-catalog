@@ -544,6 +544,14 @@ async function crawl(): Promise<void> {
           id: w.id,
           displayName: w.displayName,
         })) || [],
+        ...(sourceIssuer.credentialRefs?.length
+          ? {
+              credentialRefs: sourceIssuer.credentialRefs.map((ref) => ({
+                id: ref.id,
+                displayName: ref.displayName,
+              })),
+            }
+          : {}),
         firstSeenAt: historyState[sourceIssuer.id].firstSeenAt,
         updatedAt,
         fetchedAt,

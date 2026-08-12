@@ -23,6 +23,7 @@
     shield: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>',
     link: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
     share: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>',
+    pencil: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>',
     check: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
     server: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>',
     eye: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>',
@@ -1041,6 +1042,22 @@
     });
   }
 
+  function buildIssuerEditActionHtml(issuer) {
+    const access = config.editAccess && typeof config.editAccess === 'object' ? config.editAccess : {};
+    const base = String(config.updateFormUrl || '').trim();
+    const canEdit = window.FidesCatalogUI && typeof window.FidesCatalogUI.userCanEditCatalogItem === 'function'
+      ? window.FidesCatalogUI.userCanEditCatalogItem(access, issuer && issuer.orgId, issuer)
+      : Boolean(access.isLoggedIn);
+    if (!canEdit || !base || !issuer || !issuer.id) return '';
+    try {
+      const url = new URL(base, window.location.origin);
+      url.searchParams.set('issuer', String(issuer.id));
+      return `<a href="${escapeHtml(url.toString())}" class="fides-modal-copy-link fides-modal-edit-link" aria-label="Suggest an update" title="Suggest an update">${icons.pencil}</a>`;
+    } catch (_error) {
+      return '';
+    }
+  }
+
   function renderModal() {
     if (!selectedIssuer) return '';
     const issuer = selectedIssuer;
@@ -1094,6 +1111,7 @@
               </div>
             </div>
             <div class="fides-modal-header-actions">
+              ${buildIssuerEditActionHtml(issuer)}
               <button type="button" class="fides-modal-copy-link" id="fides-modal-copy-link" aria-label="Copy link" title="Copy link">
                 ${icons.share}
               </button>

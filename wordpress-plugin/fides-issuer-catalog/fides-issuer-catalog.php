@@ -2,17 +2,22 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers. When the master fides_catalog_ssr_enabled flag (provided by FIDES Community Tools Tiles ≥ 1.6.3) is enabled, the plugin also emits a server-rendered listing fallback, per-deeplink SEO meta tags and an Organization JSON-LD payload so issuer detail URLs become indexable by search engines.
- * Version: 1.7.10
+ * Version: 1.7.11
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.7.10');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.7.11');
+define('FIDES_ISSUER_CATALOG_DEFAULT_UPDATE_FORM_PATH', '/issuers-update/');
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-ssr.php';
 Fides_Issuer_Catalog_SSR::bootstrap();
+require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-submission-adapter.php';
+require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-submission-forms.php';
+Fides_Issuer_Catalog_Submission_Adapter::bootstrap();
+Fides_Issuer_Catalog_Submission_Forms::bootstrap();
 
 /**
  * Detect if the site is running on a .local or localhost URL (local dev).
@@ -173,6 +178,15 @@ function fides_issuer_catalog_enqueue_assets() {
         'ratingsNonce' => wp_create_nonce('wp_rest'),
         'ratingsIsLoggedIn' => is_user_logged_in(),
         'ratingsLoginUrl' => $ratings_login_url,
+        'updateFormUrl' => fides_issuer_catalog_update_form_url(),
+        'editAccess' => class_exists('Fides_Catalog_Org_Tier')
+            ? Fides_Catalog_Org_Tier::edit_access_for_user(get_current_user_id())
+            : [
+                'isLoggedIn' => is_user_logged_in(),
+                'isAdmin' => current_user_can('manage_options'),
+                'ownedOrgIds' => [],
+                'proOrgIds' => [],
+            ],
         'ecosystemExplorerUrl' => get_option(
             'fides_issuer_catalog_ecosystem_explorer_url',
             'https://fides.community/topics/ecosystem-explorer/'
@@ -180,6 +194,18 @@ function fides_issuer_catalog_enqueue_assets() {
     ]);
 }
 add_action('wp_enqueue_scripts', 'fides_issuer_catalog_enqueue_assets');
+
+/**
+ * Resolve the page containing [fides_issuer_update_form].
+ */
+function fides_issuer_catalog_update_form_url($override = '') {
+    $override = trim((string) $override);
+    if ($override !== '') {
+        return esc_url_raw($override);
+    }
+    $option = trim((string) get_option('fides_issuer_catalog_update_form_url', ''));
+    return $option !== '' ? esc_url_raw($option) : home_url(FIDES_ISSUER_CATALOG_DEFAULT_UPDATE_FORM_PATH);
+}
 
 /**
  * Enqueue frontend assets only when the issuer shortcode is present.
@@ -238,6 +264,7 @@ function fides_issuer_catalog_shortcode($atts) {
         'columns'          => '3',
         'theme'            => 'fides',
         'taxonomy_theme' => '',
+        'update_form_url' => '',
     ], $atts);
 
     $show_filters = $atts['show_filters'] === 'true' ? 'true' : 'false';
@@ -245,6 +272,12 @@ function fides_issuer_catalog_shortcode($atts) {
     $columns      = in_array($atts['columns'], ['2', '3', '4']) ? $atts['columns'] : '3';
     $theme        = in_array($atts['theme'], ['dark', 'light', 'fides']) ? $atts['theme'] : 'fides';
     $taxonomy_theme = sanitize_text_field((string) $atts['taxonomy_theme']);
+    $update_form_url = fides_issuer_catalog_update_form_url((string) $atts['update_form_url']);
+    wp_add_inline_script(
+        'fides-issuer-catalog',
+        'window.fidesIssuerCatalog = window.fidesIssuerCatalog || {}; window.fidesIssuerCatalog.updateFormUrl = ' . wp_json_encode($update_form_url) . ';',
+        'before'
+    );
 
     // Build the initial HTML inside the root container. When the master
     // SSR switch is on, this returns a hidden SSR fallback (visible to
@@ -298,6 +331,9 @@ function fides_issuer_catalog_settings_init() {
     ]);
     register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_credential_aggregated_url', [
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
+    ]);
+    register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_update_form_url', [
+        'type' => 'string', 'default' => '', 'sanitize_callback' => 'esc_url_raw',
     ]);
 }
 add_action('admin_init', 'fides_issuer_catalog_settings_init');
@@ -382,11 +418,20 @@ function fides_issuer_catalog_settings_render() { ?>
                         <p class="description">Optional. Credential catalog <code>aggregated.json</code> used for the <strong>Theme</strong> filter and <code>?theme=</code> deep links. Leave empty for GitHub default or bundled credential plugin JSON on local sites.</p>
                     </td>
                 </tr>
+                <tr>
+                    <th scope="row"><label for="fides_issuer_catalog_update_form_url">Issuer update form page URL</label></th>
+                    <td>
+                        <input type="url" id="fides_issuer_catalog_update_form_url" name="fides_issuer_catalog_update_form_url"
+                               value="<?php echo esc_attr(get_option('fides_issuer_catalog_update_form_url', '')); ?>"
+                               class="regular-text" placeholder="<?php echo esc_attr(home_url(FIDES_ISSUER_CATALOG_DEFAULT_UPDATE_FORM_PATH)); ?>">
+                        <p class="description">Page with <code>[fides_issuer_update_form]</code>. Logged-in users see a “Suggest an update” link in issuer modals.</p>
+                    </td>
+                </tr>
             </table>
             <?php submit_button(); ?>
         </form>
         <h2>Shortcode</h2>
-        <p><code>[fides_issuer_catalog]</code></p>
-        <p>Optional attributes: <code>show_filters</code>, <code>show_search</code>, <code>columns</code>, <code>theme</code> (UI color), <code>taxonomy_theme</code> (preset taxonomy filter).</p>
+        <p><code>[fides_issuer_catalog]</code>, <code>[fides_issuer_submit_form]</code>, <code>[fides_issuer_update_form]</code></p>
+        <p>Catalog attributes: <code>show_filters</code>, <code>show_search</code>, <code>columns</code>, <code>theme</code>, <code>taxonomy_theme</code>, <code>update_form_url</code>.</p>
     </div>
 <?php }

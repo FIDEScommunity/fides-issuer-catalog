@@ -142,6 +142,8 @@ export interface AggregatedIssuer {
   projectContext?: string;
   credentialConfigurations: AggregatedCredentialConfiguration[];
   supportedWallets: AggregatedWalletRef[];
+  /** Source-catalog references preserved for submission update prefill/roundtrip. */
+  credentialRefs?: SourceCredentialReference[];
   firstSeenAt: string;
   updatedAt: string;
   fetchedAt: string;
