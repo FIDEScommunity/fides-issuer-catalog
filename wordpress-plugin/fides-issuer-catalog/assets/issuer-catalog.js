@@ -29,6 +29,7 @@
     eye: '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>',
     viewGrid: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>',
     viewList: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>',
+    useCases: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>',
   };
 
   const ENVIRONMENT_LABELS = {
@@ -232,6 +233,8 @@
     walletCatalogUrl: 'https://fides.community/community-tools/personal-wallets/',
     organizationCatalogUrl: 'https://fides.community/ecosystem-explorer/organization-catalog/',
     organizationDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-organization-catalog/main/data/aggregated.json',
+    useCaseCatalogUrl: 'https://fides.community/ecosystem-explorer/use-cases/',
+    useCaseAggregatedDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-use-case-catalog/main/data/aggregated.json',
   };
   const RATINGS_API_BASE = (window.fidesIssuerCatalog && window.fidesIssuerCatalog.ratingsApiBase)
     ? String(window.fidesIssuerCatalog.ratingsApiBase).trim().replace(/\/$/, '')
@@ -269,6 +272,9 @@
   let ratingSummariesByIssuerId = Object.create(null);
   let ratingSummariesByRpId = Object.create(null);
   let ratingSummariesByCredentialId = Object.create(null);
+  let ratingSummariesByUseCaseId = Object.create(null);
+  /** issuer id → use cases[] reverse-linked from use case catalog aggregated.json */
+  let useCasesByIssuerId = Object.create(null);
   let selectedIssuer = null;
   let forcedModalTheme = null;
 
@@ -398,6 +404,51 @@
     return '';
   }
 
+  /**
+   * Accordion listing use cases that link this issuer (links.issuers[].refId).
+   * Bare name + likes table — same pattern as wallet/org modals.
+   */
+  function renderUseCasesAccordion(useCases) {
+    if (!Array.isArray(useCases) || useCases.length === 0) return '';
+    const base = (config.useCaseCatalogUrl || '').replace(/\/$/, '');
+    const rowsHtml = useCases.map((uc) => {
+      const label = escapeHtml(uc.title || uc.id);
+      const likeHtml = uc.id ? renderModalEntityLike('usecase', uc.id) : '';
+      const likeCell = `<td class="fides-modal-entity-col-likes">${likeHtml}</td>`;
+      if (base && uc.id) {
+        const href = `${base}/?usecase=${encodeURIComponent(uc.id)}`;
+        return `<tr><td><a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${label}</a></td>${likeCell}</tr>`;
+      }
+      return `<tr><td>${label}</td>${likeCell}</tr>`;
+    }).join('');
+    return `
+      <div class="fides-accordion" id="fides-accordion-use-cases">
+        <div class="fides-accordion-header-bar">
+          <button class="fides-accordion-header fides-accordion-toggle" type="button" aria-expanded="false">
+            <span class="fides-accordion-title">${icons.useCases} Use cases <span class="fides-accordion-count">${useCases.length}</span></span>
+          </button>
+          <button type="button" class="fides-accordion-chevron-btn fides-accordion-toggle" aria-expanded="false" aria-label="Toggle use cases">
+            <span class="fides-accordion-chevron">${icons.chevronDown}</span>
+          </button>
+        </div>
+        <div class="fides-accordion-body">
+          <div class="fides-attributes-table-wrap">
+            <table class="fides-attributes-table fides-modal-entity-table fides-modal-entity-table--name-likes" aria-label="Use cases">
+              <tbody>
+                ${rowsHtml}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function getDerivedUseCasesForIssuer(issuer) {
+    if (!issuer || !issuer.id) return [];
+    return useCasesByIssuerId[issuer.id] || [];
+  }
+
   function isWithinLastDays(dateStr, days) {
     if (!dateStr) return false;
     const d = new Date(dateStr);
@@ -448,6 +499,7 @@
     if (type === 'issuer') return ratingSummariesByIssuerId;
     if (type === 'rp') return ratingSummariesByRpId;
     if (type === 'credential') return ratingSummariesByCredentialId;
+    if (type === 'usecase') return ratingSummariesByUseCaseId;
     return null;
   }
 
@@ -1131,6 +1183,8 @@
                 </div>`
               : ''
             }
+
+            ${renderUseCasesAccordion(getDerivedUseCasesForIssuer(issuer))}
 
             <!-- FIDES Ecosystem Model -->
             <div class="fides-accordion fides-modal-section">
@@ -2199,6 +2253,52 @@
     }
   }
 
+  /**
+   * Build issuer id → use cases[] from use case catalog aggregated.json
+   * (links.issuers[].refId). Runtime join — issuer aggregated.json has no use-case field.
+   */
+  async function loadUseCaseIndex() {
+    useCasesByIssuerId = Object.create(null);
+    const url = (config.useCaseAggregatedDataUrl || '').trim();
+    if (!url) return;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) return;
+      const data = await response.json();
+      const useCases = Array.isArray(data.useCases) ? data.useCases : [];
+      const allUseCaseIds = [];
+      useCases.forEach(function (uc) {
+        if (!uc || typeof uc.id !== 'string') return;
+        const links = uc.links && typeof uc.links === 'object' ? uc.links : {};
+        const issuerLinks = Array.isArray(links.issuers) ? links.issuers : [];
+        const entry = {
+          id: uc.id,
+          title: (uc.title || '').trim() || uc.id,
+        };
+        let linked = false;
+        issuerLinks.forEach(function (link) {
+          if (!link || typeof link !== 'object') return;
+          const issuerId = link.refId ? String(link.refId).trim() : '';
+          if (!issuerId) return;
+          if (!useCasesByIssuerId[issuerId]) useCasesByIssuerId[issuerId] = [];
+          if (!useCasesByIssuerId[issuerId].some(function (e) { return e.id === entry.id; })) {
+            useCasesByIssuerId[issuerId].push(entry);
+            linked = true;
+          }
+        });
+        if (linked) allUseCaseIds.push(entry.id);
+      });
+      Object.keys(useCasesByIssuerId).forEach(function (issuerId) {
+        useCasesByIssuerId[issuerId].sort(function (a, b) {
+          return String(a.title || a.id).localeCompare(String(b.title || b.id), undefined, { sensitivity: 'base' });
+        });
+      });
+      await loadRatingSummariesForType('usecase', allUseCaseIds);
+    } catch (e) {
+      console.warn('Use case catalog index load failed:', e.message);
+    }
+  }
+
   async function loadIssuers() {
     const remote = (config.githubDataUrl || '').trim();
     const local = `${config.pluginUrl || ''}data/aggregated.json`;
@@ -2229,6 +2329,7 @@
     await Promise.allSettled([
       loadOrganizationCatalogMaps(),
       loadCredentialThemeIndex(),
+      loadUseCaseIndex(),
     ]);
 
     if (sortBy === 'rating') {

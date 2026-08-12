@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers. When the master fides_catalog_ssr_enabled flag (provided by FIDES Community Tools Tiles ≥ 1.6.3) is enabled, the plugin also emits a server-rendered listing fallback, per-deeplink SEO meta tags and an Organization JSON-LD payload so issuer detail URLs become indexable by search engines.
- * Version: 1.7.11
+ * Version: 1.7.12
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.7.11');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.7.12');
 define('FIDES_ISSUER_CATALOG_DEFAULT_UPDATE_FORM_PATH', '/issuers-update/');
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-ssr.php';
@@ -171,6 +171,14 @@ function fides_issuer_catalog_enqueue_assets() {
                 'https://fides.community/ecosystem-explorer/organization-catalog/'
             ),
         'organizationDataUrl' => fides_issuer_catalog_resolve_organization_data_url($use_local),
+        'useCaseCatalogUrl' => get_option(
+            'fides_issuer_catalog_use_case_catalog_url',
+            'https://fides.community/ecosystem-explorer/use-cases/'
+        ),
+        'useCaseAggregatedDataUrl' => get_option(
+            'fides_issuer_catalog_use_case_aggregated_url',
+            'https://raw.githubusercontent.com/FIDEScommunity/fides-use-case-catalog/main/data/aggregated.json'
+        ),
         'credentialAggregatedDataUrl' => fides_issuer_catalog_resolve_credential_aggregated_url($use_local),
         'vocabularyUrl'         => 'https://raw.githubusercontent.com/FIDEScommunity/fides-interop-profiles/main/data/vocabulary.json',
         'vocabularyFallbackUrl' => $plugin_url . 'assets/vocabulary.json',
@@ -329,6 +337,14 @@ function fides_issuer_catalog_settings_init() {
     register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_organization_data_url', [
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
+    register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_use_case_catalog_url', [
+        'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
+        'default' => 'https://fides.community/ecosystem-explorer/use-cases/',
+    ]);
+    register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_use_case_aggregated_url', [
+        'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
+        'default' => 'https://raw.githubusercontent.com/FIDEScommunity/fides-use-case-catalog/main/data/aggregated.json',
+    ]);
     register_setting('fides_issuer_catalog_settings', 'fides_issuer_catalog_credential_aggregated_url', [
         'type' => 'string', 'sanitize_callback' => 'esc_url_raw',
     ]);
@@ -391,17 +407,35 @@ function fides_issuer_catalog_settings_render() { ?>
                         <p class="description">URL to the RP catalog aggregated.json (used to count relying parties per issuer).</p>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row"><label for="fides_issuer_catalog_organization_catalog_url">Organization Catalog Base URL</label></th>
-                    <td>
-                        <input type="url" id="fides_issuer_catalog_organization_catalog_url" name="fides_issuer_catalog_organization_catalog_url"
-                               value="<?php echo esc_attr(get_option('fides_issuer_catalog_organization_catalog_url', 'https://fides.community/ecosystem-explorer/organization-catalog/')); ?>"
-                               class="regular-text">
-                        <p class="description">Base URL for organization deep links in the issuer modal (query <code>?org=</code> is appended). On local <code>.local</code> / <code>localhost</code> sites this setting is ignored; the plugin uses <code>/organizations/</code> on the same site instead.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><label for="fides_issuer_catalog_organization_data_url">Organization catalog data URL</label></th>
+                    <tr>
+                        <th scope="row"><label for="fides_issuer_catalog_organization_catalog_url">Organization Catalog Base URL</label></th>
+                        <td>
+                            <input type="url" id="fides_issuer_catalog_organization_catalog_url" name="fides_issuer_catalog_organization_catalog_url"
+                                   value="<?php echo esc_attr(get_option('fides_issuer_catalog_organization_catalog_url', 'https://fides.community/ecosystem-explorer/organization-catalog/')); ?>"
+                                   class="regular-text">
+                            <p class="description">Base URL for organization deep links in the issuer modal (query <code>?org=</code> is appended). On local <code>.local</code> / <code>localhost</code> sites this setting is ignored; the plugin uses <code>/organizations/</code> on the same site instead.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="fides_issuer_catalog_use_case_catalog_url">Use case catalog URL</label></th>
+                        <td>
+                            <input type="url" id="fides_issuer_catalog_use_case_catalog_url" name="fides_issuer_catalog_use_case_catalog_url"
+                                   value="<?php echo esc_attr(get_option('fides_issuer_catalog_use_case_catalog_url', 'https://fides.community/ecosystem-explorer/use-cases/')); ?>"
+                                   class="regular-text">
+                            <p class="description">Page with the use case catalog shortcode. Used for <code>?usecase=…</code> links in the Use cases accordion of the issuer modal.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="fides_issuer_catalog_use_case_aggregated_url">Use case catalog data URL</label></th>
+                        <td>
+                            <input type="url" id="fides_issuer_catalog_use_case_aggregated_url" name="fides_issuer_catalog_use_case_aggregated_url"
+                                   value="<?php echo esc_attr(get_option('fides_issuer_catalog_use_case_aggregated_url', 'https://raw.githubusercontent.com/FIDEScommunity/fides-use-case-catalog/main/data/aggregated.json')); ?>"
+                                   class="regular-text">
+                            <p class="description">Raw <code>aggregated.json</code> of the use case catalog. Used to reverse-link use cases that reference this issuer.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="fides_issuer_catalog_organization_data_url">Organization catalog data URL</label></th>
                     <td>
                         <input type="url" id="fides_issuer_catalog_organization_data_url" name="fides_issuer_catalog_organization_data_url"
                                value="<?php echo esc_attr(get_option('fides_issuer_catalog_organization_data_url', '')); ?>"
