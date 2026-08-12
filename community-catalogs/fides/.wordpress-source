@@ -1,0 +1,11 @@
+{
+  "source": "wordpress",
+  "slug": "fides",
+  "issuers": {
+    "issuer:fides:credential-issuer:test": {
+      "itemId": "issuer:fides:credential-issuer:test",
+      "publishedAt": "2026-08-12 08:51:04"
+    }
+  },
+  "importedAt": "2026-08-12T09:02:28.743Z"
+}

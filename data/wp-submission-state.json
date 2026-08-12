@@ -1,6 +1,11 @@
 {
   "schemaVersion": "1.0.0",
   "catalogType": "issuer",
-  "lastImportAt": null,
-  "managedIssuers": []
+  "lastImportAt": "2026-08-12T09:02:28.744Z",
+  "managedIssuers": [
+    {
+      "slug": "fides",
+      "issuerId": "issuer:fides:credential-issuer:test"
+    }
+  ]
 }

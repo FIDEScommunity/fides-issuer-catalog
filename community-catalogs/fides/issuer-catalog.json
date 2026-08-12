@@ -1,5 +1,6 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:fides",
   "issuers": [
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -28,5 +29,5 @@
       "issuanceProtocol": "oid4vci"
     }
   ],
-  "orgId": "org:fides"
+  "lastUpdated": "2026-08-12T08:51:04+00:00"
 }
