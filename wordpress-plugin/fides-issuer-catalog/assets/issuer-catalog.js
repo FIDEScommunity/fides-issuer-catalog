@@ -236,6 +236,8 @@
     useCaseCatalogUrl: 'https://fides.community/ecosystem-explorer/use-cases/',
     useCaseAggregatedDataUrl: 'https://raw.githubusercontent.com/FIDEScommunity/fides-use-case-catalog/main/data/aggregated.json',
   };
+  const ASK_FIDES_AVAILABLE = !!config.askFidesAvailable;
+  const ASK_FIDES_PLACEHOLDER = String(config.askFidesPlaceholder || 'Ask anything about issuers…');
   const RATINGS_API_BASE = (window.fidesIssuerCatalog && window.fidesIssuerCatalog.ratingsApiBase)
     ? String(window.fidesIssuerCatalog.ratingsApiBase).trim().replace(/\/$/, '')
     : '';
@@ -1573,12 +1575,17 @@
           <section class="fides-main-content">
             <div class="fides-results-bar">
               ${settings.showSearch ? `
-                <div class="fides-topbar-search">
-                  <div class="fides-search-wrapper">
-                    <span class="fides-search-icon">${icons.search}</span>
-                    <input id="fides-search-input" class="fides-search-input" type="text" placeholder="Search..." value="${escapeHtml(filters.search)}" autocomplete="off">
-                    <button class="fides-search-clear ${filters.search ? '' : 'hidden'}" id="fides-search-clear" type="button" aria-label="Clear search">${icons.xSmall}</button>
+                <div class="fides-search-actions">
+                  <div class="fides-topbar-search">
+                    <div class="fides-search-wrapper">
+                      <span class="fides-search-icon">${icons.search}</span>
+                      <input id="fides-search-input" class="fides-search-input" type="text" placeholder="Search..." value="${escapeHtml(filters.search)}" autocomplete="off">
+                      <button class="fides-search-clear ${filters.search ? '' : 'hidden'}" id="fides-search-clear" type="button" aria-label="Clear search">${icons.xSmall}</button>
+                    </div>
                   </div>
+                  ${ASK_FIDES_AVAILABLE
+                    ? '<div class="fides-ask-fides-option"><span class="fides-ask-fides-separator">or</span><button class="fides-ask-fides-trigger" id="fides-ask-fides-trigger" type="button">Ask <strong>FIDES</strong></button></div>'
+                    : ''}
                 </div>
               ` : ''}
               <div class="fides-results-bar-actions">
@@ -1868,6 +1875,7 @@
   function bindEvents() {
     const searchInput = root.querySelector('#fides-search-input');
     const searchClear = root.querySelector('#fides-search-clear');
+    const askFidesTrigger = root.querySelector('#fides-ask-fides-trigger');
     const handleSearch = debounce((e) => {
       filters.search = e.target.value || '';
       if (searchClear) searchClear.classList.toggle('hidden', !filters.search);
@@ -1880,6 +1888,15 @@
       searchClear.classList.add('hidden');
       renderIssuerGridOnly();
     });
+    if (askFidesTrigger) {
+      askFidesTrigger.addEventListener('click', () => {
+        if (!window.FidesAssistant || typeof window.FidesAssistant.open !== 'function') return;
+        window.FidesAssistant.open({
+          prefill: searchInput ? String(searchInput.value || '').trim() : filters.search,
+          placeholder: ASK_FIDES_PLACEHOLDER,
+        });
+      });
+    }
 
     const sortSelect = root.querySelector('#fides-sort-select');
     if (sortSelect) {

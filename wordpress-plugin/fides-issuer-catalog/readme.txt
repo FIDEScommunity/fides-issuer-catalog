@@ -2,13 +2,19 @@
 Contributors: fideslabs
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 1.7.12
+Stable tag: 1.8.0
 License: Apache-2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0
 
 OID4VCI issuer catalog with search, filters, and optional SSR/SEO via fides-community-tools-tiles.
 
 == Changelog ==
+
+= 1.8.0 =
+* Add an “or Ask FIDES” button beside issuer search when FIDES Assistant 0.6.1
+  or newer is active.
+* Reuse the headless assistant modal, prefill the current search without
+  submitting it, and show an issuer-specific chat placeholder.
 
 = 1.7.12 =
 * Issuer modal: Use cases accordion when use cases link this issuer (after intro, above Ecosystem Model); same-window deep links and like counts.

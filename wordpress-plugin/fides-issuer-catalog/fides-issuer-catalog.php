@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers. When the master fides_catalog_ssr_enabled flag (provided by FIDES Community Tools Tiles ≥ 1.6.3) is enabled, the plugin also emits a server-rendered listing fallback, per-deeplink SEO meta tags and an Organization JSON-LD payload so issuer detail URLs become indexable by search engines.
- * Version: 1.7.12
+ * Version: 1.8.0
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.7.12');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.8.0');
 define('FIDES_ISSUER_CATALOG_DEFAULT_UPDATE_FORM_PATH', '/issuers-update/');
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-ssr.php';
@@ -199,6 +199,8 @@ function fides_issuer_catalog_enqueue_assets() {
             'fides_issuer_catalog_ecosystem_explorer_url',
             'https://fides.community/topics/ecosystem-explorer/'
         ),
+        'askFidesAvailable' => has_action('fides_assistant_enqueue_headless') !== false,
+        'askFidesPlaceholder' => __('Ask anything about issuers…', 'fides-issuer-catalog'),
     ]);
 }
 add_action('wp_enqueue_scripts', 'fides_issuer_catalog_enqueue_assets');
@@ -281,6 +283,9 @@ function fides_issuer_catalog_shortcode($atts) {
     $theme        = in_array($atts['theme'], ['dark', 'light', 'fides']) ? $atts['theme'] : 'fides';
     $taxonomy_theme = sanitize_text_field((string) $atts['taxonomy_theme']);
     $update_form_url = fides_issuer_catalog_update_form_url((string) $atts['update_form_url']);
+    if (has_action('fides_assistant_enqueue_headless') !== false) {
+        do_action('fides_assistant_enqueue_headless');
+    }
     wp_add_inline_script(
         'fides-issuer-catalog',
         'window.fidesIssuerCatalog = window.fidesIssuerCatalog || {}; window.fidesIssuerCatalog.updateFormUrl = ' . wp_json_encode($update_form_url) . ';',
