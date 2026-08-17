@@ -300,6 +300,16 @@
 
   let vocabulary = null;
   let root;
+  let catalogLoadMeta = { showStaleNotice: false, remoteFailed: false, snapshotDate: '' };
+
+  function applyStaleCatalogNotice() {
+    if (!window.FidesCatalogUI || typeof window.FidesCatalogUI.mountStaleCatalogNotice !== 'function') return;
+    window.FidesCatalogUI.mountStaleCatalogNotice(root, {
+      showStaleNotice: catalogLoadMeta.showStaleNotice,
+      catalogType: 'issuer',
+      snapshotDate: catalogLoadMeta.snapshotDate
+    });
+  }
 
   let mobileFiltersController = null;
   function getMobileFilters() {
@@ -1626,6 +1636,7 @@
 
     bindEvents();
     getMobileFilters()?.applyAfterRender(mobileFiltersOpen);
+    applyStaleCatalogNotice();
   }
 
   function showToast(message, type = 'success', theme = 'fides') {
@@ -2319,30 +2330,41 @@
   async function loadIssuers() {
     const remote = (config.githubDataUrl || '').trim();
     const local = `${config.pluginUrl || ''}data/aggregated.json`;
-    /** Same idea as fetchRpCatalog / loadVocabulary: on *.local prefer bundled plugin data, then GitHub. */
-    const sources = (isFidesLocalDevHost()
-      ? [
-          { url: local, name: 'Local' },
-          { url: remote, name: 'GitHub' },
-        ]
-      : [
-          { url: remote, name: 'GitHub' },
-          { url: local, name: 'Local' },
-        ]
-    ).filter((s) => s.url);
-    for (const source of sources) {
-      try {
-        const res = await fetch(source.url);
-        if (res.ok) {
+    const ui = window.FidesCatalogUI;
+    let sourceName = '';
+
+    if (ui && typeof ui.loadCatalogAggregatedJson === 'function') {
+      const loaded = await ui.loadCatalogAggregatedJson({
+        remoteUrl: remote,
+        cacheUrl: config.cacheDataUrl,
+        localUrl: local
+      });
+      catalogLoadMeta.showStaleNotice = !!loaded.showStaleNotice;
+      catalogLoadMeta.remoteFailed = !!loaded.remoteFailed;
+      catalogLoadMeta.snapshotDate = loaded.snapshotDate || '';
+      if (loaded.ok && loaded.data) {
+        issuers = loaded.data.issuers || [];
+        sourceName = loaded.source === 'github' ? 'GitHub' : (loaded.source === 'cache' ? 'Cache' : 'Local');
+      }
+    } else {
+      const sources = (isFidesLocalDevHost()
+        ? [{ url: local, name: 'Local' }, { url: remote, name: 'GitHub' }]
+        : [{ url: remote, name: 'GitHub' }, { url: local, name: 'Local' }]
+      ).filter((s) => s.url);
+      for (const source of sources) {
+        try {
+          const res = await fetch(source.url);
+          if (!res.ok) continue;
           const data = await res.json();
           issuers = data.issuers || [];
-          console.log(`Loaded ${issuers.length} issuers from ${source.name}`);
+          sourceName = source.name;
           break;
+        } catch (err) {
+          console.warn(`Failed to load from ${source.name}:`, err.message);
         }
-      } catch (err) {
-        console.warn(`Failed to load from ${source.name}:`, err.message);
       }
     }
+    if (sourceName) console.log(`Loaded ${issuers.length} issuers from ${sourceName}`);
     await Promise.allSettled([
       loadOrganizationCatalogMaps(),
       loadCredentialThemeIndex(),

@@ -2,13 +2,22 @@
 Contributors: fideslabs
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 1.8.0
+Stable tag: 1.8.3
 License: Apache-2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0
 
 OID4VCI issuer catalog with search, filters, and optional SSR/SEO via fides-community-tools-tiles.
 
 == Changelog ==
+
+= 1.8.3 =
+* Skip empty GitHub aggregated.json payloads and fall through to the bundled plugin snapshot / WP last-known-good.
+
+= 1.8.2 =
+* After GitHub fails, use a 12-hour browser cache and the WP last-known-good aggregated feed before the bundled plugin snapshot.
+
+= 1.8.1 =
+* Show a dismissible notice when GitHub catalog data is unreachable and the plugin snapshot is used.
 
 = 1.8.0 =
 * Add an “or Ask FIDES” button beside issuer search when FIDES Assistant 0.6.1
