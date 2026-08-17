@@ -1,0 +1,11 @@
+{
+  "source": "wordpress",
+  "slug": "verana",
+  "issuers": {
+    "issuer:verana:verana-playground-issuer-novara:test": {
+      "itemId": "issuer:verana:verana-playground-issuer-novara:test",
+      "publishedAt": "2026-08-17 15:03:47"
+    }
+  },
+  "importedAt": "2026-08-17T15:04:02.127Z"
+}

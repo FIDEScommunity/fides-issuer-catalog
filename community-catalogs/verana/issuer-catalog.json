@@ -1,0 +1,17 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:verana",
+  "issuers": [
+    {
+      "id": "issuer:verana:verana-playground-issuer-novara:test",
+      "displayName": "Novara Bank (demo) — cexa-kyc (CEXA-Kyc)",
+      "description": "Italian bank and CEXA member, accredited to issue the reusable CEXA-Kyc credential from its own customer due diligence. It demonstrates the bank-to-exchange corridor: bank customers carry their KYC into crypto exchanges of the association without a second verification.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://novara.cexa.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/cexa/demos",
+      "projectContext": "Crypto Exchange Association"
+    }
+  ],
+  "lastUpdated": "2026-08-17T15:03:47+00:00"
+}
