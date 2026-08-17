@@ -10,7 +10,12 @@
       "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://novara.cexa.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/cexa/demos",
-      "projectContext": "Crypto Exchange Association"
+      "projectContext": "Crypto Exchange Association",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:cexa-kyc:sd-jwt-vc"
+        }
+      ]
     },
     {
       "id": "issuer:verana:verana-playground-issuer-aurum:test",
@@ -20,7 +25,12 @@
       "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://aurum.cexa.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/cexa/demos",
-      "projectContext": "Crypto Exchange Association"
+      "projectContext": "Crypto Exchange Association",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:cexa-kyc:sd-jwt-vc"
+        }
+      ]
     },
     {
       "id": "issuer:verana:verana-playground-vesta-issuer-umbra:test",
@@ -30,8 +40,234 @@
       "issuanceProtocol": "oid4vci",
       "oid4vciMetadataUrl": "https://umbra.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
-      "projectContext": "Vesta cast (appliance manufacturer and repair network)"
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-badge:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-cexa-association:test",
+      "displayName": "Crypto Exchange Association (demo) — cexa-verified-counterparty (CEXA-VerifiedCounterparty)",
+      "description": "Anchor of the CEXA trust ecosystem and sole issuer of the CEXA-VerifiedCounterparty credential: the Travel Rule identity issued to each member at validation and renewal, published on the member's DID as a Linked Verifiable Presentation and free to verify. As the ecosystem's organization anchor it is also an accredited issuer of the ECS-Service credential. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/cexa/demos",
+      "projectContext": "Crypto Exchange Association",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:cexa-verified-counterparty:vcdm-2-0"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-demo-anchor:test",
+      "displayName": "Playground Demo (anchor) — ecs-service (ECS Service Credential)",
+      "description": "Organization anchor of the Playground Ecosystem (demo): it owns the DemoCredential trust registry and, as an accredited ECS-Service issuer, delegates ECS-Service credentials to its four trusted sub-services (the accredited and unaccredited issuer and verifier of the personal-wallets demos). For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "projectContext": "Playground Ecosystem (personal-wallets demos)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-demo-issuer-accredited:test",
+      "displayName": "Accredited Issuer (demo) — demo-credential (DemoCredential)",
+      "description": "Reference issuer of the Playground Ecosystem, authorized on the trust registry to issue the DemoCredential. It serves anyone trying out the Verana playground: request a credential offer, receive a DemoCredential, and see a fully accredited issuance succeed end to end. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "projectContext": "Playground Ecosystem (personal-wallets demos)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:demo-credential:sd-jwt-vc"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-demo-issuer-unaccredited:test",
+      "displayName": "Unaccredited Issuer (demo) — demo-credential (DemoCredential)",
+      "description": "A trusted Verifiable Service that is deliberately NOT authorized to issue the DemoCredential. It exists so wallet developers and demo audiences can see trust resolution reject an offer from an issuer without the required ecosystem accreditation. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://demo-issuer-unaccredited.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "projectContext": "Playground Ecosystem (personal-wallets demos)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:demo-credential:sd-jwt-vc"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-demo-issuer-untrusted:test",
+      "displayName": "Untrusted Issuer (demo) — demo-credential (DemoCredential)",
+      "description": "A service that is not a Verifiable Service at all: no trust chain, no accreditation. It serves as the negative control of the playground, showing that compliant wallets refuse its credential offers before any data is exchanged. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://demo-issuer-untrusted.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "projectContext": "Playground Ecosystem (personal-wallets demos)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:demo-credential:sd-jwt-vc"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-verandia-civil-registry:test",
+      "displayName": "National Civil Registry (demo) — verandia-citizen-id (VerandiaCitizenID)",
+      "description": "National identity authority of the Republic of Verandia. Issues the Verandia Citizen ID (name, birth date, personal identifier, nationality, portrait) to citizens, and governs which relying parties may request it. As an organization anchor it is also an accredited ECS-Service issuer. The root identity credential of the Verandia use case. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://civil-registry.verandia.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/verandia/demos",
+      "projectContext": "Republic of Verandia (e-government cast)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:verandia-citizen-id:sd-jwt-vc"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-verandia-business-registry:test",
+      "displayName": "National Business Registry (demo) — verandia-legal-rep (LegalRepresentative)",
+      "description": "Company register of the Republic of Verandia. Issues Legal Representative credentials (company, registry ID, representative, role, powers) proving that a person may act on behalf of a registered company. Accredited by the Verana ECS Ecosystem as an issuer of ECS-Organization credentials (Business IDs), and an accredited ECS-Service issuer as an organization anchor. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://business-registry.verandia.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/verandia/demos",
+      "projectContext": "Republic of Verandia (e-government cast)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:verandia-legal-representative:sd-jwt-vc"
+        },
+        {
+          "id": "cred:verana:ecs-organization:vcdm-2-0"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-helvetia-trust:test",
+      "displayName": "Helvetia Trust (demo) — ecs-organization (ECS Organization Credential)",
+      "description": "KYB issuer of the playground casts, accredited by the Verana ECS Ecosystem as an issuer of ECS-Organization credentials: it verifies and identifies the legal organizations behind the cexa, vesta and demo cast services. As an organization anchor it is also an accredited ECS-Service issuer. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Verana ECS Ecosystem (KYB for the playground casts)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-organization:vcdm-2-0"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-anchor:test",
+      "displayName": "Vesta Appliances (demo) — ecs-badge (ECS-Badge)",
+      "description": "Organization anchor of the Vesta Appliances manufacturer. Issues employee badges (ECS BadgeCredential: badge number, name, photo, title, department) to its own staff, and as an accredited ECS-Service issuer delegates ECS-Service credentials to its sub-services (Vesta Portal, Vesta Repair Network). For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://vesta.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-badge:vcdm-2-0"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-issuer-zenith:test",
+      "displayName": "Zenith Repairs (demo) — ecs-badge (ECS-Badge)",
+      "description": "Independent Portuguese repair company and authorized Vesta partner. Issues employee badges to its technicians so households can verify at the door that the person is a badged employee of an authorized repairer. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://zenith.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-badge:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-iberia:test",
+      "displayName": "Vesta Iberia (demo) — authorized-repairer (AuthorizedRepairerCredential)",
+      "description": "Iberian subsidiary of Vesta Appliances and regional issuer of the Vesta Repair Network: it accredits repair companies in its territory by issuing the Authorized Repairer credential to the company's DID (Zenith Repairs among them). For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:authorized-repairer:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-nordics:test",
+      "displayName": "Vesta Nordics (demo) — authorized-repairer (AuthorizedRepairerCredential)",
+      "description": "Nordic subsidiary of Vesta Appliances and regional issuer of the Vesta Repair Network: it accredits repair companies in its territory by issuing the Authorized Repairer credential to the company's DID. For demonstration only.",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:authorized-repairer:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-normacert:test",
+      "displayName": "NormaCert (demo) — iso-9001-demo (ISO9001DemoCredential)",
+      "description": "Certification body accredited by the ISO Certification (demo) registry. After auditing an organization it issues the ISO 9001 (demo) quality-management credential, published on the certified organization's DID as a Linked Verifiable Presentation (Vesta Appliances holds one). For demonstration only; not affiliated with ISO.",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:iso-9001-demo:vcdm-2-0"
+        }
+      ]
+    },
+    {
+      "id": "issuer:verana:verana-playground-iso-certification:test",
+      "displayName": "ISO Certification (demo) — ecs-service (ECS Service Credential)",
+      "description": "Anchor of the ISO Certification (demo) registry, which accredits certification bodies as issuers of the ISO 9001 (demo) credential. As the registry's organization anchor it is an accredited ECS-Service issuer. For demonstration only; not affiliated with ISO.",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ]
     }
   ],
-  "lastUpdated": "2026-08-17T17:27:49+00:00"
+  "lastUpdated": "2026-08-17T00:00:00Z"
 }
