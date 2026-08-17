@@ -148,5 +148,8 @@
   },
   "issuer:k4security:kspts:test": {
     "firstSeenAt": "2026-07-15T06:00:43.266Z"
+  },
+  "issuer:verana:verana-playground-issuer-novara:test": {
+    "firstSeenAt": "2026-08-17T17:22:27.739Z"
   }
 }
