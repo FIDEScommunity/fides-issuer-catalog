@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "catalogType": "issuer",
-  "lastImportAt": "2026-08-17T15:04:02.127Z",
+  "lastImportAt": "2026-08-17T17:28:14.057Z",
   "managedIssuers": [
     {
       "slug": "fides",
@@ -9,7 +9,15 @@
     },
     {
       "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-issuer-aurum:test"
+    },
+    {
+      "slug": "verana",
       "issuerId": "issuer:verana:verana-playground-issuer-novara:test"
+    },
+    {
+      "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-vesta-issuer-umbra:test"
     }
   ]
 }

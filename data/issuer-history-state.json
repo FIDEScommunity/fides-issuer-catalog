@@ -151,5 +151,11 @@
   },
   "issuer:verana:verana-playground-issuer-novara:test": {
     "firstSeenAt": "2026-08-17T17:22:27.739Z"
+  },
+  "issuer:verana:verana-playground-issuer-aurum:test": {
+    "firstSeenAt": "2026-08-17T17:28:15.008Z"
+  },
+  "issuer:verana:verana-playground-vesta-issuer-umbra:test": {
+    "firstSeenAt": "2026-08-17T17:28:15.008Z"
   }
 }

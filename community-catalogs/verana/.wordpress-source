@@ -5,7 +5,15 @@
     "issuer:verana:verana-playground-issuer-novara:test": {
       "itemId": "issuer:verana:verana-playground-issuer-novara:test",
       "publishedAt": "2026-08-17 15:03:47"
+    },
+    "issuer:verana:verana-playground-issuer-aurum:test": {
+      "itemId": "issuer:verana:verana-playground-issuer-aurum:test",
+      "publishedAt": "2026-08-17 15:03:56"
+    },
+    "issuer:verana:verana-playground-vesta-issuer-umbra:test": {
+      "itemId": "issuer:verana:verana-playground-vesta-issuer-umbra:test",
+      "publishedAt": "2026-08-17 17:27:49"
     }
   },
-  "importedAt": "2026-08-17T15:04:02.127Z"
+  "importedAt": "2026-08-17T17:28:14.056Z"
 }

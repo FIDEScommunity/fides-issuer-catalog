@@ -11,7 +11,27 @@
       "oid4vciMetadataUrl": "https://novara.cexa.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
       "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/cexa/demos",
       "projectContext": "Crypto Exchange Association"
+    },
+    {
+      "id": "issuer:verana:verana-playground-issuer-aurum:test",
+      "displayName": "Aurum Exchange (demo) — cexa-kyc (CEXA-Kyc)",
+      "description": "Swiss member exchange of the Crypto Exchange Association, accredited to issue the reusable CEXA-Kyc credential. After one full identity check, customers receive a KYC credential (name, birth date, nationality, KYC level, screening evidence) they can reuse to onboard at any other CEXA member exchange without repeating the process.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://aurum.cexa.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/cexa/demos",
+      "projectContext": "Crypto Exchange Association"
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-issuer-umbra:test",
+      "displayName": "Umbra Repairs (demo) — ecs-badge (ECS-Badge)",
+      "description": "Independent Swiss repair shop that is NOT a Vesta Authorized Repairer. It issues badges to its own staff, but carries no Vesta accreditation: the contrast case showing how verification distinguishes authorized partners from everyone else.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://umbra.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)"
     }
   ],
-  "lastUpdated": "2026-08-17T15:03:47+00:00"
+  "lastUpdated": "2026-08-17T17:27:49+00:00"
 }
