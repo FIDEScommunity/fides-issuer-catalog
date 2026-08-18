@@ -2,13 +2,17 @@
 Contributors: fideslabs
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 1.8.3
+Stable tag: 1.8.4
 License: Apache-2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0
 
 OID4VCI issuer catalog with search, filters, and optional SSR/SEO via fides-community-tools-tiles.
 
 == Changelog ==
+
+= 1.8.4 =
+* After magic-link sign-in, Back reloads a cached logged-out catalog page so
+  the like star sees the new session.
 
 = 1.8.3 =
 * Skip empty GitHub aggregated.json payloads and fall through to the bundled plugin snapshot / WP last-known-good.
