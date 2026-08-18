@@ -2,13 +2,17 @@
 Contributors: fideslabs
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 1.8.4
+Stable tag: 1.8.5
 License: Apache-2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0
 
 OID4VCI issuer catalog with search, filters, and optional SSR/SEO via fides-community-tools-tiles.
 
 == Changelog ==
+
+= 1.8.5 =
+* After sign-in, Back from the logged-in page reloads a stale guest catalog
+  snapshot so the like star sees the session (needs tiles ≥ 1.9.23).
 
 = 1.8.4 =
 * After magic-link sign-in, Back reloads a cached logged-out catalog page so
