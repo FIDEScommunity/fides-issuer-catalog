@@ -157,5 +157,47 @@
   },
   "issuer:verana:verana-playground-vesta-issuer-umbra:test": {
     "firstSeenAt": "2026-08-17T17:28:15.008Z"
+  },
+  "issuer:verana:verana-playground-cexa-association:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-demo-anchor:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-demo-issuer-accredited:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-demo-issuer-unaccredited:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-demo-issuer-untrusted:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-verandia-civil-registry:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-verandia-business-registry:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-helvetia-trust:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-vesta-anchor:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-vesta-issuer-zenith:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-vesta-iberia:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-vesta-nordics:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-normacert:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:verana:verana-playground-iso-certification:test": {
+    "firstSeenAt": "2026-08-18T14:46:51.844Z"
   }
 }

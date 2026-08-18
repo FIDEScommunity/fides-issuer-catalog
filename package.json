@@ -11,7 +11,9 @@
     "check-links": "tsx scripts/check-links.ts",
     "import-wp-submissions": "tsx scripts/import-wp-submissions.ts",
     "import-wp-submissions:apply": "tsx scripts/import-wp-submissions.ts --apply",
-    "test:import-wp-submissions": "tsx --test scripts/import-wp-submissions.test.ts"
+    "test:import-wp-submissions": "tsx --test scripts/import-wp-submissions.test.ts",
+    "test:crawler": "tsx --test src/crawler/credentialRefs.test.ts",
+    "test": "tsx --test scripts/import-wp-submissions.test.ts src/crawler/credentialRefs.test.ts"
   },
   "repository": {
     "type": "git",

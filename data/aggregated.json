@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-08-18T06:49:11.077Z",
+  "lastUpdated": "2026-08-18T14:47:38.184Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -236,7 +236,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -316,7 +316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -447,7 +447,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -1231,7 +1231,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1357,7 +1357,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1451,7 +1451,7 @@
       ],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1545,7 +1545,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1616,7 +1616,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:eduwallet:uvh:test",
@@ -1843,7 +1843,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:eduwallet:mbob:test",
@@ -2070,7 +2070,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:eduwallet:hbot:test",
@@ -2297,7 +2297,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:eduwallet:tun:test",
@@ -2368,7 +2368,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:eduwallet:epi:test",
@@ -2427,7 +2427,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:eduwallet:sandbox:test",
@@ -2589,7 +2589,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:eu:digital-credentials-issuer:test",
@@ -3348,7 +3348,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -3849,7 +3849,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -3958,7 +3958,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:fides:fides-labs-issuer:test",
@@ -4012,7 +4012,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-21T14:04:37.030Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -4054,7 +4054,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -4229,7 +4229,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -4286,7 +4286,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -4328,7 +4328,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -4351,7 +4351,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -4407,7 +4407,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -4452,7 +4452,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -4546,7 +4546,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -4594,7 +4594,7 @@
       ],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -4688,7 +4688,7 @@
       ],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -5254,7 +5254,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -5327,7 +5327,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -5400,7 +5400,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -5473,7 +5473,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -5546,7 +5546,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -5570,7 +5570,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:igrant:playground:test",
@@ -5672,7 +5672,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-18T05:15:29.773Z",
       "updatedAt": "2026-05-18T07:15:10+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:k4security:kspts:test",
@@ -5803,7 +5803,7 @@
       ],
       "firstSeenAt": "2026-07-15T06:00:43.266Z",
       "updatedAt": "2026-07-08T18:23:33+09:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -5966,7 +5966,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -5980,48 +5980,18 @@
       "displayName": "Inji Certify - Insurance Sandbox Issuer",
       "environment": "test",
       "issuanceProtocol": "oid4vci",
-      "credentialIssuerUrl": "https://injicertify-insurance.collab.mosip.net",
+      "credentialIssuerUrl": "https://injicertify-insurance.collab.mosip.net/v1/certify/issuance",
       "oid4vciMetadataUrl": "https://injicertify-insurance.collab.mosip.net/v1/certify/issuance/.well-known/openid-credential-issuer",
       "logoUri": "https://www.google.com/s2/favicons?domain=mosip.io&sz=128",
       "description": "This sandbox credential issuer from MOSIP Inji Certify supports the issuance of insurance-related credentials in the MOSIP collab environment for testing OpenID4VCI flows and interoperability scenarios.",
       "issuerWebsiteUrl": "https://collab.mosip.net/",
       "projectContext": "MOSIP Collab - Inji Certify",
-      "credentialConfigurations": [
-        {
-          "configurationId": "InsuranceCredential",
-          "displayName": "Health Insurance",
-          "vcFormat": "vcdm_1_1",
-          "signingAlgorithms": [
-            "EdDSA"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "did:jwk",
-            "did:key"
-          ]
-        },
-        {
-          "configurationId": "LifeInsuranceCredential",
-          "displayName": "Life Insurance",
-          "vcFormat": "vcdm_1_1",
-          "signingAlgorithms": [
-            "EdDSA"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "did:jwk",
-            "did:key"
-          ]
-        }
-      ],
+      "credentialConfigurations": [],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z",
+      "metadataFetchError": "HTTP 404 Not Found"
     },
     {
       "id": "issuer:multipaz:mdl:test",
@@ -6224,7 +6194,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -6472,7 +6442,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -6566,7 +6536,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -6660,7 +6630,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -6701,7 +6671,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -6828,7 +6798,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -7005,7 +6975,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -7084,7 +7054,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -7177,7 +7147,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -7270,7 +7240,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-novara:test",
@@ -7295,6 +7265,15 @@
           "configurationId": "cexa-kyc",
           "displayName": "cexa-kyc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "playground",
+            "cexa",
+            "kyc",
+            "crypto",
+            "demo"
+          ],
           "vct": "https://novara.cexa.playground.testnet.verana.network/oid4vc/vct/cexa-kyc",
           "signingAlgorithms": [
             "ES256"
@@ -7304,13 +7283,22 @@
           ],
           "cryptographicBindingMethods": [
             "jwk"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:cexa-kyc:sd-jwt-vc",
+            "displayName": "CEXA-Kyc"
+          }
         }
       ],
       "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:cexa-kyc:sd-jwt-vc"
+        }
+      ],
       "firstSeenAt": "2026-08-17T17:22:27.739Z",
-      "updatedAt": "2026-08-17T17:28:39Z",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-aurum:test",
@@ -7335,6 +7323,15 @@
           "configurationId": "cexa-kyc",
           "displayName": "cexa-kyc",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "playground",
+            "cexa",
+            "kyc",
+            "crypto",
+            "demo"
+          ],
           "vct": "https://aurum.cexa.playground.testnet.verana.network/oid4vc/vct/cexa-kyc",
           "signingAlgorithms": [
             "ES256"
@@ -7344,13 +7341,22 @@
           ],
           "cryptographicBindingMethods": [
             "jwk"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:cexa-kyc:sd-jwt-vc",
+            "displayName": "CEXA-Kyc"
+          }
         }
       ],
       "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:cexa-kyc:sd-jwt-vc"
+        }
+      ],
       "firstSeenAt": "2026-08-17T17:28:15.008Z",
-      "updatedAt": "2026-08-17T17:28:39Z",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-issuer-umbra:test",
@@ -7375,6 +7381,14 @@
           "configurationId": "ecs-badge",
           "displayName": "ecs-badge",
           "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "badge"
+          ],
           "vct": "https://vesta.playground.testnet.verana.network/oid4vc/vct/ecs-badge",
           "signingAlgorithms": [
             "ES256"
@@ -7384,19 +7398,908 @@
           ],
           "cryptographicBindingMethods": [
             "jwk"
-          ]
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-badge:vcdm-2-0",
+            "displayName": "ECS Badge Credential"
+          }
         }
       ],
       "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-badge:vcdm-2-0"
+        }
+      ],
       "firstSeenAt": "2026-08-17T17:28:15.008Z",
-      "updatedAt": "2026-08-17T17:28:39Z",
-      "fetchedAt": "2026-08-18T06:49:11.077Z"
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-cexa-association:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Crypto Exchange Association (demo) — cexa-verified-counterparty (CEXA-VerifiedCounterparty)",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "credentialIssuerUrl": "https://playground.testnet.verana.network/usecases/cexa/demos",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Anchor of the CEXA trust ecosystem and sole issuer of the CEXA-VerifiedCounterparty credential: the Travel Rule identity issued to each member at validation and renewal, published on the member's DID as a Linked Verifiable Presentation and free to verify. As the ecosystem's organization anchor it is also an accredited issuer of the ECS-Service credential. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/cexa/demos",
+      "projectContext": "Crypto Exchange Association",
+      "credentialConfigurations": [
+        {
+          "configurationId": "manual:cred:verana:cexa-verified-counterparty:vcdm-2-0",
+          "displayName": "CEXA-VerifiedCounterparty",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Organization",
+          "tags": [
+            "verana",
+            "playground",
+            "cexa",
+            "travel-rule",
+            "vasp",
+            "demo"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:cexa-verified-counterparty:vcdm-2-0",
+            "displayName": "CEXA-VerifiedCounterparty"
+          }
+        },
+        {
+          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "displayName": "ECS Service Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Software",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "verifiable-service"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "displayName": "ECS Service Credential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:cexa-verified-counterparty:vcdm-2-0"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-demo-anchor:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Playground Demo (anchor) — ecs-service (ECS Service Credential)",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "credentialIssuerUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Organization anchor of the Playground Ecosystem (demo): it owns the DemoCredential trust registry and, as an accredited ECS-Service issuer, delegates ECS-Service credentials to its four trusted sub-services (the accredited and unaccredited issuer and verifier of the personal-wallets demos). For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "projectContext": "Playground Ecosystem (personal-wallets demos)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "displayName": "ECS Service Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Software",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "verifiable-service"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "displayName": "ECS Service Credential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-demo-issuer-accredited:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Accredited Issuer (demo) — demo-credential (DemoCredential)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vci/demo-did",
+      "oid4vciMetadataUrl": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Reference issuer of the Playground Ecosystem, authorized on the trust registry to issue the DemoCredential. It serves anyone trying out the Verana playground: request a credential offer, receive a DemoCredential, and see a fully accredited issuance succeed end to end. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "projectContext": "Playground Ecosystem (personal-wallets demos)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "demo-credential",
+          "displayName": "demo-credential",
+          "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "playground",
+            "personal-wallets",
+            "demo"
+          ],
+          "vct": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vc/vct/demo-credential",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:demo-credential:sd-jwt-vc",
+            "displayName": "DemoCredential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:demo-credential:sd-jwt-vc"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-demo-issuer-unaccredited:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Unaccredited Issuer (demo) — demo-credential (DemoCredential)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://demo-issuer-unaccredited.playground.testnet.verana.network/oid4vci/demo-did",
+      "oid4vciMetadataUrl": "https://demo-issuer-unaccredited.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "A trusted Verifiable Service that is deliberately NOT authorized to issue the DemoCredential. It exists so wallet developers and demo audiences can see trust resolution reject an offer from an issuer without the required ecosystem accreditation. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "projectContext": "Playground Ecosystem (personal-wallets demos)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "demo-credential",
+          "displayName": "demo-credential",
+          "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "playground",
+            "personal-wallets",
+            "demo"
+          ],
+          "vct": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vc/vct/demo-credential",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:demo-credential:sd-jwt-vc",
+            "displayName": "DemoCredential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:demo-credential:sd-jwt-vc"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-demo-issuer-untrusted:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Untrusted Issuer (demo) — demo-credential (DemoCredential)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://demo-issuer-untrusted.playground.testnet.verana.network/oid4vci/demo-did",
+      "oid4vciMetadataUrl": "https://demo-issuer-untrusted.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "A service that is not a Verifiable Service at all: no trust chain, no accreditation. It serves as the negative control of the playground, showing that compliant wallets refuse its credential offers before any data is exchanged. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+      "projectContext": "Playground Ecosystem (personal-wallets demos)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "demo-credential",
+          "displayName": "demo-credential",
+          "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "playground",
+            "personal-wallets",
+            "demo"
+          ],
+          "vct": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vc/vct/demo-credential",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:demo-credential:sd-jwt-vc",
+            "displayName": "DemoCredential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:demo-credential:sd-jwt-vc"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-verandia-civil-registry:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "National Civil Registry (demo) — verandia-citizen-id (VerandiaCitizenID)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://civil-registry.verandia.playground.testnet.verana.network/oid4vci/demo-did",
+      "oid4vciMetadataUrl": "https://civil-registry.verandia.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "National identity authority of the Republic of Verandia. Issues the Verandia Citizen ID (name, birth date, personal identifier, nationality, portrait) to citizens, and governs which relying parties may request it. As an organization anchor it is also an accredited ECS-Service issuer. The root identity credential of the Verandia use case. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/verandia/demos",
+      "projectContext": "Republic of Verandia (e-government cast)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "verandia-citizen-id",
+          "displayName": "verandia-citizen-id",
+          "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "playground",
+            "verandia",
+            "national-id",
+            "pid",
+            "demo"
+          ],
+          "vct": "https://civil-registry.verandia.playground.testnet.verana.network/oid4vc/vct/verandia-citizen-id",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:verandia-citizen-id:sd-jwt-vc",
+            "displayName": "Verandia Citizen ID"
+          }
+        },
+        {
+          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "displayName": "ECS Service Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Software",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "verifiable-service"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "displayName": "ECS Service Credential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:verandia-citizen-id:sd-jwt-vc"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-verandia-business-registry:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "National Business Registry (demo) — verandia-legal-rep (LegalRepresentative)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://business-registry.verandia.playground.testnet.verana.network/oid4vci/demo-did",
+      "oid4vciMetadataUrl": "https://business-registry.verandia.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Company register of the Republic of Verandia. Issues Legal Representative credentials (company, registry ID, representative, role, powers) proving that a person may act on behalf of a registered company. Accredited by the Verana ECS Ecosystem as an issuer of ECS-Organization credentials (Business IDs), and an accredited ECS-Service issuer as an organization anchor. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/verandia/demos",
+      "projectContext": "Republic of Verandia (e-government cast)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "verandia-legal-rep",
+          "displayName": "verandia-legal-rep",
+          "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "playground",
+            "verandia",
+            "legal-representative",
+            "demo"
+          ],
+          "vct": "https://business-registry.verandia.playground.testnet.verana.network/oid4vc/vct/verandia-legal-rep",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:verandia-legal-representative:sd-jwt-vc",
+            "displayName": "Legal Representative (Verandia)"
+          }
+        },
+        {
+          "configurationId": "manual:cred:verana:ecs-organization:vcdm-2-0",
+          "displayName": "ECS Organization Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Organization",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "organizational-identity"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-organization:vcdm-2-0",
+            "displayName": "ECS Organization Credential"
+          }
+        },
+        {
+          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "displayName": "ECS Service Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Software",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "verifiable-service"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "displayName": "ECS Service Credential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:verandia-legal-representative:sd-jwt-vc"
+        },
+        {
+          "id": "cred:verana:ecs-organization:vcdm-2-0"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-helvetia-trust:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Helvetia Trust (demo) — ecs-organization (ECS Organization Credential)",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "credentialIssuerUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "KYB issuer of the playground casts, accredited by the Verana ECS Ecosystem as an issuer of ECS-Organization credentials: it verifies and identifies the legal organizations behind the cexa, vesta and demo cast services. As an organization anchor it is also an accredited ECS-Service issuer. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Verana ECS Ecosystem (KYB for the playground casts)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "manual:cred:verana:ecs-organization:vcdm-2-0",
+          "displayName": "ECS Organization Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Organization",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "organizational-identity"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-organization:vcdm-2-0",
+            "displayName": "ECS Organization Credential"
+          }
+        },
+        {
+          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "displayName": "ECS Service Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Software",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "verifiable-service"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "displayName": "ECS Service Credential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-organization:vcdm-2-0"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-anchor:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Vesta Appliances (demo) — ecs-badge (ECS-Badge)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://vesta.playground.testnet.verana.network/oid4vci/demo-did",
+      "oid4vciMetadataUrl": "https://vesta.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Organization anchor of the Vesta Appliances manufacturer. Issues employee badges (ECS BadgeCredential: badge number, name, photo, title, department) to its own staff, and as an accredited ECS-Service issuer delegates ECS-Service credentials to its sub-services (Vesta Portal, Vesta Repair Network). For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "ecs-badge",
+          "displayName": "ecs-badge",
+          "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "badge"
+          ],
+          "vct": "https://vesta.playground.testnet.verana.network/oid4vc/vct/ecs-badge",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-badge:vcdm-2-0",
+            "displayName": "ECS Badge Credential"
+          }
+        },
+        {
+          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "displayName": "ECS Service Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Software",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "verifiable-service"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "displayName": "ECS Service Credential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-badge:vcdm-2-0"
+        },
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-issuer-zenith:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Zenith Repairs (demo) — ecs-badge (ECS-Badge)",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "credentialIssuerUrl": "https://zenith.playground.testnet.verana.network/oid4vci/demo-did",
+      "oid4vciMetadataUrl": "https://zenith.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Independent Portuguese repair company and authorized Vesta partner. Issues employee badges to its technicians so households can verify at the door that the person is a badged employee of an authorized repairer. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "ecs-badge",
+          "displayName": "ecs-badge",
+          "vcFormat": "sd_jwt_vc",
+          "subjectType": "Person",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "badge"
+          ],
+          "vct": "https://vesta.playground.testnet.verana.network/oid4vc/vct/ecs-badge",
+          "signingAlgorithms": [
+            "ES256"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "jwk"
+          ],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-badge:vcdm-2-0",
+            "displayName": "ECS Badge Credential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-badge:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-iberia:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Vesta Iberia (demo) — authorized-repairer (AuthorizedRepairerCredential)",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "credentialIssuerUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Iberian subsidiary of Vesta Appliances and regional issuer of the Vesta Repair Network: it accredits repair companies in its territory by issuing the Authorized Repairer credential to the company's DID (Zenith Repairs among them). For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "manual:cred:verana:authorized-repairer:vcdm-2-0",
+          "displayName": "Authorized Repairer (Vesta)",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Organization",
+          "tags": [
+            "verana",
+            "playground",
+            "vesta",
+            "accreditation",
+            "demo"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:authorized-repairer:vcdm-2-0",
+            "displayName": "Authorized Repairer (Vesta)"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:authorized-repairer:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-vesta-nordics:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "Vesta Nordics (demo) — authorized-repairer (AuthorizedRepairerCredential)",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "credentialIssuerUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Nordic subsidiary of Vesta Appliances and regional issuer of the Vesta Repair Network: it accredits repair companies in its territory by issuing the Authorized Repairer credential to the company's DID. For demonstration only.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "manual:cred:verana:authorized-repairer:vcdm-2-0",
+          "displayName": "Authorized Repairer (Vesta)",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Organization",
+          "tags": [
+            "verana",
+            "playground",
+            "vesta",
+            "accreditation",
+            "demo"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:authorized-repairer:vcdm-2-0",
+            "displayName": "Authorized Repairer (Vesta)"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:authorized-repairer:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-normacert:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "NormaCert (demo) — iso-9001-demo (ISO9001DemoCredential)",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "credentialIssuerUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Certification body accredited by the ISO Certification (demo) registry. After auditing an organization it issues the ISO 9001 (demo) quality-management credential, published on the certified organization's DID as a Linked Verifiable Presentation (Vesta Appliances holds one). For demonstration only; not affiliated with ISO.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "manual:cred:verana:iso-9001-demo:vcdm-2-0",
+          "displayName": "ISO 9001 (demo)",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Organization",
+          "tags": [
+            "verana",
+            "playground",
+            "vesta",
+            "certification",
+            "quality-management",
+            "demo"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:iso-9001-demo:vcdm-2-0",
+            "displayName": "ISO 9001 (demo)"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:iso-9001-demo:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
+    },
+    {
+      "id": "issuer:verana:verana-playground-iso-certification:test",
+      "orgId": "org:verana",
+      "organization": {
+        "name": "Verana",
+        "country": "EE",
+        "website": "https://verana.io",
+        "logoUri": "https://verana.io/logo.svg"
+      },
+      "displayName": "ISO Certification (demo) — ecs-service (ECS Service Credential)",
+      "environment": "test",
+      "issuanceProtocol": "other",
+      "credentialIssuerUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "logoUri": "https://verana.io/logo.svg",
+      "description": "Anchor of the ISO Certification (demo) registry, which accredits certification bodies as issuers of the ISO 9001 (demo) credential. As the registry's organization anchor it is an accredited ECS-Service issuer. For demonstration only; not affiliated with ISO.",
+      "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+      "projectContext": "Vesta cast (appliance manufacturer and repair network)",
+      "credentialConfigurations": [
+        {
+          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "displayName": "ECS Service Credential",
+          "vcFormat": "vcdm_2_0",
+          "subjectType": "Software",
+          "tags": [
+            "verana",
+            "verifiable-trust",
+            "ecs",
+            "essential-credential-schema",
+            "verifiable-service"
+          ],
+          "signingAlgorithms": [],
+          "proofTypes": [],
+          "cryptographicBindingMethods": [],
+          "credentialCatalogRef": {
+            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "displayName": "ECS Service Credential"
+          }
+        }
+      ],
+      "supportedWallets": [],
+      "credentialRefs": [
+        {
+          "id": "cred:verana:ecs-service:vcdm-2-0"
+        }
+      ],
+      "firstSeenAt": "2026-08-18T14:46:51.844Z",
+      "updatedAt": "2026-08-17T14:31:26-05:00",
+      "fetchedAt": "2026-08-18T14:47:38.184Z"
     }
   ],
   "stats": {
-    "totalIssuers": 51,
+    "totalIssuers": 65,
     "productionIssuers": 9,
     "totalOrganizations": 29,
-    "totalCredentialConfigurations": 273
+    "totalCredentialConfigurations": 291
   }
 }

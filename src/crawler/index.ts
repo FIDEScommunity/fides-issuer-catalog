@@ -14,6 +14,7 @@ import type {
   AggregatedOrganization,
   IssuerHistoryState,
 } from '../types/issuer.js';
+import { applyManualCredentialRefs, configurationsFromCredentialRefs } from './credentialRefs.js';
 
 const ROOT = path.resolve(process.cwd());
 const COMMUNITY_CATALOGS_DIR = path.join(ROOT, 'community-catalogs');
@@ -342,41 +343,6 @@ function enrichCredentialConfigurations(
   );
 }
 
-function catalogVcFormatToAggregated(fmt: string | undefined): string {
-  if (!fmt) return 'unknown';
-  if (fmt === 'mdoc' || fmt === 'sd_jwt_vc') return fmt;
-  return fmt;
-}
-
-/** Non-OID4VCI issuers: build credentialConfigurations from manual credentialRefs (for cross-catalog linking). */
-function configurationsFromCredentialRefs(
-  refs: NonNullable<SourceIssuer['credentialRefs']>,
-  credentialEntries: CredentialEntry[]
-): AggregatedCredentialConfiguration[] {
-  return refs.map((ref) => {
-    const catalogEntry = credentialEntries.find((c) => c.id === ref.id);
-    const docType =
-      catalogEntry?.nativeIdentifierType === 'docType'
-        ? catalogEntry.nativeIdentifier
-        : undefined;
-    return {
-      configurationId: `manual:${ref.id}`,
-      displayName: ref.displayName || catalogEntry?.displayName || ref.id,
-      vcFormat: catalogVcFormatToAggregated(catalogEntry?.vcFormat),
-      subjectType: catalogEntry?.subjectType,
-      tags: catalogEntry?.tags,
-      docType,
-      signingAlgorithms: [],
-      proofTypes: [],
-      cryptographicBindingMethods: [],
-      credentialCatalogRef: {
-        id: ref.id,
-        displayName: ref.displayName || catalogEntry?.displayName,
-      },
-    };
-  });
-}
-
 // Get issuer display name from OID4VCI metadata
 function getIssuerDisplayName(
   metadata: Oid4vciMetadata,
@@ -487,19 +453,11 @@ async function crawl(): Promise<void> {
       let credentialConfigurations: AggregatedCredentialConfiguration[];
 
       if (protocol === 'oid4vci') {
-        credentialConfigurations = enrichCredentialConfigurations(metadata, credentialEntries);
-        if (sourceIssuer.credentialRefs && sourceIssuer.credentialRefs.length > 0) {
-          for (const config of credentialConfigurations) {
-            if (!config.credentialCatalogRef) {
-              const manualRef = sourceIssuer.credentialRefs.find(
-                (r) => r.id === config.configurationId || r.displayName === config.displayName
-              );
-              if (manualRef) {
-                config.credentialCatalogRef = { id: manualRef.id, displayName: manualRef.displayName };
-              }
-            }
-          }
-        }
+        credentialConfigurations = applyManualCredentialRefs(
+          enrichCredentialConfigurations(metadata, credentialEntries),
+          sourceIssuer.credentialRefs,
+          credentialEntries
+        );
       } else {
         credentialConfigurations = configurationsFromCredentialRefs(
           sourceIssuer.credentialRefs || [],

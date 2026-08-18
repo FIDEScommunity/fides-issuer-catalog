@@ -123,7 +123,7 @@ Add your organization to the [FIDES Organization Catalog](https://github.com/FID
 | `displayName` | Override the display name from `.well-known` |
 | `projectContext` | Project/pilot context (e.g. `"EWC v3 pilot"`) |
 | `supportedWallets[]` | References to wallet catalog IDs |
-| `credentialRefs[]` | Manual credential catalog refs (fallback if auto-match fails) |
+| `credentialRefs[]` | Manual credential catalog refs. Used when auto-match on `vct` / `doctype` fails, and for extra types on the same issuer (e.g. Linked VP). A catalog `id` is enough; `displayName` is optional. |
 
 ## 🔍 Machine-Readable Output
 
