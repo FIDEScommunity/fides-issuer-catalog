@@ -418,21 +418,24 @@
 
   /**
    * Accordion listing use cases that link this issuer (links.issuers[].refId).
-   * Bare name + likes table — same pattern as wallet/org modals.
+   * Card layout matches other catalog modals; closed by default.
    */
-  function renderUseCasesAccordion(useCases) {
+  function renderUseCasesAccordion(useCases, sourceIssuer) {
     if (!Array.isArray(useCases) || useCases.length === 0) return '';
     const base = (config.useCaseCatalogUrl || '').replace(/\/$/, '');
-    const rowsHtml = useCases.map((uc) => {
-      const label = escapeHtml(uc.title || uc.id);
-      const likeHtml = uc.id ? renderModalEntityLike('usecase', uc.id) : '';
-      const likeCell = `<td class="fides-modal-entity-col-likes">${likeHtml}</td>`;
-      if (base && uc.id) {
-        const href = `${base}/?usecase=${encodeURIComponent(uc.id)}`;
-        return `<tr><td><a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${label}</a></td>${likeCell}</tr>`;
-      }
-      return `<tr><td>${label}</td>${likeCell}</tr>`;
-    }).join('');
+    let body = '';
+    if (window.FidesCatalogUI && typeof window.FidesCatalogUI.buildUseCasesCardsHtml === 'function') {
+      body = window.FidesCatalogUI.buildUseCasesCardsHtml(useCases, base, {
+        matomoSourceId: sourceIssuer && sourceIssuer.id ? String(sourceIssuer.id) : '',
+        renderUseCaseLikeHtml: function(itemId) {
+          const like = renderModalEntityLike('usecase', itemId);
+          return like
+            ? `<span class="fides-modal-use-case-card__like">${like}</span>`
+            : '';
+        }
+      });
+    }
+    if (!body) return '';
     return `
       <div class="fides-accordion" id="fides-accordion-use-cases">
         <div class="fides-accordion-header-bar">
@@ -444,13 +447,7 @@
           </button>
         </div>
         <div class="fides-accordion-body">
-          <div class="fides-attributes-table-wrap">
-            <table class="fides-attributes-table fides-modal-entity-table fides-modal-entity-table--name-likes" aria-label="Use cases">
-              <tbody>
-                ${rowsHtml}
-              </tbody>
-            </table>
-          </div>
+          ${body}
         </div>
       </div>
     `;
@@ -1196,7 +1193,7 @@
               : ''
             }
 
-            ${renderUseCasesAccordion(getDerivedUseCasesForIssuer(issuer))}
+            ${renderUseCasesAccordion(getDerivedUseCasesForIssuer(issuer), issuer)}
 
             <!-- FIDES Ecosystem Model -->
             <div class="fides-accordion fides-modal-section">
@@ -1858,6 +1855,10 @@
       });
     });
 
+    if (window.FidesCatalogUI && typeof window.FidesCatalogUI.bindModalUseCasesScroll === 'function') {
+      window.FidesCatalogUI.bindModalUseCasesScroll(overlay);
+    }
+
     // Ecosystem side boxes: scroll modal to matching accordion and open it
     function openEcoTargetAccordion(accordionId) {
       const acc = document.getElementById(accordionId);
@@ -2479,6 +2480,13 @@
       theme: root.dataset.theme || 'fides',
     };
     root.setAttribute('data-theme', settings.theme);
+    if (window.FidesCatalogUI && window.FidesCatalogUI.initMatomoLinkTracking) {
+      window.FidesCatalogUI.initMatomoLinkTracking({
+        category: 'Issuer Catalog',
+        containerSelector: '#fides-issuer-catalog-root',
+        modalOverlayId: 'fides-modal-overlay'
+      });
+    }
     readQueryParams();
     loadIssuers();
   }
