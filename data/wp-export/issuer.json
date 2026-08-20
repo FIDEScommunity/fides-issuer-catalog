@@ -1,7 +1,7 @@
 {
     "schemaVersion": "1.0.0",
     "catalogType": "issuer",
-    "generatedAt": "2026-08-17T17:27:49+00:00",
+    "generatedAt": "2026-08-20T16:06:23+00:00",
     "entries": [
         {
             "itemId": "issuer:fides:credential-issuer:test",
@@ -28,6 +28,131 @@
             "updatedAt": "2026-08-12 08:51:04"
         },
         {
+            "itemId": "issuer:igrant:webuildcorporateshop:production",
+            "slug": "igrant",
+            "filename": "issuer-catalog.json",
+            "source": "wordpress",
+            "document": {
+                "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+                "orgId": "org:igrant",
+                "issuers": [
+                    {
+                        "id": "issuer:igrant:webuildcorporateshop:production",
+                        "displayName": "WE BUILD Corporate Shop",
+                        "description": "WE BUILD Corporate Shop issues trusted eReceipts for B2B payments.",
+                        "environment": "production",
+                        "issuanceProtocol": "oid4vci",
+                        "oid4vciMetadataUrl": "https://oid4vc.igrant.io/organisation/11202b45-04bb-49ef-bdf2-772be31b2ae4/service/.well-known/openid-credential-issuer",
+                        "issuerWebsiteUrl": "https://webuildshop-corporate-demo.igrant.io",
+                        "projectContext": "WE BUILD"
+                    }
+                ],
+                "lastUpdated": "2026-08-20T16:06:23+00:00"
+            },
+            "publishedAt": "2026-08-20 16:06:23",
+            "updatedAt": "2026-08-20 16:06:23"
+        },
+        {
+            "itemId": "issuer:verana:verana-playground-business-registry:test",
+            "slug": "verana",
+            "filename": "issuer-catalog.json",
+            "source": "wordpress",
+            "document": {
+                "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+                "orgId": "org:verana",
+                "issuers": [
+                    {
+                        "id": "issuer:verana:verana-playground-business-registry:test",
+                        "displayName": "National Business Registry (demo) — verandia-legal-rep (LegalRepresentative)",
+                        "description": "Company register of the Republic of Verandia. Issues Legal Representative credentials (company, registry ID, representative, role, powers) proving that a person may act on behalf of a registered company, for use with banks and lenders in the Verandia scenario.",
+                        "environment": "test",
+                        "issuanceProtocol": "oid4vci",
+                        "oid4vciMetadataUrl": "https://business-registry.verandia.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+                        "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/verandia/demos",
+                        "projectContext": "Republic of Verandia"
+                    }
+                ],
+                "lastUpdated": "2026-08-17T17:28:19+00:00"
+            },
+            "publishedAt": "2026-08-17 17:28:19",
+            "updatedAt": "2026-08-17 17:28:19"
+        },
+        {
+            "itemId": "issuer:verana:verana-playground-demo-issuer-accredited:production",
+            "slug": "verana",
+            "filename": "issuer-catalog.json",
+            "source": "wordpress",
+            "document": {
+                "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+                "orgId": "org:verana",
+                "issuers": [
+                    {
+                        "id": "issuer:verana:verana-playground-demo-issuer-accredited:production",
+                        "displayName": "Accredited Issuer (demo) — demo-credential (DemoCredential)",
+                        "description": "Reference issuer of the Playground Ecosystem, authorized on the trust registry to issue the DemoCredential. It serves anyone trying out the Verana playground: request a credential offer, receive a DemoCredential, and see a fully accredited issuance succeed end to end.",
+                        "environment": "production",
+                        "issuanceProtocol": "oid4vci",
+                        "oid4vciMetadataUrl": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+                        "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+                        "projectContext": "Verana Playground"
+                    }
+                ],
+                "lastUpdated": "2026-08-17T17:29:29+00:00"
+            },
+            "publishedAt": "2026-08-17 17:29:29",
+            "updatedAt": "2026-08-17 17:29:29"
+        },
+        {
+            "itemId": "issuer:verana:verana-playground-demo-issuer-unaccredited:test",
+            "slug": "verana",
+            "filename": "issuer-catalog.json",
+            "source": "wordpress",
+            "document": {
+                "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+                "orgId": "org:verana",
+                "issuers": [
+                    {
+                        "id": "issuer:verana:verana-playground-demo-issuer-unaccredited:test",
+                        "displayName": "Unaccredited Issuer (demo) — demo-credential (DemoCredential)",
+                        "description": "A trusted Verifiable Service that is deliberately NOT authorized to issue the DemoCredential. It exists so wallet developers and demo audiences can see trust resolution reject an offer from an issuer without the required ecosystem accreditation.",
+                        "environment": "test",
+                        "issuanceProtocol": "oid4vci",
+                        "oid4vciMetadataUrl": "https://demo-issuer-unaccredited.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+                        "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+                        "projectContext": "Verana Playground"
+                    }
+                ],
+                "lastUpdated": "2026-08-17T17:28:28+00:00"
+            },
+            "publishedAt": "2026-08-17 17:28:28",
+            "updatedAt": "2026-08-17 17:28:28"
+        },
+        {
+            "itemId": "issuer:verana:verana-playground-demo-issuer-untrusted:test",
+            "slug": "verana",
+            "filename": "issuer-catalog.json",
+            "source": "wordpress",
+            "document": {
+                "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+                "orgId": "org:verana",
+                "issuers": [
+                    {
+                        "id": "issuer:verana:verana-playground-demo-issuer-untrusted:test",
+                        "displayName": "Untrusted Issuer (demo) — demo-credential (DemoCredential)",
+                        "description": "A service that is not a Verifiable Service at all: no trust chain, no accreditation. It serves as the negative control of the playground, showing that compliant wallets refuse its credential offers before any data is exchanged.",
+                        "environment": "test",
+                        "issuanceProtocol": "oid4vci",
+                        "oid4vciMetadataUrl": "https://demo-issuer-untrusted.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+                        "issuerWebsiteUrl": "https://playground.testnet.verana.network/personal-wallets",
+                        "projectContext": "Verana Playground"
+                    }
+                ],
+                "lastUpdated": "2026-08-17T17:28:24+00:00"
+            },
+            "publishedAt": "2026-08-17 17:28:24",
+            "updatedAt": "2026-08-17 17:28:24"
+        },
+        {
             "itemId": "issuer:verana:verana-playground-issuer-aurum:test",
             "slug": "verana",
             "filename": "issuer-catalog.json",
@@ -51,6 +176,31 @@
             },
             "publishedAt": "2026-08-17 15:03:56",
             "updatedAt": "2026-08-17 15:03:56"
+        },
+        {
+            "itemId": "issuer:verana:verana-playground-issuer-citizen-id:test",
+            "slug": "verana",
+            "filename": "issuer-catalog.json",
+            "source": "wordpress",
+            "document": {
+                "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+                "orgId": "org:verana",
+                "issuers": [
+                    {
+                        "id": "issuer:verana:verana-playground-issuer-citizen-id:test",
+                        "displayName": "National Civil Registry (demo) — verandia-citizen-id (VerandiaCitizenID)",
+                        "description": "National identity authority of the Republic of Verandia. Issues the Verandia Citizen ID (name, birth date, personal identifier, nationality, portrait) to citizens, and governs which relying parties may request it. The root identity credential of the Verandia use case.",
+                        "environment": "test",
+                        "issuanceProtocol": "oid4vci",
+                        "oid4vciMetadataUrl": "https://civil-registry.verandia.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+                        "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/verandia/demos",
+                        "projectContext": "Republic of Verandia"
+                    }
+                ],
+                "lastUpdated": "2026-08-17T17:28:06+00:00"
+            },
+            "publishedAt": "2026-08-17 17:28:06",
+            "updatedAt": "2026-08-17 17:28:06"
         },
         {
             "itemId": "issuer:verana:verana-playground-issuer-novara:test",
@@ -101,6 +251,56 @@
             },
             "publishedAt": "2026-08-17 17:27:49",
             "updatedAt": "2026-08-17 17:27:49"
+        },
+        {
+            "itemId": "issuer:verana:verana-playground-vesta-issuer-vesta:test",
+            "slug": "verana",
+            "filename": "issuer-catalog.json",
+            "source": "wordpress",
+            "document": {
+                "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+                "orgId": "org:verana",
+                "issuers": [
+                    {
+                        "id": "issuer:verana:verana-playground-vesta-issuer-vesta:test",
+                        "displayName": "Vesta Appliances (demo) — ecs-badge (ECS-Badge)",
+                        "description": "Organization anchor of the Vesta Appliances manufacturer. Issues employee badges (ECS BadgeCredential: badge number, name, photo, title, department) to its own staff, so customers and partners can verify who represents Vesta.",
+                        "environment": "test",
+                        "issuanceProtocol": "oid4vci",
+                        "oid4vciMetadataUrl": "https://vesta.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+                        "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+                        "projectContext": "Vesta cast (appliance manufacturer and repair network)"
+                    }
+                ],
+                "lastUpdated": "2026-08-17T17:28:13+00:00"
+            },
+            "publishedAt": "2026-08-17 17:28:13",
+            "updatedAt": "2026-08-17 17:28:13"
+        },
+        {
+            "itemId": "issuer:verana:verana-playground-vesta-issuer-zenith:test",
+            "slug": "verana",
+            "filename": "issuer-catalog.json",
+            "source": "wordpress",
+            "document": {
+                "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+                "orgId": "org:verana",
+                "issuers": [
+                    {
+                        "id": "issuer:verana:verana-playground-vesta-issuer-zenith:test",
+                        "displayName": "Zenith Repairs (demo) — ecs-badge (ECS-Badge)",
+                        "description": "Independent Portuguese repair company and authorized Vesta partner. Issues employee badges to its technicians so households can verify at the door that the person is a badged employee of an authorized repairer.",
+                        "environment": "test",
+                        "issuanceProtocol": "oid4vci",
+                        "oid4vciMetadataUrl": "https://zenith.playground.testnet.verana.network/oid4vci/demo-did/.well-known/openid-credential-issuer",
+                        "issuerWebsiteUrl": "https://playground.testnet.verana.network/usecases/vesta/demos",
+                        "projectContext": "Vesta cast (appliance manufacturer and repair network)"
+                    }
+                ],
+                "lastUpdated": "2026-08-17T17:27:59+00:00"
+            },
+            "publishedAt": "2026-08-17 17:27:59",
+            "updatedAt": "2026-08-17 17:27:59"
         }
     ]
 }
