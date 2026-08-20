@@ -199,5 +199,20 @@
   },
   "issuer:verana:verana-playground-iso-certification:test": {
     "firstSeenAt": "2026-08-18T14:46:51.844Z"
+  },
+  "issuer:igrant:webuildcorporateshop:production": {
+    "firstSeenAt": "2026-08-20T16:06:45.910Z"
+  },
+  "issuer:verana:verana-playground-business-registry:test": {
+    "firstSeenAt": "2026-08-20T16:06:45.910Z"
+  },
+  "issuer:verana:verana-playground-demo-issuer-accredited:production": {
+    "firstSeenAt": "2026-08-20T16:06:45.910Z"
+  },
+  "issuer:verana:verana-playground-issuer-citizen-id:test": {
+    "firstSeenAt": "2026-08-20T16:06:45.910Z"
+  },
+  "issuer:verana:verana-playground-vesta-issuer-vesta:test": {
+    "firstSeenAt": "2026-08-20T16:06:45.910Z"
   }
 }

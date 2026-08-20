@@ -1,15 +1,39 @@
 {
   "schemaVersion": "1.0.0",
   "catalogType": "issuer",
-  "lastImportAt": "2026-08-17T17:28:14.057Z",
+  "lastImportAt": "2026-08-20T16:06:45.081Z",
   "managedIssuers": [
     {
       "slug": "fides",
       "issuerId": "issuer:fides:credential-issuer:test"
     },
     {
+      "slug": "igrant",
+      "issuerId": "issuer:igrant:webuildcorporateshop:production"
+    },
+    {
+      "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-business-registry:test"
+    },
+    {
+      "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-demo-issuer-accredited:production"
+    },
+    {
+      "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-demo-issuer-unaccredited:test"
+    },
+    {
+      "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-demo-issuer-untrusted:test"
+    },
+    {
       "slug": "verana",
       "issuerId": "issuer:verana:verana-playground-issuer-aurum:test"
+    },
+    {
+      "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-issuer-citizen-id:test"
     },
     {
       "slug": "verana",
@@ -18,6 +42,14 @@
     {
       "slug": "verana",
       "issuerId": "issuer:verana:verana-playground-vesta-issuer-umbra:test"
+    },
+    {
+      "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-vesta-issuer-vesta:test"
+    },
+    {
+      "slug": "verana",
+      "issuerId": "issuer:verana:verana-playground-vesta-issuer-zenith:test"
     }
   ]
 }

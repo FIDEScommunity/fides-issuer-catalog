@@ -13,7 +13,35 @@
     "issuer:verana:verana-playground-vesta-issuer-umbra:test": {
       "itemId": "issuer:verana:verana-playground-vesta-issuer-umbra:test",
       "publishedAt": "2026-08-17 17:27:49"
+    },
+    "issuer:verana:verana-playground-business-registry:test": {
+      "itemId": "issuer:verana:verana-playground-business-registry:test",
+      "publishedAt": "2026-08-17 17:28:19"
+    },
+    "issuer:verana:verana-playground-demo-issuer-accredited:production": {
+      "itemId": "issuer:verana:verana-playground-demo-issuer-accredited:production",
+      "publishedAt": "2026-08-17 17:29:29"
+    },
+    "issuer:verana:verana-playground-demo-issuer-unaccredited:test": {
+      "itemId": "issuer:verana:verana-playground-demo-issuer-unaccredited:test",
+      "publishedAt": "2026-08-17 17:28:28"
+    },
+    "issuer:verana:verana-playground-demo-issuer-untrusted:test": {
+      "itemId": "issuer:verana:verana-playground-demo-issuer-untrusted:test",
+      "publishedAt": "2026-08-17 17:28:24"
+    },
+    "issuer:verana:verana-playground-issuer-citizen-id:test": {
+      "itemId": "issuer:verana:verana-playground-issuer-citizen-id:test",
+      "publishedAt": "2026-08-17 17:28:06"
+    },
+    "issuer:verana:verana-playground-vesta-issuer-vesta:test": {
+      "itemId": "issuer:verana:verana-playground-vesta-issuer-vesta:test",
+      "publishedAt": "2026-08-17 17:28:13"
+    },
+    "issuer:verana:verana-playground-vesta-issuer-zenith:test": {
+      "itemId": "issuer:verana:verana-playground-vesta-issuer-zenith:test",
+      "publishedAt": "2026-08-17 17:27:59"
     }
   },
-  "importedAt": "2026-08-17T17:28:14.056Z"
+  "importedAt": "2026-08-20T16:06:45.081Z"
 }

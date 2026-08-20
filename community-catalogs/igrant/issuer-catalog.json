@@ -1,5 +1,6 @@
 {
   "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:igrant",
   "issuers": [
     {
       "id": "issuer:igrant:demo:test",
@@ -20,7 +21,17 @@
       "issuerWebsiteUrl": "https://issuer-playground.igrant.io/admin/",
       "projectContext": "iGrant.io Issuer Playground",
       "issuanceProtocol": "oid4vci"
+    },
+    {
+      "id": "issuer:igrant:webuildcorporateshop:production",
+      "displayName": "WE BUILD Corporate Shop",
+      "description": "WE BUILD Corporate Shop issues trusted eReceipts for B2B payments.",
+      "environment": "production",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://oid4vc.igrant.io/organisation/11202b45-04bb-49ef-bdf2-772be31b2ae4/service/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://webuildshop-corporate-demo.igrant.io",
+      "projectContext": "WE BUILD"
     }
   ],
-  "orgId": "org:igrant"
+  "lastUpdated": "2026-08-20T16:06:23+00:00"
 }
