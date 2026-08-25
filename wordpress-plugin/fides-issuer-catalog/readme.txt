@@ -2,13 +2,16 @@
 Contributors: fideslabs
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 1.8.10
+Stable tag: 1.8.11
 License: Apache-2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0
 
 OID4VCI issuer catalog with search, filters, and optional SSR/SEO via fides-community-tools-tiles.
 
 == Changelog ==
+
+= 1.8.11 =
+* Sync shared modal UI: Use cases accordion scroll arrows overlay cards on narrow screens (tiles ≥ 1.13.18).
 
 = 1.8.10 =
 * Sync shared modal UI: Use cases accordion scrolls horizontally when more than two cases are linked (tiles ≥ 1.13.17).
