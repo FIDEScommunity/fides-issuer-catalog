@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-09-07T11:59:30.812Z",
+  "lastUpdated": "2026-09-08T10:54:35.468Z",
   "issuers": [
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -236,7 +236,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -316,7 +316,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -447,7 +447,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -1231,7 +1231,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1357,7 +1357,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1451,7 +1451,7 @@
       ],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1545,7 +1545,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1616,7 +1616,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:eduwallet:uvh:test",
@@ -1644,7 +1644,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z",
+      "fetchedAt": "2026-09-08T10:54:35.468Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -1673,7 +1673,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z",
+      "fetchedAt": "2026-09-08T10:54:35.468Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -1702,7 +1702,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z",
+      "fetchedAt": "2026-09-08T10:54:35.468Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -1731,7 +1731,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z",
+      "fetchedAt": "2026-09-08T10:54:35.468Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -1760,7 +1760,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z",
+      "fetchedAt": "2026-09-08T10:54:35.468Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -1789,7 +1789,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z",
+      "fetchedAt": "2026-09-08T10:54:35.468Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2549,7 +2549,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -3050,7 +3050,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -3159,7 +3159,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:fides:fides-labs-issuer:test",
@@ -3213,7 +3213,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-21T14:04:37.030Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -3255,7 +3255,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3430,7 +3430,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3487,7 +3487,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -3529,7 +3529,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -3552,7 +3552,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -3608,7 +3608,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -3653,7 +3653,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -3747,7 +3747,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -3795,7 +3795,7 @@
       ],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -3889,7 +3889,7 @@
       ],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -4454,7 +4454,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -4527,7 +4527,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -4600,7 +4600,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -4673,7 +4673,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -4746,7 +4746,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -4769,7 +4769,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:igrant:playground:test",
@@ -4870,7 +4870,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-18T05:15:29.773Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:igrant:webuildcorporateshop:production",
@@ -4893,7 +4893,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:k4security:kspts:test",
@@ -5023,7 +5023,7 @@
       ],
       "firstSeenAt": "2026-07-15T06:00:43.266Z",
       "updatedAt": "2026-07-08T18:23:33+09:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -5186,7 +5186,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -5210,7 +5210,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z",
+      "fetchedAt": "2026-09-08T10:54:35.468Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -5414,7 +5414,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -5422,7 +5422,6 @@
       "organization": {
         "name": "Namirial",
         "country": "IT",
-        "website": "https://www.namirial.com",
         "logoUri": "https://wallet-demo.namirial.com/static/img/fav-namirial-logo.png"
       },
       "displayName": "Namirial Demo Platform",
@@ -5653,7 +5652,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -5747,7 +5746,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -5841,7 +5840,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -5882,7 +5881,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -6008,7 +6007,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -6185,7 +6184,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -6264,7 +6263,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -6357,7 +6356,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -6450,7 +6449,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-novara:test",
@@ -6508,7 +6507,7 @@
       ],
       "firstSeenAt": "2026-08-17T17:22:27.739Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-aurum:test",
@@ -6566,7 +6565,7 @@
       ],
       "firstSeenAt": "2026-08-17T17:28:15.008Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-issuer-umbra:test",
@@ -6623,7 +6622,7 @@
       ],
       "firstSeenAt": "2026-08-17T17:28:15.008Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-cexa-association:test",
@@ -6696,7 +6695,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-anchor:test",
@@ -6745,7 +6744,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-accredited:test",
@@ -6801,7 +6800,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-unaccredited:test",
@@ -6857,7 +6856,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-untrusted:test",
@@ -6913,7 +6912,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-verandia-civil-registry:test",
@@ -6994,7 +6993,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-verandia-business-registry:test",
@@ -7097,7 +7096,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-helvetia-trust:test",
@@ -7169,7 +7168,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-anchor:test",
@@ -7249,7 +7248,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-issuer-zenith:test",
@@ -7306,7 +7305,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-iberia:test",
@@ -7355,7 +7354,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-nordics:test",
@@ -7404,7 +7403,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-normacert:test",
@@ -7454,7 +7453,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-iso-certification:test",
@@ -7503,7 +7502,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-business-registry:test",
@@ -7543,7 +7542,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-accredited:production",
@@ -7583,7 +7582,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-citizen-id:test",
@@ -7623,7 +7622,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-issuer-vesta:test",
@@ -7663,7 +7662,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-09-07T11:59:30.812Z"
+      "fetchedAt": "2026-09-08T10:54:35.468Z"
     }
   ],
   "stats": {
