@@ -1,0 +1,16 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:a4-advisory",
+  "issuers": [
+    {
+      "id": "issuer:a4advisory:unfold-playground:test",
+      "displayName": "EUDIW Unfold",
+      "description": "Playground OID4VCI issuer for the EUDIW Unfold trust-management environment. Issues mdoc credentials including mobile driving licence, vehicle registration, vaccination, Health ID and ePrescription.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://unfold.mdoc.online/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://unfold.mdoc.online/",
+      "projectContext": "EUDIW Unfold playground"
+    }
+  ]
+}
