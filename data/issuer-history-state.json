@@ -214,5 +214,8 @@
   },
   "issuer:verana:verana-playground-vesta-issuer-vesta:test": {
     "firstSeenAt": "2026-08-20T16:06:45.910Z"
+  },
+  "issuer:a4advisory:unfold-playground:test": {
+    "firstSeenAt": "2026-09-29T08:58:45.551Z"
   }
 }
