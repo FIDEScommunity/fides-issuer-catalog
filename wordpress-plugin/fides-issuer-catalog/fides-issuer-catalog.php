@@ -2,14 +2,14 @@
 /**
  * Plugin Name: FIDES Issuer Catalog
  * Description: Searchable catalog of OID4VCI credential issuers. When the master fides_catalog_ssr_enabled flag (provided by FIDES Community Tools Tiles ≥ 1.6.3) is enabled, the plugin also emits a server-rendered listing fallback, per-deeplink SEO meta tags and an Organization JSON-LD payload so issuer detail URLs become indexable by search engines.
- * Version: 1.8.14
+ * Version: 1.9.1
  * Author: FIDES Labs BV
  * License: Apache-2.0
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('FIDES_ISSUER_CATALOG_VERSION', '1.8.14');
+define('FIDES_ISSUER_CATALOG_VERSION', '1.9.1');
 define('FIDES_ISSUER_CATALOG_DEFAULT_UPDATE_FORM_PATH', '/issuers-update/');
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-fides-issuer-catalog-ssr.php';
@@ -244,7 +244,7 @@ function fides_issuer_catalog_should_enqueue_assets() {
  * @return string[]
  */
 function fides_issuer_catalog_query_vars($vars) {
-    foreach (['theme', 'issuer', 'issuers', 'sector', 'country'] as $q) {
+    foreach (['theme', 'issuer', 'issuers', 'sector', 'country', 'catalog_page'] as $q) {
         $vars[] = $q;
     }
     return $vars;
@@ -258,7 +258,7 @@ add_filter('query_vars', 'fides_issuer_catalog_query_vars');
  * @return string|false
  */
 function fides_issuer_catalog_preserve_redirect_canonical($redirect_url) {
-    $keys = ['theme', 'issuer', 'issuers', 'sector', 'country'];
+    $keys = ['theme', 'issuer', 'issuers', 'sector', 'country', 'catalog_page'];
     foreach ($keys as $key) {
         if (isset($_GET[$key]) && (string) $_GET[$key] !== '') {
             return false;

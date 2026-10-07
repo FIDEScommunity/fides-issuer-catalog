@@ -1,3 +1,69 @@
+.fides-issuer-card {
+  position: relative;
+}
+
+.fides-issuer-card .fides-catalog-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.fides-issuer-card a:not(.fides-catalog-card-link),
+.fides-issuer-card button {
+  position: relative;
+  z-index: 2;
+}
+
+#fides-issuer-catalog-root .fides-catalog-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+#fides-issuer-catalog-root .fides-catalog-pagination__meta {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--fides-text-muted);
+}
+
+#fides-issuer-catalog-root .fides-catalog-pagination__nav,
+#fides-issuer-catalog-root .fides-catalog-pagination__pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#fides-issuer-catalog-root .fides-catalog-pagination__pages {
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#fides-issuer-catalog-root .fides-catalog-pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--fides-border);
+  border-radius: 8px;
+  color: var(--fides-text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#fides-issuer-catalog-root .fides-catalog-pagination a[aria-current="page"],
+#fides-issuer-catalog-root .fides-catalog-pagination a:hover {
+  border-color: var(--fides-accent);
+  color: var(--fides-accent);
+}
 /**
  * FIDES Issuer Catalog - WordPress Plugin Styles
  */
@@ -756,6 +822,12 @@
 
 .fides-filter-count.hidden {
   visibility: hidden;
+}
+
+.fides-sidebar-header .fides-filter-count.is-placeholder,
+.fides-sidebar-header .fides-clear-all.is-placeholder {
+  visibility: hidden !important;
+  pointer-events: none;
 }
 
 .fides-clear-all {

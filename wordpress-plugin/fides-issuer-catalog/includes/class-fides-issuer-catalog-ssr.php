@@ -80,6 +80,7 @@ if (! class_exists('Fides_Issuer_Catalog_SSR')) {
             protected function shortcode_root_id(): string { return 'fides-issuer-catalog-root'; }
             protected function loading_label(): string    { return __('Loading issuer catalog…', 'fides-issuer-catalog'); }
             protected function max_listing_items(): int   { return self::MAX_LISTING_ITEMS; }
+            protected function supports_standalone_detail_page(): bool { return true; }
 
             public function register_with_core(): void {
                 if (! class_exists('Fides_Catalog_Registry')) {

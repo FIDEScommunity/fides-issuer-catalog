@@ -271,6 +271,9 @@
   let issuers = [];
   let filterFacets = null;
   let sortBy = 'rating';
+  const LISTING_PAGE_PARAM = 'catalog_page';
+  const LISTING_PAGE_SIZE = 30;
+  let listingPage = listingPageFromLocation();
   let ratingSummariesByIssuerId = Object.create(null);
   let ratingSummariesByRpId = Object.create(null);
   let ratingSummariesByCredentialId = Object.create(null);
@@ -762,6 +765,88 @@
     });
   }
 
+  function listingPageFromLocation() {
+    const raw = Number.parseInt(new URLSearchParams(window.location.search).get(LISTING_PAGE_PARAM) || '1', 10);
+    return Number.isFinite(raw) && raw > 0 ? raw : 1;
+  }
+
+  function issuerDetailHref(id) {
+    const url = new URL(window.location.origin + window.location.pathname);
+    url.searchParams.set('issuer', id);
+    return url.toString();
+  }
+
+  function listingHrefForPage(page) {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('issuer');
+    if (page > 1) url.searchParams.set(LISTING_PAGE_PARAM, String(page));
+    else url.searchParams.delete(LISTING_PAGE_PARAM);
+    url.hash = '';
+    return url.toString();
+  }
+
+  function pagedIssuers(filtered) {
+    const totalPages = Math.max(1, Math.ceil(filtered.length / LISTING_PAGE_SIZE));
+    listingPage = Math.min(Math.max(1, listingPage), totalPages);
+    const start = (listingPage - 1) * LISTING_PAGE_SIZE;
+    return filtered.slice(start, start + LISTING_PAGE_SIZE);
+  }
+
+  function renderPaginationBar(totalItems) {
+    const totalPages = Math.ceil(totalItems / LISTING_PAGE_SIZE);
+    if (totalPages <= 1) return '';
+    const page = Math.min(listingPage, totalPages);
+    const start = (page - 1) * LISTING_PAGE_SIZE + 1;
+    const end = Math.min(page * LISTING_PAGE_SIZE, totalItems);
+    const links = Array.from({ length: totalPages }, (_, index) => index + 1)
+      .map((number) => `<li><a class="fides-catalog-page-link${number === page ? ' is-current' : ''}" href="${escapeHtml(listingHrefForPage(number))}" data-catalog-page="${number}"${number === page ? ' aria-current="page"' : ''}>${number}</a></li>`)
+      .join('');
+    const previous = page > 1
+      ? `<a class="fides-catalog-pagination__prev" href="${escapeHtml(listingHrefForPage(page - 1))}" data-catalog-page="${page - 1}" rel="prev">Previous</a>`
+      : '';
+    const next = page < totalPages
+      ? `<a class="fides-catalog-pagination__next" href="${escapeHtml(listingHrefForPage(page + 1))}" data-catalog-page="${page + 1}" rel="next">Next</a>`
+      : '';
+    return `<nav class="fides-catalog-pagination" aria-label="Catalog pages">
+      <p class="fides-catalog-pagination__meta">Showing ${start}–${end} of ${totalItems}</p>
+      <div class="fides-catalog-pagination__nav">${previous}<ol class="fides-catalog-pagination__pages">${links}</ol>${next}</div>
+    </nav>`;
+  }
+
+  function bindPaginationLinks() {
+    root.querySelectorAll('[data-catalog-page]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        listingPage = Number.parseInt(link.dataset.catalogPage || '1', 10) || 1;
+        window.history.pushState({}, '', link.href);
+        renderIssuerGridOnly();
+        root.querySelector('.fides-results')?.scrollIntoView({ block: 'start' });
+      });
+    });
+  }
+
+  function retainStandaloneDetailPage() {
+    const detail = root.querySelector('[data-fides-ssr-page="detail"]');
+    if (!detail) return false;
+    const fallback = detail.closest('[data-fides-ssr="issuer"]');
+    if (fallback) {
+      fallback.style.display = '';
+      fallback.removeAttribute('aria-hidden');
+    }
+    root.querySelector('[data-fides-ssr-spinner="1"]')?.remove();
+    return true;
+  }
+
+  function revealSsrFallback() {
+    const fallback = root.querySelector('[data-fides-ssr="issuer"]');
+    if (!fallback) return false;
+    fallback.style.display = '';
+    fallback.removeAttribute('aria-hidden');
+    root.querySelector('[data-fides-ssr-spinner="1"]')?.remove();
+    return true;
+  }
+
   /**
    * Renders the grid/list toggle buttons for the results bar.
    * Generic: only depends on the module-level `viewMode` variable and `icons`.
@@ -814,7 +899,8 @@
     const credCount = configs.length;
 
     return `
-      <div class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}" tabindex="0" role="button" aria-label="${escapeHtml(issuer.organization?.name || '')} – ${escapeHtml(issuer.displayName)}">
+      <div class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}">
+        <a class="fides-catalog-card-link" href="${escapeHtml(issuerDetailHref(issuer.id))}" aria-label="View ${escapeHtml(issuer.displayName || issuer.id)}"></a>
         <div class="fides-row-icon" aria-hidden="true">
           ${logo
             ? `<img src="${escapeHtml(logo)}" alt="${escapeHtml(issuer.organization?.name || '')}" style="width:22px;height:22px;object-fit:contain;border-radius:3px;">`
@@ -854,7 +940,8 @@
     const credLabel = catalogCount === 1 ? 'Credential' : 'Credentials';
 
     return `
-      <div class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}" tabindex="0" role="button" aria-label="${escapeHtml(issuer.organization?.name || '')} – ${escapeHtml(issuer.displayName)}">
+      <div class="fides-issuer-card" data-id="${escapeHtml(issuer.id)}">
+        <a class="fides-catalog-card-link" href="${escapeHtml(issuerDetailHref(issuer.id))}" aria-label="View ${escapeHtml(issuer.displayName || issuer.id)}"></a>
         <header class="fides-credential-header">
           <div class="fides-credential-subject-icon" aria-hidden="true">
             ${logo
@@ -1533,10 +1620,10 @@
           <div class="fides-sidebar-title">
             ${icons.filter}
             <span>Filters</span>
-            <span class="fides-filter-count ${activeFilterCount > 0 ? '' : 'hidden'}">${activeFilterCount || 0}</span>
+            <span class="fides-filter-count ${activeFilterCount > 0 ? '' : 'is-placeholder'}">${activeFilterCount || 0}</span>
           </div>
           <div class="fides-sidebar-actions">
-            <button class="fides-clear-all ${activeFilterCount > 0 ? '' : 'hidden'}" id="fides-clear" type="button">
+            <button class="fides-clear-all ${activeFilterCount > 0 ? '' : 'is-placeholder'}" id="fides-clear" type="button" aria-hidden="${activeFilterCount > 0 ? 'false' : 'true'}" tabindex="${activeFilterCount > 0 ? '0' : '-1'}">
               ${icons.x} Clear
             </button>
             <button class="fides-sidebar-close" id="fides-sidebar-close" aria-label="Close filters">
@@ -1572,6 +1659,7 @@
 
   function render() {
     const filtered = getFilteredIssuers();
+    const visibleIssuers = pagedIssuers(filtered);
     const metrics = computeMetrics(filtered);
 
     const mobileFiltersOpen = getMobileFilters()?.captureOpenState() || false;
@@ -1620,11 +1708,12 @@
             <div class="fides-results">
               <div class="fides-issuer-grid" data-view="${effectiveView()}" data-columns="${escapeHtml(settings.columns)}">
                 ${effectiveView() === 'list' ? renderIssuerListHeader() : ''}
-                ${filtered.length > 0
-                  ? filtered.map(effectiveView() === 'list' ? renderIssuerRow : renderIssuerCard).join('')
+                ${visibleIssuers.length > 0
+                  ? visibleIssuers.map(effectiveView() === 'list' ? renderIssuerRow : renderIssuerCard).join('')
                   : '<p class="fides-empty">No issuers found.</p>'
                 }
               </div>
+              <div class="fides-catalog-pagination-slot">${renderPaginationBar(filtered.length)}</div>
             </div>
           </section>
         </div>
@@ -1632,6 +1721,7 @@
     `;
 
     bindEvents();
+    bindPaginationLinks();
     getMobileFilters()?.applyAfterRender(mobileFiltersOpen);
     applyStaleCatalogNotice();
   }
@@ -1961,7 +2051,13 @@
 
     // Card clicks
     root.querySelectorAll('.fides-issuer-card').forEach((card) => {
-      card.addEventListener('click', () => openModal(card.dataset.id));
+      card.addEventListener('click', (event) => {
+        const link = event.target.closest('.fides-catalog-card-link');
+        if (link && (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;
+        if (event.target.closest('a') && !link) return;
+        if (link) event.preventDefault();
+        openModal(card.dataset.id);
+      });
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.id); } });
     });
 
@@ -1997,6 +2093,7 @@
     const ev = effectiveView();
     grid.setAttribute('data-view', ev);
     const filtered = getFilteredIssuers();
+    const visibleIssuers = pagedIssuers(filtered);
     const metrics = computeMetrics(filtered);
     const kpiValues = root.querySelectorAll('.fides-kpi-card .fides-kpi-value');
     if (kpiValues.length >= 4) {
@@ -2005,14 +2102,23 @@
       kpiValues[3].textContent = String(metrics.recentActivity);
     }
     const header = ev === 'list' ? renderIssuerListHeader() : '';
-    const items = filtered.length > 0
-      ? filtered.map(ev === 'list' ? renderIssuerRow : renderIssuerCard).join('')
+    const items = visibleIssuers.length > 0
+      ? visibleIssuers.map(ev === 'list' ? renderIssuerRow : renderIssuerCard).join('')
       : '<p class="fides-empty">No issuers found.</p>';
     grid.innerHTML = header + items;
+    const paginationSlot = root.querySelector('.fides-catalog-pagination-slot');
+    if (paginationSlot) paginationSlot.innerHTML = renderPaginationBar(filtered.length);
     root.querySelectorAll('.fides-issuer-card').forEach((card) => {
-      card.addEventListener('click', () => openModal(card.dataset.id));
+      card.addEventListener('click', (event) => {
+        const link = event.target.closest('.fides-catalog-card-link');
+        if (link && (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;
+        if (event.target.closest('a') && !link) return;
+        if (link) event.preventDefault();
+        openModal(card.dataset.id);
+      });
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.id); } });
     });
+    bindPaginationLinks();
     fillCardRpCounts(filtered);
   }
 
@@ -2365,6 +2471,7 @@
         }
       }
     }
+    if (issuers.length === 0 && revealSsrFallback()) return;
     if (sourceName) console.log(`Loaded ${issuers.length} issuers from ${sourceName}`);
     await Promise.allSettled([
       loadOrganizationCatalogMaps(),
@@ -2383,6 +2490,7 @@
     enrichIssuersCredentialThemes(issuers);
     filterFacets = computeFilterFacets(issuers);
     normalizeIssuerSigningAlgorithmFilters();
+    if (retainStandaloneDetailPage()) return;
     render();
     checkDeepLink();
 
@@ -2447,6 +2555,11 @@
       filters.credentialTheme = [themeCode];
     }
   }
+
+  window.addEventListener('popstate', () => {
+    listingPage = listingPageFromLocation();
+    if (!retainStandaloneDetailPage()) renderIssuerGridOnly();
+  });
 
   function openModalFromData(issuer, options) {
     if (!issuer || typeof issuer !== 'object') return false;

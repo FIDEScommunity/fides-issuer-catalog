@@ -2,13 +2,21 @@
 Contributors: fideslabs
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 1.8.14
+Stable tag: 1.9.1
 License: Apache-2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0
 
 OID4VCI issuer catalog with search, filters, and optional SSR/SEO via fides-community-tools-tiles.
 
 == Changelog ==
+
+= 1.9.1 =
+* Align pagination structure and styling with the wallet catalog, including result range and Previous/Next links.
+* Keep the issuer filter header height stable after selecting a filter.
+
+= 1.9.0 =
+* Add crawlable detail links and stable 30-item pagination to the JavaScript catalog.
+* Keep standalone SSR detail content visible after JavaScript loads (requires fides-community-tools-tiles ≥ 1.13.32 and respects the fides_catalog_ssr_enabled switch).
 
 = 1.8.14 =
 * Make the shared mobile filter drawer modal and keyboard-accessible (tiles ≥ 1.13.31).
