@@ -217,5 +217,17 @@
   },
   "issuer:a4advisory:unfold-playground:test": {
     "firstSeenAt": "2026-09-29T08:58:45.551Z"
+  },
+  "issuer:france:playground:test": {
+    "firstSeenAt": "2026-10-13T20:41:39.560Z"
+  },
+  "issuer:france:custom-issuer:test": {
+    "firstSeenAt": "2026-10-13T20:41:39.560Z"
+  },
+  "issuer:ingroupe:aptitude:test": {
+    "firstSeenAt": "2026-10-13T20:43:47.252Z"
+  },
+  "issuer:lutra:playground:test": {
+    "firstSeenAt": "2026-10-13T20:43:47.252Z"
   }
 }

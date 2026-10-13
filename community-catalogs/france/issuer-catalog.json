@@ -1,0 +1,26 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:france",
+  "issuers": [
+    {
+      "id": "issuer:france:playground:test",
+      "displayName": "France Identité Playground Issuer",
+      "description": "France Identité OID4VCI 1.0 playground issuer for PID, age verification, mDL, photo ID, mobile vehicle registration, mobile vaccination and SD-JWT PID test credentials.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://api.playground.france-identite.gouv.fr/.well-known/openid-credential-issuer/poc/idakto/openid4vci/v2",
+      "issuerWebsiteUrl": "https://playground.france-identite.gouv.fr/marketplace/wallets/fin_oid4vci_doc/",
+      "projectContext": "France Identité EUDIW Unfold Playground"
+    },
+    {
+      "id": "issuer:france:custom-issuer:test",
+      "displayName": "France Titres Custom Issuer",
+      "description": "OID4VCI Draft 13 reference issuer for creating and testing custom mdoc and SD-JWT VC credentials with the France Identité Partenaires wallet.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://api.playground.france-identite.gouv.fr/france-titres/custom-issuer/issuer/custom-issuer/protocol/oid4vci/draft-13/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://api.playground.france-identite.gouv.fr/france-titres/custom-issuer/",
+      "projectContext": "France Identité Partenaires Draft 13 reference implementation"
+    }
+  ]
+}

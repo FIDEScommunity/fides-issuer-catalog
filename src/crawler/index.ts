@@ -63,7 +63,21 @@ async function fetchJson<T>(url: string, timeoutMs = 10000): Promise<T> {
       headers: DEFAULT_JSON_HEADERS,
     });
     if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-    return (await res.json()) as T;
+    const body = await res.text();
+    try {
+      return JSON.parse(body) as T;
+    } catch (jsonError) {
+      const jwtParts = body.trim().split('.');
+      if (jwtParts.length !== 3) {
+        throw jsonError;
+      }
+
+      try {
+        return JSON.parse(Buffer.from(jwtParts[1], 'base64url').toString('utf-8')) as T;
+      } catch {
+        throw new Error('Response is neither JSON nor a compact JWT with a JSON payload');
+      }
+    }
   } finally {
     clearTimeout(timer);
   }
@@ -121,6 +135,7 @@ function isLocalDevHost(): boolean {
 
 async function loadOrganizationCatalogMap(): Promise<Map<string, OrgCatalogEntry>> {
   const useLocal = isLocalDevHost();
+  const explicitLocalPath = process.env.ORGANIZATION_CATALOG_AGGREGATED_PATH;
 
   const tryParse = (raw: string): Map<string, OrgCatalogEntry> => {
     const data = JSON.parse(raw) as { organizations?: OrgCatalogEntry[] };
@@ -131,8 +146,14 @@ async function loadOrganizationCatalogMap(): Promise<Map<string, OrgCatalogEntry
     return map;
   };
 
-  if (useLocal) {
-    for (const localPath of ORGANIZATION_CATALOG_LOCAL_PATHS) {
+  const preferredLocalPaths = explicitLocalPath
+    ? [explicitLocalPath]
+    : useLocal
+      ? ORGANIZATION_CATALOG_LOCAL_PATHS
+      : [];
+
+  if (preferredLocalPaths.length > 0) {
+    for (const localPath of preferredLocalPaths) {
       if (localPath && fs.existsSync(localPath)) {
         try {
           const raw = fs.readFileSync(localPath, 'utf-8');

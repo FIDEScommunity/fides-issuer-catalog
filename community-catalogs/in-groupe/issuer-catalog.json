@@ -1,0 +1,16 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:in-groupe",
+  "issuers": [
+    {
+      "id": "issuer:ingroupe:aptitude:test",
+      "displayName": "IN Groupe Aptitude Issuer",
+      "description": "Public Aptitude development issuer for testing OID4VCI credential offers and issuance with EUDI-compatible wallets.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://aptitude-issuer.utoconnect.com/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://aptitude-issuer-studio.utoconnect.com/",
+      "projectContext": "IN Groupe Aptitude interoperability playground"
+    }
+  ]
+}
