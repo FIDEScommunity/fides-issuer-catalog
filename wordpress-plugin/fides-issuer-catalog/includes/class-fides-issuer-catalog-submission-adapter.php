@@ -307,7 +307,7 @@ if (! class_exists('Fides_Issuer_Catalog_Submission_Adapter')) {
                     continue;
                 }
                 $id = sanitize_text_field((string) ($ref['id'] ?? ''));
-                if ($id === '' || ($credentials && ! preg_match('/^cred:[a-z0-9]+:[a-z0-9-]+:[a-z0-9-]+$/', $id))) {
+                if ($id === '' || ($credentials && ! preg_match('/^cred:[a-z0-9]+:[a-z0-9-]+(?::[a-z0-9-]+)?$/', $id))) {
                     continue;
                 }
                 $entry = array('id' => $id);
