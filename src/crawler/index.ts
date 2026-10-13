@@ -107,6 +107,10 @@ interface CredentialEntry {
   nativeIdentifier?: string;
   nativeIdentifierType?: string;
   vcFormat?: string;
+  /** Present after attestation-type seed-merge; prefer over legacy format-era ids. */
+  attestationTypeId?: string;
+  aliasIds?: string[];
+  formats?: Array<{ nativeIdentifier?: string }>;
 }
 
 /** Same logic as WordPress plugin: .local or localhost = local dev → use local credential catalog when available */
@@ -179,20 +183,20 @@ function orgEntryToAggregatedOrganization(entry: OrgCatalogEntry): AggregatedOrg
 }
 
 async function loadCredentialCatalog(): Promise<CredentialEntry[]> {
-  const useLocal = isLocalDevHost();
-
-  if (useLocal) {
-    for (const localPath of CREDENTIAL_CATALOG_LOCAL_PATHS) {
-      if (localPath && fs.existsSync(localPath)) {
-        try {
-          const raw = fs.readFileSync(localPath, 'utf-8');
-          const data = JSON.parse(raw) as { credentials?: CredentialEntry[] };
-          const list = data.credentials || [];
+  // Prefer a sibling local credential catalog whenever it exists so crawls pick
+  // up attestation-type ids + aliasIds before they are published to GitHub.
+  for (const localPath of CREDENTIAL_CATALOG_LOCAL_PATHS) {
+    if (localPath && fs.existsSync(localPath)) {
+      try {
+        const raw = fs.readFileSync(localPath, 'utf-8');
+        const data = JSON.parse(raw) as { credentials?: CredentialEntry[] };
+        const list = data.credentials || [];
+        if (list.length) {
           console.log(`  (using local credential catalog: ${localPath}, ${list.length} credentials)`);
           return list;
-        } catch (parseErr) {
-          console.warn('Could not parse local credential catalog:', (parseErr as Error).message);
         }
+      } catch (parseErr) {
+        console.warn('Could not parse local credential catalog:', (parseErr as Error).message);
       }
     }
   }
@@ -232,16 +236,21 @@ function matchCredentialCatalog(
 
   if (!identifier) return undefined;
 
-  const matches = credentialEntries.filter((c) => c.nativeIdentifier === identifier);
+  const matches = credentialEntries.filter((c) => {
+    if (c.nativeIdentifier === identifier) return true;
+    return Array.isArray(c.formats) && c.formats.some((f) => f && f.nativeIdentifier === identifier);
+  });
   if (!matches.length) return undefined;
 
   // When several catalog credentials share the same native identifier (e.g. EU vs ISO mDL),
   // prefer the ISO-anchored entry as the normative authority.
   const isoPreferred = matches.find((c) => typeof c.id === 'string' && c.id.startsWith('cred:iso:'));
   const match = isoPreferred || matches[0];
+  const catalogId =
+    (typeof match.attestationTypeId === 'string' && match.attestationTypeId) || match.id;
 
   return {
-    id: match.id,
+    id: catalogId,
     displayName: match.displayName,
   };
 }

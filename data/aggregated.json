@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-10-12T14:51:44.866Z",
+  "lastUpdated": "2026-10-12T20:29:38.020Z",
   "issuers": [
     {
       "id": "issuer:a4advisory:unfold-playground:test",
@@ -27,10 +27,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
-            "mdoc",
-            "mdl"
+            "iso",
+            "mdl",
+            "mdoc"
           ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
@@ -43,8 +43,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
+            "id": "cred:iso:mdl",
+            "displayName": "mDL"
           }
         },
         {
@@ -85,8 +85,8 @@
           "tags": [
             "eu",
             "eudi",
-            "mdoc",
-            "hiid"
+            "hiid",
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.hiid.1",
           "signingAlgorithms": [
@@ -99,8 +99,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:hiid-mdoc:mdoc",
-            "displayName": "Health ID (MSO Mdoc)"
+            "id": "cred:eu:hiid",
+            "displayName": "Health ID"
           }
         },
         {
@@ -124,8 +124,8 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
+            "iso",
             "mdoc",
             "photoid"
           ],
@@ -140,8 +140,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:photoid-mdoc-alt:mdoc",
-            "displayName": "Photo ID (MSO Mdoc)"
+            "id": "cred:iso:photoid-mdoc-alt",
+            "displayName": "Photo ID"
           }
         },
         {
@@ -166,8 +166,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -178,6 +178,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -191,8 +192,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -201,10 +202,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "age-verification",
             "eu",
             "eudi",
-            "mdoc",
-            "age-verification"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
@@ -217,8 +218,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
+            "id": "cred:eu:age-verification",
+            "displayName": "Age Verification"
           }
         },
         {
@@ -255,7 +256,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-09-29T08:58:45.551Z",
       "updatedAt": "2026-09-29T10:58:26+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -282,10 +283,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
-            "mdoc",
-            "mdl"
+            "iso",
+            "mdl",
+            "mdoc"
           ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
@@ -298,8 +299,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
+            "id": "cred:iso:mdl",
+            "displayName": "mDL"
           }
         },
         {
@@ -308,10 +309,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
-            "mdoc",
-            "mdl"
+            "iso",
+            "mdl",
+            "mdoc"
           ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
@@ -325,8 +326,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
+            "id": "cred:iso:mdl",
+            "displayName": "mDL"
           }
         },
         {
@@ -337,6 +338,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -350,8 +352,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -362,6 +364,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -376,8 +379,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -402,8 +405,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -429,8 +432,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -439,10 +442,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "age-verification",
             "eu",
             "eudi",
-            "mdoc",
-            "age-verification"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
@@ -455,8 +458,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
+            "id": "cred:eu:age-verification",
+            "displayName": "Age Verification"
           }
         },
         {
@@ -465,10 +468,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "age-verification",
             "eu",
             "eudi",
-            "mdoc",
-            "age-verification"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
@@ -482,15 +485,15 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
+            "id": "cred:eu:age-verification",
+            "displayName": "Age Verification"
           }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -517,11 +520,11 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
+            "iso",
             "mdoc",
-            "vehicle",
-            "registration"
+            "registration",
+            "vehicle"
           ],
           "docType": "org.iso.7367.1.mVRC",
           "signingAlgorithms": [
@@ -534,8 +537,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mvrc-mdoc:mdoc",
-            "displayName": "Vehicle Registration Certificate (MSO Mdoc)"
+            "id": "cred:iso:mvrc",
+            "displayName": "Vehicle Registration Certificate"
           }
         },
         {
@@ -544,11 +547,11 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
+            "iso",
             "mdoc",
-            "vehicle",
-            "registration"
+            "registration",
+            "vehicle"
           ],
           "docType": "org.iso.7367.1.mVRC",
           "signingAlgorithms": [
@@ -562,15 +565,15 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mvrc-mdoc:mdoc",
-            "displayName": "Vehicle Registration Certificate (MSO Mdoc)"
+            "id": "cred:iso:mvrc",
+            "displayName": "Vehicle Registration Certificate"
           }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -613,8 +616,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
+            "id": "cred:eu:msisdn",
+            "displayName": "MSISDN"
           }
         },
         {
@@ -640,8 +643,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
+            "id": "cred:eu:msisdn",
+            "displayName": "MSISDN"
           }
         },
         {
@@ -666,8 +669,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
+            "id": "cred:eu:msisdn",
+            "displayName": "MSISDN"
           }
         },
         {
@@ -693,15 +696,15 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
+            "id": "cred:eu:msisdn",
+            "displayName": "MSISDN"
           }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -746,7 +749,8 @@
           "tags": [
             "eu",
             "eudi",
-            "hiid"
+            "hiid",
+            "mdoc"
           ],
           "vct": "urn:eu.europa.ec.eudi:hiid:1",
           "signingAlgorithms": [
@@ -761,8 +765,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:hiid-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "Health ID (SD-JWT VC)"
+            "id": "cred:eu:hiid",
+            "displayName": "Health ID"
           }
         },
         {
@@ -773,7 +777,8 @@
           "tags": [
             "eu",
             "eudi",
-            "iban"
+            "iban",
+            "mdoc"
           ],
           "vct": "urn:eu.europa.ec.eudi:iban:1",
           "signingAlgorithms": [
@@ -787,8 +792,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:iban-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "IBAN (SD-JWT VC)"
+            "id": "cred:eu:iban",
+            "displayName": "IBAN"
           }
         },
         {
@@ -957,8 +962,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -1047,9 +1052,10 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
+            "ehic",
             "eu",
             "eudi",
-            "ehic"
+            "mdoc"
           ],
           "vct": "urn:eudi:ehic:1",
           "signingAlgorithms": [
@@ -1064,8 +1070,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:ehic-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "EHIC (SD-JWT VC)"
+            "id": "cred:eu:ehic",
+            "displayName": "EHIC"
           }
         },
         {
@@ -1122,10 +1128,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
-            "mdoc",
-            "mdl"
+            "iso",
+            "mdl",
+            "mdoc"
           ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
@@ -1139,8 +1145,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
+            "id": "cred:iso:mdl",
+            "displayName": "mDL"
           }
         },
         {
@@ -1149,10 +1155,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "ehic",
             "eu",
             "eudi",
-            "mdoc",
-            "ehic"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.ehic.1",
           "signingAlgorithms": [
@@ -1166,8 +1172,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:ehic-mdoc:mdoc",
-            "displayName": "EHIC (MSO Mdoc)"
+            "id": "cred:eu:ehic",
+            "displayName": "EHIC"
           }
         },
         {
@@ -1210,8 +1216,8 @@
           "tags": [
             "eu",
             "eudi",
-            "mdoc",
-            "hiid"
+            "hiid",
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.hiid.1",
           "signingAlgorithms": [
@@ -1226,8 +1232,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:hiid-mdoc:mdoc",
-            "displayName": "Health ID (MSO Mdoc)"
+            "id": "cred:eu:hiid",
+            "displayName": "Health ID"
           }
         },
         {
@@ -1284,10 +1290,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "cor",
             "eu",
             "eudi",
-            "mdoc",
-            "cor"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.cor.1",
           "signingAlgorithms": [
@@ -1301,8 +1307,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:cor-mdoc:mdoc",
-            "displayName": "Certificate of Residence (MSO Mdoc)"
+            "id": "cred:eu:cor",
+            "displayName": "Certificate of Residence"
           }
         },
         {
@@ -1313,8 +1319,8 @@
           "tags": [
             "eu",
             "eudi",
-            "mdoc",
-            "iban"
+            "iban",
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.iban.1",
           "signingAlgorithms": [
@@ -1328,8 +1334,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:iban-mdoc:mdoc",
-            "displayName": "IBAN (MSO Mdoc)"
+            "id": "cred:eu:iban",
+            "displayName": "IBAN"
           }
         },
         {
@@ -1372,6 +1378,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -1386,8 +1393,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -1462,8 +1469,8 @@
           "tags": [
             "eu",
             "eudi",
-            "mdoc",
-            "loyalty"
+            "loyalty",
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.loyalty.1",
           "signingAlgorithms": [
@@ -1477,15 +1484,15 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:loyalty-mdoc:mdoc",
-            "displayName": "Loyalty (MSO Mdoc)"
+            "id": "cred:eu:loyalty",
+            "displayName": "Loyalty"
           }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1547,7 +1554,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:vat:sd-jwt-vc",
+            "id": "cred:fides:vat",
             "displayName": "VAT Attestation"
           }
         },
@@ -1611,7 +1618,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1631,59 +1638,59 @@
       "issuerWebsiteUrl": "https://www.certlei.com/",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
+          "configurationId": "manual:cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "legal-entity",
             "lei",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:legal-entity-vlei:acdc",
+            "id": "cred:gleif:legal-entity-vlei",
             "displayName": "vLEI – Legal Entity Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
+            "gleif",
             "official-role",
             "oor",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:official-organizational-role-vlei:acdc",
+            "id": "cred:gleif:official-organizational-role-vlei",
             "displayName": "vLEI – Official Organizational Role (OOR) Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
-            "engagement-context",
             "ecr",
-            "gleif"
+            "engagement-context",
+            "gleif",
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:engagement-context-role-vlei:acdc",
+            "id": "cred:gleif:engagement-context-role-vlei",
             "displayName": "vLEI – Engagement Context Role (ECR) Credential"
           }
         }
@@ -1691,21 +1698,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-04-23T10:36:50+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1725,59 +1732,59 @@
       "issuerWebsiteUrl": "https://www.cfca.com.cn/",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
+          "configurationId": "manual:cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "legal-entity",
             "lei",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:legal-entity-vlei:acdc",
+            "id": "cred:gleif:legal-entity-vlei",
             "displayName": "vLEI – Legal Entity Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
+            "gleif",
             "official-role",
             "oor",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:official-organizational-role-vlei:acdc",
+            "id": "cred:gleif:official-organizational-role-vlei",
             "displayName": "vLEI – Official Organizational Role (OOR) Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
-            "engagement-context",
             "ecr",
-            "gleif"
+            "engagement-context",
+            "gleif",
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:engagement-context-role-vlei:acdc",
+            "id": "cred:gleif:engagement-context-role-vlei",
             "displayName": "vLEI – Engagement Context Role (ECR) Credential"
           }
         }
@@ -1785,21 +1792,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-04-23T10:36:25+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -1843,7 +1850,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:iban:sd-jwt-vc",
+            "id": "cred:fides:iban",
             "displayName": "IBAN Attestation"
           }
         },
@@ -1870,7 +1877,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:eduwallet:uvh:test",
@@ -1898,7 +1905,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -1927,7 +1934,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -1956,7 +1963,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -1985,7 +1992,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2014,7 +2021,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2043,7 +2050,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-07-09T15:18:14+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2070,10 +2077,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "cor",
             "eu",
             "eudi",
-            "mdoc",
-            "cor"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.cor.1",
           "signingAlgorithms": [
@@ -2088,8 +2095,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:cor-mdoc:mdoc",
-            "displayName": "Certificate of Residence (MSO Mdoc)"
+            "id": "cred:eu:cor",
+            "displayName": "Certificate of Residence"
           }
         },
         {
@@ -2098,9 +2105,9 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
+            "diploma",
             "eu",
-            "eudi",
-            "diploma"
+            "eudi"
           ],
           "vct": "urn:eu.europa.ec.eudi:diploma:1:1",
           "signingAlgorithms": [
@@ -2115,8 +2122,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:diploma-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "Diploma (SD-JWT VC)"
+            "id": "cred:eu:diploma",
+            "displayName": "Diploma"
           }
         },
         {
@@ -2125,10 +2132,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "ehic",
             "eu",
             "eudi",
-            "mdoc",
-            "ehic"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.ehic.1",
           "signingAlgorithms": [
@@ -2143,8 +2150,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:ehic-mdoc:mdoc",
-            "displayName": "EHIC (MSO Mdoc)"
+            "id": "cred:eu:ehic",
+            "displayName": "EHIC"
           }
         },
         {
@@ -2153,9 +2160,10 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
+            "ehic",
             "eu",
             "eudi",
-            "ehic"
+            "mdoc"
           ],
           "vct": "urn:eudi:ehic:1",
           "signingAlgorithms": [
@@ -2170,8 +2178,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:ehic-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "EHIC (SD-JWT VC)"
+            "id": "cred:eu:ehic",
+            "displayName": "EHIC"
           }
         },
         {
@@ -2180,10 +2188,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "employee",
             "eu",
             "eudi",
-            "mdoc",
-            "employee"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.employee.1",
           "signingAlgorithms": [
@@ -2198,8 +2206,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:employee-mdoc:mdoc",
-            "displayName": "Employee ID (MSO Mdoc)"
+            "id": "cred:eu:employee",
+            "displayName": "Employee ID"
           }
         },
         {
@@ -2210,8 +2218,8 @@
           "tags": [
             "eu",
             "eudi",
-            "mdoc",
-            "hiid"
+            "hiid",
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.hiid.1",
           "signingAlgorithms": [
@@ -2226,8 +2234,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:hiid-mdoc:mdoc",
-            "displayName": "Health ID (MSO Mdoc)"
+            "id": "cred:eu:hiid",
+            "displayName": "Health ID"
           }
         },
         {
@@ -2238,7 +2246,8 @@
           "tags": [
             "eu",
             "eudi",
-            "hiid"
+            "hiid",
+            "mdoc"
           ],
           "vct": "urn:eu.europa.ec.eudi:hiid:1",
           "signingAlgorithms": [
@@ -2253,8 +2262,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:hiid-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "Health ID (SD-JWT VC)"
+            "id": "cred:eu:hiid",
+            "displayName": "Health ID"
           }
         },
         {
@@ -2265,8 +2274,8 @@
           "tags": [
             "eu",
             "eudi",
-            "mdoc",
-            "iban"
+            "iban",
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.iban.1",
           "signingAlgorithms": [
@@ -2281,8 +2290,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:iban-mdoc:mdoc",
-            "displayName": "IBAN (MSO Mdoc)"
+            "id": "cred:eu:iban",
+            "displayName": "IBAN"
           }
         },
         {
@@ -2293,7 +2302,8 @@
           "tags": [
             "eu",
             "eudi",
-            "iban"
+            "iban",
+            "mdoc"
           ],
           "vct": "urn:eu.europa.ec.eudi:iban:1",
           "signingAlgorithms": [
@@ -2308,8 +2318,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:iban-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "IBAN (SD-JWT VC)"
+            "id": "cred:eu:iban",
+            "displayName": "IBAN"
           }
         },
         {
@@ -2337,8 +2347,8 @@
           "tags": [
             "eu",
             "eudi",
-            "mdoc",
-            "loyalty"
+            "loyalty",
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.loyalty.1",
           "signingAlgorithms": [
@@ -2353,8 +2363,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:loyalty-mdoc:mdoc",
-            "displayName": "Loyalty (MSO Mdoc)"
+            "id": "cred:eu:loyalty",
+            "displayName": "Loyalty"
           }
         },
         {
@@ -2363,10 +2373,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
-            "mdoc",
-            "mdl"
+            "iso",
+            "mdl",
+            "mdoc"
           ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
@@ -2381,8 +2391,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
+            "id": "cred:iso:mdl",
+            "displayName": "mDL"
           }
         },
         {
@@ -2409,8 +2419,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-mdoc:mdoc",
-            "displayName": "MSISDN (MSO Mdoc)"
+            "id": "cred:eu:msisdn",
+            "displayName": "MSISDN"
           }
         },
         {
@@ -2421,6 +2431,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "msisdn"
           ],
           "vct": "urn:eu.europa.ec.eudi:msisdn:1",
@@ -2436,8 +2447,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:msisdn-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "MSISDN (SD-JWT VC)"
+            "id": "cred:eu:msisdn",
+            "displayName": "MSISDN"
           }
         },
         {
@@ -2464,8 +2475,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pda1-mdoc:mdoc",
-            "displayName": "PDA1 (MSO Mdoc)"
+            "id": "cred:eu:pda1",
+            "displayName": "PDA1"
           }
         },
         {
@@ -2476,6 +2487,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pda1"
           ],
           "vct": "urn:eu.europa.ec.eudi:pda1:1",
@@ -2491,8 +2503,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pda1-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "PDA1 (SD-JWT VC)"
+            "id": "cred:eu:pda1",
+            "displayName": "PDA1"
           }
         },
         {
@@ -2501,8 +2513,8 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
+            "iso",
             "mdoc",
             "photoid"
           ],
@@ -2519,8 +2531,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:photoid-mdoc:mdoc",
-            "displayName": "Photo ID (MSO Mdoc)"
+            "id": "cred:iso:photoid",
+            "displayName": "Photo ID"
           }
         },
         {
@@ -2547,8 +2559,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -2575,8 +2587,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -2587,6 +2599,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -2602,8 +2615,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -2630,8 +2643,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:por-mdoc:mdoc",
-            "displayName": "Power Of Representation (MSO Mdoc)"
+            "id": "cred:eu:por",
+            "displayName": "Power Of Representation"
           }
         },
         {
@@ -2642,6 +2655,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "por"
           ],
           "vct": "urn:eu.europa.ec.eudi:por:1",
@@ -2657,8 +2671,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:por-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "Power Of Representation (SD-JWT VC)"
+            "id": "cred:eu:por",
+            "displayName": "Power Of Representation"
           }
         },
         {
@@ -2685,8 +2699,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:seafarer-mdoc:mdoc",
-            "displayName": "Seafarer (MSO Mdoc)"
+            "id": "cred:eu:seafarer",
+            "displayName": "Seafarer"
           }
         },
         {
@@ -2713,8 +2727,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:tax-mdoc:mdoc",
-            "displayName": "Tax Number (MSO Mdoc)"
+            "id": "cred:eu:tax",
+            "displayName": "Tax Number"
           }
         },
         {
@@ -2740,8 +2754,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:tax-residency-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "Tax Residency (SD-JWT VC)"
+            "id": "cred:eu:tax-residency",
+            "displayName": "Tax Residency"
           }
         },
         {
@@ -2752,6 +2766,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "tax"
           ],
           "vct": "urn:eu.europa.ec.eudi:tax:1",
@@ -2767,8 +2782,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:tax-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "Tax Number (SD-JWT VC)"
+            "id": "cred:eu:tax",
+            "displayName": "Tax Number"
           }
         },
         {
@@ -2777,8 +2792,8 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
+            "iso",
             "mdoc",
             "reservation"
           ],
@@ -2795,7 +2810,7 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:reservation-mdoc:mdoc",
+            "id": "cred:iso:reservation",
             "displayName": "Reservation"
           }
         }
@@ -2803,7 +2818,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -2924,7 +2939,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:lpid:sd-jwt-vc",
+            "id": "cred:fides:lpid",
             "displayName": "LPID Attestation"
           }
         },
@@ -2990,7 +3005,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:pid:sd-jwt-vc",
+            "id": "cred:fides:pid",
             "displayName": "PID Attestation"
           }
         },
@@ -3019,7 +3034,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:organization-profile:sd-jwt-vc",
+            "id": "cred:fides:organization-profile",
             "displayName": "Organization Profile"
           }
         },
@@ -3029,8 +3044,8 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "fides",
             "criminal-record",
+            "fides",
             "screening"
           ],
           "vct": "CriminalRecordCheck",
@@ -3048,7 +3063,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:criminal-record-check:sd-jwt-vc",
+            "id": "cred:fides:criminal-record-check",
             "displayName": "Criminal Record Check"
           }
         },
@@ -3076,7 +3091,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:vat:sd-jwt-vc",
+            "id": "cred:fides:vat",
             "displayName": "VAT Attestation"
           }
         },
@@ -3086,9 +3101,9 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "fides",
             "employee",
-            "employment"
+            "employment",
+            "fides"
           ],
           "vct": "VerifiedEmployee",
           "signingAlgorithms": [
@@ -3105,7 +3120,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:verified-employee:sd-jwt-vc",
+            "id": "cred:fides:verified-employee",
             "displayName": "Verified Employee"
           }
         },
@@ -3189,7 +3204,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:iban:sd-jwt-vc",
+            "id": "cred:fides:iban",
             "displayName": "IBAN Attestation"
           }
         },
@@ -3218,9 +3233,9 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "fides",
+            "diploma",
             "education",
-            "diploma"
+            "fides"
           ],
           "vct": "HigherEducationDiploma",
           "signingAlgorithms": [
@@ -3237,7 +3252,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:higher-education-diploma:sd-jwt-vc",
+            "id": "cred:fides:higher-education-diploma",
             "displayName": "Higher Education Diploma"
           }
         },
@@ -3247,10 +3262,10 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Organization",
           "tags": [
-            "fides",
-            "iso",
             "certificate",
-            "certification"
+            "certification",
+            "fides",
+            "iso"
           ],
           "vct": "ISO14001",
           "signingAlgorithms": [
@@ -3267,7 +3282,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:iso-certificate:sd-jwt-vc",
+            "id": "cred:fides:iso-certificate",
             "displayName": "ISO Certificate"
           }
         },
@@ -3277,9 +3292,9 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "fides",
+            "certificate",
             "education",
-            "certificate"
+            "fides"
           ],
           "vct": "UpperSecondaryEducationCertificate",
           "signingAlgorithms": [
@@ -3296,7 +3311,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:upper-secondary-education:sd-jwt-vc",
+            "id": "cred:fides:upper-secondary-education",
             "displayName": "Upper Secondary Education Certificate"
           }
         }
@@ -3304,7 +3319,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -3331,8 +3346,8 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "fides",
-            "brp"
+            "brp",
+            "fides"
           ],
           "vct": "urn:org:fides:brp:1",
           "signingAlgorithms": [
@@ -3349,7 +3364,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:brp:sd-jwt-vc",
+            "id": "cred:fides:brp",
             "displayName": "BRP Attestation"
           }
         },
@@ -3359,8 +3374,8 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "fides",
-            "contact-details"
+            "contact-details",
+            "fides"
           ],
           "vct": "urn:org:fides:contact-details:1",
           "signingAlgorithms": [
@@ -3377,7 +3392,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:contact-details:sd-jwt-vc",
+            "id": "cred:fides:contact-details",
             "displayName": "Contact Details"
           }
         },
@@ -3387,8 +3402,8 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "fides",
-            "bri"
+            "bri",
+            "fides"
           ],
           "vct": "urn:org:fides:nl_bld_bri:1",
           "signingAlgorithms": [
@@ -3405,7 +3420,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:bri:sd-jwt-vc",
+            "id": "cred:fides:bri",
             "displayName": "BRI Attestation"
           }
         }
@@ -3413,7 +3428,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:fides:fides-labs-issuer:test",
@@ -3459,7 +3474,7 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:fides:verified-email:sd-jwt-vc",
+            "id": "cred:fides:verified-email",
             "displayName": "Verified Email"
           }
         }
@@ -3467,7 +3482,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-21T14:04:37.030Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -3509,7 +3524,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3684,7 +3699,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3741,7 +3756,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:findynet:pension-demo-paradym:test",
@@ -3783,7 +3798,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -3806,7 +3821,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -3831,9 +3846,9 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "pension",
             "eligibility",
             "findynet",
+            "pension",
             "sd-jwt"
           ],
           "vct": "https://alennusperuste.todiste.fi/credentials/v1/PensionCredential",
@@ -3854,7 +3869,7 @@
             "did:ion"
           ],
           "credentialCatalogRef": {
-            "id": "cred:findynet:pension-credential:sd-jwt-vc",
+            "id": "cred:findynet:pension-credential",
             "displayName": "Pension Credential"
           }
         }
@@ -3862,7 +3877,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -3907,7 +3922,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -3927,59 +3942,59 @@
       "issuerWebsiteUrl": "https://finema.co/",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
+          "configurationId": "manual:cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "legal-entity",
             "lei",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:legal-entity-vlei:acdc",
+            "id": "cred:gleif:legal-entity-vlei",
             "displayName": "vLEI – Legal Entity Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
+            "gleif",
             "official-role",
             "oor",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:official-organizational-role-vlei:acdc",
+            "id": "cred:gleif:official-organizational-role-vlei",
             "displayName": "vLEI – Official Organizational Role (OOR) Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
-            "engagement-context",
             "ecr",
-            "gleif"
+            "engagement-context",
+            "gleif",
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:engagement-context-role-vlei:acdc",
+            "id": "cred:gleif:engagement-context-role-vlei",
             "displayName": "vLEI – Engagement Context Role (ECR) Credential"
           }
         }
@@ -3987,21 +4002,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-04-23T10:35:45+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -4021,21 +4036,21 @@
       "issuerWebsiteUrl": "https://www.gleif.org/",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:qualified-vlei-issuer:acdc",
+          "configurationId": "manual:cred:gleif:qualified-vlei-issuer",
           "displayName": "vLEI - Qualified vLEI Issuer (QVI)",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "issuer",
             "qvi",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:qualified-vlei-issuer:acdc",
+            "id": "cred:gleif:qualified-vlei-issuer",
             "displayName": "vLEI - Qualified vLEI Issuer (QVI)"
           }
         }
@@ -4043,13 +4058,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:qualified-vlei-issuer:acdc",
+          "id": "cred:gleif:qualified-vlei-issuer",
           "displayName": "vLEI - Qualified vLEI Issuer (QVI)"
         }
       ],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-04-23T10:24:48+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -4069,59 +4084,59 @@
       "issuerWebsiteUrl": "https://globalvlei.com/",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
+          "configurationId": "manual:cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "legal-entity",
             "lei",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:legal-entity-vlei:acdc",
+            "id": "cred:gleif:legal-entity-vlei",
             "displayName": "vLEI – Legal Entity"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
+            "gleif",
             "official-role",
             "oor",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:official-organizational-role-vlei:acdc",
+            "id": "cred:gleif:official-organizational-role-vlei",
             "displayName": "vLEI – Official Organizational Role (OOR) Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
-            "engagement-context",
             "ecr",
-            "gleif"
+            "engagement-context",
+            "gleif",
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:engagement-context-role-vlei:acdc",
+            "id": "cred:gleif:engagement-context-role-vlei",
             "displayName": "vLEI – Engagement Context Role (ECR) Credential"
           }
         }
@@ -4129,21 +4144,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-04-23T10:35:11+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -4168,10 +4183,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "employee",
             "eu",
             "eudi",
-            "mdoc",
-            "employee"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.employee.1",
           "signingAlgorithms": [
@@ -4185,8 +4200,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:employee-mdoc:mdoc",
-            "displayName": "Employee ID (MSO Mdoc)"
+            "id": "cred:eu:employee",
+            "displayName": "Employee ID"
           }
         },
         {
@@ -4227,10 +4242,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "cor",
             "eu",
             "eudi",
-            "mdoc",
-            "cor"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.cor.1",
           "signingAlgorithms": [
@@ -4244,8 +4259,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:cor-mdoc:mdoc",
-            "displayName": "Certificate of Residence (MSO Mdoc)"
+            "id": "cred:eu:cor",
+            "displayName": "Certificate of Residence"
           }
         },
         {
@@ -4256,8 +4271,8 @@
           "tags": [
             "eu",
             "eudi",
-            "mdoc",
-            "hiid"
+            "hiid",
+            "mdoc"
           ],
           "docType": "eu.europa.ec.eudi.hiid.1",
           "signingAlgorithms": [
@@ -4271,8 +4286,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:hiid-mdoc:mdoc",
-            "displayName": "Health ID (MSO Mdoc)"
+            "id": "cred:eu:hiid",
+            "displayName": "Health ID"
           }
         },
         {
@@ -4281,8 +4296,8 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
+            "iso",
             "mdoc",
             "photoid"
           ],
@@ -4298,8 +4313,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:photoid-mdoc-alt:mdoc",
-            "displayName": "Photo ID (MSO Mdoc)"
+            "id": "cred:iso:photoid-mdoc-alt",
+            "displayName": "Photo ID"
           }
         },
         {
@@ -4308,9 +4323,9 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
+            "diploma",
             "eu",
-            "eudi",
-            "diploma"
+            "eudi"
           ],
           "vct": "urn:eu.europa.ec.eudi:diploma:1:1",
           "signingAlgorithms": [
@@ -4326,8 +4341,8 @@
             "did:jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:diploma-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "Diploma (SD-JWT VC)"
+            "id": "cred:eu:diploma",
+            "displayName": "Diploma"
           }
         },
         {
@@ -4338,7 +4353,8 @@
           "tags": [
             "eu",
             "eudi",
-            "iban"
+            "iban",
+            "mdoc"
           ],
           "vct": "urn:eu.europa.ec.eudi:iban:1",
           "signingAlgorithms": [
@@ -4354,8 +4370,8 @@
             "did:jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:iban-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "IBAN (SD-JWT VC)"
+            "id": "cred:eu:iban",
+            "displayName": "IBAN"
           }
         },
         {
@@ -4366,6 +4382,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "por"
           ],
           "vct": "urn:eu.europa.ec.eudi:por:1",
@@ -4382,8 +4399,8 @@
             "did:jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:por-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "Power Of Representation (SD-JWT VC)"
+            "id": "cred:eu:por",
+            "displayName": "Power Of Representation"
           }
         },
         {
@@ -4394,6 +4411,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "tax"
           ],
           "vct": "urn:eu.europa.ec.eudi:tax:1",
@@ -4410,8 +4428,8 @@
             "did:jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:tax-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "Tax Number (SD-JWT VC)"
+            "id": "cred:eu:tax",
+            "displayName": "Tax Number"
           }
         },
         {
@@ -4437,8 +4455,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -4449,6 +4467,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -4465,8 +4484,8 @@
             "did:jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -4475,9 +4494,10 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
+            "ehic",
             "eu",
             "eudi",
-            "ehic"
+            "mdoc"
           ],
           "vct": "urn:eudi:ehic:1",
           "signingAlgorithms": [
@@ -4493,8 +4513,8 @@
             "did:jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:ehic-sd-jwt-vc:sd-jwt-vc",
-            "displayName": "EHIC (SD-JWT VC)"
+            "id": "cred:eu:ehic",
+            "displayName": "EHIC"
           }
         },
         {
@@ -4520,8 +4540,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -4530,10 +4550,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "age-verification",
             "eu",
             "eudi",
-            "mdoc",
-            "age-verification"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
@@ -4547,8 +4567,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
+            "id": "cred:eu:age-verification",
+            "displayName": "Age Verification"
           }
         },
         {
@@ -4575,10 +4595,10 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Organization",
           "tags": [
-            "webuild",
+            "company-certificate",
             "eucc",
             "ewc",
-            "company-certificate"
+            "webuild"
           ],
           "vct": "urn:eudi:eucc:1",
           "signingAlgorithms": [
@@ -4594,7 +4614,7 @@
             "did:jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:webuild:eucc:sd-jwt-vc",
+            "id": "cred:webuild:eucc",
             "displayName": "EU Company Certificate"
           }
         },
@@ -4708,7 +4728,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -4728,42 +4748,42 @@
       "projectContext": "IATA Digital Identity and Contactless Travel",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:iata:boarding-pass-mdoc:mdoc",
+          "configurationId": "manual:cred:iata:boarding-pass",
           "displayName": "Boarding Pass (MSO Mdoc)",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iata",
-            "travel",
             "boarding-pass",
-            "mdoc"
+            "iata",
+            "mdoc",
+            "travel"
           ],
           "docType": "org.iata.boardingpass.1",
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:iata:boarding-pass-mdoc:mdoc",
+            "id": "cred:iata:boarding-pass",
             "displayName": "Boarding Pass (MSO Mdoc)"
           }
         },
         {
-          "configurationId": "manual:cred:iata:booking-order-mdoc:mdoc",
+          "configurationId": "manual:cred:iata:booking-order",
           "displayName": "Booking Order (MSO Mdoc)",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iata",
-            "travel",
             "booking",
-            "mdoc"
+            "iata",
+            "mdoc",
+            "travel"
           ],
           "docType": "org.iata.bookingorder.1",
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:iata:booking-order-mdoc:mdoc",
+            "id": "cred:iata:booking-order",
             "displayName": "Booking Order (MSO Mdoc)"
           }
         }
@@ -4771,17 +4791,17 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:iata:boarding-pass-mdoc:mdoc",
+          "id": "cred:iata:boarding-pass",
           "displayName": "Boarding Pass (MSO Mdoc)"
         },
         {
-          "id": "cred:iata:booking-order-mdoc:mdoc",
+          "id": "cred:iata:booking-order",
           "displayName": "Booking Order (MSO Mdoc)"
         }
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -4801,42 +4821,42 @@
       "projectContext": "IATA Digital Identity and Contactless Travel",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:iata:boarding-pass-mdoc:mdoc",
+          "configurationId": "manual:cred:iata:boarding-pass",
           "displayName": "Boarding Pass (MSO Mdoc)",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iata",
-            "travel",
             "boarding-pass",
-            "mdoc"
+            "iata",
+            "mdoc",
+            "travel"
           ],
           "docType": "org.iata.boardingpass.1",
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:iata:boarding-pass-mdoc:mdoc",
+            "id": "cred:iata:boarding-pass",
             "displayName": "Boarding Pass (MSO Mdoc)"
           }
         },
         {
-          "configurationId": "manual:cred:iata:booking-order-mdoc:mdoc",
+          "configurationId": "manual:cred:iata:booking-order",
           "displayName": "Booking Order (MSO Mdoc)",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iata",
-            "travel",
             "booking",
-            "mdoc"
+            "iata",
+            "mdoc",
+            "travel"
           ],
           "docType": "org.iata.bookingorder.1",
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:iata:booking-order-mdoc:mdoc",
+            "id": "cred:iata:booking-order",
             "displayName": "Booking Order (MSO Mdoc)"
           }
         }
@@ -4844,17 +4864,17 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:iata:boarding-pass-mdoc:mdoc",
+          "id": "cred:iata:boarding-pass",
           "displayName": "Boarding Pass (MSO Mdoc)"
         },
         {
-          "id": "cred:iata:booking-order-mdoc:mdoc",
+          "id": "cred:iata:booking-order",
           "displayName": "Booking Order (MSO Mdoc)"
         }
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -4874,42 +4894,42 @@
       "projectContext": "IATA Digital Identity and Contactless Travel",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:iata:boarding-pass-mdoc:mdoc",
+          "configurationId": "manual:cred:iata:boarding-pass",
           "displayName": "Boarding Pass (MSO Mdoc)",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iata",
-            "travel",
             "boarding-pass",
-            "mdoc"
+            "iata",
+            "mdoc",
+            "travel"
           ],
           "docType": "org.iata.boardingpass.1",
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:iata:boarding-pass-mdoc:mdoc",
+            "id": "cred:iata:boarding-pass",
             "displayName": "Boarding Pass (MSO Mdoc)"
           }
         },
         {
-          "configurationId": "manual:cred:iata:booking-order-mdoc:mdoc",
+          "configurationId": "manual:cred:iata:booking-order",
           "displayName": "Booking Order (MSO Mdoc)",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iata",
-            "travel",
             "booking",
-            "mdoc"
+            "iata",
+            "mdoc",
+            "travel"
           ],
           "docType": "org.iata.bookingorder.1",
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:iata:booking-order-mdoc:mdoc",
+            "id": "cred:iata:booking-order",
             "displayName": "Booking Order (MSO Mdoc)"
           }
         }
@@ -4917,17 +4937,17 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:iata:boarding-pass-mdoc:mdoc",
+          "id": "cred:iata:boarding-pass",
           "displayName": "Boarding Pass (MSO Mdoc)"
         },
         {
-          "id": "cred:iata:booking-order-mdoc:mdoc",
+          "id": "cred:iata:booking-order",
           "displayName": "Booking Order (MSO Mdoc)"
         }
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -4947,42 +4967,42 @@
       "projectContext": "IATA Digital Identity and Contactless Travel",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:iata:boarding-pass-mdoc:mdoc",
+          "configurationId": "manual:cred:iata:boarding-pass",
           "displayName": "Boarding Pass (MSO Mdoc)",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iata",
-            "travel",
             "boarding-pass",
-            "mdoc"
+            "iata",
+            "mdoc",
+            "travel"
           ],
           "docType": "org.iata.boardingpass.1",
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:iata:boarding-pass-mdoc:mdoc",
+            "id": "cred:iata:boarding-pass",
             "displayName": "Boarding Pass (MSO Mdoc)"
           }
         },
         {
-          "configurationId": "manual:cred:iata:booking-order-mdoc:mdoc",
+          "configurationId": "manual:cred:iata:booking-order",
           "displayName": "Booking Order (MSO Mdoc)",
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iata",
-            "travel",
             "booking",
-            "mdoc"
+            "iata",
+            "mdoc",
+            "travel"
           ],
           "docType": "org.iata.bookingorder.1",
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:iata:booking-order-mdoc:mdoc",
+            "id": "cred:iata:booking-order",
             "displayName": "Booking Order (MSO Mdoc)"
           }
         }
@@ -4990,17 +5010,17 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:iata:boarding-pass-mdoc:mdoc",
+          "id": "cred:iata:boarding-pass",
           "displayName": "Boarding Pass (MSO Mdoc)"
         },
         {
-          "id": "cred:iata:booking-order-mdoc:mdoc",
+          "id": "cred:iata:booking-order",
           "displayName": "Booking Order (MSO Mdoc)"
         }
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-04-23T11:14:30+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -5023,7 +5043,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -5052,6 +5072,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -5065,8 +5086,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -5091,8 +5112,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -5101,10 +5122,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "age-verification",
             "eu",
             "eudi",
-            "mdoc",
-            "age-verification"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
@@ -5117,15 +5138,15 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
+            "id": "cred:eu:age-verification",
+            "displayName": "Age Verification"
           }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-05-18T05:15:29.773Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:igrant:webuildcorporateshop:production",
@@ -5148,7 +5169,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -5169,87 +5190,87 @@
       "projectContext": "Standards-based DPP implementation",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:uncefact:dpp:vcdm-2-0",
+          "configurationId": "manual:cred:uncefact:dpp",
           "displayName": "Digital Product Passport",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Product",
           "tags": [
-            "untp",
-            "dpp"
+            "dpp",
+            "untp"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:uncefact:dpp:vcdm-2-0",
+            "id": "cred:uncefact:dpp",
             "displayName": "Digital Product Passport"
           }
         },
         {
-          "configurationId": "manual:cred:uncefact:dte:vcdm-2-0",
+          "configurationId": "manual:cred:uncefact:dte",
           "displayName": "Digital Traceability Event",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Document",
           "tags": [
-            "untp",
-            "dte"
+            "dte",
+            "untp"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:uncefact:dte:vcdm-2-0",
+            "id": "cred:uncefact:dte",
             "displayName": "Digital Traceability Event"
           }
         },
         {
-          "configurationId": "manual:cred:uncefact:dfr:vcdm-2-0",
+          "configurationId": "manual:cred:uncefact:dfr",
           "displayName": "Digital Facility Record",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Organization",
           "tags": [
-            "untp",
-            "dfr"
+            "dfr",
+            "untp"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:uncefact:dfr:vcdm-2-0",
+            "id": "cred:uncefact:dfr",
             "displayName": "Digital Facility Record"
           }
         },
         {
-          "configurationId": "manual:cred:uncefact:dia:vcdm-2-0",
+          "configurationId": "manual:cred:uncefact:dia",
           "displayName": "Digital Identity Anchor",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Organization",
           "tags": [
-            "untp",
-            "dia"
+            "dia",
+            "untp"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:uncefact:dia:vcdm-2-0",
+            "id": "cred:uncefact:dia",
             "displayName": "Digital Identity Anchor"
           }
         },
         {
-          "configurationId": "manual:cred:uncefact:dcc:vcdm-2-0",
+          "configurationId": "manual:cred:uncefact:dcc",
           "displayName": "Conformity Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Product",
           "tags": [
-            "untp",
-            "dcc"
+            "dcc",
+            "untp"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:uncefact:dcc:vcdm-2-0",
+            "id": "cred:uncefact:dcc",
             "displayName": "Conformity Credential"
           }
         }
@@ -5257,29 +5278,29 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:uncefact:dpp:vcdm-2-0",
+          "id": "cred:uncefact:dpp",
           "displayName": "Digital Product Passport"
         },
         {
-          "id": "cred:uncefact:dte:vcdm-2-0",
+          "id": "cred:uncefact:dte",
           "displayName": "Digital Traceability Event"
         },
         {
-          "id": "cred:uncefact:dfr:vcdm-2-0",
+          "id": "cred:uncefact:dfr",
           "displayName": "Digital Facility Record"
         },
         {
-          "id": "cred:uncefact:dia:vcdm-2-0",
+          "id": "cred:uncefact:dia",
           "displayName": "Digital Identity Anchor"
         },
         {
-          "id": "cred:uncefact:dcc:vcdm-2-0",
+          "id": "cred:uncefact:dcc",
           "displayName": "Conformity Credential"
         }
       ],
       "firstSeenAt": "2026-07-15T06:00:43.266Z",
       "updatedAt": "2026-07-08T18:23:33+09:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -5317,33 +5338,15 @@
           ]
         },
         {
-          "configurationId": "UBO_jwt_vc_json",
-          "displayName": "UBO",
-          "vcFormat": "vcdm_1_1",
-          "signingAlgorithms": [
-            "ES256",
-            "ES256K"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "did:jwk",
-            "did:web",
-            "jwk",
-            "did:ebsi"
-          ]
-        },
-        {
           "configurationId": "uri:eu.ebw.oid.1",
           "displayName": "EBWOID",
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Organization",
           "tags": [
-            "webuild",
+            "ds001",
             "ebw",
             "oid",
-            "ds001"
+            "webuild"
           ],
           "vct": "uri:eu.ebw.oid.1",
           "signingAlgorithms": [
@@ -5360,9 +5363,27 @@
             "did:ebsi"
           ],
           "credentialCatalogRef": {
-            "id": "cred:webuild:ebw-oid:sd-jwt-vc",
+            "id": "cred:webuild:ebw-oid",
             "displayName": "EBW Owner Identification Data (EBW-OID)"
           }
+        },
+        {
+          "configurationId": "UBO_jwt_vc_json",
+          "displayName": "UBO",
+          "vcFormat": "vcdm_1_1",
+          "signingAlgorithms": [
+            "ES256",
+            "ES256K"
+          ],
+          "proofTypes": [
+            "jwt"
+          ],
+          "cryptographicBindingMethods": [
+            "did:jwk",
+            "did:web",
+            "jwk",
+            "did:ebsi"
+          ]
         },
         {
           "configurationId": "LPID_jwt_vc_json",
@@ -5442,7 +5463,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -5466,7 +5487,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z",
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -5494,10 +5515,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
-            "mdoc",
-            "mdl"
+            "iso",
+            "mdl",
+            "mdoc"
           ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
@@ -5510,8 +5531,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
+            "id": "cred:iso:mdl",
+            "displayName": "mDL"
           }
         },
         {
@@ -5537,8 +5558,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -5549,6 +5570,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -5562,8 +5584,8 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -5599,10 +5621,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "age-verification",
             "eu",
             "eudi",
-            "mdoc",
-            "age-verification"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
@@ -5615,8 +5637,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
+            "id": "cred:eu:age-verification",
+            "displayName": "Age Verification"
           }
         },
         {
@@ -5670,7 +5692,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -5717,8 +5739,8 @@
             "did:key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -5729,6 +5751,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -5746,8 +5769,8 @@
             "did:key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -5756,10 +5779,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "age-verification",
             "eu",
             "eudi",
-            "mdoc",
-            "age-verification"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
@@ -5777,8 +5800,8 @@
             "did:key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
+            "id": "cred:eu:age-verification",
+            "displayName": "Age Verification"
           }
         },
         {
@@ -5787,10 +5810,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
-            "mdoc",
-            "mdl"
+            "iso",
+            "mdl",
+            "mdoc"
           ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
@@ -5808,8 +5831,8 @@
             "did:key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
+            "id": "cred:iso:mdl",
+            "displayName": "mDL"
           }
         },
         {
@@ -5911,7 +5934,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -5931,59 +5954,59 @@
       "issuerWebsiteUrl": "https://provenant.net/",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
+          "configurationId": "manual:cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "legal-entity",
             "lei",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:legal-entity-vlei:acdc",
+            "id": "cred:gleif:legal-entity-vlei",
             "displayName": "vLEI – Legal Entity Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
+            "gleif",
             "official-role",
             "oor",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:official-organizational-role-vlei:acdc",
+            "id": "cred:gleif:official-organizational-role-vlei",
             "displayName": "vLEI – Official Organizational Role (OOR) Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
-            "engagement-context",
             "ecr",
-            "gleif"
+            "engagement-context",
+            "gleif",
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:engagement-context-role-vlei:acdc",
+            "id": "cred:gleif:engagement-context-role-vlei",
             "displayName": "vLEI – Engagement Context Role (ECR) Credential"
           }
         }
@@ -5991,21 +6014,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-04-23T10:38:37+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -6025,59 +6048,59 @@
       "issuerWebsiteUrl": "https://www.sheca.com/",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
+          "configurationId": "manual:cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "legal-entity",
             "lei",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:legal-entity-vlei:acdc",
+            "id": "cred:gleif:legal-entity-vlei",
             "displayName": "vLEI – Legal Entity Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
+            "gleif",
             "official-role",
             "oor",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:official-organizational-role-vlei:acdc",
+            "id": "cred:gleif:official-organizational-role-vlei",
             "displayName": "vLEI – Official Organizational Role (OOR) Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
-            "engagement-context",
             "ecr",
-            "gleif"
+            "engagement-context",
+            "gleif",
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:engagement-context-role-vlei:acdc",
+            "id": "cred:gleif:engagement-context-role-vlei",
             "displayName": "vLEI – Engagement Context Role (ECR) Credential"
           }
         }
@@ -6085,21 +6108,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-04-23T10:39:19+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -6119,27 +6142,12 @@
       "description": "Sandbox credential issuer for the Swiss E-ID (swiyu) Public Beta. Supports issuance of Beta-ID credentials using OpenID4VCI with SD-JWT format via pre-authorized flows.",
       "issuerWebsiteUrl": "https://www.bcs.admin.ch/bcs-web/#/",
       "projectContext": "Swiss E-ID (swiyu) Public Beta – Beta Credential Service (BCS)",
-      "credentialConfigurations": [
-        {
-          "configurationId": "betaid-sdjwt",
-          "displayName": "betaid-sdjwt",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "urn:vct:ch.admin.bcs.betaid",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ]
-        }
-      ],
+      "credentialConfigurations": [],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z",
+      "metadataFetchError": "This operation was aborted"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -6265,7 +6273,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -6328,6 +6336,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -6350,8 +6359,8 @@
             "did"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -6378,8 +6387,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -6388,10 +6397,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
-            "iso",
             "eudi",
-            "mdoc",
-            "mdl"
+            "iso",
+            "mdl",
+            "mdoc"
           ],
           "docType": "org.iso.18013.5.1.mDL",
           "signingAlgorithms": [
@@ -6406,8 +6415,8 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:iso:mdl-mdoc:mdoc",
-            "displayName": "mDL (MSO Mdoc)"
+            "id": "cred:iso:mdl",
+            "displayName": "mDL"
           }
         },
         {
@@ -6416,10 +6425,10 @@
           "vcFormat": "mdoc",
           "subjectType": "Person",
           "tags": [
+            "age-verification",
             "eu",
             "eudi",
-            "mdoc",
-            "age-verification"
+            "mdoc"
           ],
           "docType": "eu.europa.ec.av.1",
           "signingAlgorithms": [
@@ -6434,15 +6443,15 @@
             "cose_key"
           ],
           "credentialCatalogRef": {
-            "id": "cred:eu:age-verification-mdoc:mdoc",
-            "displayName": "Age Verification (MSO Mdoc)"
+            "id": "cred:eu:age-verification",
+            "displayName": "Age Verification"
           }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -6486,8 +6495,8 @@
           ],
           "logoUri": "https://examplestate.com/public/pid.png",
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-mdoc:mdoc",
-            "displayName": "PID (MSO Mdoc)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         },
         {
@@ -6498,6 +6507,7 @@
           "tags": [
             "eu",
             "eudi",
+            "mdoc",
             "pid"
           ],
           "vct": "urn:eudi:pid:1",
@@ -6513,15 +6523,15 @@
           ],
           "logoUri": "https://examplestate.com/public/pid.png",
           "credentialCatalogRef": {
-            "id": "cred:eu:pid-vc-sd-jwt:sd-jwt-vc",
-            "displayName": "PID (SD-JWT VC)"
+            "id": "cred:eu:pid",
+            "displayName": "PID"
           }
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -6540,59 +6550,59 @@
       "description": "TOPPAN issues GLEIF vLEI credentials in ACDC format for manufacturing, supply chain, trade, and financial scenarios, including organizational identity and role-based credentials used in trusted cross-border business processes.",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
+          "configurationId": "manual:cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "legal-entity",
             "lei",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:legal-entity-vlei:acdc",
+            "id": "cred:gleif:legal-entity-vlei",
             "displayName": "vLEI – Legal Entity Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
+            "gleif",
             "official-role",
             "oor",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:official-organizational-role-vlei:acdc",
+            "id": "cred:gleif:official-organizational-role-vlei",
             "displayName": "vLEI – Official Organizational Role (OOR) Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
-            "engagement-context",
             "ecr",
-            "gleif"
+            "engagement-context",
+            "gleif",
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:engagement-context-role-vlei:acdc",
+            "id": "cred:gleif:engagement-context-role-vlei",
             "displayName": "vLEI – Engagement Context Role (ECR) Credential"
           }
         }
@@ -6600,21 +6610,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-04-23T10:40:21+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -6633,59 +6643,59 @@
       "description": "TradeGo issues GLEIF vLEI credentials in ACDC format for digital trade and supply chain scenarios, including organizational identity and role-based credentials used in trade document exchange, financing, and cross-border business processes.",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:gleif:legal-entity-vlei:acdc",
+          "configurationId": "manual:cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential",
           "vcFormat": "acdc",
           "subjectType": "Organization",
           "tags": [
-            "vlei",
+            "gleif",
             "legal-entity",
             "lei",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:legal-entity-vlei:acdc",
+            "id": "cred:gleif:legal-entity-vlei",
             "displayName": "vLEI – Legal Entity Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:official-organizational-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
+            "gleif",
             "official-role",
             "oor",
-            "gleif"
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:official-organizational-role-vlei:acdc",
+            "id": "cred:gleif:official-organizational-role-vlei",
             "displayName": "vLEI – Official Organizational Role (OOR) Credential"
           }
         },
         {
-          "configurationId": "manual:cred:gleif:engagement-context-role-vlei:acdc",
+          "configurationId": "manual:cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential",
           "vcFormat": "acdc",
           "subjectType": "Person",
           "tags": [
-            "vlei",
-            "engagement-context",
             "ecr",
-            "gleif"
+            "engagement-context",
+            "gleif",
+            "vlei"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:gleif:engagement-context-role-vlei:acdc",
+            "id": "cred:gleif:engagement-context-role-vlei",
             "displayName": "vLEI – Engagement Context Role (ECR) Credential"
           }
         }
@@ -6693,21 +6703,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-04-23T10:39:50+02:00",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-novara:test",
@@ -6733,12 +6743,12 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "playground",
             "cexa",
-            "kyc",
             "crypto",
-            "demo"
+            "demo",
+            "kyc",
+            "playground",
+            "verana"
           ],
           "vct": "https://novara.cexa.playground.testnet.verana.network/oid4vc/vct/cexa-kyc",
           "signingAlgorithms": [
@@ -6751,7 +6761,7 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:cexa-kyc:sd-jwt-vc",
+            "id": "cred:verana:cexa-kyc",
             "displayName": "CEXA-Kyc"
           }
         }
@@ -6759,12 +6769,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:cexa-kyc:sd-jwt-vc"
+          "id": "cred:verana:cexa-kyc",
+          "displayName": "CEXA-Kyc"
         }
       ],
       "firstSeenAt": "2026-08-17T17:22:27.739Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-aurum:test",
@@ -6790,12 +6801,12 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "playground",
             "cexa",
-            "kyc",
             "crypto",
-            "demo"
+            "demo",
+            "kyc",
+            "playground",
+            "verana"
           ],
           "vct": "https://aurum.cexa.playground.testnet.verana.network/oid4vc/vct/cexa-kyc",
           "signingAlgorithms": [
@@ -6808,7 +6819,7 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:cexa-kyc:sd-jwt-vc",
+            "id": "cred:verana:cexa-kyc",
             "displayName": "CEXA-Kyc"
           }
         }
@@ -6816,12 +6827,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:cexa-kyc:sd-jwt-vc"
+          "id": "cred:verana:cexa-kyc",
+          "displayName": "CEXA-Kyc"
         }
       ],
       "firstSeenAt": "2026-08-17T17:28:15.008Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-issuer-umbra:test",
@@ -6847,11 +6859,11 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "verifiable-trust",
+            "badge",
             "ecs",
             "essential-credential-schema",
-            "badge"
+            "verana",
+            "verifiable-trust"
           ],
           "vct": "https://vesta.playground.testnet.verana.network/oid4vc/vct/ecs-badge",
           "signingAlgorithms": [
@@ -6864,7 +6876,7 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-badge:vcdm-2-0",
+            "id": "cred:verana:ecs-badge",
             "displayName": "ECS Badge Credential"
           }
         }
@@ -6872,12 +6884,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-badge:vcdm-2-0"
+          "id": "cred:verana:ecs-badge",
+          "displayName": "ECS Badge Credential"
         }
       ],
       "firstSeenAt": "2026-08-17T17:28:15.008Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-cexa-association:test",
@@ -6897,43 +6910,43 @@
       "projectContext": "Crypto Exchange Association",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:verana:cexa-verified-counterparty:vcdm-2-0",
+          "configurationId": "manual:cred:verana:cexa-verified-counterparty",
           "displayName": "CEXA-VerifiedCounterparty",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Organization",
           "tags": [
-            "verana",
-            "playground",
             "cexa",
+            "demo",
+            "playground",
             "travel-rule",
             "vasp",
-            "demo"
+            "verana"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:cexa-verified-counterparty:vcdm-2-0",
+            "id": "cred:verana:cexa-verified-counterparty",
             "displayName": "CEXA-VerifiedCounterparty"
           }
         },
         {
-          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-service",
           "displayName": "ECS Service Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Software",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "verifiable-service"
+            "verana",
+            "verifiable-service",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "id": "cred:verana:ecs-service",
             "displayName": "ECS Service Credential"
           }
         }
@@ -6941,15 +6954,17 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:cexa-verified-counterparty:vcdm-2-0"
+          "id": "cred:verana:cexa-verified-counterparty",
+          "displayName": "CEXA-VerifiedCounterparty"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-anchor:test",
@@ -6969,22 +6984,22 @@
       "projectContext": "Playground Ecosystem (personal-wallets demos)",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-service",
           "displayName": "ECS Service Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Software",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "verifiable-service"
+            "verana",
+            "verifiable-service",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "id": "cred:verana:ecs-service",
             "displayName": "ECS Service Credential"
           }
         }
@@ -6992,12 +7007,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-accredited:test",
@@ -7023,10 +7039,10 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "playground",
+            "demo",
             "personal-wallets",
-            "demo"
+            "playground",
+            "verana"
           ],
           "vct": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vc/vct/demo-credential",
           "signingAlgorithms": [
@@ -7039,7 +7055,7 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:demo-credential:sd-jwt-vc",
+            "id": "cred:verana:demo-credential",
             "displayName": "DemoCredential"
           }
         }
@@ -7047,12 +7063,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:demo-credential:sd-jwt-vc"
+          "id": "cred:verana:demo-credential",
+          "displayName": "DemoCredential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-unaccredited:test",
@@ -7078,10 +7095,10 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "playground",
+            "demo",
             "personal-wallets",
-            "demo"
+            "playground",
+            "verana"
           ],
           "vct": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vc/vct/demo-credential",
           "signingAlgorithms": [
@@ -7094,7 +7111,7 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:demo-credential:sd-jwt-vc",
+            "id": "cred:verana:demo-credential",
             "displayName": "DemoCredential"
           }
         }
@@ -7102,12 +7119,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:demo-credential:sd-jwt-vc"
+          "id": "cred:verana:demo-credential",
+          "displayName": "DemoCredential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-untrusted:test",
@@ -7133,10 +7151,10 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "playground",
+            "demo",
             "personal-wallets",
-            "demo"
+            "playground",
+            "verana"
           ],
           "vct": "https://demo-issuer-accredited.playground.testnet.verana.network/oid4vc/vct/demo-credential",
           "signingAlgorithms": [
@@ -7149,7 +7167,7 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:demo-credential:sd-jwt-vc",
+            "id": "cred:verana:demo-credential",
             "displayName": "DemoCredential"
           }
         }
@@ -7157,12 +7175,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:demo-credential:sd-jwt-vc"
+          "id": "cred:verana:demo-credential",
+          "displayName": "DemoCredential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-verandia-civil-registry:test",
@@ -7188,12 +7207,12 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "playground",
-            "verandia",
+            "demo",
             "national-id",
             "pid",
-            "demo"
+            "playground",
+            "verana",
+            "verandia"
           ],
           "vct": "https://civil-registry.verandia.playground.testnet.verana.network/oid4vc/vct/verandia-citizen-id",
           "signingAlgorithms": [
@@ -7206,27 +7225,27 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:verandia-citizen-id:sd-jwt-vc",
+            "id": "cred:verana:verandia-citizen-id",
             "displayName": "Verandia Citizen ID"
           }
         },
         {
-          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-service",
           "displayName": "ECS Service Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Software",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "verifiable-service"
+            "verana",
+            "verifiable-service",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "id": "cred:verana:ecs-service",
             "displayName": "ECS Service Credential"
           }
         }
@@ -7234,15 +7253,17 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:verandia-citizen-id:sd-jwt-vc"
+          "id": "cred:verana:verandia-citizen-id",
+          "displayName": "Verandia Citizen ID"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-verandia-business-registry:test",
@@ -7268,11 +7289,11 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "playground",
-            "verandia",
+            "demo",
             "legal-representative",
-            "demo"
+            "playground",
+            "verana",
+            "verandia"
           ],
           "vct": "https://business-registry.verandia.playground.testnet.verana.network/oid4vc/vct/verandia-legal-rep",
           "signingAlgorithms": [
@@ -7285,47 +7306,47 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:verandia-legal-representative:sd-jwt-vc",
+            "id": "cred:verana:verandia-legal-representative",
             "displayName": "Legal Representative (Verandia)"
           }
         },
         {
-          "configurationId": "manual:cred:verana:ecs-organization:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-organization",
           "displayName": "ECS Organization Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Organization",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "organizational-identity"
+            "organizational-identity",
+            "verana",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-organization:vcdm-2-0",
+            "id": "cred:verana:ecs-organization",
             "displayName": "ECS Organization Credential"
           }
         },
         {
-          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-service",
           "displayName": "ECS Service Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Software",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "verifiable-service"
+            "verana",
+            "verifiable-service",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "id": "cred:verana:ecs-service",
             "displayName": "ECS Service Credential"
           }
         }
@@ -7333,18 +7354,21 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:verandia-legal-representative:sd-jwt-vc"
+          "id": "cred:verana:verandia-legal-representative",
+          "displayName": "Legal Representative (Verandia)"
         },
         {
-          "id": "cred:verana:ecs-organization:vcdm-2-0"
+          "id": "cred:verana:ecs-organization",
+          "displayName": "ECS Organization Credential"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-helvetia-trust:test",
@@ -7364,42 +7388,42 @@
       "projectContext": "Verana ECS Ecosystem (KYB for the playground casts)",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:verana:ecs-organization:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-organization",
           "displayName": "ECS Organization Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Organization",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "organizational-identity"
+            "organizational-identity",
+            "verana",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-organization:vcdm-2-0",
+            "id": "cred:verana:ecs-organization",
             "displayName": "ECS Organization Credential"
           }
         },
         {
-          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-service",
           "displayName": "ECS Service Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Software",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "verifiable-service"
+            "verana",
+            "verifiable-service",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "id": "cred:verana:ecs-service",
             "displayName": "ECS Service Credential"
           }
         }
@@ -7407,15 +7431,17 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-organization:vcdm-2-0"
+          "id": "cred:verana:ecs-organization",
+          "displayName": "ECS Organization Credential"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-anchor:test",
@@ -7441,11 +7467,11 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "verifiable-trust",
+            "badge",
             "ecs",
             "essential-credential-schema",
-            "badge"
+            "verana",
+            "verifiable-trust"
           ],
           "vct": "https://vesta.playground.testnet.verana.network/oid4vc/vct/ecs-badge",
           "signingAlgorithms": [
@@ -7458,27 +7484,27 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-badge:vcdm-2-0",
+            "id": "cred:verana:ecs-badge",
             "displayName": "ECS Badge Credential"
           }
         },
         {
-          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-service",
           "displayName": "ECS Service Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Software",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "verifiable-service"
+            "verana",
+            "verifiable-service",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "id": "cred:verana:ecs-service",
             "displayName": "ECS Service Credential"
           }
         }
@@ -7486,15 +7512,17 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-badge:vcdm-2-0"
+          "id": "cred:verana:ecs-badge",
+          "displayName": "ECS Badge Credential"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-issuer-zenith:test",
@@ -7520,11 +7548,11 @@
           "vcFormat": "sd_jwt_vc",
           "subjectType": "Person",
           "tags": [
-            "verana",
-            "verifiable-trust",
+            "badge",
             "ecs",
             "essential-credential-schema",
-            "badge"
+            "verana",
+            "verifiable-trust"
           ],
           "vct": "https://vesta.playground.testnet.verana.network/oid4vc/vct/ecs-badge",
           "signingAlgorithms": [
@@ -7537,7 +7565,7 @@
             "jwk"
           ],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-badge:vcdm-2-0",
+            "id": "cred:verana:ecs-badge",
             "displayName": "ECS Badge Credential"
           }
         }
@@ -7545,12 +7573,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-badge:vcdm-2-0"
+          "id": "cred:verana:ecs-badge",
+          "displayName": "ECS Badge Credential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-iberia:test",
@@ -7570,22 +7599,22 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:verana:authorized-repairer:vcdm-2-0",
+          "configurationId": "manual:cred:verana:authorized-repairer",
           "displayName": "Authorized Repairer (Vesta)",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Organization",
           "tags": [
-            "verana",
-            "playground",
-            "vesta",
             "accreditation",
-            "demo"
+            "demo",
+            "playground",
+            "verana",
+            "vesta"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:authorized-repairer:vcdm-2-0",
+            "id": "cred:verana:authorized-repairer",
             "displayName": "Authorized Repairer (Vesta)"
           }
         }
@@ -7593,12 +7622,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:authorized-repairer:vcdm-2-0"
+          "id": "cred:verana:authorized-repairer",
+          "displayName": "Authorized Repairer (Vesta)"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-nordics:test",
@@ -7618,22 +7648,22 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:verana:authorized-repairer:vcdm-2-0",
+          "configurationId": "manual:cred:verana:authorized-repairer",
           "displayName": "Authorized Repairer (Vesta)",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Organization",
           "tags": [
-            "verana",
-            "playground",
-            "vesta",
             "accreditation",
-            "demo"
+            "demo",
+            "playground",
+            "verana",
+            "vesta"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:authorized-repairer:vcdm-2-0",
+            "id": "cred:verana:authorized-repairer",
             "displayName": "Authorized Repairer (Vesta)"
           }
         }
@@ -7641,12 +7671,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:authorized-repairer:vcdm-2-0"
+          "id": "cred:verana:authorized-repairer",
+          "displayName": "Authorized Repairer (Vesta)"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-normacert:test",
@@ -7666,23 +7697,23 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:verana:iso-9001-demo:vcdm-2-0",
+          "configurationId": "manual:cred:verana:iso-9001-demo",
           "displayName": "ISO 9001 (demo)",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Organization",
           "tags": [
-            "verana",
-            "playground",
-            "vesta",
             "certification",
+            "demo",
+            "playground",
             "quality-management",
-            "demo"
+            "verana",
+            "vesta"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:iso-9001-demo:vcdm-2-0",
+            "id": "cred:verana:iso-9001-demo",
             "displayName": "ISO 9001 (demo)"
           }
         }
@@ -7690,12 +7721,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:iso-9001-demo:vcdm-2-0"
+          "id": "cred:verana:iso-9001-demo",
+          "displayName": "ISO 9001 (demo)"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-iso-certification:test",
@@ -7715,22 +7747,22 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialConfigurations": [
         {
-          "configurationId": "manual:cred:verana:ecs-service:vcdm-2-0",
+          "configurationId": "manual:cred:verana:ecs-service",
           "displayName": "ECS Service Credential",
           "vcFormat": "vcdm_2_0",
           "subjectType": "Software",
           "tags": [
-            "verana",
-            "verifiable-trust",
             "ecs",
             "essential-credential-schema",
-            "verifiable-service"
+            "verana",
+            "verifiable-service",
+            "verifiable-trust"
           ],
           "signingAlgorithms": [],
           "proofTypes": [],
           "cryptographicBindingMethods": [],
           "credentialCatalogRef": {
-            "id": "cred:verana:ecs-service:vcdm-2-0",
+            "id": "cred:verana:ecs-service",
             "displayName": "ECS Service Credential"
           }
         }
@@ -7738,12 +7770,13 @@
       "supportedWallets": [],
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-business-registry:test",
@@ -7782,7 +7815,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-accredited:production",
@@ -7821,7 +7854,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-citizen-id:test",
@@ -7860,7 +7893,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-issuer-vesta:test",
@@ -7899,13 +7932,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-08-20T16:07:08Z",
-      "fetchedAt": "2026-10-12T14:51:44.866Z"
+      "fetchedAt": "2026-10-12T20:29:38.020Z"
     }
   ],
   "stats": {
     "totalIssuers": 71,
     "productionIssuers": 11,
     "totalOrganizations": 30,
-    "totalCredentialConfigurations": 270
+    "totalCredentialConfigurations": 269
   }
 }

@@ -11,7 +11,7 @@
       "issuerWebsiteUrl": "https://www.gleif.org/",
       "credentialRefs": [
         {
-          "id": "cred:gleif:qualified-vlei-issuer:acdc",
+          "id": "cred:gleif:qualified-vlei-issuer",
           "displayName": "vLEI - Qualified vLEI Issuer (QVI)"
         }
       ]

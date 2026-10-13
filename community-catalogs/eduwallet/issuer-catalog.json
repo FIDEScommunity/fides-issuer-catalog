@@ -12,7 +12,10 @@
       "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/uvh/.well-known/openid-credential-issuer",
       "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
       "supportedWallets": [
-        { "id": "wwwallet", "displayName": "wwWallet" }
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
       ]
     },
     {
@@ -24,7 +27,10 @@
       "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/mbob/.well-known/openid-credential-issuer",
       "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
       "supportedWallets": [
-        { "id": "wwwallet", "displayName": "wwWallet" }
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
       ]
     },
     {
@@ -36,7 +42,10 @@
       "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/hbot/.well-known/openid-credential-issuer",
       "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
       "supportedWallets": [
-        { "id": "wwwallet", "displayName": "wwWallet" }
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
       ]
     },
     {
@@ -48,7 +57,10 @@
       "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/tun/.well-known/openid-credential-issuer",
       "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
       "supportedWallets": [
-        { "id": "wwwallet", "displayName": "wwWallet" }
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
       ]
     },
     {
@@ -60,7 +72,10 @@
       "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/epi/.well-known/openid-credential-issuer",
       "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
       "supportedWallets": [
-        { "id": "wwwallet", "displayName": "wwWallet" }
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
       ]
     },
     {
@@ -72,7 +87,10 @@
       "oid4vciMetadataUrl": "https://agent.dev.eduwallet.nl/sandbox/.well-known/openid-credential-issuer",
       "projectContext": "Npuls eduwallet proeftuin (DIIP v4)",
       "supportedWallets": [
-        { "id": "wwwallet", "displayName": "wwWallet" }
+        {
+          "id": "wwwallet",
+          "displayName": "wwWallet"
+        }
       ]
     }
   ]
