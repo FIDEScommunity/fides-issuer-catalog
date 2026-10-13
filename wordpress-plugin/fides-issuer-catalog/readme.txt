@@ -2,13 +2,16 @@
 Contributors: fideslabs
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 License: Apache-2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0
 
 OID4VCI issuer catalog with search, filters, and optional SSR/SEO via fides-community-tools-tiles.
 
 == Changelog ==
+
+= 1.9.3 =
+* Restore the styled interactive detail modal on deep links while retaining hidden SSR content, crawlable links, metadata, and pagination.
 
 = 1.9.2 =
 * Support type-level credential refs and alias resolution in the catalog UI and forms (TS11 / tiles ≥ 1.13.32).
