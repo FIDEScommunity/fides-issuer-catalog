@@ -341,6 +341,7 @@
   let rpCatalogFetchPromise = null;
   /** cred:… id -> taxonomy theme codes from credential catalog aggregated.json */
   let credentialThemesById = Object.create(null);
+  let credentialAliasIndex = { byId: Object.create(null), canonicalIdByRef: Object.create(null) };
   /** orgId -> list of canonical sector codes (from organization catalog aggregated.json). */
   const organizationSectorsByOrgId = new Map();
   let organizationSectorMapReady = false;
@@ -999,16 +1000,27 @@
     return rpCatalogFetchPromise;
   }
 
+  function resolveCredentialRefId(credentialId) {
+    const ui = window.FidesCatalogUI;
+    if (ui && typeof ui.resolveCredentialCanonicalId === 'function') {
+      return ui.resolveCredentialCanonicalId(credentialId, credentialAliasIndex);
+    }
+    return credentialId;
+  }
+
   /** @returns {number|null} Match count, or null if issuer has no catalog-linked credential types (UI shows 0). */
   function countRpsForIssuer(issuer, rpList) {
     const credIds = new Set(
       (issuer.credentialConfigurations || [])
-        .map((c) => c.credentialCatalogRef?.id)
+        .map((c) => resolveCredentialRefId(c.credentialCatalogRef?.id))
         .filter(Boolean)
     );
     if (!credIds.size) return null;
     return rpList.filter((rp) =>
-      (rp.acceptedCredentialRefs || []).some((ref) => credIds.has(ref.credentialCatalogId))
+      (rp.acceptedCredentialRefs || []).some((ref) => {
+        const refId = ref && ref.credentialCatalogId;
+        return refId && credIds.has(resolveCredentialRefId(refId));
+      })
     ).length;
   }
 
@@ -1220,9 +1232,14 @@
     const catalogConfigs = configs.filter((cc) => cc.credentialCatalogRef);
     const uncataloguedConfigs = configs.filter((cc) => !cc.credentialCatalogRef);
     const credCatBase = (config.credentialCatalogUrl || '').replace(/\/$/, '');
+    const exploreCredentialIds = Array.from(new Set(
+      catalogConfigs
+        .map((cc) => resolveCredentialRefId(cc.credentialCatalogRef && cc.credentialCatalogRef.id))
+        .filter(Boolean)
+    ));
     const credentialCatalogExploreHref =
-      catalogConfigs.length > 0 && credCatBase
-        ? `${credCatBase}?credentials=${catalogConfigs.map((cc) => encodeURIComponent(cc.credentialCatalogRef.id)).join(',')}`
+      exploreCredentialIds.length > 0 && credCatBase
+        ? `${credCatBase}?credentials=${exploreCredentialIds.map((id) => encodeURIComponent(id)).join(',')}`
         : '';
     /** Primary modal CTA: only when issuer catalog JSON has issuerWebsiteUrl (not org.website fallback). */
     const issuerVisitUrl = String(issuer.issuerWebsiteUrl || '').trim();
@@ -1376,13 +1393,18 @@
                           const formatTd = `<td>${formatTag}</td>`;
                           const ref = cc.credentialCatalogRef;
                           if (ref) {
-                            const base = (config.credentialCatalogUrl || '').replace(/\/$/, '');
-                            const href = base ? `${base}?credential=${encodeURIComponent(ref.id)}` : '';
-                            const label = ref.displayName || ref.id;
+                            const ui = window.FidesCatalogUI;
+                            const canonicalId = resolveCredentialRefId(ref.id);
+                            const href = (ui && typeof ui.getCredentialCatalogDeepLink === 'function')
+                              ? ui.getCredentialCatalogDeepLink(ref.id, config.credentialCatalogUrl, credentialAliasIndex)
+                              : ((config.credentialCatalogUrl || '').replace(/\/$/, '')
+                                ? `${(config.credentialCatalogUrl || '').replace(/\/$/, '')}?credential=${encodeURIComponent(canonicalId || ref.id)}`
+                                : '');
+                            const label = ref.displayName || canonicalId || ref.id;
                             const typeCell = href
                               ? `<a href="${escapeHtml(href)}" class="fides-modal-link-inline" onclick="event.stopPropagation();">${escapeHtml(label)}</a>`
                               : `<span>${escapeHtml(label)}</span>`;
-                            const likeCell = `<td class="fides-modal-entity-col-likes">${renderModalEntityLike('credential', ref.id)}</td>`;
+                            const likeCell = `<td class="fides-modal-entity-col-likes">${renderModalEntityLike('credential', canonicalId || ref.id)}</td>`;
                             return `<tr><td>${typeCell}</td>${likeCell}${formatTd}</tr>`;
                           }
                           const name = escapeHtml(cc.displayName || cc.configurationId);
@@ -1779,12 +1801,15 @@
 
       const credIds = new Set(
         (issuerForRp.credentialConfigurations || [])
-          .map((c) => c.credentialCatalogRef?.id)
+          .map((c) => resolveCredentialRefId(c.credentialCatalogRef?.id))
           .filter(Boolean)
       );
       const matchingRps = rpList
         .filter((rp) =>
-          (rp.acceptedCredentialRefs || []).some((ref) => credIds.has(ref.credentialCatalogId))
+          (rp.acceptedCredentialRefs || []).some((ref) => {
+            const refId = ref && ref.credentialCatalogId;
+            return refId && credIds.has(resolveCredentialRefId(refId));
+          })
         )
         .sort((a, b) =>
           String(a.name || a.id).localeCompare(String(b.name || b.id), undefined, { sensitivity: 'base' })
@@ -2289,6 +2314,7 @@
 
   async function loadCredentialThemeIndex() {
     credentialThemesById = Object.create(null);
+    credentialAliasIndex = { byId: Object.create(null), canonicalIdByRef: Object.create(null) };
     const url = (config.credentialAggregatedDataUrl || '').trim();
     if (!url) return;
     try {
@@ -2296,12 +2322,22 @@
       if (!res.ok) return;
       const data = await res.json();
       const creds = Array.isArray(data.credentials) ? data.credentials : [];
+      const ui = window.FidesCatalogUI;
+      if (ui && typeof ui.buildCredentialAliasIndex === 'function') {
+        credentialAliasIndex = ui.buildCredentialAliasIndex(creds);
+      }
       creds.forEach((c) => {
         if (!c || typeof c.id !== 'string') return;
         const themes = Array.isArray(c.themes) ? c.themes : [];
-        credentialThemesById[c.id] = themes.filter(
+        const themeList = themes.filter(
           (t) => typeof t === 'string' && Object.prototype.hasOwnProperty.call(THEME_LABELS, t),
         );
+        const resolvable = (ui && typeof ui.credentialResolvableIds === 'function')
+          ? ui.credentialResolvableIds(c)
+          : [c.id];
+        resolvable.forEach((id) => {
+          credentialThemesById[id] = themeList;
+        });
       });
     } catch (err) {
       console.warn('Credential catalog theme index load failed:', err.message);
@@ -2314,7 +2350,7 @@
       (issuer.credentialConfigurations || []).forEach((cc) => {
         const id = cc.credentialCatalogRef?.id;
         if (!id || typeof id !== 'string') return;
-        const arr = credentialThemesById[id];
+        const arr = credentialThemesById[id] || credentialThemesById[resolveCredentialRefId(id)];
         if (arr) arr.forEach((t) => set.add(t));
       });
       issuer.derivedCredentialThemes = Array.from(set);

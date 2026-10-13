@@ -13,7 +13,8 @@
       "projectContext": "Crypto Exchange Association",
       "credentialRefs": [
         {
-          "id": "cred:verana:cexa-kyc:sd-jwt-vc"
+          "id": "cred:verana:cexa-kyc",
+          "displayName": "CEXA-Kyc"
         }
       ]
     },
@@ -28,7 +29,8 @@
       "projectContext": "Crypto Exchange Association",
       "credentialRefs": [
         {
-          "id": "cred:verana:cexa-kyc:sd-jwt-vc"
+          "id": "cred:verana:cexa-kyc",
+          "displayName": "CEXA-Kyc"
         }
       ]
     },
@@ -43,7 +45,8 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-badge:vcdm-2-0"
+          "id": "cred:verana:ecs-badge",
+          "displayName": "ECS Badge Credential"
         }
       ]
     },
@@ -57,10 +60,12 @@
       "projectContext": "Crypto Exchange Association",
       "credentialRefs": [
         {
-          "id": "cred:verana:cexa-verified-counterparty:vcdm-2-0"
+          "id": "cred:verana:cexa-verified-counterparty",
+          "displayName": "CEXA-VerifiedCounterparty"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ]
     },
@@ -74,7 +79,8 @@
       "projectContext": "Playground Ecosystem (personal-wallets demos)",
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ]
     },
@@ -89,7 +95,8 @@
       "projectContext": "Playground Ecosystem (personal-wallets demos)",
       "credentialRefs": [
         {
-          "id": "cred:verana:demo-credential:sd-jwt-vc"
+          "id": "cred:verana:demo-credential",
+          "displayName": "DemoCredential"
         }
       ]
     },
@@ -104,7 +111,8 @@
       "projectContext": "Verana Playground",
       "credentialRefs": [
         {
-          "id": "cred:verana:demo-credential:sd-jwt-vc"
+          "id": "cred:verana:demo-credential",
+          "displayName": "DemoCredential"
         }
       ]
     },
@@ -119,7 +127,8 @@
       "projectContext": "Verana Playground",
       "credentialRefs": [
         {
-          "id": "cred:verana:demo-credential:sd-jwt-vc"
+          "id": "cred:verana:demo-credential",
+          "displayName": "DemoCredential"
         }
       ]
     },
@@ -134,10 +143,12 @@
       "projectContext": "Republic of Verandia (e-government cast)",
       "credentialRefs": [
         {
-          "id": "cred:verana:verandia-citizen-id:sd-jwt-vc"
+          "id": "cred:verana:verandia-citizen-id",
+          "displayName": "Verandia Citizen ID"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ]
     },
@@ -152,13 +163,16 @@
       "projectContext": "Republic of Verandia (e-government cast)",
       "credentialRefs": [
         {
-          "id": "cred:verana:verandia-legal-representative:sd-jwt-vc"
+          "id": "cred:verana:verandia-legal-representative",
+          "displayName": "Legal Representative (Verandia)"
         },
         {
-          "id": "cred:verana:ecs-organization:vcdm-2-0"
+          "id": "cred:verana:ecs-organization",
+          "displayName": "ECS Organization Credential"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ]
     },
@@ -172,10 +186,12 @@
       "projectContext": "Verana ECS Ecosystem (KYB for the playground casts)",
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-organization:vcdm-2-0"
+          "id": "cred:verana:ecs-organization",
+          "displayName": "ECS Organization Credential"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ]
     },
@@ -190,10 +206,12 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-badge:vcdm-2-0"
+          "id": "cred:verana:ecs-badge",
+          "displayName": "ECS Badge Credential"
         },
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ]
     },
@@ -208,7 +226,8 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-badge:vcdm-2-0"
+          "id": "cred:verana:ecs-badge",
+          "displayName": "ECS Badge Credential"
         }
       ]
     },
@@ -222,7 +241,8 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialRefs": [
         {
-          "id": "cred:verana:authorized-repairer:vcdm-2-0"
+          "id": "cred:verana:authorized-repairer",
+          "displayName": "Authorized Repairer (Vesta)"
         }
       ]
     },
@@ -236,7 +256,8 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialRefs": [
         {
-          "id": "cred:verana:authorized-repairer:vcdm-2-0"
+          "id": "cred:verana:authorized-repairer",
+          "displayName": "Authorized Repairer (Vesta)"
         }
       ]
     },
@@ -250,7 +271,8 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialRefs": [
         {
-          "id": "cred:verana:iso-9001-demo:vcdm-2-0"
+          "id": "cred:verana:iso-9001-demo",
+          "displayName": "ISO 9001 (demo)"
         }
       ]
     },
@@ -264,7 +286,8 @@
       "projectContext": "Vesta cast (appliance manufacturer and repair network)",
       "credentialRefs": [
         {
-          "id": "cred:verana:ecs-service:vcdm-2-0"
+          "id": "cred:verana:ecs-service",
+          "displayName": "ECS Service Credential"
         }
       ]
     },

@@ -11,23 +11,23 @@
       "projectContext": "Standards-based DPP implementation",
       "credentialRefs": [
         {
-          "id": "cred:uncefact:dpp:vcdm-2-0",
+          "id": "cred:uncefact:dpp",
           "displayName": "Digital Product Passport"
         },
         {
-          "id": "cred:uncefact:dte:vcdm-2-0",
+          "id": "cred:uncefact:dte",
           "displayName": "Digital Traceability Event"
         },
         {
-          "id": "cred:uncefact:dfr:vcdm-2-0",
+          "id": "cred:uncefact:dfr",
           "displayName": "Digital Facility Record"
         },
         {
-          "id": "cred:uncefact:dia:vcdm-2-0",
+          "id": "cred:uncefact:dia",
           "displayName": "Digital Identity Anchor"
         },
         {
-          "id": "cred:uncefact:dcc:vcdm-2-0",
+          "id": "cred:uncefact:dcc",
           "displayName": "Conformity Credential"
         }
       ]

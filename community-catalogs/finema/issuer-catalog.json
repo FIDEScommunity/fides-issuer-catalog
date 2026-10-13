@@ -11,15 +11,15 @@
       "issuerWebsiteUrl": "https://finema.co/",
       "credentialRefs": [
         {
-          "id": "cred:gleif:legal-entity-vlei:acdc",
+          "id": "cred:gleif:legal-entity-vlei",
           "displayName": "vLEI – Legal Entity Credential"
         },
         {
-          "id": "cred:gleif:official-organizational-role-vlei:acdc",
+          "id": "cred:gleif:official-organizational-role-vlei",
           "displayName": "vLEI – Official Organizational Role (OOR) Credential"
         },
         {
-          "id": "cred:gleif:engagement-context-role-vlei:acdc",
+          "id": "cred:gleif:engagement-context-role-vlei",
           "displayName": "vLEI – Engagement Context Role (ECR) Credential"
         }
       ]

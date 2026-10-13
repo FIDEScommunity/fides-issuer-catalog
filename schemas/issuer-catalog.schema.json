@@ -50,8 +50,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^cred:[a-z0-9]+:[a-z0-9-]+:[a-z0-9-]+$",
-          "description": "Credential catalog ID (e.g. cred:fides:lpid:sd-jwt-vc)"
+          "pattern": "^cred:[a-z0-9]+:[a-z0-9-]+(?::[a-z0-9-]+)?$",
+          "description": "Credential catalog attestation type id (cred:org:key), or legacy per-format id (cred:org:key:format)"
         },
         "displayName": {
           "type": "string"

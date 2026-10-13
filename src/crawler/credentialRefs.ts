@@ -14,10 +14,11 @@ interface CatalogEntry {
   vcFormat?: string;
 }
 
-/** `cred:verana:cexa-kyc:sd-jwt-vc` → `cexa-kyc` */
+/** `cred:verana:cexa-kyc` or `cred:verana:cexa-kyc:sd-jwt-vc` → `cexa-kyc` */
 export function catalogCredentialKey(id: string): string {
   const parts = String(id || '').split(':');
-  return parts.length >= 4 ? parts[2] : '';
+  if (parts[0] !== 'cred' || parts.length < 3) return '';
+  return parts[2] || '';
 }
 
 function normalize(value: string | undefined): string {
