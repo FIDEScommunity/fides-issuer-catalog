@@ -1,0 +1,16 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:blokverse",
+  "issuers": [
+    {
+      "id": "issuer:blokverse:playground:test",
+      "displayName": "Maenada Playground",
+      "description": "France Identité playground issuer for Maenada Synapse. Issues PID, mobile driving licence, Photo ID, age attestation and SCA credentials as SD-JWT VC and mdoc.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://oid4vci-stage-france-sandbox.maenada.com/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://api.playground.france-identite.gouv.fr/blokverse/mnd-ui/",
+      "projectContext": "France Identité EUDIW Unfold playground"
+    }
+  ]
+}
