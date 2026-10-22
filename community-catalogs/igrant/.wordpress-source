@@ -5,7 +5,11 @@
     "issuer:igrant:webuildcorporateshop:production": {
       "itemId": "issuer:igrant:webuildcorporateshop:production",
       "publishedAt": "2026-10-22 11:52:22"
+    },
+    "issuer:igrant:demo:test": {
+      "itemId": "issuer:igrant:demo:test",
+      "publishedAt": "2026-10-22 12:07:50"
     }
   },
-  "importedAt": "2026-10-22T11:52:39.205Z"
+  "importedAt": "2026-10-22T12:08:08.650Z"
 }
