@@ -28,10 +28,10 @@
       "description": "WE BUILD Corporate Shop issues trusted eReceipts for B2B payments.",
       "environment": "production",
       "issuanceProtocol": "oid4vci",
-      "oid4vciMetadataUrl": "https://oid4vc.igrant.io/organisation/11202b45-04bb-49ef-bdf2-772be31b2ae4/service/.well-known/openid-credential-issuer",
+      "oid4vciMetadataUrl": "https://oid4vc.igrant.io/.well-known/openid-credential-issuer/organisation/11202b45-04bb-49ef-bdf2-772be31b2ae4/service/version-01",
       "issuerWebsiteUrl": "https://webuildshop-corporate-demo.igrant.io",
       "projectContext": "WE BUILD"
     }
   ],
-  "lastUpdated": "2026-08-20T16:06:23+00:00"
+  "lastUpdated": "2026-10-22T11:52:22+00:00"
 }
