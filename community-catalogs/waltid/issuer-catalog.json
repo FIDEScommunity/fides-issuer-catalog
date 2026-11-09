@@ -1,0 +1,17 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:waltid",
+  "issuers": [
+    {
+      "id": "issuer:waltid:demo-issuer:test",
+      "displayName": "walt.id Demo Issuer",
+      "description": "Public demo of the walt.id Issuer (Community Stack), for testing only. Issues sample PID, mDL, age verification, payment card and other credentials as SD-JWT VC, mdoc and W3C VC.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://issuer2.demo.walt.id/.well-known/openid-credential-issuer/openid4vci",
+      "issuerWebsiteUrl": "https://portal2.demo.walt.id",
+      "projectContext": "walt.id public demo"
+    }
+  ],
+  "lastUpdated": "2026-11-09T00:00:00Z"
+}
