@@ -232,5 +232,8 @@
   },
   "issuer:blokverse:playground:test": {
     "firstSeenAt": "2026-10-20T11:09:41.956Z"
+  },
+  "issuer:waltid:demo-issuer:test": {
+    "firstSeenAt": "2026-11-09T11:49:44.109Z"
   }
 }
