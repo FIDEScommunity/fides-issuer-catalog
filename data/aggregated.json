@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
   "catalogType": "issuer-catalog",
-  "lastUpdated": "2026-11-21T14:25:14.303Z",
+  "lastUpdated": "2026-11-22T14:18:48.720Z",
   "issuers": [
     {
       "id": "issuer:a4advisory:unfold-playground:test",
@@ -256,7 +256,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-09-29T08:58:45.551Z",
       "updatedAt": "2026-09-29T10:58:26+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:animo:bundesdruckerei:test",
@@ -493,7 +493,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:animo:rdw:test",
@@ -573,7 +573,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:animo:telorg:test",
@@ -704,7 +704,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:aruba:wallet:test",
@@ -1492,7 +1492,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:37:02.594Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:credenco:belastingdienst:test",
@@ -1524,10 +1524,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -1543,10 +1543,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -1562,10 +1562,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -1581,10 +1581,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -1599,17 +1599,17 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:blokverse:playground:test",
@@ -1804,7 +1804,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-10-20T11:09:41.956Z",
       "updatedAt": "2026-10-20T10:12:46+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:certizen:vlei:production",
@@ -1898,7 +1898,7 @@
       ],
       "firstSeenAt": "2026-04-23T07:19:38.014Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:cfca:vlei:production",
@@ -1992,7 +1992,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:52:21.519Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:credenco:tulip:test",
@@ -2025,10 +2025,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -2044,17 +2044,17 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T08:33:47.815Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:eduwallet:uvh:test",
@@ -2082,7 +2082,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2111,7 +2111,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2140,7 +2140,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2169,7 +2169,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2198,7 +2198,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -2227,7 +2227,7 @@
       ],
       "firstSeenAt": "2026-07-09T13:10:12.907Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -3017,7 +3017,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:fides:credential-issuer:test",
@@ -3051,10 +3051,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3070,10 +3070,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3089,10 +3089,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3108,10 +3108,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3127,10 +3127,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3146,10 +3146,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3165,10 +3165,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3184,10 +3184,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3209,10 +3209,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:organization-profile",
@@ -3232,10 +3232,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3251,10 +3251,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3276,10 +3276,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:verified-employee",
@@ -3299,10 +3299,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3318,10 +3318,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3336,10 +3336,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3355,10 +3355,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3374,10 +3374,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3393,10 +3393,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3412,10 +3412,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -3431,17 +3431,17 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:07:58.852Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:fides:mijnoverheid-issuer:test",
@@ -3480,10 +3480,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:brp",
@@ -3508,10 +3508,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:contact-details",
@@ -3536,10 +3536,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:bri",
@@ -3550,7 +3550,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-12T20:11:57.399Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:fides:fides-labs-issuer:test",
@@ -3591,10 +3591,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fidoalliance:open-checkout-mandate",
@@ -3620,10 +3620,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:fides:verified-email",
@@ -3634,7 +3634,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-21T14:04:37.030Z",
       "updatedAt": "2026-08-12T09:02:50Z",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:findynet:pension-demo-hovi:test",
@@ -3676,7 +3676,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:23:24.764Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:findynet:pension-demo-waltid:test",
@@ -3851,7 +3851,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:36:15.479Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:findynet:pension-demo-sphereon:test",
@@ -3874,7 +3874,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:39:25.499Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 502 Bad Gateway"
     },
     {
@@ -3917,7 +3917,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-04-28T18:43:25.977Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:findynet:pension-demo-gataca:test",
@@ -3940,7 +3940,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T12:10:23.288Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:findynet:pension-demo-procivis:test",
@@ -3986,7 +3986,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:findynet:ips-procivis:test",
@@ -4032,7 +4032,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-05T13:00:02.914Z",
       "updatedAt": "2026-05-05T16:15:30+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:finema:vlei:production",
@@ -4126,7 +4126,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:51:43.465Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:france:playground:test",
@@ -4320,7 +4320,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-10-13T20:41:39.560Z",
       "updatedAt": "2026-10-13T23:39:32+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:france:custom-issuer:test",
@@ -4829,7 +4829,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-10-13T20:41:39.560Z",
       "updatedAt": "2026-10-13T23:39:32+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:gleif:vlei-root:production",
@@ -4877,7 +4877,7 @@
       ],
       "firstSeenAt": "2026-04-23T08:25:05.204Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:globalvlei:vlei:production",
@@ -4971,7 +4971,7 @@
       ],
       "firstSeenAt": "2026-04-23T07:32:35.459Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:hovi:eudi-playground:test",
@@ -5541,7 +5541,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:iata:indigo:production",
@@ -5614,7 +5614,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:iata:british-airways:production",
@@ -5687,7 +5687,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:iata:japan-airlines:production",
@@ -5760,7 +5760,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:iata:air-new-zealand:production",
@@ -5833,7 +5833,7 @@
       ],
       "firstSeenAt": "2026-04-22T14:03:52.578Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:igrant:demo:test",
@@ -5873,7 +5873,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:24:16.301Z",
       "updatedAt": "2026-10-22T12:08:46Z",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:igrant:playground:test",
@@ -5975,7 +5975,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-05-18T05:15:29.773Z",
       "updatedAt": "2026-10-22T12:08:46Z",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:igrant:webuildcorporateshop:production",
@@ -6025,7 +6025,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-10-22T12:08:46Z",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:ingroupe:aptitude:test",
@@ -6045,1216 +6045,12 @@
       "description": "Public Aptitude development issuer for testing OID4VCI credential offers and issuance with EUDI-compatible wallets.",
       "issuerWebsiteUrl": "https://aptitude-issuer-studio.utoconnect.com/",
       "projectContext": "IN Groupe Aptitude interoperability playground",
-      "credentialConfigurations": [
-        {
-          "configurationId": "org.iso.23220.photoid.1_mso_mdoc",
-          "displayName": "Photo ID",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eudi",
-            "iso",
-            "mdoc",
-            "photoid"
-          ],
-          "docType": "org.iso.23220.photoid.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:iso:photoid",
-            "displayName": "Photo ID"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.pid_mso_mdoc",
-          "displayName": "PID",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "pid"
-          ],
-          "docType": "eu.europa.ec.eudi.pid.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:pid",
-            "displayName": "PID"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.pid_vc_sd_jwt",
-          "displayName": "PID",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "pid"
-          ],
-          "vct": "urn:eudi:pid:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:pid",
-            "displayName": "PID"
-          }
-        },
-        {
-          "configurationId": "org.iso.18013.5.1.mDL_mso_mdoc",
-          "displayName": "mDL",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eudi",
-            "iso",
-            "mdl",
-            "mdoc"
-          ],
-          "docType": "org.iso.18013.5.1.mDL",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:iso:mdl",
-            "displayName": "mDL"
-          }
-        },
-        {
-          "configurationId": "org.iso.7367.2.1.mVC_mdoc",
-          "displayName": "Mobile Vehicle Certificate",
-          "vcFormat": "mdoc",
-          "docType": "org.iso.7367.2.1.mVC",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.por_mdoc",
-          "displayName": "Power of Representation",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "por"
-          ],
-          "docType": "eu.europa.ec.eudi.por.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:por",
-            "displayName": "Power Of Representation"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.por_sd_jwt_vc",
-          "displayName": "Power of Representation",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "por"
-          ],
-          "vct": "urn:eu.europa.ec.eudi:por:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:por",
-            "displayName": "Power Of Representation"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.seafarer_mdoc",
-          "displayName": "Seafarer",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "seafarer"
-          ],
-          "docType": "eu.europa.ec.eudi.seafarer.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:seafarer",
-            "displayName": "Seafarer"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.iban_mdoc",
-          "displayName": "IBAN",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "iban",
-            "mdoc"
-          ],
-          "docType": "eu.europa.ec.eudi.iban.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:iban",
-            "displayName": "IBAN"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.iban_sd_jwt_vc",
-          "displayName": "IBAN",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "iban",
-            "mdoc"
-          ],
-          "vct": "urn:eu.europa.ec.eudi:iban:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:iban",
-            "displayName": "IBAN"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.msisdn_mdoc",
-          "displayName": "Mobile Number Attestation",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "msisdn"
-          ],
-          "docType": "eu.europa.ec.eudi.msisdn.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:msisdn",
-            "displayName": "MSISDN"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.msisdn_sd_jwt_vc",
-          "displayName": "Mobile Number Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "msisdn"
-          ],
-          "vct": "urn:eu.europa.ec.eudi:msisdn:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:msisdn",
-            "displayName": "MSISDN"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.cor_mdoc",
-          "displayName": "Certificate of Residence",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "cor",
-            "eu",
-            "eudi",
-            "mdoc"
-          ],
-          "docType": "eu.europa.ec.eudi.cor.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:cor",
-            "displayName": "Certificate of Residence"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.loyalty_mdoc",
-          "displayName": "Loyalty",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "loyalty",
-            "mdoc"
-          ],
-          "docType": "eu.europa.ec.eudi.loyalty.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:loyalty",
-            "displayName": "Loyalty"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.pseudonym.age_over_18.1_mso_mdoc",
-          "displayName": "AgeOver18",
-          "vcFormat": "mdoc",
-          "docType": "eu.europa.ec.eudi.pseudonym.age_over_18.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.hiid_mdoc",
-          "displayName": "Health Insurance ID",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "hiid",
-            "mdoc"
-          ],
-          "docType": "eu.europa.ec.eudi.hiid.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:hiid",
-            "displayName": "Health ID"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.hiid_sd_jwt_vc",
-          "displayName": "Health Insurance ID",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "hiid",
-            "mdoc"
-          ],
-          "vct": "urn:eu.europa.ec.eudi:hiid:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:hiid",
-            "displayName": "Health ID"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.ehic_mdoc",
-          "displayName": "European Health Insurance Card",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "ehic",
-            "eu",
-            "eudi",
-            "mdoc"
-          ],
-          "docType": "eu.europa.ec.eudi.ehic.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:ehic",
-            "displayName": "EHIC"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.ehic_sd_jwt_vc",
-          "displayName": "European Health Insurance Card",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "ehic",
-            "eu",
-            "eudi",
-            "mdoc"
-          ],
-          "vct": "urn:eudi:ehic:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:ehic",
-            "displayName": "EHIC"
-          }
-        },
-        {
-          "configurationId": "org.iso.18013.5.1.reservation_mso_mdoc",
-          "displayName": "Reservation",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eudi",
-            "iso",
-            "mdoc",
-            "reservation"
-          ],
-          "docType": "org.iso.18013.5.1.reservation",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:iso:reservation",
-            "displayName": "Reservation"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.tax_mdoc",
-          "displayName": "Tax Number",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "tax"
-          ],
-          "docType": "eu.europa.ec.eudi.tax.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:tax",
-            "displayName": "Tax Number"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.tax_sd_jwt_vc",
-          "displayName": "Tax Number",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "tax"
-          ],
-          "vct": "urn:eu.europa.ec.eudi:tax:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:tax",
-            "displayName": "Tax Number"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.tax_residency_vc_sd_jwt",
-          "displayName": "Tax Residency",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "tax"
-          ],
-          "vct": "urn:eu.europa.ec.eudi:tax:1:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:tax-residency",
-            "displayName": "Tax Residency"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.diploma_vc_sd_jwt",
-          "displayName": "Diploma",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "diploma",
-            "eu",
-            "eudi"
-          ],
-          "vct": "urn:eu.europa.ec.eudi:diploma:1:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:diploma",
-            "displayName": "Diploma"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.learning_credential_vc_sd_jwt",
-          "displayName": "Learning Credential",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "urn:eu.europa.ec.eudi:learning:credential:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "eu.we-build.student_id_vc_sd_jwt",
-          "displayName": "Student ID",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "VerifiableStudentID",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "eu.we-build.ebwoid_vc_sd_jwt",
-          "displayName": "Legal Person ID (LPID)",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Organization",
-          "tags": [
-            "ds001",
-            "ebw",
-            "oid",
-            "webuild"
-          ],
-          "vct": "uri:eu.ebw.oid.1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:webuild:ebw-oid",
-            "displayName": "EBW Owner Identification Data (EBW-OID)"
-          }
-        },
-        {
-          "configurationId": "eu.we-build.eucc_vc_sd_jwt",
-          "displayName": "EU Company Certificate",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Organization",
-          "tags": [
-            "company-certificate",
-            "eucc",
-            "ewc",
-            "webuild"
-          ],
-          "vct": "urn:eudi:eucc:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:webuild:eucc",
-            "displayName": "EU Company Certificate"
-          }
-        },
-        {
-          "configurationId": "eu.we-build.authorised_signatories_vc_sd_jwt",
-          "displayName": "Signatory Rights",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "mandate",
-            "signatories",
-            "webuild"
-          ],
-          "vct": "eu.we-build:authorisedsignatories:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:webuild:authorised-signatories",
-            "displayName": "Authorised Signatories"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.pda1_mdoc",
-          "displayName": "Portable Document A1",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "pda1"
-          ],
-          "docType": "eu.europa.ec.eudi.pda1.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:pda1",
-            "displayName": "PDA1"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.pda1_sd_jwt_vc",
-          "displayName": "Portable Document A1",
-          "vcFormat": "sd_jwt_vc",
-          "subjectType": "Person",
-          "tags": [
-            "eu",
-            "eudi",
-            "mdoc",
-            "pda1"
-          ],
-          "vct": "urn:eu.europa.ec.eudi:pda1:1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:pda1",
-            "displayName": "PDA1"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.av.1_mso_mdoc",
-          "displayName": "Proof of Age",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "age-verification",
-            "eu",
-            "eudi",
-            "mdoc"
-          ],
-          "docType": "eu.europa.ec.av.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:age-verification",
-            "displayName": "Age Verification"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.employee.1_mso_mdoc",
-          "displayName": "Employee ID",
-          "vcFormat": "mdoc",
-          "subjectType": "Person",
-          "tags": [
-            "employee",
-            "eu",
-            "eudi",
-            "mdoc"
-          ],
-          "docType": "eu.europa.ec.eudi.employee.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png",
-          "credentialCatalogRef": {
-            "id": "cred:eu:employee",
-            "displayName": "Employee ID"
-          }
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.boatlicense_mso_mdoc",
-          "displayName": "Boat License",
-          "vcFormat": "mdoc",
-          "docType": "eu.europa.ec.eudi.boatlicense.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "psd2.payment_service_user_vc_sd_jwt",
-          "displayName": "SCA Payment Service User",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://psd2.standard.org/payment_service_user",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "psd2.payment_account_vc_sd_jwt",
-          "displayName": "SCA Payment Account",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://psd2.standard.org/payment_account",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "org.ingroupe.identity.1_mdoc",
-          "displayName": "Eudiw Identity For IN Groupe",
-          "vcFormat": "mdoc",
-          "docType": "org.ingroupe.identity.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.passenger_id.1_mso_mdoc",
-          "displayName": "Passenger ID",
-          "vcFormat": "mdoc",
-          "docType": "eu.europa.ec.eudi.passenger_id.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "eu.europa.ec.eudi.travel_document.1_mso_mdoc",
-          "displayName": "Travel Document",
-          "vcFormat": "mdoc",
-          "docType": "eu.europa.ec.eudi.travel_document.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.employment_relationship_vc_sd_jwt",
-          "displayName": "Employment Relationship Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/employment-relationship/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.pro_id_mso_mdoc",
-          "displayName": "Professional Identity Attestation - ProID",
-          "vcFormat": "mdoc",
-          "docType": "com.ingroupe.passpro.proid.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.pro_id_vc_sd_jwt",
-          "displayName": "Professional Identity Attestation - ProID",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/pro-id/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.electrical_habilitation_vc_sd_jwt",
-          "displayName": "Electrical Habilitation Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/electrical-habilitation/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.safety_training_vc_sd_jwt",
-          "displayName": "Safety Training Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/safety-training/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.nuclear_site_training_vc_sd_jwt",
-          "displayName": "Nuclear Site Training Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/nuclear-site-training/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.radiation_protection_vc_sd_jwt",
-          "displayName": "Radiation Protection Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/radiation-protection/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.medical_fitness_vc_sd_jwt",
-          "displayName": "Medical Fitness Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/medical-fitness/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.security_clearance_vc_sd_jwt",
-          "displayName": "Security Clearance Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/security-clearance/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.confined_space_authorization_vc_sd_jwt",
-          "displayName": "Confined Space Authorization Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/confined-space-authorization/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.work_at_height_authorization_vc_sd_jwt",
-          "displayName": "Work At Height Authorization Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/work-at-height-authorization/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.equipment_authorization_vc_sd_jwt",
-          "displayName": "Equipment Authorization Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/equipment-authorization/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.site_induction_vc_sd_jwt",
-          "displayName": "Site Induction Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/site-induction/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.mission_authorization_mso_mdoc",
-          "displayName": "Mission Authorization Attestation",
-          "vcFormat": "mdoc",
-          "docType": "com.ingroupe.passpro.mission_authorization.1",
-          "signingAlgorithms": [
-            -9
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk",
-            "cose_key"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        },
-        {
-          "configurationId": "passpro.mission_authorization_vc_sd_jwt",
-          "displayName": "Mission Authorization Attestation",
-          "vcFormat": "sd_jwt_vc",
-          "vct": "https://schemas.passpro.ingroupe.com/vct/mission-authorization/v1",
-          "signingAlgorithms": [
-            "ES256"
-          ],
-          "proofTypes": [
-            "jwt"
-          ],
-          "cryptographicBindingMethods": [
-            "jwk"
-          ],
-          "logoUri": "https://aptitude-issuer.utoconnect.com/branding/ingroupe-issuer-logo.png"
-        }
-      ],
+      "credentialConfigurations": [],
       "supportedWallets": [],
       "firstSeenAt": "2026-10-13T20:43:47.252Z",
       "updatedAt": "2026-10-13T23:39:32+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
+      "metadataFetchError": "This operation was aborted"
     },
     {
       "id": "issuer:k4security:kspts:test",
@@ -7384,7 +6180,7 @@
       ],
       "firstSeenAt": "2026-07-15T06:00:43.266Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:credenco:kvk:test",
@@ -7415,10 +6211,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -7433,10 +6229,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -7459,10 +6255,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ],
           "credentialCatalogRef": {
             "id": "cred:webuild:ebw-oid",
@@ -7481,10 +6277,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -7500,10 +6296,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -7519,10 +6315,10 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         },
         {
@@ -7537,17 +6333,17 @@
             "jwt"
           ],
           "cryptographicBindingMethods": [
-            "jwk",
             "did:web",
             "did:jwk",
-            "did:ebsi"
+            "did:ebsi",
+            "jwk"
           ]
         }
       ],
       "supportedWallets": [],
       "firstSeenAt": "2026-03-16T14:36:01.417Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:lutra:playground:test",
@@ -7678,7 +6474,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-10-13T20:43:47.252Z",
       "updatedAt": "2026-10-13T23:39:32+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:mosip:insurance:test",
@@ -7702,7 +6498,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:48:38.832Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -7918,7 +6714,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-20T15:19:21.293Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:namirial:wallet-studio:test",
@@ -8160,7 +6956,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-18T12:08:33.802Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:provenant:vlei:production",
@@ -8254,7 +7050,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:53:21.448Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:sheca:vlei:production",
@@ -8348,7 +7144,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:32:23.165Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:swiyu:beta-id:test",
@@ -8388,7 +7184,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T16:59:22.876Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:talao:acnliwayop:test",
@@ -8514,7 +7310,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-21T17:43:39.905Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:thales:unfold:test",
@@ -8692,7 +7488,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:41:04.052Z",
       "updatedAt": "2026-04-22T17:29:34+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:toppan:goid:test",
@@ -8772,7 +7568,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-03-22T19:20:00.820Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:toppan:vlei:production",
@@ -8865,7 +7661,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:42:20.316Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:tradego:vlei:production",
@@ -8958,7 +7754,7 @@
       ],
       "firstSeenAt": "2026-04-23T05:37:57.208Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:verana:verana-playground-issuer-novara:test",
@@ -9009,7 +7805,7 @@
       ],
       "firstSeenAt": "2026-08-17T17:22:27.739Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9061,7 +7857,7 @@
       ],
       "firstSeenAt": "2026-08-17T17:28:15.008Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9112,7 +7908,7 @@
       ],
       "firstSeenAt": "2026-08-17T17:28:15.008Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9187,7 +7983,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-anchor:test",
@@ -9236,7 +8032,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:verana:verana-playground-demo-issuer-accredited:test",
@@ -9285,7 +8081,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9335,7 +8131,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9385,7 +8181,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9461,7 +8257,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9560,7 +8356,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9634,7 +8430,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-anchor:test",
@@ -9708,7 +8504,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9759,7 +8555,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -9809,7 +8605,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:verana:verana-playground-vesta-nordics:test",
@@ -9858,7 +8654,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:verana:verana-playground-normacert:test",
@@ -9908,7 +8704,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:verana:verana-playground-iso-certification:test",
@@ -9957,7 +8753,7 @@
       ],
       "firstSeenAt": "2026-08-18T14:46:51.844Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     },
     {
       "id": "issuer:verana:verana-playground-business-registry:test",
@@ -9980,7 +8776,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -10004,7 +8800,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -10028,7 +8824,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -10052,7 +8848,7 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-08-20T16:06:45.910Z",
       "updatedAt": "2026-10-13T08:37:22+02:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z",
+      "fetchedAt": "2026-11-22T14:18:48.720Z",
       "metadataFetchError": "HTTP 404 Not Found"
     },
     {
@@ -10413,13 +9209,13 @@
       "supportedWallets": [],
       "firstSeenAt": "2026-11-09T11:49:44.109Z",
       "updatedAt": "2026-11-09T11:27:10+01:00",
-      "fetchedAt": "2026-11-21T14:25:14.303Z"
+      "fetchedAt": "2026-11-22T14:18:48.720Z"
     }
   ],
   "stats": {
     "totalIssuers": 77,
     "productionIssuers": 11,
     "totalOrganizations": 35,
-    "totalCredentialConfigurations": 384
+    "totalCredentialConfigurations": 330
   }
 }
