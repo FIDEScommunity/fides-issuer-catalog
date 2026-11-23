@@ -235,5 +235,11 @@
   },
   "issuer:waltid:demo-issuer:test": {
     "firstSeenAt": "2026-11-09T11:49:44.109Z"
+  },
+  "issuer:authologic:poc:test": {
+    "firstSeenAt": "2026-11-23T18:09:54.064Z"
+  },
+  "issuer:procivis:eudi-trial:test": {
+    "firstSeenAt": "2026-11-23T18:09:54.064Z"
   }
 }
