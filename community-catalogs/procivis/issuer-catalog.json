@@ -1,0 +1,26 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:procivis",
+  "issuers": [
+    {
+      "id": "issuer:procivis:eudi-trial:test",
+      "displayName": "Procivis EUDI Trial Issuer",
+      "description": "Trial OID4VCI issuer enabled by the Procivis One demo portal on the France Identité playground. Issues PID, mobile driving licence and age-verification credentials.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://eudiw-issuer.eudi.trial.procivis-one.com/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://api.playground.france-identite.gouv.fr/procivis/portal/embedded-issuance",
+      "projectContext": "France Identité EUDIW Unfold playground",
+      "supportedWallets": [
+        {
+          "id": "france-identite",
+          "displayName": "France Identité"
+        },
+        {
+          "id": "procivis-one-wallet",
+          "displayName": "Procivis One Wallet"
+        }
+      ]
+    }
+  ]
+}

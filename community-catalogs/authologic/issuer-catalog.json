@@ -1,0 +1,22 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:authologic",
+  "issuers": [
+    {
+      "id": "issuer:authologic:poc:test",
+      "displayName": "Authologic PoC Issuer",
+      "description": "Proof-of-concept OID4VCI issuer used with the Authologic playground on France Identité.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://issuer.devel.authologic.com/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://issuer.devel.authologic.com/ui/onboard.html",
+      "projectContext": "France Identité EUDIW Unfold playground",
+      "supportedWallets": [
+        {
+          "id": "france-identite",
+          "displayName": "France Identité"
+        }
+      ]
+    }
+  ]
+}

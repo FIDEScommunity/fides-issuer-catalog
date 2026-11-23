@@ -1,0 +1,22 @@
+{
+  "$schema": "https://fides.community/schemas/issuer-catalog/v1",
+  "orgId": "org:accurey",
+  "issuers": [
+    {
+      "id": "issuer:accurey:shareholder:test",
+      "displayName": "Accurey Shareholder Issuer",
+      "description": "Issues the ACC-SHAREHOLDER-1 shareholding attestation in SD-JWT VC and mdoc. The attestation is minted from the register on demand and is valid for 48 hours.",
+      "environment": "test",
+      "issuanceProtocol": "oid4vci",
+      "oid4vciMetadataUrl": "https://issuer.accurey.com/.well-known/openid-credential-issuer",
+      "issuerWebsiteUrl": "https://issuer.accurey.com/",
+      "projectContext": "France Identité EUDIW Unfold playground",
+      "supportedWallets": [
+        {
+          "id": "france-identite",
+          "displayName": "France Identité"
+        }
+      ]
+    }
+  ]
+}
