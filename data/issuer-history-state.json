@@ -241,5 +241,8 @@
   },
   "issuer:procivis:eudi-trial:test": {
     "firstSeenAt": "2026-11-23T18:09:54.064Z"
+  },
+  "issuer:accurey:shareholder:test": {
+    "firstSeenAt": "2026-11-24T17:13:59.857Z"
   }
 }
